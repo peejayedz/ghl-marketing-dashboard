@@ -1,0 +1,13 @@
+{
+  "generatedAt": "2026-07-28T19:45:00-04:00",
+  "source": "Scraped from GoHighLevel Marketing > Emails > Campaigns (standalone one-off Email Campaigns, separate from Automation Workflows) at https://app.lawfirmmarketingpros.com/v2/location/sQ2VSMkR7cLHb46Wdemi/marketing/emails/campaigns and each campaign's Statistics tab. Two campaigns currently sitting as unsent Drafts are omitted since they have no stats yet.",
+  "campaigns": [
+    {
+      "title": "Untitled email campaign (no subject set)",
+      "status": "Sent",
+      "sentDate": "2021-01-17T04:34:00",
+      "recipients": 1,
+      "stats": { "delivered": 0, "opened": 0, "clicked": 0, "bounced": 0, "unsubscribed": 0 }
+    }
+  ]
+}
