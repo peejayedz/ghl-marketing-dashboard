@@ -71,6 +71,15 @@
   .status-published { background: rgba(52,201,143,0.15); color: var(--accent2); }
   .status-draft { background: rgba(255,180,84,0.15); color: var(--accent3); }
   .zero { color: var(--muted); }
+  .count-link { color: var(--accent); cursor: pointer; text-decoration: underline; text-decoration-style: dotted; }
+  .count-link:hover { color: #fff; }
+  .count-flat { color: var(--text); }
+  .contacts-row td { background: #11172400; padding: 0; }
+  .contacts-panel { background: #131a29; border-top: 1px dashed var(--border); border-bottom: 1px dashed var(--border); padding: 12px 16px; white-space: normal; }
+  .contacts-panel table { font-size: 12px; }
+  .contacts-panel th, .contacts-panel td { padding: 5px 8px; border-bottom: 1px solid #20293c; }
+  .contacts-panel .empty-msg { color: var(--muted); font-style: italic; padding: 4px 0; }
+  .contact-status { padding: 1px 6px; border-radius: 8px; font-size: 10px; background: rgba(91,140,255,0.15); color: var(--accent); }
 </style>
 </head>
 <body>
@@ -91,6 +100,7 @@
 <script>
 let DATA = null;
 let selectedKey = null;
+let expandedWorkflow = null; // "<campaignKey>::<workflowIndex>::enrolled|active"
 
 function fmtDate(iso) {
   if (!iso) return '';
@@ -135,32 +145,73 @@ function renderCards() {
       <div class="stat-row"><span class="label">Avg click rate</span><span class="value rate click">${pct(clicked)}</span></div>
       <div class="stat-row"><span class="label">Avg reply rate</span><span class="value rate reply">${pct(replied)}</span></div>
     `;
-    card.addEventListener('click', () => { selectedKey = c.key; renderCards(); renderTable(); });
+    card.addEventListener('click', () => { selectedKey = c.key; expandedWorkflow = null; renderCards(); renderTable(); });
     grid.appendChild(card);
   });
 }
 
+function contactsPanelHtml(w) {
+  if (w.enrolled === 0) {
+    return `<div class="empty-msg">No contacts enrolled in this workflow.</div>`;
+  }
+  if (!w.contactsLoaded) {
+    return `<div class="empty-msg">Contact list not pulled yet for this workflow — the daily refresh backfills these over its next couple of runs. Ask Claude to pull it now if you need it immediately.</div>`;
+  }
+  if (!w.contacts || w.contacts.length === 0) {
+    return `<div class="empty-msg">No enrollment history found (may have been re-triggered/merged since enrollment).</div>`;
+  }
+  const rows = w.contacts.map(ct => `
+    <tr>
+      <td>${ct.name || '(no name)'}</td>
+      <td>${ct.email || '<span class="zero">—</span>'}</td>
+      <td>${ct.phone || '<span class="zero">—</span>'}</td>
+      <td>${fmtDate(ct.dateEnrolled)}</td>
+      <td>${ct.status ? `<span class="contact-status">${ct.status}</span>` : ''}</td>
+    </tr>`).join('');
+  return `
+    <table>
+      <thead><tr><th>Name</th><th>Email</th><th>Phone</th><th>Date enrolled</th><th>Status</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>`;
+}
+
+function toggleContacts(rowKey) {
+  expandedWorkflow = (expandedWorkflow === rowKey) ? null : rowKey;
+  renderTable();
+}
+
 function renderTable() {
   const c = DATA.campaigns.find(x => x.key === selectedKey) || DATA.campaigns[0];
-  document.getElementById('table-title').textContent = c.label + ' — workflows';
+  document.getElementById('table-title').textContent = c.label + ' — workflows (click Enrolled/Active to see contacts)';
   document.getElementById('folder-link').href = c.folderUrl;
 
   const tbody = document.querySelector('#wf-table tbody');
-  tbody.innerHTML = c.workflows.map(w => {
+  let html = '';
+  c.workflows.forEach((w, i) => {
     const statusClass = w.status === 'Published' ? 'status-published' : 'status-draft';
     const cell = (v) => v === 0 ? '<span class="zero">0%</span>' : pct(v);
-    return `<tr>
+    const rowKey = `${c.key}::${i}`;
+    const countHtml = (n) => n > 0
+      ? `<span class="count-link" onclick="toggleContacts('${rowKey}')">${n}</span>`
+      : `<span class="count-flat zero">0</span>`;
+
+    html += `<tr>
       <td>${w.name}</td>
       <td><span class="status-pill ${statusClass}">${w.status}</span></td>
-      <td>${w.enrolled}</td>
-      <td>${w.active}</td>
+      <td>${countHtml(w.enrolled)}</td>
+      <td>${countHtml(w.active)}</td>
       <td>${fmtDate(w.createdOn)}</td>
       <td>${fmtDate(w.lastUpdated)}</td>
       <td>${cell(w.email.opened)}</td>
       <td>${cell(w.email.clicked)}</td>
       <td>${cell(w.email.replied)}</td>
     </tr>`;
-  }).join('');
+
+    if (expandedWorkflow === rowKey) {
+      html += `<tr class="contacts-row"><td colspan="9"><div class="contacts-panel">${contactsPanelHtml(w)}</div></td></tr>`;
+    }
+  });
+  tbody.innerHTML = html;
 }
 
 loadData().then(data => {
