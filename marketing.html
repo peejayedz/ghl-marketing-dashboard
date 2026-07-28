@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Marketing Campaigns Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg: #0f1420;
+    --card: #171d2b;
+    --border: #262f42;
+    --text: #e8ecf4;
+    --muted: #8b95ab;
+    --accent: #5b8cff;
+    --accent2: #34c98f;
+    --accent3: #ffb454;
+    --accent4: #ff6b6b;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 32px;
+  }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  .subtitle { color: var(--muted); font-size: 13px; margin-bottom: 8px; }
+  .note {
+    background: #1a2233;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 28px;
+  }
+  .campaign-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    cursor: pointer;
+    transition: border-color 0.15s;
+  }
+  .card:hover { border-color: var(--accent); }
+  .card.active { border-color: var(--accent); }
+  .card h2 { font-size: 16px; margin: 0 0 4px; }
+  .card .wf-count { color: var(--muted); font-size: 12px; margin-bottom: 14px; }
+  .stat-row { display: flex; justify-content: space-between; padding: 6px 0; font-size: 13px; }
+  .stat-row .label { color: var(--muted); }
+  .stat-row .value { font-weight: 600; }
+  .rate { color: var(--accent2); }
+  .rate.click { color: var(--accent3); }
+  .rate.reply { color: var(--accent4); }
+  table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+  th { color: var(--muted); font-weight: 500; position: sticky; top: 0; background: var(--card); }
+  td:first-child, th:first-child { white-space: normal; max-width: 320px; }
+  .table-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; overflow-x: auto; }
+  .table-card h2 { margin-top: 0; font-size: 15px; display: flex; align-items: center; justify-content: space-between; }
+  .table-card h2 a { color: var(--accent); font-size: 12px; font-weight: 400; text-decoration: none; }
+  .status-pill { padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; }
+  .status-published { background: rgba(52,201,143,0.15); color: var(--accent2); }
+  .status-draft { background: rgba(255,180,84,0.15); color: var(--accent3); }
+  .zero { color: var(--muted); }
+</style>
+</head>
+<body>
+  <h1>Marketing Campaigns Dashboard</h1>
+  <div class="subtitle" id="last-updated">Loading...</div>
+  <div class="note">Enrollment and email engagement data is scraped from GoHighLevel's Automation &gt; Workflows UI (not available via GHL's public API). Campaign-level Opened/Clicked/Replied are enrollment-weighted averages across that campaign's workflows.</div>
+
+  <div class="campaign-grid" id="cards"></div>
+
+  <div class="table-card">
+    <h2><span id="table-title">Workflows</span> <a id="folder-link" href="#" target="_blank">Open in GoHighLevel &#8594;</a></h2>
+    <table id="wf-table">
+      <thead><tr><th>Workflow</th><th>Status</th><th>Enrolled</th><th>Active</th><th>Created</th><th>Last updated</th><th>Opened</th><th>Clicked</th><th>Replied</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+<script>
+let DATA = null;
+let selectedKey = null;
+
+function fmtDate(iso) {
+  if (!iso) return '';
+  const d = new Date(iso);
+  return d.toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' }) +
+    ' ' + d.toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit' });
+}
+
+function pct(n) {
+  return (Math.round(n * 100) / 100) + '%';
+}
+
+function weightedAvg(workflows, field) {
+  const totalEnrolled = workflows.reduce((s, w) => s + w.enrolled, 0);
+  if (totalEnrolled === 0) return 0;
+  const sum = workflows.reduce((s, w) => s + w.enrolled * (w.email[field] || 0), 0);
+  return sum / totalEnrolled;
+}
+
+async function loadData() {
+  const res = await fetch('../data/marketing-campaigns.json', { cache: 'no-store' });
+  return await res.json();
+}
+
+function renderCards() {
+  const grid = document.getElementById('cards');
+  grid.innerHTML = '';
+  DATA.campaigns.forEach(c => {
+    const totalEnrolled = c.workflows.reduce((s, w) => s + w.enrolled, 0);
+    const opened = weightedAvg(c.workflows, 'opened');
+    const clicked = weightedAvg(c.workflows, 'clicked');
+    const replied = weightedAvg(c.workflows, 'replied');
+    const published = c.workflows.filter(w => w.status === 'Published').length;
+
+    const card = document.createElement('div');
+    card.className = 'card' + (c.key === selectedKey ? ' active' : '');
+    card.innerHTML = `
+      <h2>${c.label}</h2>
+      <div class="wf-count">${c.workflows.length} workflows (${published} published)</div>
+      <div class="stat-row"><span class="label">Total enrolled</span><span class="value">${totalEnrolled}</span></div>
+      <div class="stat-row"><span class="label">Avg open rate</span><span class="value rate">${pct(opened)}</span></div>
+      <div class="stat-row"><span class="label">Avg click rate</span><span class="value rate click">${pct(clicked)}</span></div>
+      <div class="stat-row"><span class="label">Avg reply rate</span><span class="value rate reply">${pct(replied)}</span></div>
+    `;
+    card.addEventListener('click', () => { selectedKey = c.key; renderCards(); renderTable(); });
+    grid.appendChild(card);
+  });
+}
+
+function renderTable() {
+  const c = DATA.campaigns.find(x => x.key === selectedKey) || DATA.campaigns[0];
+  document.getElementById('table-title').textContent = c.label + ' — workflows';
+  document.getElementById('folder-link').href = c.folderUrl;
+
+  const tbody = document.querySelector('#wf-table tbody');
+  tbody.innerHTML = c.workflows.map(w => {
+    const statusClass = w.status === 'Published' ? 'status-published' : 'status-draft';
+    const cell = (v) => v === 0 ? '<span class="zero">0%</span>' : pct(v);
+    return `<tr>
+      <td>${w.name}</td>
+      <td><span class="status-pill ${statusClass}">${w.status}</span></td>
+      <td>${w.enrolled}</td>
+      <td>${w.active}</td>
+      <td>${fmtDate(w.createdOn)}</td>
+      <td>${fmtDate(w.lastUpdated)}</td>
+      <td>${cell(w.email.opened)}</td>
+      <td>${cell(w.email.clicked)}</td>
+      <td>${cell(w.email.replied)}</td>
+    </tr>`;
+  }).join('');
+}
+
+loadData().then(data => {
+  DATA = data;
+  selectedKey = data.campaigns[0].key;
+  document.getElementById('last-updated').textContent = 'Data as of: ' + new Date(data.generatedAt).toLocaleString();
+  renderCards();
+  renderTable();
+});
+</script>
+</body>
+</html>
