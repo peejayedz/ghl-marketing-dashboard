@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Marketing Automation Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg: #0f1420;
+    --card: #171d2b;
+    --border: #262f42;
+    --text: #e8ecf4;
+    --muted: #8b95ab;
+    --accent: #5b8cff;
+    --accent2: #34c98f;
+    --accent3: #ffb454;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 32px;
+  }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  .subtitle { color: var(--muted); font-size: 13px; margin-bottom: 28px; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 32px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+  }
+  .card h2 { font-size: 16px; margin: 0 0 14px; }
+  .stat-row { display: flex; justify-content: space-between; padding: 6px 0; font-size: 13px; }
+  .stat-row .label { color: var(--muted); }
+  .stat-row .value { font-weight: 600; }
+  .rate { color: var(--accent2); }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+  th { color: var(--muted); font-weight: 500; }
+  .table-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; overflow-x: auto; }
+  select { background: var(--card); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 6px 10px; margin-bottom: 12px; }
+  canvas { max-height: 220px; }
+  .error { color: #ff6b6b; }
+</style>
+</head>
+<body>
+  <h1>Marketing Automation Dashboard</h1>
+  <div class="subtitle" id="last-updated">Loading...</div>
+
+  <div class="grid" id="cards"></div>
+
+  <div class="table-card">
+    <h2 style="margin-top:0">Enrolled contacts</h2>
+    <select id="campaign-select"></select>
+    <table id="contacts-table">
+      <thead><tr><th>Name</th><th>Email</th><th>Date enrolled</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+<script>
+async function loadData() {
+  try {
+    const res = await fetch('../data/dashboard-data.json', { cache: 'no-store' });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    return await res.json();
+  } catch (e) {
+    document.getElementById('last-updated').innerHTML =
+      '<span class="error">Could not load data/dashboard-data.json - ' + e.message + '</span>';
+    throw e;
+  }
+}
+
+function renderCards(campaigns) {
+  const grid = document.getElementById('cards');
+  grid.innerHTML = '';
+  campaigns.forEach((c, i) => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
+      <h2>${c.label}</h2>
+      <div class="stat-row"><span class="label">Enrolled</span><span class="value">${c.enrolled}</span></div>
+      <div class="stat-row"><span class="label">Opened</span><span class="value">${c.opened}</span></div>
+      <div class="stat-row"><span class="label">Clicked</span><span class="value">${c.clicked}</span></div>
+      ${c.replied !== null && c.replied !== undefined ? `<div class="stat-row"><span class="label">Replied</span><span class="value">${c.replied}</span></div>` : ''}
+      <div class="stat-row"><span class="label">Open rate</span><span class="value rate">${c.openRate}%</span></div>
+      <div class="stat-row"><span class="label">Click rate</span><span class="value rate">${c.clickRate}%</span></div>
+      <canvas id="chart-${i}"></canvas>
+    `;
+    grid.appendChild(card);
+  });
+
+  campaigns.forEach((c, i) => {
+    new Chart(document.getElementById(`chart-${i}`), {
+      type: 'bar',
+      data: {
+        labels: ['Enrolled', 'Opened', 'Clicked'].concat(c.replied != null ? ['Replied'] : []),
+        datasets: [{
+          data: [c.enrolled, c.opened, c.clicked].concat(c.replied != null ? [c.replied] : []),
+          backgroundColor: ['#5b8cff', '#34c98f', '#ffb454', '#ff6b6b'],
+          borderRadius: 6,
+        }]
+      },
+      options: {
+        plugins: { legend: { display: false } },
+        scales: {
+          x: { ticks: { color: '#8b95ab' }, grid: { display: false } },
+          y: { ticks: { color: '#8b95ab' }, grid: { color: '#262f42' } }
+        }
+      }
+    });
+  });
+}
+
+function renderTable(campaigns) {
+  const select = document.getElementById('campaign-select');
+  select.innerHTML = campaigns.map(c => `<option value="${c.key}">${c.label}</option>`).join('');
+
+  function draw(key) {
+    const c = campaigns.find(x => x.key === key) || campaigns[0];
+    const tbody = document.querySelector('#contacts-table tbody');
+    tbody.innerHTML = (c.contacts || []).map(ct => `
+      <tr><td>${ct.name || ''}</td><td>${ct.email || ''}</td><td>${(ct.dateAdded || '').slice(0,10)}</td></tr>
+    `).join('') || '<tr><td colspan="3" style="color:#8b95ab">No contacts returned</td></tr>';
+  }
+
+  select.addEventListener('change', () => draw(select.value));
+  draw(campaigns[0]?.key);
+}
+
+loadData().then(data => {
+  document.getElementById('last-updated').textContent =
+    'Last updated: ' + new Date(data.generatedAt).toLocaleString();
+  renderCards(data.campaigns);
+  renderTable(data.campaigns);
+});
+</script>
+</body>
+</html>

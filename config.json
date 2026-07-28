@@ -1,0 +1,29 @@
+{
+  "locationId": "REPLACE_WITH_YOUR_GHL_LOCATION_ID",
+  "campaigns": [
+    {
+      "key": "onboarding",
+      "label": "Onboarding / Operations",
+      "enrolledTag": "onboarding-enrolled",
+      "openedTag": "onboarding-opened",
+      "clickedTag": "onboarding-clicked",
+      "repliedTag": ""
+    },
+    {
+      "key": "marketing",
+      "label": "Marketing",
+      "enrolledTag": "marketing-enrolled",
+      "openedTag": "marketing-opened",
+      "clickedTag": "marketing-clicked",
+      "repliedTag": ""
+    },
+    {
+      "key": "dlf",
+      "label": "DLF",
+      "enrolledTag": "dlf-enrolled",
+      "openedTag": "dlf-opened",
+      "clickedTag": "dlf-clicked",
+      "repliedTag": ""
+    }
+  ]
+}
