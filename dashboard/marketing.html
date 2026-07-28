@@ -74,23 +74,32 @@
   .count-link { color: var(--accent); cursor: pointer; text-decoration: underline; text-decoration-style: dotted; }
   .count-link:hover { color: #fff; }
   .count-flat { color: var(--text); }
-  .contacts-row td { background: #11172400; padding: 0; }
-  .contacts-panel { background: #131a29; border-top: 1px dashed var(--border); border-bottom: 1px dashed var(--border); padding: 12px 16px; white-space: normal; }
-  .contacts-panel table { font-size: 12px; }
-  .contacts-panel th, .contacts-panel td { padding: 5px 8px; border-bottom: 1px solid #20293c; }
-  .contacts-panel .empty-msg { color: var(--muted); font-style: italic; padding: 4px 0; }
-  .contact-status { padding: 1px 6px; border-radius: 8px; font-size: 10px; background: rgba(91,140,255,0.15); color: var(--accent); }
+  .sync-label { display: inline-flex; align-items: center; gap: 6px; background: #1a2233; border: 1px solid var(--border); border-radius: 6px; padding: 4px 10px; font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+  .sync-label .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent2); }
+  .sync-label strong { color: var(--text); font-weight: 600; }
+  .status-filter { display: flex; gap: 6px; margin-bottom: 14px; }
+  .status-filter button {
+    background: var(--card); color: var(--muted); border: 1px solid var(--border);
+    border-radius: 6px; padding: 5px 12px; font-size: 12.5px; cursor: pointer; font-family: inherit;
+  }
+  .status-filter button:hover { border-color: var(--accent); color: var(--text); }
+  .status-filter button.active { background: var(--accent); border-color: var(--accent); color: #fff; }
 </style>
 </head>
 <body>
   <h1>Marketing Campaigns Dashboard</h1>
-  <div class="subtitle" id="last-updated">Loading...</div>
-  <div class="note">Enrollment and email engagement data is scraped from GoHighLevel's Automation &gt; Workflows UI (not available via GHL's public API). Campaign-level Opened/Clicked/Replied are enrollment-weighted averages across that campaign's workflows.</div>
+  <div class="sync-label" id="last-updated"><span class="dot"></span>Loading...</div>
+  <div class="note">Enrollment and email engagement data is scraped from GoHighLevel's Automation &gt; Workflows UI (not available via GHL's public API). Campaign-level Opened/Clicked/Replied are enrollment-weighted averages across that campaign's workflows. Click any Enrolled/Active count to open that workflow's Enrollment History directly in GoHighLevel.</div>
 
   <div class="campaign-grid" id="cards"></div>
 
   <div class="table-card">
     <h2><span id="table-title">Workflows</span> <a id="folder-link" href="#" target="_blank">Open in GoHighLevel &#8594;</a></h2>
+    <div class="status-filter" id="status-filter">
+      <button data-status="all" class="active">All</button>
+      <button data-status="Published">Published</button>
+      <button data-status="Draft">Draft</button>
+    </div>
     <table id="wf-table">
       <thead><tr><th>Workflow</th><th>Status</th><th>Enrolled</th><th>Active</th><th>Created</th><th>Last updated</th><th>Opened</th><th>Clicked</th><th>Replied</th></tr></thead>
       <tbody></tbody>
@@ -100,7 +109,8 @@
 <script>
 let DATA = null;
 let selectedKey = null;
-let expandedWorkflow = null; // "<campaignKey>::<workflowIndex>::enrolled|active"
+let statusFilter = 'all';
+const LOCATION_ID = 'sQ2VSMkR7cLHb46Wdemi';
 
 function fmtDate(iso) {
   if (!iso) return '';
@@ -145,54 +155,38 @@ function renderCards() {
       <div class="stat-row"><span class="label">Avg click rate</span><span class="value rate click">${pct(clicked)}</span></div>
       <div class="stat-row"><span class="label">Avg reply rate</span><span class="value rate reply">${pct(replied)}</span></div>
     `;
-    card.addEventListener('click', () => { selectedKey = c.key; expandedWorkflow = null; renderCards(); renderTable(); });
+    card.addEventListener('click', () => { selectedKey = c.key; renderCards(); renderTable(); });
     grid.appendChild(card);
   });
 }
 
-function contactsPanelHtml(w) {
-  if (w.enrolled === 0) {
-    return `<div class="empty-msg">No contacts enrolled in this workflow.</div>`;
+// Builds a direct link to this workflow's Enrollment History in GoHighLevel.
+// Falls back to the campaign's folder view if we don't have a workflowId on file yet.
+function workflowLink(w, campaign) {
+  if (w.workflowId) {
+    return `https://app.lawfirmmarketingpros.com/v2/location/${LOCATION_ID}/automation/workflow/${w.workflowId}/status`;
   }
-  if (!w.contactsLoaded) {
-    return `<div class="empty-msg">Contact list not pulled yet for this workflow — the daily refresh backfills these over its next couple of runs. Ask Claude to pull it now if you need it immediately.</div>`;
-  }
-  if (!w.contacts || w.contacts.length === 0) {
-    return `<div class="empty-msg">No enrollment history found (may have been re-triggered/merged since enrollment).</div>`;
-  }
-  const rows = w.contacts.map(ct => `
-    <tr>
-      <td>${ct.name || '(no name)'}</td>
-      <td>${ct.email || '<span class="zero">—</span>'}</td>
-      <td>${ct.phone || '<span class="zero">—</span>'}</td>
-      <td>${fmtDate(ct.dateEnrolled)}</td>
-      <td>${ct.status ? `<span class="contact-status">${ct.status}</span>` : ''}</td>
-    </tr>`).join('');
-  return `
-    <table>
-      <thead><tr><th>Name</th><th>Email</th><th>Phone</th><th>Date enrolled</th><th>Status</th></tr></thead>
-      <tbody>${rows}</tbody>
-    </table>`;
-}
-
-function toggleContacts(rowKey) {
-  expandedWorkflow = (expandedWorkflow === rowKey) ? null : rowKey;
-  renderTable();
+  return campaign.folderUrl;
 }
 
 function renderTable() {
   const c = DATA.campaigns.find(x => x.key === selectedKey) || DATA.campaigns[0];
-  document.getElementById('table-title').textContent = c.label + ' — workflows (click Enrolled/Active to see contacts)';
+  document.getElementById('table-title').textContent = c.label + ' — workflows (click Enrolled/Active to open in GoHighLevel)';
   document.getElementById('folder-link').href = c.folderUrl;
 
   const tbody = document.querySelector('#wf-table tbody');
   let html = '';
-  c.workflows.forEach((w, i) => {
+  const workflows = statusFilter === 'all' ? c.workflows : c.workflows.filter(w => w.status === statusFilter);
+  if (workflows.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="9" style="color:var(--muted); font-style:italic;">No ${statusFilter.toLowerCase()} workflows in this campaign.</td></tr>`;
+    return;
+  }
+  workflows.forEach((w) => {
     const statusClass = w.status === 'Published' ? 'status-published' : 'status-draft';
     const cell = (v) => v === 0 ? '<span class="zero">0%</span>' : pct(v);
-    const rowKey = `${c.key}::${i}`;
+    const link = workflowLink(w, c);
     const countHtml = (n) => n > 0
-      ? `<span class="count-link" onclick="toggleContacts('${rowKey}')">${n}</span>`
+      ? `<a class="count-link" href="${link}" target="_blank" rel="noopener">${n}</a>`
       : `<span class="count-flat zero">0</span>`;
 
     html += `<tr>
@@ -206,18 +200,24 @@ function renderTable() {
       <td>${cell(w.email.clicked)}</td>
       <td>${cell(w.email.replied)}</td>
     </tr>`;
-
-    if (expandedWorkflow === rowKey) {
-      html += `<tr class="contacts-row"><td colspan="9"><div class="contacts-panel">${contactsPanelHtml(w)}</div></td></tr>`;
-    }
   });
   tbody.innerHTML = html;
 }
 
+document.getElementById('status-filter').addEventListener('click', (e) => {
+  const btn = e.target.closest('button[data-status]');
+  if (!btn) return;
+  statusFilter = btn.dataset.status;
+  document.querySelectorAll('#status-filter button').forEach(b => b.classList.toggle('active', b === btn));
+  renderTable();
+});
+
 loadData().then(data => {
   DATA = data;
   selectedKey = data.campaigns[0].key;
-  document.getElementById('last-updated').textContent = 'Data as of: ' + new Date(data.generatedAt).toLocaleString();
+  const synced = new Date(data.generatedAt);
+  document.getElementById('last-updated').innerHTML =
+    '<span class="dot"></span>Last synced: <strong>' + synced.toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' }) + '</strong>';
   renderCards();
   renderTable();
 });
