@@ -174,6 +174,18 @@
         <label>Year</label>
         <select class="select-input" id="report-year-select"></select>
       </div>
+      <div class="select-group">
+        <label>From date</label>
+        <input type="date" class="select-input" id="report-date-from" style="min-width:160px;">
+      </div>
+      <div class="select-group">
+        <label>To date</label>
+        <input type="date" class="select-input" id="report-date-to" style="min-width:160px;">
+      </div>
+      <div class="select-group">
+        <label>&nbsp;</label>
+        <button type="button" class="view-toggle-btn" id="report-date-clear" style="background:var(--card); border:1px solid var(--border); color:var(--muted); padding:9px 14px; font-weight:500;">Clear dates</button>
+      </div>
     </div>
     <div class="section-sub" id="report-filter-caption" style="margin: -12px 0 20px; color: var(--muted); font-size: 12.5px;"></div>
 
@@ -205,6 +217,8 @@ let statusFilter = 'all';
 let reportKey = null;
 let reportMonth = 'all';
 let reportYear = 'all';
+let reportDateFrom = '';
+let reportDateTo = '';
 let reportChart = null;
 const LOCATION_ID = 'sQ2VSMkR7cLHb46Wdemi';
 const MONTH_NAMES = ['January','February','March','April','May','June','July','August','September','October','November','December'];
@@ -218,6 +232,12 @@ function fmtDate(iso) {
 
 function pct(n) {
   return (Math.round(n * 100) / 100) + '%';
+}
+
+function fmtShortDate(isoDate) {
+  // isoDate here is a plain "YYYY-MM-DD" string from a <input type="date">
+  const d = new Date(isoDate + 'T00:00:00');
+  return d.toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' });
 }
 
 function weightedAvg(workflows, field) {
@@ -339,10 +359,20 @@ document.getElementById('view-toggle-btn').addEventListener('click', () => {
 });
 
 // ---------- Marketing Report view ----------
+function dateRangeActive() {
+  return reportDateFrom !== '' || reportDateTo !== '';
+}
+
 function workflowsInFilter(campaign) {
   return campaign.workflows.filter(w => {
-    if (!w.lastUpdated) return reportMonth === 'all' && reportYear === 'all';
+    if (!w.lastUpdated) return !dateRangeActive() && reportMonth === 'all' && reportYear === 'all';
     const d = new Date(w.lastUpdated);
+    // A custom date range takes precedence over the Month/Year quick filters.
+    if (dateRangeActive()) {
+      if (reportDateFrom && d < new Date(reportDateFrom + 'T00:00:00')) return false;
+      if (reportDateTo && d > new Date(reportDateTo + 'T23:59:59')) return false;
+      return true;
+    }
     if (reportYear !== 'all' && d.getFullYear() !== Number(reportYear)) return false;
     if (reportMonth !== 'all' && d.getMonth() !== Number(reportMonth)) return false;
     return true;
@@ -367,6 +397,13 @@ function populateReportFilters() {
   yearSel.innerHTML = '<option value="all">All years</option>' +
     Array.from(years).sort((a, b) => b - a).map(y => `<option value="${y}">${y}</option>`).join('');
   yearSel.value = reportYear;
+
+  document.getElementById('report-date-from').value = reportDateFrom;
+  document.getElementById('report-date-to').value = reportDateTo;
+  // A custom date range takes precedence, so grey out Month/Year while one is set.
+  const rangeActive = dateRangeActive();
+  monthSel.disabled = rangeActive;
+  yearSel.disabled = rangeActive;
 }
 
 function renderReportKpis(workflows) {
@@ -448,12 +485,20 @@ function renderReport() {
   const campaign = DATA.campaigns.find(c => c.key === reportKey) || DATA.campaigns[0];
   const workflows = workflowsInFilter(campaign);
 
-  const captionParts = [];
-  if (reportMonth !== 'all') captionParts.push(MONTH_NAMES[Number(reportMonth)]);
-  if (reportYear !== 'all') captionParts.push(reportYear);
-  document.getElementById('report-filter-caption').textContent = captionParts.length
-    ? `Showing workflows last updated in ${captionParts.join(' ')} (${workflows.length} of ${campaign.workflows.length} workflows match).`
-    : `Showing all ${campaign.workflows.length} workflows in this campaign, regardless of date.`;
+  let captionText;
+  if (dateRangeActive()) {
+    const fromLabel = reportDateFrom ? fmtShortDate(reportDateFrom) : 'the beginning';
+    const toLabel = reportDateTo ? fmtShortDate(reportDateTo) : 'today';
+    captionText = `Showing workflows last updated from ${fromLabel} to ${toLabel} (${workflows.length} of ${campaign.workflows.length} workflows match).`;
+  } else {
+    const captionParts = [];
+    if (reportMonth !== 'all') captionParts.push(MONTH_NAMES[Number(reportMonth)]);
+    if (reportYear !== 'all') captionParts.push(reportYear);
+    captionText = captionParts.length
+      ? `Showing workflows last updated in ${captionParts.join(' ')} (${workflows.length} of ${campaign.workflows.length} workflows match).`
+      : `Showing all ${campaign.workflows.length} workflows in this campaign, regardless of date.`;
+  }
+  document.getElementById('report-filter-caption').textContent = captionText;
 
   if (workflows.length === 0) {
     document.getElementById('report-kpis').innerHTML = '<div class="empty-state">No workflows match this date filter.</div>';
@@ -476,6 +521,19 @@ document.getElementById('report-month-select').addEventListener('change', (e) =>
 });
 document.getElementById('report-year-select').addEventListener('change', (e) => {
   reportYear = e.target.value;
+  renderReport();
+});
+document.getElementById('report-date-from').addEventListener('change', (e) => {
+  reportDateFrom = e.target.value;
+  renderReport();
+});
+document.getElementById('report-date-to').addEventListener('change', (e) => {
+  reportDateTo = e.target.value;
+  renderReport();
+});
+document.getElementById('report-date-clear').addEventListener('click', () => {
+  reportDateFrom = '';
+  reportDateTo = '';
   renderReport();
 });
 
