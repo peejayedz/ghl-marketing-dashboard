@@ -320,20 +320,21 @@ document.getElementById('status-filter').addEventListener('click', (e) => {
 });
 
 // ---------- View toggle ----------
+let reportViewActive = false;
 document.getElementById('view-toggle-btn').addEventListener('click', () => {
   const techView = document.getElementById('technical-view');
   const reportView = document.getElementById('report-view');
   const btn = document.getElementById('view-toggle-btn');
-  const showingReport = reportView.style.display !== 'none';
-  if (showingReport) {
-    reportView.style.display = 'none';
-    techView.style.display = '';
-    btn.textContent = 'Switch to Marketing Report';
-  } else {
+  reportViewActive = !reportViewActive;
+  if (reportViewActive) {
     techView.style.display = 'none';
-    reportView.style.display = '';
+    reportView.style.display = 'block';
     btn.textContent = 'Switch to Technical View';
     renderReport();
+  } else {
+    reportView.style.display = 'none';
+    techView.style.display = 'block';
+    btn.textContent = 'Switch to Marketing Report';
   }
 });
 
