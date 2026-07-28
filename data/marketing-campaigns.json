@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-29T13:15:00-04:00",
+  "generatedAt": "2026-07-28T19:21:19-04:00",
   "source": "Scraped from GoHighLevel Automation > Workflows list UI (Total enrolled / Active enrolled / Last updated / Created on columns, plus per-workflow Stats panel: Delivered/Opened/Clicked/Replied/Bounced). This data is not available via GoHighLevel's public API. Enrolled/Active counts link directly to each workflow's Enrollment History page in GoHighLevel when a workflowId is on file.",
   "campaigns": [
     {
