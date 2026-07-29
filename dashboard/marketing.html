@@ -1226,23 +1226,26 @@ function updateDlfEmailSortIndicators() {
   });
 }
 
+const DLF_EMAIL_METRIC_KEYS = ['opened', 'clicked', 'replied', 'bounced', 'unsubscribed'];
+const DLF_EMAIL_METRIC_LABELS = { opened: 'Open rate', clicked: 'Click rate', replied: 'Reply rate', bounced: 'Bounce rate', unsubscribed: 'Unsubscribe rate' };
+
 function renderDlfEmailKpis(emails) {
   const totalRecipients = emails.reduce((s, c) => s + (c.recipients || 0), 0);
   const grid = document.getElementById('dlf-email-kpis');
   let html = `<div class="report-kpi-card"><div class="kpi-value">${emails.length}</div><div class="kpi-label">Total Emails</div></div>`;
   html += `<div class="report-kpi-card"><div class="kpi-value">${totalRecipients}</div><div class="kpi-label">Total Recipients</div></div>`;
-  EMAIL_METRIC_KEYS.forEach(key => {
+  DLF_EMAIL_METRIC_KEYS.forEach(key => {
     const v = weightedAvgEmail(emails, key);
-    html += `<div class="report-kpi-card"><div class="kpi-value">${pct(v)}</div><div class="kpi-label">${EMAIL_METRIC_LABELS[key]}</div></div>`;
+    html += `<div class="report-kpi-card"><div class="kpi-value">${pct(v)}</div><div class="kpi-label">${DLF_EMAIL_METRIC_LABELS[key]}</div></div>`;
   });
   grid.innerHTML = html;
-  return EMAIL_METRIC_KEYS.map(key => weightedAvgEmail(emails, key));
+  return DLF_EMAIL_METRIC_KEYS.map(key => weightedAvgEmail(emails, key));
 }
 
 function renderDlfEmailChart(values) {
   const ctx = document.getElementById('dlf-email-chart');
-  const labels = ['Delivery', 'Open', 'Click', 'Bounce', 'Unsubscribe'];
-  const colors = ['#5b8cff', '#34c98f', '#ffb454', '#ff6b6b', '#8b95ab'];
+  const labels = ['Open', 'Click', 'Reply', 'Bounce', 'Unsubscribe'];
+  const colors = ['#34c98f', '#ffb454', '#5b8cff', '#ff6b6b', '#8b95ab'];
   if (dlfEmailChart) dlfEmailChart.destroy();
   dlfEmailChart = new Chart(ctx, {
     type: 'bar',
