@@ -130,6 +130,23 @@
   .email-stat .v { font-size: 22px; font-weight: 700; }
   .email-stat .l { color: var(--muted); font-size: 12px; margin-top: 2px; }
   .empty-state { color: var(--muted); font-style: italic; font-size: 13.5px; padding: 20px 0; text-align: center; }
+
+  .report-kpi-card.clickable { cursor: pointer; transition: border-color 0.15s; }
+  .report-kpi-card.clickable:hover { border-color: var(--accent); }
+  .report-kpi-card.active { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+  .drilldown-header { display: flex; align-items: center; justify-content: space-between; margin: 22px 0 6px; font-size: 14px; font-weight: 600; }
+  .drilldown-close-btn {
+    background: none; border: 1px solid var(--border); color: var(--muted); border-radius: 6px;
+    padding: 4px 10px; font-size: 12px; cursor: pointer; font-family: inherit;
+  }
+  .drilldown-close-btn:hover { color: var(--text); border-color: var(--accent); }
+  .drilldown-note { color: var(--muted); font-size: 12px; margin-bottom: 12px; line-height: 1.4; }
+
+  .email-campaign-card { border-top: 1px solid var(--border); padding: 18px 0; }
+  .email-campaign-card:first-child { border-top: none; padding-top: 0; }
+  .email-campaign-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 4px; }
+  .email-campaign-title { font-size: 15px; font-weight: 600; }
+  .email-campaign-meta { color: var(--muted); font-size: 12.5px; }
 </style>
 </head>
 <body>
@@ -193,8 +210,9 @@
 
     <div class="report-section">
       <h3>Engagement rates <span id="report-chart-campaign-label" style="color:var(--muted); font-weight:400;"></span></h3>
-      <div class="section-sub">Delivery, open, click, bounce and reply rate — enrollment-weighted across the selected campaign's workflows.</div>
+      <div class="section-sub">Delivery, open, click, bounce and reply rate — enrollment-weighted across the selected campaign's workflows. Click a bar or KPI card above to see it broken down by workflow.</div>
       <canvas id="report-chart" height="90"></canvas>
+      <div id="report-drilldown"></div>
     </div>
 
     <div class="report-note">
@@ -204,8 +222,7 @@
     <div class="report-section">
       <h3>Email Campaign performance</h3>
       <div class="section-sub">Standalone one-off email campaigns sent via GoHighLevel's Email Marketing tool (separate from the automation workflows above).</div>
-      <select class="select-input" id="report-email-select"></select>
-      <div id="report-email-stats"></div>
+      <div id="report-email-list"></div>
     </div>
   </div>
 
@@ -220,8 +237,11 @@ let reportYear = 'all';
 let reportDateFrom = '';
 let reportDateTo = '';
 let reportChart = null;
+let reportDrilldownMetric = null;
 const LOCATION_ID = 'sQ2VSMkR7cLHb46Wdemi';
 const MONTH_NAMES = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+const METRIC_KEYS = ['delivered', 'opened', 'clicked', 'bounced', 'replied'];
+const METRIC_LABELS = { delivered: 'Delivery rate', opened: 'Open rate', clicked: 'Click rate', bounced: 'Bounce rate', replied: 'Reply rate' };
 
 function fmtDate(iso) {
   if (!iso) return '';
@@ -408,20 +428,25 @@ function populateReportFilters() {
 
 function renderReportKpis(workflows) {
   const totalEnrolled = workflows.reduce((s, w) => s + w.enrolled, 0);
-  const metrics = [
-    { key: 'delivered', label: 'Delivery rate' },
-    { key: 'opened', label: 'Open rate' },
-    { key: 'clicked', label: 'Click rate' },
-    { key: 'bounced', label: 'Bounce rate' },
-    { key: 'replied', label: 'Reply rate' },
-  ];
+  const metrics = METRIC_KEYS.map(key => ({ key, label: METRIC_LABELS[key] }));
   const grid = document.getElementById('report-kpis');
   let html = `<div class="report-kpi-card"><div class="kpi-value">${totalEnrolled}</div><div class="kpi-label">Total Enrolled</div></div>`;
   metrics.forEach(m => {
     const v = weightedAvg(workflows, m.key);
-    html += `<div class="report-kpi-card"><div class="kpi-value">${pct(v)}</div><div class="kpi-label">${m.label}</div></div>`;
+    const activeClass = reportDrilldownMetric === m.key ? ' active' : '';
+    html += `<div class="report-kpi-card clickable${activeClass}" data-metric="${m.key}">
+      <div class="kpi-value">${pct(v)}</div>
+      <div class="kpi-label">${m.label}</div>
+    </div>`;
   });
   grid.innerHTML = html;
+  grid.querySelectorAll('.report-kpi-card[data-metric]').forEach(card => {
+    card.addEventListener('click', () => {
+      const key = card.dataset.metric;
+      reportDrilldownMetric = (reportDrilldownMetric === key) ? null : key;
+      renderReport();
+    });
+  });
   return metrics.map(m => weightedAvg(workflows, m.key));
 }
 
@@ -430,14 +455,30 @@ function renderReportChart(campaignLabel, values) {
   const ctx = document.getElementById('report-chart');
   const labels = ['Delivery', 'Open', 'Click', 'Bounce', 'Reply'];
   const colors = ['#5b8cff', '#34c98f', '#ffb454', '#ff6b6b', '#c48bff'];
+  const borderWidths = METRIC_KEYS.map(k => (k === reportDrilldownMetric ? 3 : 0));
   if (reportChart) reportChart.destroy();
   reportChart = new Chart(ctx, {
     type: 'bar',
     data: {
       labels,
-      datasets: [{ data: values.map(v => Math.round(v * 100) / 100), backgroundColor: colors, borderRadius: 8 }]
+      datasets: [{
+        data: values.map(v => Math.round(v * 100) / 100),
+        backgroundColor: colors,
+        borderRadius: 8,
+        borderColor: '#ffffff',
+        borderWidth: borderWidths
+      }]
     },
     options: {
+      onClick: (evt, elements) => {
+        if (!elements.length) return;
+        const key = METRIC_KEYS[elements[0].index];
+        reportDrilldownMetric = (reportDrilldownMetric === key) ? null : key;
+        renderReport();
+      },
+      onHover: (evt, elements) => {
+        evt.native.target.style.cursor = elements.length ? 'pointer' : 'default';
+      },
       plugins: { legend: { display: false } },
       scales: {
         x: { ticks: { color: '#8b95ab' }, grid: { display: false } },
@@ -447,36 +488,68 @@ function renderReportChart(campaignLabel, values) {
   });
 }
 
-function renderReportEmailStats(entry) {
-  const box = document.getElementById('report-email-stats');
-  if (!entry) {
+function renderEmailList() {
+  const box = document.getElementById('report-email-list');
+  if (!EMAIL_DATA || !EMAIL_DATA.campaigns || EMAIL_DATA.campaigns.length === 0) {
     box.innerHTML = '<div class="empty-state">No sent email campaigns yet — once the team sends one-off campaigns via GoHighLevel\'s Email Marketing tool, they\'ll show up here.</div>';
     return;
   }
-  const stats = [
-    { label: 'Delivered', v: entry.stats.delivered },
-    { label: 'Opened', v: entry.stats.opened },
-    { label: 'Clicked', v: entry.stats.clicked },
-    { label: 'Bounced', v: entry.stats.bounced },
-    { label: 'Unsubscribed', v: entry.stats.unsubscribed },
-  ];
-  box.innerHTML = `
-    <div style="margin-top:14px; color:var(--muted); font-size:13px;">${entry.status}${entry.sentDate ? ' · ' + fmtDate(entry.sentDate) : ''} · ${entry.recipients} recipient${entry.recipients === 1 ? '' : 's'}</div>
-    <div class="email-stat-grid">
-      ${stats.map(s => `<div class="email-stat"><div class="v">${pct(s.v)}</div><div class="l">${s.label}</div></div>`).join('')}
-    </div>`;
+  box.innerHTML = EMAIL_DATA.campaigns.map(e => {
+    const stats = [
+      { label: 'Delivered', v: e.stats.delivered },
+      { label: 'Opened', v: e.stats.opened },
+      { label: 'Clicked', v: e.stats.clicked },
+      { label: 'Bounced', v: e.stats.bounced },
+      { label: 'Unsubscribed', v: e.stats.unsubscribed },
+    ];
+    const statusClass = e.status === 'Sent' ? 'status-published' : 'status-draft';
+    return `
+      <div class="email-campaign-card">
+        <div class="email-campaign-header">
+          <div class="email-campaign-title">${e.title}</div>
+          <span class="status-pill ${statusClass}">${e.status}</span>
+        </div>
+        <div class="email-campaign-meta">${e.sentDate ? fmtDate(e.sentDate) : 'No sent date on file'} &middot; ${e.recipients} recipient${e.recipients === 1 ? '' : 's'}</div>
+        <div class="email-stat-grid">
+          ${stats.map(s => `<div class="email-stat"><div class="v">${pct(s.v)}</div><div class="l">${s.label}</div></div>`).join('')}
+        </div>
+      </div>`;
+  }).join('');
 }
 
-function populateEmailDropdown() {
-  const sel = document.getElementById('report-email-select');
-  if (!EMAIL_DATA || !EMAIL_DATA.campaigns || EMAIL_DATA.campaigns.length === 0) {
-    sel.innerHTML = '<option value="">No email campaigns found</option>';
-    renderReportEmailStats(null);
-    return;
+function renderDrilldownPanel(workflows, campaign) {
+  const box = document.getElementById('report-drilldown');
+  if (!reportDrilldownMetric) { box.innerHTML = ''; return; }
+  const metric = reportDrilldownMetric;
+  const label = METRIC_LABELS[metric];
+  const withEnrollment = workflows.filter(w => w.enrolled > 0);
+  const rows = withEnrollment.map(w => {
+    const v = w.email[metric] || 0;
+    const link = workflowLink(w, campaign);
+    return `<tr>
+      <td>${w.name}</td>
+      <td>${w.enrolled}</td>
+      <td>${pct(v)}</td>
+      <td><a class="count-link" href="${link}" target="_blank" rel="noopener">View in GoHighLevel &#8594;</a></td>
+    </tr>`;
+  }).join('');
+  box.innerHTML = `
+    <div class="drilldown-header">
+      <span>${label} by workflow</span>
+      <button type="button" id="report-drilldown-close" class="drilldown-close-btn">Close &times;</button>
+    </div>
+    <div class="drilldown-note">GoHighLevel doesn't expose a filtered "who opened/clicked" contact list anywhere in its UI, so each link below opens that workflow's full Enrollment History in GoHighLevel instead — the closest contact-level view it provides.</div>
+    <table class="drilldown-table">
+      <thead><tr><th>Workflow</th><th>Enrolled</th><th>${label}</th><th></th></tr></thead>
+      <tbody>${rows || '<tr><td colspan="4" style="color:var(--muted); font-style:italic;">No workflows with enrollment in this filter.</td></tr>'}</tbody>
+    </table>`;
+  const closeBtn = document.getElementById('report-drilldown-close');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      reportDrilldownMetric = null;
+      renderReport();
+    });
   }
-  sel.innerHTML = EMAIL_DATA.campaigns.map((e, i) => `<option value="${i}">${e.title}</option>`).join('');
-  renderReportEmailStats(EMAIL_DATA.campaigns[0]);
-  sel.onchange = () => renderReportEmailStats(EMAIL_DATA.campaigns[sel.value]);
 }
 
 function renderReport() {
@@ -508,7 +581,8 @@ function renderReport() {
     const values = renderReportKpis(workflows);
     renderReportChart(campaign.label, values);
   }
-  populateEmailDropdown();
+  renderDrilldownPanel(workflows, campaign);
+  renderEmailList();
 }
 
 document.getElementById('report-campaign-select').addEventListener('change', (e) => {
