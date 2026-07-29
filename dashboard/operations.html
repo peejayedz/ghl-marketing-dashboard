@@ -59,7 +59,13 @@
     background: var(--bg); color: var(--text); border: 1px solid var(--border);
     border-radius: 8px; padding: 8px 12px; font-size: 13px; font-family: inherit; cursor: pointer;
   }
-  input[type="date"] { cursor: text; }
+  input[type="date"] { cursor: text; color-scheme: dark; }
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(78%) sepia(56%) saturate(1200%) hue-rotate(340deg) brightness(103%) contrast(101%);
+    cursor: pointer;
+  }
+  .btn.apply { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .btn.apply:hover { background: #4676ee; }
   input[type="search"] {
     background: var(--bg); color: var(--text); border: 1px solid var(--border);
     border-radius: 8px; padding: 8px 12px; font-size: 13px; font-family: inherit; min-width: 220px;
@@ -148,6 +154,7 @@
       <label>To</label>
       <input type="date" id="date-to">
     </div>
+    <button class="btn apply" id="apply-filters">Apply filters</button>
     <button class="btn clear" id="clear-filters">Clear filters</button>
     <div style="flex:1"></div>
     <div class="select-group" style="position:relative;">
@@ -410,10 +417,10 @@ function renderAll() {
 }
 
 function wireToolbar() {
-  document.getElementById("search-input").addEventListener("input", renderTable);
-  document.getElementById("date-field-select").addEventListener("change", renderTable);
-  document.getElementById("date-from").addEventListener("change", renderTable);
-  document.getElementById("date-to").addEventListener("change", renderTable);
+  document.getElementById("apply-filters").addEventListener("click", renderTable);
+  document.getElementById("search-input").addEventListener("keydown", (e) => {
+    if (e.key === "Enter") renderTable();
+  });
   document.getElementById("clear-filters").addEventListener("click", () => {
     document.getElementById("search-input").value = "";
     document.getElementById("date-field-select").value = "";
