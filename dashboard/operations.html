@@ -115,6 +115,15 @@
   .contact-line .c-phone { color: var(--muted); }
   .empty-state { text-align: center; padding: 40px; color: var(--muted); }
   .error { color: var(--accent4); }
+
+  @media print {
+    .toolbar, .status-filter, .columns-popover, .export-popover, .kpi-grid, .sync-label { display: none !important; }
+    body { background: #fff; color: #000; padding: 12px; }
+    .table-card { background: #fff; border: none; box-shadow: none; padding: 0; }
+    th, td { border-color: #ccc; color: #000; }
+    .company-link, .chevron, .muted, .count-pill, .tag-pill { color: #000 !important; background: none !important; border: none !important; }
+    .sort-arrow { display: none; }
+  }
 </style>
 </head>
 <body>
@@ -158,6 +167,15 @@
     <button class="btn clear" id="clear-filters">Clear filters</button>
     <div style="flex:1"></div>
     <div class="select-group" style="position:relative;">
+      <button class="btn" id="export-btn">Export ▾</button>
+      <div class="columns-popover export-popover" id="export-popover">
+        <div class="col-title">Export current view</div>
+        <button class="btn" id="export-csv" style="width:100%; margin-bottom:6px; text-align:left;">CSV</button>
+        <button class="btn" id="export-xlsx" style="width:100%; margin-bottom:6px; text-align:left;">Excel (.xlsx)</button>
+        <button class="btn" id="export-pdf" style="width:100%; text-align:left;">PDF (print)</button>
+      </div>
+    </div>
+    <div class="select-group" style="position:relative;">
       <button class="btn" id="columns-btn">Columns ▾</button>
       <div class="columns-popover" id="columns-popover"></div>
     </div>
@@ -189,6 +207,13 @@ let expandedCompanies = new Set();
 let visibleColumns = new Set(COLUMN_DEFS.filter(c => c.default).map(c => c.key));
 let sortKey = "company";
 let sortDir = "asc"; // "asc" | "desc"
+let lastRenderedCompanies = [];
+
+const TAG_PILL_HTML = {
+  "lfmp client": '<span class="tag-pill">lfmp client</span>',
+  "offboarded client": '<span class="tag-pill offboarded">offboarded client</span>',
+  "wpp client": '<span class="tag-pill wpp">wpp client</span>',
+};
 
 const SORTABLE = new Set(["company", "contactCount", "dateClosed", "onboardingDate", "terminationNotice", "lastDayOfService"]);
 
@@ -239,6 +264,7 @@ function renderSynced() {
 function renderStatusFilter() {
   const bar = document.getElementById("status-filter");
   const views = [
+    { key: "all", label: "All Clients" },
     { key: "active", label: "Active Clients (LFMP)" },
     { key: "offboarded", label: "Offboarded Clients" },
     { key: "wpp", label: "WPP Clients" },
@@ -283,13 +309,8 @@ function renderColumnsPopover() {
   });
 }
 
-function tagPillsFor(viewKey) {
-  const map = {
-    active: '<span class="tag-pill">lfmp client</span>',
-    offboarded: '<span class="tag-pill offboarded">offboarded client</span>',
-    wpp: '<span class="tag-pill wpp">wpp client</span>',
-  };
-  return map[viewKey] || "";
+function tagPillsFor(c) {
+  return (c.tags || []).map(t => TAG_PILL_HTML[t] || `<span class="tag-pill">${t}</span>`).join(" ");
 }
 
 function getFilteredCompanies() {
@@ -324,6 +345,7 @@ function getFilteredCompanies() {
 
 function renderTable() {
   const companies = getFilteredCompanies();
+  lastRenderedCompanies = companies;
   const view = DATA.views[currentView];
   document.getElementById("table-title").textContent = view.label + " — " + companies.length + " of " + view.companies.length + " companies";
 
@@ -373,7 +395,7 @@ function renderTable() {
       } else if (col.key === "contactCount") {
         td.innerHTML = `<span class="count-pill">${c.contactCount}</span>`;
       } else if (col.key === "tags") {
-        td.innerHTML = tagPillsFor(currentView);
+        td.innerHTML = tagPillsFor(c);
       } else if (["dateClosed", "onboardingDate", "terminationNotice", "lastDayOfService"].includes(col.key)) {
         const v = c[col.key];
         td.innerHTML = v ? fmtDate(v) : '<span class="muted">—</span>';
@@ -410,6 +432,78 @@ function renderTable() {
   });
 }
 
+function buildExportTable() {
+  const cols = COLUMN_DEFS.filter(c => visibleColumns.has(c.key));
+  const headers = cols.map(c => c.label);
+  const dateKeys = ["dateClosed", "onboardingDate", "terminationNotice", "lastDayOfService"];
+  const rows = lastRenderedCompanies.map(c => cols.map(col => {
+    if (col.key === "company") return c.company;
+    if (col.key === "contactCount") return c.contactCount;
+    if (col.key === "tags") return (c.tags || []).join("; ");
+    if (dateKeys.includes(col.key)) return c[col.key] ? fmtDate(c[col.key]) : "";
+    return "";
+  }));
+  return { headers, rows };
+}
+
+function filenameFor(ext) {
+  const label = (DATA.views[currentView] ? DATA.views[currentView].label : currentView).replace(/[^a-z0-9]+/gi, "-").toLowerCase();
+  const date = new Date().toISOString().slice(0, 10);
+  return `operations-${label}-${date}.${ext}`;
+}
+
+function downloadBlob(blob, filename) {
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+function exportCSV() {
+  const { headers, rows } = buildExportTable();
+  const esc = v => {
+    v = String(v ?? "");
+    return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v;
+  };
+  const lines = [headers.map(esc).join(","), ...rows.map(r => r.map(esc).join(","))];
+  downloadBlob(new Blob([lines.join("\n")], { type: "text/csv;charset=utf-8;" }), filenameFor("csv"));
+}
+
+let sheetJsLoading = null;
+function loadSheetJS() {
+  if (window.XLSX) return Promise.resolve();
+  if (sheetJsLoading) return sheetJsLoading;
+  sheetJsLoading = new Promise((resolve, reject) => {
+    const s = document.createElement("script");
+    s.src = "https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js";
+    s.onload = resolve;
+    s.onerror = reject;
+    document.head.appendChild(s);
+  });
+  return sheetJsLoading;
+}
+
+async function exportXLSX() {
+  try {
+    await loadSheetJS();
+    const { headers, rows } = buildExportTable();
+    const ws = XLSX.utils.aoa_to_sheet([headers, ...rows]);
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, "Clients");
+    XLSX.writeFile(wb, filenameFor("xlsx"));
+  } catch (e) {
+    alert("Could not load the Excel export library. Check your connection and try again.");
+  }
+}
+
+function exportPDF() {
+  window.print();
+}
+
 function renderAll() {
   renderStatusFilter();
   renderKPIs();
@@ -434,8 +528,20 @@ function wireToolbar() {
     e.stopPropagation();
     colsPop.classList.toggle("open");
   });
+
+  const exportBtn = document.getElementById("export-btn");
+  const exportPop = document.getElementById("export-popover");
+  exportBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    exportPop.classList.toggle("open");
+  });
+  document.getElementById("export-csv").addEventListener("click", () => { exportCSV(); exportPop.classList.remove("open"); });
+  document.getElementById("export-xlsx").addEventListener("click", () => { exportXLSX(); exportPop.classList.remove("open"); });
+  document.getElementById("export-pdf").addEventListener("click", () => { exportPDF(); exportPop.classList.remove("open"); });
+
   document.addEventListener("click", (e) => {
     if (!colsPop.contains(e.target) && e.target !== colsBtn) colsPop.classList.remove("open");
+    if (!exportPop.contains(e.target) && e.target !== exportBtn) exportPop.classList.remove("open");
   });
 }
 
