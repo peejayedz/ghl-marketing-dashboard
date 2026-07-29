@@ -1,11 +1,31 @@
 {
-  "generatedAt": "2026-07-28T19:45:00-04:00",
-  "source": "Scraped from GoHighLevel Marketing > Emails > Campaigns (standalone one-off Email Campaigns, separate from Automation Workflows) at https://app.lawfirmmarketingpros.com/v2/location/sQ2VSMkR7cLHb46Wdemi/marketing/emails/campaigns and each campaign's Statistics tab. Two campaigns currently sitting as unsent Drafts are omitted since they have no stats yet.",
+  "generatedAt": "2026-07-29T09:52:00-04:00",
+  "source": "Scraped from GoHighLevel Marketing > Emails > Campaigns (standalone one-off Email Campaigns, separate from Automation Workflows) at https://app.lawfirmmarketingpros.com/v2/location/sQ2VSMkR7cLHb46Wdemi/marketing/emails/campaigns, cross-referenced with each campaign's Email details panel (Created On, Recipient List) and Statistics tab (engagement stats). Draft campaigns are included per PJ's request; createdOn for the two current drafts could not be confirmed this run due to a GHL page-load issue and is set to null (falls back to Last Updated in the dashboard) — the daily sync will backfill the real value.",
   "campaigns": [
+    {
+      "title": "Untitled campaign name",
+      "status": "Draft",
+      "createdOn": null,
+      "lastUpdated": "2026-07-03T02:28:00",
+      "executionDate": null,
+      "recipients": 0,
+      "stats": { "delivered": 0, "opened": 0, "clicked": 0, "bounced": 0, "unsubscribed": 0 }
+    },
+    {
+      "title": "Untitled campaign name",
+      "status": "Draft",
+      "createdOn": null,
+      "lastUpdated": "2026-06-27T01:02:00",
+      "executionDate": null,
+      "recipients": 0,
+      "stats": { "delivered": 0, "opened": 0, "clicked": 0, "bounced": 0, "unsubscribed": 0 }
+    },
     {
       "title": "Untitled email campaign (no subject set)",
       "status": "Sent",
-      "sentDate": "2021-01-17T04:34:00",
+      "createdOn": "2021-10-22T00:23:00",
+      "lastUpdated": "2021-10-22T00:23:00",
+      "executionDate": "2021-01-17T04:34:00",
       "recipients": 1,
       "stats": { "delivered": 0, "opened": 0, "clicked": 0, "bounced": 0, "unsubscribed": 0 }
     }
