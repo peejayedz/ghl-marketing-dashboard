@@ -254,6 +254,29 @@
       <div id="report-drilldown"></div>
     </div>
 
+    <div class="report-section">
+      <h3>Campaign Emails <span id="report-email-campaign-label" style="color:var(--muted); font-weight:400;"></span></h3>
+      <div class="section-sub">Every individual outbound marketing email sent as part of the selected campaign's workflows, with per-email subject lines. Internal team notifications are excluded — only emails sent to prospects/clients are shown.</div>
+      <div class="report-kpi-grid" id="report-email-kpis"></div>
+    </div>
+
+    <div class="table-card">
+      <h2><span>Email List</span></h2>
+      <table id="report-email-table">
+        <thead><tr>
+          <th data-sort="subject">Email Subject<span class="sort-arrow"></span></th>
+          <th data-sort="workflowName">Workflow<span class="sort-arrow"></span></th>
+          <th data-sort="createdOn">Created on<span class="sort-arrow"></span></th>
+          <th data-sort="opened">Opened<span class="sort-arrow"></span></th>
+          <th data-sort="clicked">Clicked<span class="sort-arrow"></span></th>
+          <th data-sort="replied">Replied<span class="sort-arrow"></span></th>
+          <th data-sort="bounced">Bounced<span class="sort-arrow"></span></th>
+          <th data-sort="unsubscribed">Unsubscribed<span class="sort-arrow"></span></th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
     <div class="report-note">
       Note: GoHighLevel's workflow and email statistics don't expose hour-of-day open/click timing (only day-level trend lines and totals), so a "best time to send" breakdown isn't available here — the metrics above are the most granular engagement data GHL's reporting provides for these campaigns.
     </div>
@@ -409,6 +432,9 @@ let dlfEmailSortKey = null;
 let dlfEmailSortDir = 1;
 let dlfDateFrom = '';
 let dlfDateTo = '';
+let CAMPAIGN_EMAILS_DATA = null;
+let reportEmailSortKey = null;
+let reportEmailSortDir = 1;
 let dlfChart = null;
 const LOCATION_ID = 'sQ2VSMkR7cLHb46Wdemi';
 const MONTH_NAMES = ['January','February','March','April','May','June','July','August','September','October','November','December'];
@@ -468,6 +494,16 @@ async function loadEmailData() {
 async function loadDlfData() {
   try {
     const res = await fetch('../data/dlf-automations.json', { cache: 'no-store' });
+    if (!res.ok) return null;
+    return await res.json();
+  } catch (e) {
+    return null;
+  }
+}
+
+async function loadCampaignEmailsData() {
+  try {
+    const res = await fetch('../data/marketing-emails.json', { cache: 'no-store' });
     if (!res.ok) return null;
     return await res.json();
   } catch (e) {
@@ -788,6 +824,111 @@ function renderDrilldownPanel(workflows, campaign) {
   }
 }
 
+const REPORT_EMAIL_SORT_ACCESSORS = {
+  subject: c => (c.subject || '').toLowerCase(),
+  workflowName: c => (c.workflowName || '').toLowerCase(),
+  createdOn: c => c.createdOn ? new Date(c.createdOn).getTime() : 0,
+  opened: c => (c.stats && c.stats.opened) || 0,
+  clicked: c => (c.stats && c.stats.clicked) || 0,
+  replied: c => (c.stats && c.stats.replied) || 0,
+  bounced: c => (c.stats && c.stats.bounced) || 0,
+  unsubscribed: c => (c.stats && c.stats.unsubscribed) || 0
+};
+
+function sortReportEmails(emails) {
+  if (!reportEmailSortKey) return emails;
+  const accessor = REPORT_EMAIL_SORT_ACCESSORS[reportEmailSortKey];
+  if (!accessor) return emails;
+  return [...emails].sort((a, b) => {
+    const av = accessor(a), bv = accessor(b);
+    if (av < bv) return -1 * reportEmailSortDir;
+    if (av > bv) return 1 * reportEmailSortDir;
+    return 0;
+  });
+}
+
+function updateReportEmailSortIndicators() {
+  document.querySelectorAll('#report-email-table th[data-sort]').forEach(th => {
+    const arrow = th.querySelector('.sort-arrow');
+    if (!arrow) return;
+    arrow.textContent = th.dataset.sort === reportEmailSortKey ? (reportEmailSortDir === 1 ? '▲' : '▼') : '';
+  });
+}
+
+const REPORT_EMAIL_METRIC_KEYS = ['opened', 'clicked', 'replied', 'bounced', 'unsubscribed'];
+const REPORT_EMAIL_METRIC_LABELS = { opened: 'Open rate', clicked: 'Click rate', replied: 'Reply rate', bounced: 'Bounce rate', unsubscribed: 'Unsubscribe rate' };
+
+function emailsInReportFilter(campaignKey) {
+  const campaignEmails = (CAMPAIGN_EMAILS_DATA && CAMPAIGN_EMAILS_DATA.campaigns) || [];
+  const found = campaignEmails.find(c => c.key === campaignKey);
+  const emails = (found && found.emails) || [];
+  if (!dateRangeActive()) return emails;
+  return emails.filter(c => {
+    if (!c.createdOn) return false;
+    const d = new Date(c.createdOn);
+    if (reportDateFrom && d < new Date(reportDateFrom + 'T00:00:00')) return false;
+    if (reportDateTo && d > new Date(reportDateTo + 'T23:59:59')) return false;
+    return true;
+  });
+}
+
+function renderReportEmailKpis(emails) {
+  const totalRecipients = emails.reduce((s, c) => s + (c.recipients || 0), 0);
+  const grid = document.getElementById('report-email-kpis');
+  let html = `<div class="report-kpi-card"><div class="kpi-value">${emails.length}</div><div class="kpi-label">Total Emails</div></div>`;
+  html += `<div class="report-kpi-card"><div class="kpi-value">${totalRecipients}</div><div class="kpi-label">Total Recipients</div></div>`;
+  REPORT_EMAIL_METRIC_KEYS.forEach(key => {
+    const v = weightedAvgEmail(emails, key);
+    html += `<div class="report-kpi-card"><div class="kpi-value">${metricDisplay(v, totalRecipients)}</div><div class="kpi-label">${REPORT_EMAIL_METRIC_LABELS[key]}</div></div>`;
+  });
+  grid.innerHTML = html;
+}
+
+function renderReportEmailTable(emails) {
+  const sorted = sortReportEmails(emails);
+  const tbody = document.querySelector('#report-email-table tbody');
+  if (sorted.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="8" style="color:var(--muted); font-style:italic;">No emails match the current filters.</td></tr>`;
+    updateReportEmailSortIndicators();
+    return;
+  }
+  const cell = (v) => v === 0 ? '<span class="zero">0%</span>' : pct(v);
+  tbody.innerHTML = sorted.map(c => {
+    const stats = c.stats || {};
+    return `<tr>
+      <td>${c.subject}</td>
+      <td>${c.workflowName}</td>
+      <td>${c.createdOn ? fmtDate(c.createdOn) : '<span class="zero">Unknown</span>'}</td>
+      <td>${cell(stats.opened || 0)}</td>
+      <td>${cell(stats.clicked || 0)}</td>
+      <td>${cell(stats.replied || 0)}</td>
+      <td>${cell(stats.bounced || 0)}</td>
+      <td>${cell(stats.unsubscribed || 0)}</td>
+    </tr>`;
+  }).join('');
+  updateReportEmailSortIndicators();
+}
+
+function renderReportEmailSection(campaign) {
+  document.getElementById('report-email-campaign-label').textContent = '— ' + campaign.label;
+  const emails = emailsInReportFilter(campaign.key);
+  if (emails.length === 0) {
+    document.getElementById('report-email-kpis').innerHTML = '<div class="empty-state">No campaign emails found for this campaign/date filter.</div>';
+  } else {
+    renderReportEmailKpis(emails);
+  }
+  renderReportEmailTable(emails);
+}
+
+document.querySelector('#report-email-table thead').addEventListener('click', (e) => {
+  const th = e.target.closest('th[data-sort]');
+  if (!th) return;
+  const key = th.dataset.sort;
+  if (reportEmailSortKey === key) { reportEmailSortDir *= -1; } else { reportEmailSortKey = key; reportEmailSortDir = 1; }
+  const campaign = DATA.campaigns.find(c => c.key === reportKey) || DATA.campaigns[0];
+  renderReportEmailTable(emailsInReportFilter(campaign.key));
+});
+
 function renderReport() {
   if (!reportKey) reportKey = DATA.campaigns[0].key;
   populateReportFilters();
@@ -814,6 +955,7 @@ function renderReport() {
     renderReportChart(campaign.label, values, totalEnrolled);
   }
   renderDrilldownPanel(workflows, campaign);
+  renderReportEmailSection(campaign);
 }
 
 document.getElementById('report-campaign-select').addEventListener('change', (e) => {
@@ -1329,10 +1471,11 @@ document.getElementById('dlf-date-clear').addEventListener('click', () => {
   renderDlfView();
 });
 
-Promise.all([loadData(), loadEmailData(), loadDlfData()]).then(([data, emailData, dlfData]) => {
+Promise.all([loadData(), loadEmailData(), loadDlfData(), loadCampaignEmailsData()]).then(([data, emailData, dlfData, campaignEmailsData]) => {
   DATA = data;
   EMAIL_DATA = emailData;
   DLF_DATA = dlfData;
+  CAMPAIGN_EMAILS_DATA = campaignEmailsData;
   selectedKey = data.campaigns[0].key;
   const synced = new Date(data.generatedAt);
   const syncedEST = synced.toLocaleString('en-US', {
