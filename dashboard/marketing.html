@@ -100,6 +100,7 @@
   /* Marketing Report view — larger, simpler, presentation-friendly */
   #report-view { display: none; }
   #email-view { display: none; }
+  #dlf-view { display: none; }
   .report-toolbar { display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 24px; }
   .select-group { display: flex; flex-direction: column; gap: 5px; }
   .select-group label { font-size: 11.5px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
@@ -174,9 +175,13 @@
       <h1>Marketing Campaigns Dashboard</h1>
       <div class="sync-label" id="last-updated"><span class="dot"></span>Loading...</div>
     </div>
-    <div style="display:flex; gap:10px; flex-wrap:wrap;">
-      <button class="view-toggle-btn" id="view-toggle-btn">Switch to Marketing Report</button>
-      <button class="view-toggle-btn" id="email-view-btn" style="background:var(--card); border:1px solid var(--border); color:var(--text);">View Email Campaigns Performance</button>
+    <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:flex-start;">
+      <div id="nav-entry-buttons" style="display:flex; gap:10px; flex-wrap:wrap;">
+        <button class="view-toggle-btn" id="goto-report-btn">Switch to Marketing Report</button>
+        <button class="view-toggle-btn" id="goto-email-btn" style="background:var(--card); border:1px solid var(--border); color:var(--text);">View Email Campaigns Performance</button>
+        <button class="view-toggle-btn" id="goto-dlf-btn" style="background:var(--card); border:1px solid var(--border); color:var(--text);">DLF Automations &amp; Report</button>
+      </div>
+      <button class="view-toggle-btn" id="back-btn" style="display:none;">&#8592; Marketing Automation List</button>
     </div>
   </div>
 
@@ -312,6 +317,63 @@
     </div>
   </div>
 
+  <div id="dlf-view">
+    <div class="note">Automations in GoHighLevel's "03_DLF" automation folder. Reports below are enrollment/recipient-weighted across DLF's workflows and email sends.</div>
+
+    <div class="report-section">
+      <h3>Reports</h3>
+      <div class="section-sub">Current active contacts, new contacts since last sync, and engagement rates across DLF's automation workflows.</div>
+      <div class="report-kpi-grid" id="dlf-report-kpis"></div>
+      <div style="height:160px;">
+        <canvas id="dlf-report-chart"></canvas>
+      </div>
+    </div>
+
+    <div class="table-card">
+      <h2><span>Automations</span> <a id="dlf-folder-link" href="#" target="_blank">Open in GoHighLevel &#8594;</a></h2>
+      <table id="dlf-table">
+        <thead><tr>
+          <th data-sort="name">Workflow<span class="sort-arrow"></span></th>
+          <th data-sort="status">Status<span class="sort-arrow"></span></th>
+          <th data-sort="enrolled">Enrolled<span class="sort-arrow"></span></th>
+          <th data-sort="active">Active<span class="sort-arrow"></span></th>
+          <th data-sort="createdOn">Created<span class="sort-arrow"></span></th>
+          <th data-sort="lastUpdated">Last updated<span class="sort-arrow"></span></th>
+          <th data-sort="opened">Opened<span class="sort-arrow"></span></th>
+          <th data-sort="clicked">Clicked<span class="sort-arrow"></span></th>
+          <th data-sort="replied">Replied<span class="sort-arrow"></span></th>
+          <th data-sort="unsubscribed">Unsubscribed<span class="sort-arrow"></span></th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <div class="report-section">
+      <h3>Emails</h3>
+      <div class="section-sub">Delivered, opened, clicked, bounced and unsubscribed rate — recipient-weighted across DLF's email sends.</div>
+      <div class="report-kpi-grid" id="dlf-email-kpis"></div>
+      <div style="height:160px;">
+        <canvas id="dlf-email-chart"></canvas>
+      </div>
+    </div>
+
+    <div class="table-card">
+      <h2><span>Email List</span></h2>
+      <table id="dlf-email-table">
+        <thead><tr>
+          <th data-sort="subject">Email Subject<span class="sort-arrow"></span></th>
+          <th data-sort="workflowName">Campaign Name<span class="sort-arrow"></span></th>
+          <th data-sort="createdOn">Created on<span class="sort-arrow"></span></th>
+          <th data-sort="lastUpdated">Last updated<span class="sort-arrow"></span></th>
+          <th data-sort="executionDate">Date sent / Execution Date<span class="sort-arrow"></span></th>
+          <th data-sort="status">Status<span class="sort-arrow"></span></th>
+          <th data-sort="recipients">Number of contacts sent<span class="sort-arrow"></span></th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
 <script>
 let DATA = null;
 let EMAIL_DATA = null;
@@ -334,6 +396,13 @@ let emailDateTo = '';
 let emailChart = null;
 let emailSortKey = null;
 let emailSortDir = 1;
+let DLF_DATA = null;
+let dlfSortKey = null;
+let dlfSortDir = 1;
+let dlfEmailSortKey = null;
+let dlfEmailSortDir = 1;
+let dlfChart = null;
+let dlfEmailChart = null;
 const LOCATION_ID = 'sQ2VSMkR7cLHb46Wdemi';
 const MONTH_NAMES = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 const METRIC_KEYS = ['delivered', 'opened', 'clicked', 'bounced', 'replied', 'unsubscribed'];
@@ -382,6 +451,16 @@ async function loadData() {
 async function loadEmailData() {
   try {
     const res = await fetch('../data/email-campaigns.json', { cache: 'no-store' });
+    if (!res.ok) return null;
+    return await res.json();
+  } catch (e) {
+    return null;
+  }
+}
+
+async function loadDlfData() {
+  try {
+    const res = await fetch('../data/dlf-automations.json', { cache: 'no-store' });
     if (!res.ok) return null;
     return await res.json();
   } catch (e) {
@@ -540,34 +619,29 @@ document.querySelector('#wf-table thead').addEventListener('click', (e) => {
   renderTable();
 });
 
-// ---------- View toggle (technical / report / email) ----------
+// ---------- View toggle (technical / report / email / dlf) ----------
+// Home (Technical View) shows all entry buttons. Any other view shows a single Back button.
 let currentView = 'technical';
-let previousMainView = 'technical'; // last non-email view, so the email button can return to it
 
 function showView(view) {
   document.getElementById('technical-view').style.display = view === 'technical' ? 'block' : 'none';
   document.getElementById('report-view').style.display = view === 'report' ? 'block' : 'none';
   document.getElementById('email-view').style.display = view === 'email' ? 'block' : 'none';
+  document.getElementById('dlf-view').style.display = view === 'dlf' ? 'block' : 'none';
   currentView = view;
-  if (view !== 'email') previousMainView = view;
 
-  document.getElementById('view-toggle-btn').textContent =
-    view === 'report' ? 'View Automation List' : 'Switch to Marketing Report';
-  document.getElementById('email-view-btn').textContent =
-    view === 'email'
-      ? ('Back to ' + (previousMainView === 'report' ? 'Marketing Report' : 'Automation List'))
-      : 'View Email Campaigns Performance';
+  document.getElementById('nav-entry-buttons').style.display = view === 'technical' ? 'flex' : 'none';
+  document.getElementById('back-btn').style.display = view === 'technical' ? 'none' : 'inline-block';
 
   if (view === 'report') renderReport();
   if (view === 'email') renderEmailView();
+  if (view === 'dlf') renderDlfView();
 }
 
-document.getElementById('view-toggle-btn').addEventListener('click', () => {
-  showView(currentView === 'report' ? 'technical' : 'report');
-});
-document.getElementById('email-view-btn').addEventListener('click', () => {
-  showView(currentView === 'email' ? previousMainView : 'email');
-});
+document.getElementById('goto-report-btn').addEventListener('click', () => showView('report'));
+document.getElementById('goto-email-btn').addEventListener('click', () => showView('email'));
+document.getElementById('goto-dlf-btn').addEventListener('click', () => showView('dlf'));
+document.getElementById('back-btn').addEventListener('click', () => showView('technical'));
 
 // ---------- Marketing Report view ----------
 function dateRangeActive() {
@@ -1011,9 +1085,240 @@ document.querySelector('#email-table thead').addEventListener('click', (e) => {
   renderEmailView();
 });
 
-Promise.all([loadData(), loadEmailData()]).then(([data, emailData]) => {
+// ---------- DLF Automations & Report view ----------
+const DLF_SORT_ACCESSORS = {
+  name: w => (w.name || '').toLowerCase(),
+  status: w => w.status || '',
+  enrolled: w => w.enrolled || 0,
+  active: w => w.active || 0,
+  createdOn: w => w.createdOn ? new Date(w.createdOn).getTime() : 0,
+  lastUpdated: w => w.lastUpdated ? new Date(w.lastUpdated).getTime() : 0,
+  opened: w => w.email.opened || 0,
+  clicked: w => w.email.clicked || 0,
+  replied: w => w.email.replied || 0,
+  unsubscribed: w => w.email.unsubscribed || 0
+};
+
+function sortDlfWorkflows(workflows) {
+  if (!dlfSortKey) return workflows;
+  const accessor = DLF_SORT_ACCESSORS[dlfSortKey];
+  if (!accessor) return workflows;
+  return [...workflows].sort((a, b) => {
+    const av = accessor(a), bv = accessor(b);
+    if (av < bv) return -1 * dlfSortDir;
+    if (av > bv) return 1 * dlfSortDir;
+    return 0;
+  });
+}
+
+function updateDlfSortIndicators() {
+  document.querySelectorAll('#dlf-table th[data-sort]').forEach(th => {
+    const arrow = th.querySelector('.sort-arrow');
+    if (!arrow) return;
+    arrow.textContent = th.dataset.sort === dlfSortKey ? (dlfSortDir === 1 ? '▲' : '▼') : '';
+  });
+}
+
+function renderDlfReportKpis() {
+  const workflows = (DLF_DATA && DLF_DATA.workflows) || [];
+  const totalActive = workflows.reduce((s, w) => s + (w.active || 0), 0);
+  const totalNew = workflows.reduce((s, w) => s + (w.newSinceLastSync || 0), 0);
+  const rateKeys = ['opened', 'clicked', 'replied', 'unsubscribed', 'bounced'];
+  const rateLabels = { opened: 'Open rate', clicked: 'Click rate', replied: 'Reply rate', unsubscribed: 'Unsubscribe rate', bounced: 'Bounce rate' };
+  const grid = document.getElementById('dlf-report-kpis');
+  let html = `<div class="report-kpi-card"><div class="kpi-value">${totalActive}</div><div class="kpi-label">Active Contacts</div></div>`;
+  html += `<div class="report-kpi-card"><div class="kpi-value">${totalNew}</div><div class="kpi-label">New Contacts <span style="font-size:11px; opacity:0.75;">(since last sync)</span></div></div>`;
+  rateKeys.forEach(key => {
+    const v = weightedAvg(workflows, key);
+    html += `<div class="report-kpi-card"><div class="kpi-value">${pct(v)}</div><div class="kpi-label">${rateLabels[key]}</div></div>`;
+  });
+  grid.innerHTML = html;
+  return rateKeys.map(key => weightedAvg(workflows, key));
+}
+
+function renderDlfReportChart(values) {
+  const ctx = document.getElementById('dlf-report-chart');
+  const labels = ['Open', 'Click', 'Reply', 'Unsubscribe', 'Bounce'];
+  const colors = ['#34c98f', '#ffb454', '#c48bff', '#8b95ab', '#ff6b6b'];
+  if (dlfChart) dlfChart.destroy();
+  dlfChart = new Chart(ctx, {
+    type: 'bar',
+    data: { labels, datasets: [{ data: values.map(v => Math.round(v * 100) / 100), backgroundColor: colors, borderRadius: 8, borderColor: '#ffffff', borderWidth: 0 }] },
+    options: {
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { ticks: { color: '#8b95ab' }, grid: { display: false } },
+        y: { ticks: { color: '#8b95ab', callback: v => v + '%' }, grid: { color: '#262f42' }, beginAtZero: true }
+      }
+    }
+  });
+}
+
+function renderDlfTable() {
+  const workflows = sortDlfWorkflows((DLF_DATA && DLF_DATA.workflows) || []);
+  const tbody = document.querySelector('#dlf-table tbody');
+  if (workflows.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="10" style="color:var(--muted); font-style:italic;">No DLF workflows found.</td></tr>`;
+    updateDlfSortIndicators();
+    return;
+  }
+  tbody.innerHTML = workflows.map(w => {
+    const statusClass = w.status === 'Published' ? 'status-published' : 'status-draft';
+    const cell = (v) => v === 0 ? '<span class="zero">0%</span>' : pct(v);
+    const link = w.workflowId
+      ? `https://app.lawfirmmarketingpros.com/v2/location/${LOCATION_ID}/automation/workflow/${w.workflowId}/status`
+      : ((DLF_DATA && DLF_DATA.folderUrl) || '#');
+    const countHtml = (n) => n > 0
+      ? `<a class="count-link" href="${link}" target="_blank" rel="noopener">${n}</a>`
+      : `<span class="count-flat zero">0</span>`;
+    return `<tr>
+      <td>${w.name}</td>
+      <td><span class="status-pill ${statusClass}">${w.status}</span></td>
+      <td>${countHtml(w.enrolled)}</td>
+      <td>${countHtml(w.active)}</td>
+      <td>${fmtDate(w.createdOn)}</td>
+      <td>${fmtDate(w.lastUpdated)}</td>
+      <td>${cell(w.email.opened)}</td>
+      <td>${cell(w.email.clicked)}</td>
+      <td>${cell(w.email.replied)}</td>
+      <td>${cell(w.email.unsubscribed)}</td>
+    </tr>`;
+  }).join('');
+  updateDlfSortIndicators();
+}
+
+document.querySelector('#dlf-table thead').addEventListener('click', (e) => {
+  const th = e.target.closest('th[data-sort]');
+  if (!th) return;
+  const key = th.dataset.sort;
+  if (dlfSortKey === key) { dlfSortDir *= -1; } else { dlfSortKey = key; dlfSortDir = 1; }
+  renderDlfTable();
+});
+
+const DLF_EMAIL_SORT_ACCESSORS = {
+  subject: c => (c.subject || '').toLowerCase(),
+  workflowName: c => (c.workflowName || '').toLowerCase(),
+  createdOn: c => c.createdOn ? new Date(c.createdOn).getTime() : 0,
+  lastUpdated: c => c.lastUpdated ? new Date(c.lastUpdated).getTime() : 0,
+  executionDate: c => c.executionDate ? new Date(c.executionDate).getTime() : 0,
+  status: c => c.status || '',
+  recipients: c => c.recipients || 0
+};
+
+function sortDlfEmails(emails) {
+  if (!dlfEmailSortKey) return emails;
+  const accessor = DLF_EMAIL_SORT_ACCESSORS[dlfEmailSortKey];
+  if (!accessor) return emails;
+  return [...emails].sort((a, b) => {
+    const av = accessor(a), bv = accessor(b);
+    if (av < bv) return -1 * dlfEmailSortDir;
+    if (av > bv) return 1 * dlfEmailSortDir;
+    return 0;
+  });
+}
+
+function updateDlfEmailSortIndicators() {
+  document.querySelectorAll('#dlf-email-table th[data-sort]').forEach(th => {
+    const arrow = th.querySelector('.sort-arrow');
+    if (!arrow) return;
+    arrow.textContent = th.dataset.sort === dlfEmailSortKey ? (dlfEmailSortDir === 1 ? '▲' : '▼') : '';
+  });
+}
+
+function renderDlfEmailKpis(emails) {
+  const totalRecipients = emails.reduce((s, c) => s + (c.recipients || 0), 0);
+  const grid = document.getElementById('dlf-email-kpis');
+  let html = `<div class="report-kpi-card"><div class="kpi-value">${emails.length}</div><div class="kpi-label">Total Emails</div></div>`;
+  html += `<div class="report-kpi-card"><div class="kpi-value">${totalRecipients}</div><div class="kpi-label">Total Recipients</div></div>`;
+  EMAIL_METRIC_KEYS.forEach(key => {
+    const v = weightedAvgEmail(emails, key);
+    html += `<div class="report-kpi-card"><div class="kpi-value">${pct(v)}</div><div class="kpi-label">${EMAIL_METRIC_LABELS[key]}</div></div>`;
+  });
+  grid.innerHTML = html;
+  return EMAIL_METRIC_KEYS.map(key => weightedAvgEmail(emails, key));
+}
+
+function renderDlfEmailChart(values) {
+  const ctx = document.getElementById('dlf-email-chart');
+  const labels = ['Delivery', 'Open', 'Click', 'Bounce', 'Unsubscribe'];
+  const colors = ['#5b8cff', '#34c98f', '#ffb454', '#ff6b6b', '#8b95ab'];
+  if (dlfEmailChart) dlfEmailChart.destroy();
+  dlfEmailChart = new Chart(ctx, {
+    type: 'bar',
+    data: { labels, datasets: [{ data: values.map(v => Math.round(v * 100) / 100), backgroundColor: colors, borderRadius: 8, borderColor: '#ffffff', borderWidth: 0 }] },
+    options: {
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { ticks: { color: '#8b95ab' }, grid: { display: false } },
+        y: { ticks: { color: '#8b95ab', callback: v => v + '%' }, grid: { color: '#262f42' }, beginAtZero: true }
+      }
+    }
+  });
+}
+
+function renderDlfEmailTable(emails) {
+  const sorted = sortDlfEmails(emails);
+  const tbody = document.querySelector('#dlf-email-table tbody');
+  if (sorted.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="7" style="color:var(--muted); font-style:italic;">No DLF emails found.</td></tr>`;
+    updateDlfEmailSortIndicators();
+    return;
+  }
+  tbody.innerHTML = sorted.map(c => {
+    const statusClass = (c.status === 'Published' || c.status === 'Sent') ? 'status-published' : 'status-draft';
+    return `<tr>
+      <td>${c.subject}</td>
+      <td>${c.workflowName}</td>
+      <td>${c.createdOn ? fmtDate(c.createdOn) : '<span class="zero">Unknown</span>'}</td>
+      <td>${c.lastUpdated ? fmtDate(c.lastUpdated) : '<span class="zero">—</span>'}</td>
+      <td>${c.executionDate ? fmtDate(c.executionDate) : '<span class="zero">Ongoing (automation-triggered)</span>'}</td>
+      <td><span class="status-pill ${statusClass}">${c.status}</span></td>
+      <td>${c.recipients}</td>
+    </tr>`;
+  }).join('');
+  updateDlfEmailSortIndicators();
+}
+
+document.querySelector('#dlf-email-table thead').addEventListener('click', (e) => {
+  const th = e.target.closest('th[data-sort]');
+  if (!th) return;
+  const key = th.dataset.sort;
+  if (dlfEmailSortKey === key) { dlfEmailSortDir *= -1; } else { dlfEmailSortKey = key; dlfEmailSortDir = 1; }
+  renderDlfEmailTable((DLF_DATA && DLF_DATA.emails) || []);
+});
+
+function renderDlfEmailSection() {
+  const emails = (DLF_DATA && DLF_DATA.emails) || [];
+  if (emails.length === 0) {
+    document.getElementById('dlf-email-kpis').innerHTML = '<div class="empty-state">No DLF emails found.</div>';
+    if (dlfEmailChart) { dlfEmailChart.destroy(); dlfEmailChart = null; }
+  } else {
+    const values = renderDlfEmailKpis(emails);
+    renderDlfEmailChart(values);
+  }
+  renderDlfEmailTable(emails);
+}
+
+function renderDlfView() {
+  document.getElementById('dlf-folder-link').href = (DLF_DATA && DLF_DATA.folderUrl) || '#';
+  const workflows = (DLF_DATA && DLF_DATA.workflows) || [];
+  if (workflows.length === 0) {
+    document.getElementById('dlf-report-kpis').innerHTML = '<div class="empty-state">No DLF workflows found.</div>';
+    if (dlfChart) { dlfChart.destroy(); dlfChart = null; }
+  } else {
+    const values = renderDlfReportKpis();
+    renderDlfReportChart(values);
+  }
+  renderDlfTable();
+  renderDlfEmailSection();
+}
+
+Promise.all([loadData(), loadEmailData(), loadDlfData()]).then(([data, emailData, dlfData]) => {
   DATA = data;
   EMAIL_DATA = emailData;
+  DLF_DATA = dlfData;
   selectedKey = data.campaigns[0].key;
   const synced = new Date(data.generatedAt);
   const syncedEST = synced.toLocaleString('en-US', {
