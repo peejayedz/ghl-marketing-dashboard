@@ -365,10 +365,11 @@
           <th data-sort="subject">Email Subject<span class="sort-arrow"></span></th>
           <th data-sort="workflowName">Campaign Name<span class="sort-arrow"></span></th>
           <th data-sort="createdOn">Created on<span class="sort-arrow"></span></th>
-          <th data-sort="lastUpdated">Last updated<span class="sort-arrow"></span></th>
-          <th data-sort="executionDate">Date sent / Execution Date<span class="sort-arrow"></span></th>
-          <th data-sort="status">Status<span class="sort-arrow"></span></th>
-          <th data-sort="recipients">Number of contacts sent<span class="sort-arrow"></span></th>
+          <th data-sort="opened">Opened<span class="sort-arrow"></span></th>
+          <th data-sort="clicked">Clicked<span class="sort-arrow"></span></th>
+          <th data-sort="replied">Replied<span class="sort-arrow"></span></th>
+          <th data-sort="bounced">Bounced<span class="sort-arrow"></span></th>
+          <th data-sort="unsubscribed">Unsubscribed<span class="sort-arrow"></span></th>
         </tr></thead>
         <tbody></tbody>
       </table>
@@ -1198,10 +1199,11 @@ const DLF_EMAIL_SORT_ACCESSORS = {
   subject: c => (c.subject || '').toLowerCase(),
   workflowName: c => (c.workflowName || '').toLowerCase(),
   createdOn: c => c.createdOn ? new Date(c.createdOn).getTime() : 0,
-  lastUpdated: c => c.lastUpdated ? new Date(c.lastUpdated).getTime() : 0,
-  executionDate: c => c.executionDate ? new Date(c.executionDate).getTime() : 0,
-  status: c => c.status || '',
-  recipients: c => c.recipients || 0
+  opened: c => (c.stats && c.stats.opened) || 0,
+  clicked: c => (c.stats && c.stats.clicked) || 0,
+  replied: c => (c.stats && c.stats.replied) || 0,
+  bounced: c => (c.stats && c.stats.bounced) || 0,
+  unsubscribed: c => (c.stats && c.stats.unsubscribed) || 0
 };
 
 function sortDlfEmails(emails) {
@@ -1260,20 +1262,22 @@ function renderDlfEmailTable(emails) {
   const sorted = sortDlfEmails(emails);
   const tbody = document.querySelector('#dlf-email-table tbody');
   if (sorted.length === 0) {
-    tbody.innerHTML = `<tr><td colspan="7" style="color:var(--muted); font-style:italic;">No DLF emails found.</td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="8" style="color:var(--muted); font-style:italic;">No DLF emails found.</td></tr>`;
     updateDlfEmailSortIndicators();
     return;
   }
+  const cell = (v) => v === 0 ? '<span class="zero">0%</span>' : pct(v);
   tbody.innerHTML = sorted.map(c => {
-    const statusClass = (c.status === 'Published' || c.status === 'Sent') ? 'status-published' : 'status-draft';
+    const stats = c.stats || {};
     return `<tr>
       <td>${c.subject}</td>
       <td>${c.workflowName}</td>
       <td>${c.createdOn ? fmtDate(c.createdOn) : '<span class="zero">Unknown</span>'}</td>
-      <td>${c.lastUpdated ? fmtDate(c.lastUpdated) : '<span class="zero">—</span>'}</td>
-      <td>${c.executionDate ? fmtDate(c.executionDate) : '<span class="zero">Ongoing (automation-triggered)</span>'}</td>
-      <td><span class="status-pill ${statusClass}">${c.status}</span></td>
-      <td>${c.recipients}</td>
+      <td>${cell(stats.opened || 0)}</td>
+      <td>${cell(stats.clicked || 0)}</td>
+      <td>${cell(stats.replied || 0)}</td>
+      <td>${cell(stats.bounced || 0)}</td>
+      <td>${cell(stats.unsubscribed || 0)}</td>
     </tr>`;
   }).join('');
   updateDlfEmailSortIndicators();
