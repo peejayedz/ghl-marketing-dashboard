@@ -175,13 +175,14 @@
       <h1>Marketing Campaigns Dashboard</h1>
       <div class="sync-label" id="last-updated"><span class="dot"></span>Loading...</div>
     </div>
-    <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:flex-start;">
-      <div id="nav-entry-buttons" style="display:flex; gap:10px; flex-wrap:wrap;">
-        <button class="view-toggle-btn" id="goto-report-btn">Switch to Marketing Report</button>
-        <button class="view-toggle-btn" id="goto-email-btn" style="background:var(--card); border:1px solid var(--border); color:var(--text);">View Email Campaigns Performance</button>
-        <button class="view-toggle-btn" id="goto-dlf-btn" style="background:var(--card); border:1px solid var(--border); color:var(--text);">DLF Automations &amp; Report</button>
-      </div>
-      <button class="view-toggle-btn" id="back-btn" style="display:none;">&#8592; Marketing Automation List</button>
+    <div class="select-group" id="nav-select-group">
+      <label>View</label>
+      <select class="select-input" id="view-select" style="min-width:260px;">
+        <option value="technical">Marketing Automation List</option>
+        <option value="report">Marketing Report</option>
+        <option value="email">Email Campaigns Performance</option>
+        <option value="dlf">DLF Automations &amp; Report</option>
+      </select>
     </div>
   </div>
 
@@ -619,8 +620,8 @@ document.querySelector('#wf-table thead').addEventListener('click', (e) => {
   renderTable();
 });
 
-// ---------- View toggle (technical / report / email / dlf) ----------
-// Home (Technical View) shows all entry buttons. Any other view shows a single Back button.
+// ---------- View switcher (technical / report / email / dlf) ----------
+// A single dropdown drives navigation between the four views.
 let currentView = 'technical';
 
 function showView(view) {
@@ -629,19 +630,16 @@ function showView(view) {
   document.getElementById('email-view').style.display = view === 'email' ? 'block' : 'none';
   document.getElementById('dlf-view').style.display = view === 'dlf' ? 'block' : 'none';
   currentView = view;
-
-  document.getElementById('nav-entry-buttons').style.display = view === 'technical' ? 'flex' : 'none';
-  document.getElementById('back-btn').style.display = view === 'technical' ? 'none' : 'inline-block';
+  document.getElementById('view-select').value = view;
 
   if (view === 'report') renderReport();
   if (view === 'email') renderEmailView();
   if (view === 'dlf') renderDlfView();
 }
 
-document.getElementById('goto-report-btn').addEventListener('click', () => showView('report'));
-document.getElementById('goto-email-btn').addEventListener('click', () => showView('email'));
-document.getElementById('goto-dlf-btn').addEventListener('click', () => showView('dlf'));
-document.getElementById('back-btn').addEventListener('click', () => showView('technical'));
+document.getElementById('view-select').addEventListener('change', (e) => {
+  showView(e.target.value);
+});
 
 // ---------- Marketing Report view ----------
 function dateRangeActive() {
