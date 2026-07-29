@@ -1,6 +1,6 @@
 {
   "generatedAt": "2026-07-29T11:40:00-04:00",
-  "source": "Scraped from GoHighLevel Automation > Workflows for the '03_DLF' folder (a4f0cd90-0852-4926-9f52-2a946026e0da) > '01_AI Cheat Sheet' subfolder (dbc41aeb-f349-4811-9140-df3bb980be16), cross-referenced with each workflow's Email Statistics page (Delivered/Opened/Clicked/Bounced/Unsubscribed) and Enrollment History (Total enrolled/Active enrolled). Email subject lines could not be confirmed this run due to a GHL page-load issue on both the Workflow Campaigns statistics dropdown and the workflow builder canvas (repeated blank-page failures after 4+ reload retries) — the 'subject' field below is a placeholder using the workflow's own name and will be backfilled with the real subject line by the daily scheduled sync.",
+  "source": "Scraped from GoHighLevel Automation > Workflows for the '03_DLF' folder (a4f0cd90-0852-4926-9f52-2a946026e0da) > '01_AI Cheat Sheet' subfolder (dbc41aeb-f349-4811-9140-df3bb980be16), cross-referenced with each workflow's Email Statistics page (Delivered/Opened/Clicked/Bounced/Unsubscribed), Enrollment History (Total enrolled/Active enrolled), and each workflow builder canvas (real per-email subject lines, read directly from each Email action step). Workflow 1 ('1.0_AI Cheat Sheet - CE') contains 1 email step; Workflow 2 ('2.0 - ...Then Send Email Sequence') contains 9 email steps (internally named Email #2 through Email 10 — GHL's own step numbering skips a plain 'Email 1' on this workflow), for 10 individual emails total across the DLF automation. GHL does not expose per-email-step engagement stats or a distinct recipient count per step, so each email below reuses its parent workflow's aggregate stats and enrolled count as the closest available proxy.",
   "folderUrl": "https://app.lawfirmmarketingpros.com/v2/location/sQ2VSMkR7cLHb46Wdemi/automation/workflows?listTab=all&folder=a4f0cd90-0852-4926-9f52-2a946026e0da",
   "workflows": [
     {
@@ -28,7 +28,7 @@
   ],
   "emails": [
     {
-      "subject": "1.0_AI Cheat Sheet - CE (subject pending confirmation)",
+      "subject": "Your AI Visibility Cheatsheet Is Inside",
       "workflowName": "1.0_AI Cheat Sheet - CE",
       "workflowId": "9972ccf0-3aee-4ab5-b698-f09bba093030",
       "status": "Published",
@@ -39,7 +39,95 @@
       "stats": { "delivered": 100, "opened": 100, "clicked": 0, "bounced": 0, "unsubscribed": 0 }
     },
     {
-      "subject": "2.0 - When Contact Tag Added AI Cheat Sheet IE, Then Send Email Sequence (subject pending confirmation)",
+      "subject": "Why AI is ignoring your law firm (it's not what you think)",
+      "workflowName": "2.0 - When Contact Tag Added AI Cheat Sheet IE, Then Send Email Sequence",
+      "workflowId": "81854e4d-ca61-4e75-a48e-49848143b6de",
+      "status": "Published",
+      "createdOn": "2026-07-17T15:26:00",
+      "lastUpdated": "2026-07-22T14:04:00",
+      "executionDate": null,
+      "recipients": 1,
+      "stats": { "delivered": 100, "opened": 100, "clicked": 0, "bounced": 0, "unsubscribed": 0 }
+    },
+    {
+      "subject": "Why AI needs your reviews (not just ratings)",
+      "workflowName": "2.0 - When Contact Tag Added AI Cheat Sheet IE, Then Send Email Sequence",
+      "workflowId": "81854e4d-ca61-4e75-a48e-49848143b6de",
+      "status": "Published",
+      "createdOn": "2026-07-17T15:26:00",
+      "lastUpdated": "2026-07-22T14:04:00",
+      "executionDate": null,
+      "recipients": 1,
+      "stats": { "delivered": 100, "opened": 100, "clicked": 0, "bounced": 0, "unsubscribed": 0 }
+    },
+    {
+      "subject": "Is your Google Business Profile working against you?",
+      "workflowName": "2.0 - When Contact Tag Added AI Cheat Sheet IE, Then Send Email Sequence",
+      "workflowId": "81854e4d-ca61-4e75-a48e-49848143b6de",
+      "status": "Published",
+      "createdOn": "2026-07-17T15:26:00",
+      "lastUpdated": "2026-07-22T14:04:00",
+      "executionDate": null,
+      "recipients": 1,
+      "stats": { "delivered": 100, "opened": 100, "clicked": 0, "bounced": 0, "unsubscribed": 0 }
+    },
+    {
+      "subject": "Most law firms are overcomplicating AI",
+      "workflowName": "2.0 - When Contact Tag Added AI Cheat Sheet IE, Then Send Email Sequence",
+      "workflowId": "81854e4d-ca61-4e75-a48e-49848143b6de",
+      "status": "Published",
+      "createdOn": "2026-07-17T15:26:00",
+      "lastUpdated": "2026-07-22T14:04:00",
+      "executionDate": null,
+      "recipients": 1,
+      "stats": { "delivered": 100, "opened": 100, "clicked": 0, "bounced": 0, "unsubscribed": 0 }
+    },
+    {
+      "subject": "How to use AI to get more cases (without sounding like a robot)",
+      "workflowName": "2.0 - When Contact Tag Added AI Cheat Sheet IE, Then Send Email Sequence",
+      "workflowId": "81854e4d-ca61-4e75-a48e-49848143b6de",
+      "status": "Published",
+      "createdOn": "2026-07-17T15:26:00",
+      "lastUpdated": "2026-07-22T14:04:00",
+      "executionDate": null,
+      "recipients": 1,
+      "stats": { "delivered": 100, "opened": 100, "clicked": 0, "bounced": 0, "unsubscribed": 0 }
+    },
+    {
+      "subject": "Where your firm is losing cases online",
+      "workflowName": "2.0 - When Contact Tag Added AI Cheat Sheet IE, Then Send Email Sequence",
+      "workflowId": "81854e4d-ca61-4e75-a48e-49848143b6de",
+      "status": "Published",
+      "createdOn": "2026-07-17T15:26:00",
+      "lastUpdated": "2026-07-22T14:04:00",
+      "executionDate": null,
+      "recipients": 1,
+      "stats": { "delivered": 100, "opened": 100, "clicked": 0, "bounced": 0, "unsubscribed": 0 }
+    },
+    {
+      "subject": "Speed wins: Why waiting kills revenue",
+      "workflowName": "2.0 - When Contact Tag Added AI Cheat Sheet IE, Then Send Email Sequence",
+      "workflowId": "81854e4d-ca61-4e75-a48e-49848143b6de",
+      "status": "Published",
+      "createdOn": "2026-07-17T15:26:00",
+      "lastUpdated": "2026-07-22T14:04:00",
+      "executionDate": null,
+      "recipients": 1,
+      "stats": { "delivered": 100, "opened": 100, "clicked": 0, "bounced": 0, "unsubscribed": 0 }
+    },
+    {
+      "subject": "The real reason most law firms stay invisible (it's not the algorithm)",
+      "workflowName": "2.0 - When Contact Tag Added AI Cheat Sheet IE, Then Send Email Sequence",
+      "workflowId": "81854e4d-ca61-4e75-a48e-49848143b6de",
+      "status": "Published",
+      "createdOn": "2026-07-17T15:26:00",
+      "lastUpdated": "2026-07-22T14:04:00",
+      "executionDate": null,
+      "recipients": 1,
+      "stats": { "delivered": 100, "opened": 100, "clicked": 0, "bounced": 0, "unsubscribed": 0 }
+    },
+    {
+      "subject": "See your real AI visibility opportunities",
       "workflowName": "2.0 - When Contact Tag Added AI Cheat Sheet IE, Then Send Email Sequence",
       "workflowId": "81854e4d-ca61-4e75-a48e-49848143b6de",
       "status": "Published",
