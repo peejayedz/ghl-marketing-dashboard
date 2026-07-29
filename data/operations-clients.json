@@ -1,29 +1,11 @@
 {
-  "generatedAt": "2026-07-30T06:36:14+08:00",
+  "generatedAt": "2026-07-30T07:22:07+08:00",
   "source": "Companies scraped from GoHighLevel Contacts (filtered by tag: 'lfmp client', 'offboarded client', 'wpp client') grouped by Business name. Date fields (Date Closed, Onboarding Date, Termination Notice, Last Day Of Service) are scraped from the Companies object's custom fields, matched by company name.",
   "views": {
     "all": {
       "label": "All Clients",
       "tag": null,
       "companies": [
-        {
-          "company": "(No company on file)",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "Calvin Marcera",
-              "phone": null,
-              "email": "cjracemar1125@gmail.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
         {
           "company": "Albrecht Law PLLC",
           "contactCount": 2,
@@ -547,7 +529,7 @@
               "email": "josh@joshjoneslaw.com"
             },
             {
-              "name": "Josh Jones (marketing)",
+              "name": "Josh Jones",
               "phone": null,
               "email": "marketing@joshjoneslaw.com"
             }
@@ -963,8 +945,8 @@
           "tags": [
             "lfmp client"
           ],
-          "dateClosed": null,
-          "onboardingDate": null,
+          "dateClosed": "2025-07-18",
+          "onboardingDate": "2025-08-13",
           "terminationNotice": null,
           "lastDayOfService": null
         },
@@ -1254,8 +1236,8 @@
           ],
           "dateClosed": "2025-06-25",
           "onboardingDate": "2025-07-02",
-          "terminationNotice": "2026-07-20",
-          "lastDayOfService": "2026-08-20"
+          "terminationNotice": null,
+          "lastDayOfService": null
         },
         {
           "company": "Solano Law Firm",
@@ -1569,8 +1551,8 @@
           ],
           "dateClosed": null,
           "onboardingDate": null,
-          "terminationNotice": "2026-07-10",
-          "lastDayOfService": "2026-08-15"
+          "terminationNotice": null,
+          "lastDayOfService": null
         },
         {
           "company": "The Law Offices Of Kimberly Butler Rainen",
@@ -1648,8 +1630,8 @@
           ],
           "dateClosed": null,
           "onboardingDate": null,
-          "terminationNotice": "2026-07-24",
-          "lastDayOfService": "2026-08-31"
+          "terminationNotice": null,
+          "lastDayOfService": null
         },
         {
           "company": "The Mahdavi Law Firm PLLC",
@@ -1871,24 +1853,6 @@
       "label": "Active Clients (LFMP)",
       "tag": "lfmp client",
       "companies": [
-        {
-          "company": "(No company on file)",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "Calvin Marcera",
-              "phone": null,
-              "email": "cjracemar1125@gmail.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
         {
           "company": "Albrecht Law PLLC",
           "contactCount": 2,
@@ -2309,8 +2273,8 @@
           "tags": [
             "lfmp client"
           ],
-          "dateClosed": null,
-          "onboardingDate": null,
+          "dateClosed": "2025-07-18",
+          "onboardingDate": "2025-08-13",
           "terminationNotice": null,
           "lastDayOfService": null
         },
@@ -2462,8 +2426,8 @@
           ],
           "dateClosed": "2025-06-25",
           "onboardingDate": "2025-07-02",
-          "terminationNotice": "2026-07-20",
-          "lastDayOfService": "2026-08-20"
+          "terminationNotice": null,
+          "lastDayOfService": null
         },
         {
           "company": "Solano Law Firm",
@@ -2608,8 +2572,8 @@
           ],
           "dateClosed": null,
           "onboardingDate": null,
-          "terminationNotice": "2026-07-10",
-          "lastDayOfService": "2026-08-15"
+          "terminationNotice": null,
+          "lastDayOfService": null
         },
         {
           "company": "The Law Offices of Nugent Zborowski",
@@ -2659,8 +2623,8 @@
           ],
           "dateClosed": null,
           "onboardingDate": null,
-          "terminationNotice": "2026-07-24",
-          "lastDayOfService": "2026-08-31"
+          "terminationNotice": null,
+          "lastDayOfService": null
         },
         {
           "company": "The Mahdavi Law Firm PLLC",
@@ -3092,7 +3056,7 @@
               "email": "josh@joshjoneslaw.com"
             },
             {
-              "name": "Josh Jones (marketing)",
+              "name": "Josh Jones",
               "phone": null,
               "email": "marketing@joshjoneslaw.com"
             }
