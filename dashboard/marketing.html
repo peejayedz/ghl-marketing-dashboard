@@ -60,9 +60,13 @@
   .rate { color: var(--accent2); }
   .rate.click { color: var(--accent3); }
   .rate.reply { color: var(--accent4); }
+  .rate.unsub { color: var(--muted); }
   table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
   th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); white-space: nowrap; }
   th { color: var(--muted); font-weight: 500; position: sticky; top: 0; background: var(--card); }
+  th[data-sort] { cursor: pointer; user-select: none; }
+  th[data-sort]:hover { color: var(--text); }
+  .sort-arrow { display: inline-block; width: 10px; margin-left: 4px; font-size: 10px; opacity: 0.8; }
   td:first-child, th:first-child { white-space: normal; max-width: 320px; }
   .table-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; overflow-x: auto; }
   .table-card h2 { margin-top: 0; font-size: 15px; display: flex; align-items: center; justify-content: space-between; }
@@ -147,6 +151,20 @@
   .email-campaign-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 4px; }
   .email-campaign-title { font-size: 15px; font-weight: 600; }
   .email-campaign-meta { color: var(--muted); font-size: 12.5px; }
+
+  .stats-toggle { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--muted); white-space: nowrap; }
+  .switch { position: relative; display: inline-block; width: 38px; height: 21px; flex-shrink: 0; }
+  .switch input { opacity: 0; width: 0; height: 0; }
+  .switch .slider {
+    position: absolute; inset: 0; cursor: pointer; background: var(--border);
+    transition: background 0.15s; border-radius: 20px;
+  }
+  .switch .slider:before {
+    content: ""; position: absolute; height: 15px; width: 15px; left: 3px; bottom: 3px;
+    background: #fff; transition: transform 0.15s; border-radius: 50%;
+  }
+  .switch input:checked + .slider { background: var(--accent); }
+  .switch input:checked + .slider:before { transform: translateX(17px); }
 </style>
 </head>
 <body>
@@ -170,8 +188,42 @@
         <button data-status="Published">Published</button>
         <button data-status="Draft">Draft</button>
       </div>
+      <div class="report-toolbar" style="margin-bottom:10px;">
+        <div class="select-group">
+          <label>Month</label>
+          <select class="select-input" id="tech-month-select" style="min-width:140px;"></select>
+        </div>
+        <div class="select-group">
+          <label>Year</label>
+          <select class="select-input" id="tech-year-select" style="min-width:110px;"></select>
+        </div>
+        <div class="select-group">
+          <label>From date</label>
+          <input type="date" class="select-input" id="tech-date-from" style="min-width:150px;">
+        </div>
+        <div class="select-group">
+          <label>To date</label>
+          <input type="date" class="select-input" id="tech-date-to" style="min-width:150px;">
+        </div>
+        <div class="select-group">
+          <label>&nbsp;</label>
+          <button type="button" class="view-toggle-btn" id="tech-date-clear" style="background:var(--card); border:1px solid var(--border); color:var(--muted); padding:9px 14px; font-weight:500;">Clear dates</button>
+        </div>
+      </div>
+      <div id="tech-filter-caption" style="margin: -4px 0 14px; color: var(--muted); font-size: 12px;"></div>
       <table id="wf-table">
-        <thead><tr><th>Workflow</th><th>Status</th><th>Enrolled</th><th>Active</th><th>Created</th><th>Last updated</th><th>Opened</th><th>Clicked</th><th>Replied</th></tr></thead>
+        <thead><tr>
+          <th data-sort="name">Workflow<span class="sort-arrow"></span></th>
+          <th data-sort="status">Status<span class="sort-arrow"></span></th>
+          <th data-sort="enrolled">Enrolled<span class="sort-arrow"></span></th>
+          <th data-sort="active">Active<span class="sort-arrow"></span></th>
+          <th data-sort="createdOn">Created<span class="sort-arrow"></span></th>
+          <th data-sort="lastUpdated">Last updated<span class="sort-arrow"></span></th>
+          <th data-sort="opened">Opened<span class="sort-arrow"></span></th>
+          <th data-sort="clicked">Clicked<span class="sort-arrow"></span></th>
+          <th data-sort="replied">Replied<span class="sort-arrow"></span></th>
+          <th data-sort="unsubscribed">Unsubscribed<span class="sort-arrow"></span></th>
+        </tr></thead>
         <tbody></tbody>
       </table>
     </div>
@@ -204,13 +256,19 @@
         <button type="button" class="view-toggle-btn" id="report-date-clear" style="background:var(--card); border:1px solid var(--border); color:var(--muted); padding:9px 14px; font-weight:500;">Clear dates</button>
       </div>
     </div>
-    <div class="section-sub" id="report-filter-caption" style="margin: -12px 0 20px; color: var(--muted); font-size: 12.5px;"></div>
+    <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:16px; margin: -12px 0 20px;">
+      <div class="section-sub" id="report-filter-caption" style="margin:0; color: var(--muted); font-size: 12.5px;"></div>
+      <label class="stats-toggle">
+        <span class="switch"><input type="checkbox" id="stats-toggle-input"><span class="slider"></span></span>
+        <span>Show Stats in Numbers</span>
+      </label>
+    </div>
 
     <div class="report-kpi-grid" id="report-kpis"></div>
 
     <div class="report-section">
       <h3>Engagement rates <span id="report-chart-campaign-label" style="color:var(--muted); font-weight:400;"></span></h3>
-      <div class="section-sub">Delivery, open, click, bounce and reply rate — enrollment-weighted across the selected campaign's workflows. Click a bar or KPI card above to see it broken down by workflow.</div>
+      <div class="section-sub">Delivery, open, click, bounce, reply and unsubscribe rate — enrollment-weighted across the selected campaign's workflows. Click a bar or KPI card above to see it broken down by workflow.</div>
       <canvas id="report-chart" height="90"></canvas>
       <div id="report-drilldown"></div>
     </div>
@@ -220,7 +278,22 @@
     </div>
 
     <div class="report-section">
-      <h3>Email Campaign performance</h3>
+      <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+        <h3 style="margin:0;">Email Campaign performance</h3>
+        <div class="select-group" style="min-width:190px;">
+          <label>Sort by</label>
+          <select class="select-input" id="email-sort-select" style="min-width:190px;">
+            <option value="sentDate-desc">Sent date (newest first)</option>
+            <option value="sentDate-asc">Sent date (oldest first)</option>
+            <option value="status">Status</option>
+            <option value="delivered">Delivered rate</option>
+            <option value="opened">Open rate</option>
+            <option value="clicked">Click rate</option>
+            <option value="bounced">Bounce rate</option>
+            <option value="unsubscribed">Unsubscribe rate</option>
+          </select>
+        </div>
+      </div>
       <div class="section-sub">Standalone one-off email campaigns sent via GoHighLevel's Email Marketing tool (separate from the automation workflows above).</div>
       <div id="report-email-list"></div>
     </div>
@@ -238,10 +311,18 @@ let reportDateFrom = '';
 let reportDateTo = '';
 let reportChart = null;
 let reportDrilldownMetric = null;
+let showNumbers = false;
+let techMonth = 'all';
+let techYear = 'all';
+let techDateFrom = '';
+let techDateTo = '';
+let techSortKey = null;
+let techSortDir = 1;
+let emailSort = 'sentDate-desc';
 const LOCATION_ID = 'sQ2VSMkR7cLHb46Wdemi';
 const MONTH_NAMES = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-const METRIC_KEYS = ['delivered', 'opened', 'clicked', 'bounced', 'replied'];
-const METRIC_LABELS = { delivered: 'Delivery rate', opened: 'Open rate', clicked: 'Click rate', bounced: 'Bounce rate', replied: 'Reply rate' };
+const METRIC_KEYS = ['delivered', 'opened', 'clicked', 'bounced', 'replied', 'unsubscribed'];
+const METRIC_LABELS = { delivered: 'Delivery rate', opened: 'Open rate', clicked: 'Click rate', bounced: 'Bounce rate', replied: 'Reply rate', unsubscribed: 'Unsubscribe rate' };
 
 function fmtDate(iso) {
   if (!iso) return '';
@@ -252,6 +333,15 @@ function fmtDate(iso) {
 
 function pct(n) {
   return (Math.round(n * 100) / 100) + '%';
+}
+
+// Displays a rate either as a percentage or, when the "Show Stats in Numbers"
+// toggle is on, as an estimated raw count (base * percentage / 100, rounded).
+// "base" is whatever the percentage is a share of — enrolled contacts for a
+// workflow/campaign-level metric, or recipients for a standalone email campaign.
+function metricDisplay(percentValue, base) {
+  if (!showNumbers) return pct(percentValue);
+  return Math.round(base * (percentValue || 0) / 100).toString();
 }
 
 function fmtShortDate(isoDate) {
@@ -290,6 +380,7 @@ function renderCards() {
     const opened = weightedAvg(c.workflows, 'opened');
     const clicked = weightedAvg(c.workflows, 'clicked');
     const replied = weightedAvg(c.workflows, 'replied');
+    const unsubscribed = weightedAvg(c.workflows, 'unsubscribed');
     const published = c.workflows.filter(w => w.status === 'Published').length;
 
     const card = document.createElement('div');
@@ -301,6 +392,7 @@ function renderCards() {
       <div class="stat-row"><span class="label">Avg open rate</span><span class="value rate">${pct(opened)}</span></div>
       <div class="stat-row"><span class="label">Avg click rate</span><span class="value rate click">${pct(clicked)}</span></div>
       <div class="stat-row"><span class="label">Avg reply rate</span><span class="value rate reply">${pct(replied)}</span></div>
+      <div class="stat-row"><span class="label">Avg unsubscribe rate</span><span class="value rate unsub">${pct(unsubscribed)}</span></div>
     `;
     card.addEventListener('click', () => { selectedKey = c.key; renderCards(); renderTable(); });
     grid.appendChild(card);
@@ -332,19 +424,116 @@ const METRIC_TAB_LABELS = {
   opened: 'Opened',
   clicked: 'Clicked',
   bounced: 'Hard Bounced or Soft Bounced',
-  replied: 'Replied'
+  replied: 'Replied',
+  unsubscribed: 'Unsubscribed'
 };
+
+// ---------- Technical View date filter ----------
+function techDateRangeActive() {
+  return techDateFrom !== '' || techDateTo !== '';
+}
+
+function workflowsInTechFilter(workflows) {
+  return workflows.filter(w => {
+    if (!w.lastUpdated) return !techDateRangeActive() && techMonth === 'all' && techYear === 'all';
+    const d = new Date(w.lastUpdated);
+    if (techDateRangeActive()) {
+      if (techDateFrom && d < new Date(techDateFrom + 'T00:00:00')) return false;
+      if (techDateTo && d > new Date(techDateTo + 'T23:59:59')) return false;
+      return true;
+    }
+    if (techYear !== 'all' && d.getFullYear() !== Number(techYear)) return false;
+    if (techMonth !== 'all' && d.getMonth() !== Number(techMonth)) return false;
+    return true;
+  });
+}
+
+function populateTechFilters() {
+  const monthSel = document.getElementById('tech-month-select');
+  monthSel.innerHTML = '<option value="all">All months</option>' +
+    MONTH_NAMES.map((m, i) => `<option value="${i}">${m}</option>`).join('');
+  monthSel.value = techMonth;
+
+  const years = new Set();
+  DATA.campaigns.forEach(c => c.workflows.forEach(w => {
+    if (w.lastUpdated) years.add(new Date(w.lastUpdated).getFullYear());
+  }));
+  const yearSel = document.getElementById('tech-year-select');
+  yearSel.innerHTML = '<option value="all">All years</option>' +
+    Array.from(years).sort((a, b) => b - a).map(y => `<option value="${y}">${y}</option>`).join('');
+  yearSel.value = techYear;
+
+  document.getElementById('tech-date-from').value = techDateFrom;
+  document.getElementById('tech-date-to').value = techDateTo;
+  const rangeActive = techDateRangeActive();
+  monthSel.disabled = rangeActive;
+  yearSel.disabled = rangeActive;
+}
+
+// ---------- Technical View sort ----------
+const TECH_SORT_ACCESSORS = {
+  name: w => (w.name || '').toLowerCase(),
+  status: w => w.status || '',
+  enrolled: w => w.enrolled || 0,
+  active: w => w.active || 0,
+  createdOn: w => w.createdOn ? new Date(w.createdOn).getTime() : 0,
+  lastUpdated: w => w.lastUpdated ? new Date(w.lastUpdated).getTime() : 0,
+  opened: w => w.email.opened || 0,
+  clicked: w => w.email.clicked || 0,
+  replied: w => w.email.replied || 0,
+  unsubscribed: w => w.email.unsubscribed || 0
+};
+
+function sortWorkflows(workflows) {
+  if (!techSortKey) return workflows;
+  const accessor = TECH_SORT_ACCESSORS[techSortKey];
+  if (!accessor) return workflows;
+  return [...workflows].sort((a, b) => {
+    const av = accessor(a), bv = accessor(b);
+    if (av < bv) return -1 * techSortDir;
+    if (av > bv) return 1 * techSortDir;
+    return 0;
+  });
+}
+
+function updateSortIndicators() {
+  document.querySelectorAll('#wf-table th[data-sort]').forEach(th => {
+    const arrow = th.querySelector('.sort-arrow');
+    if (!arrow) return;
+    arrow.textContent = th.dataset.sort === techSortKey ? (techSortDir === 1 ? '▲' : '▼') : '';
+  });
+}
 
 function renderTable() {
   const c = DATA.campaigns.find(x => x.key === selectedKey) || DATA.campaigns[0];
   document.getElementById('table-title').textContent = c.label + ' — workflows (click Enrolled/Active to open in GoHighLevel)';
   document.getElementById('folder-link').href = c.folderUrl;
+  populateTechFilters();
 
   const tbody = document.querySelector('#wf-table tbody');
   let html = '';
-  const workflows = statusFilter === 'all' ? c.workflows : c.workflows.filter(w => w.status === statusFilter);
+  let workflows = statusFilter === 'all' ? c.workflows : c.workflows.filter(w => w.status === statusFilter);
+  workflows = workflowsInTechFilter(workflows);
+  workflows = sortWorkflows(workflows);
+
+  let captionText;
+  if (techDateRangeActive()) {
+    const fromLabel = techDateFrom ? fmtShortDate(techDateFrom) : 'the beginning';
+    const toLabel = techDateTo ? fmtShortDate(techDateTo) : 'today';
+    captionText = `Showing workflows last updated from ${fromLabel} to ${toLabel} (${workflows.length} of ${c.workflows.length} workflows match).`;
+  } else {
+    const captionParts = [];
+    if (techMonth !== 'all') captionParts.push(MONTH_NAMES[Number(techMonth)]);
+    if (techYear !== 'all') captionParts.push(techYear);
+    captionText = captionParts.length
+      ? `Showing workflows last updated in ${captionParts.join(' ')} (${workflows.length} of ${c.workflows.length} workflows match).`
+      : '';
+  }
+  document.getElementById('tech-filter-caption').textContent = captionText;
+
   if (workflows.length === 0) {
-    tbody.innerHTML = `<tr><td colspan="9" style="color:var(--muted); font-style:italic;">No ${statusFilter.toLowerCase()} workflows in this campaign.</td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="10" style="color:var(--muted); font-style:italic;">No workflows match the current filters.</td></tr>`;
+    updateSortIndicators();
     return;
   }
   workflows.forEach((w) => {
@@ -365,9 +554,11 @@ function renderTable() {
       <td>${cell(w.email.opened)}</td>
       <td>${cell(w.email.clicked)}</td>
       <td>${cell(w.email.replied)}</td>
+      <td>${cell(w.email.unsubscribed)}</td>
     </tr>`;
   });
   tbody.innerHTML = html;
+  updateSortIndicators();
 }
 
 document.getElementById('status-filter').addEventListener('click', (e) => {
@@ -375,6 +566,40 @@ document.getElementById('status-filter').addEventListener('click', (e) => {
   if (!btn) return;
   statusFilter = btn.dataset.status;
   document.querySelectorAll('#status-filter button').forEach(b => b.classList.toggle('active', b === btn));
+  renderTable();
+});
+
+document.getElementById('tech-month-select').addEventListener('change', (e) => {
+  techMonth = e.target.value;
+  renderTable();
+});
+document.getElementById('tech-year-select').addEventListener('change', (e) => {
+  techYear = e.target.value;
+  renderTable();
+});
+document.getElementById('tech-date-from').addEventListener('change', (e) => {
+  techDateFrom = e.target.value;
+  renderTable();
+});
+document.getElementById('tech-date-to').addEventListener('change', (e) => {
+  techDateTo = e.target.value;
+  renderTable();
+});
+document.getElementById('tech-date-clear').addEventListener('click', () => {
+  techDateFrom = '';
+  techDateTo = '';
+  renderTable();
+});
+document.querySelector('#wf-table thead').addEventListener('click', (e) => {
+  const th = e.target.closest('th[data-sort]');
+  if (!th) return;
+  const key = th.dataset.sort;
+  if (techSortKey === key) {
+    techSortDir *= -1;
+  } else {
+    techSortKey = key;
+    techSortDir = 1;
+  }
   renderTable();
 });
 
@@ -454,7 +679,7 @@ function renderReportKpis(workflows) {
     const v = weightedAvg(workflows, m.key);
     const activeClass = reportDrilldownMetric === m.key ? ' active' : '';
     html += `<div class="report-kpi-card clickable${activeClass}" data-metric="${m.key}">
-      <div class="kpi-value">${pct(v)}</div>
+      <div class="kpi-value">${metricDisplay(v, totalEnrolled)}</div>
       <div class="kpi-label">${m.label}</div>
     </div>`;
   });
@@ -469,19 +694,22 @@ function renderReportKpis(workflows) {
   return metrics.map(m => weightedAvg(workflows, m.key));
 }
 
-function renderReportChart(campaignLabel, values) {
+function renderReportChart(campaignLabel, values, totalEnrolled) {
   document.getElementById('report-chart-campaign-label').textContent = '— ' + campaignLabel;
   const ctx = document.getElementById('report-chart');
-  const labels = ['Delivery', 'Open', 'Click', 'Bounce', 'Reply'];
-  const colors = ['#5b8cff', '#34c98f', '#ffb454', '#ff6b6b', '#c48bff'];
+  const labels = ['Delivery', 'Open', 'Click', 'Bounce', 'Reply', 'Unsubscribe'];
+  const colors = ['#5b8cff', '#34c98f', '#ffb454', '#ff6b6b', '#c48bff', '#8b95ab'];
   const borderWidths = METRIC_KEYS.map(k => (k === reportDrilldownMetric ? 3 : 0));
+  const chartValues = showNumbers
+    ? values.map(v => Math.round(totalEnrolled * v / 100))
+    : values.map(v => Math.round(v * 100) / 100);
   if (reportChart) reportChart.destroy();
   reportChart = new Chart(ctx, {
     type: 'bar',
     data: {
       labels,
       datasets: [{
-        data: values.map(v => Math.round(v * 100) / 100),
+        data: chartValues,
         backgroundColor: colors,
         borderRadius: 8,
         borderColor: '#ffffff',
@@ -501,10 +729,43 @@ function renderReportChart(campaignLabel, values) {
       plugins: { legend: { display: false } },
       scales: {
         x: { ticks: { color: '#8b95ab' }, grid: { display: false } },
-        y: { ticks: { color: '#8b95ab', callback: v => v + '%' }, grid: { color: '#262f42' }, beginAtZero: true }
+        y: {
+          ticks: { color: '#8b95ab', callback: v => showNumbers ? v : v + '%' },
+          grid: { color: '#262f42' }, beginAtZero: true
+        }
       }
     }
   });
+}
+
+const EMAIL_SORT_ACCESSORS = {
+  delivered: e => e.stats.delivered || 0,
+  opened: e => e.stats.opened || 0,
+  clicked: e => e.stats.clicked || 0,
+  bounced: e => e.stats.bounced || 0,
+  unsubscribed: e => e.stats.unsubscribed || 0
+};
+
+function sortEmailCampaigns(campaigns) {
+  const list = [...campaigns];
+  if (emailSort === 'sentDate-desc' || emailSort === 'sentDate-asc') {
+    const dir = emailSort === 'sentDate-desc' ? -1 : 1;
+    list.sort((a, b) => {
+      const av = a.sentDate ? new Date(a.sentDate).getTime() : 0;
+      const bv = b.sentDate ? new Date(b.sentDate).getTime() : 0;
+      return (av - bv) * dir;
+    });
+    return list;
+  }
+  if (emailSort === 'status') {
+    list.sort((a, b) => (a.status || '').localeCompare(b.status || ''));
+    return list;
+  }
+  const accessor = EMAIL_SORT_ACCESSORS[emailSort];
+  if (accessor) {
+    list.sort((a, b) => accessor(b) - accessor(a)); // highest first
+  }
+  return list;
 }
 
 function renderEmailList() {
@@ -513,7 +774,7 @@ function renderEmailList() {
     box.innerHTML = '<div class="empty-state">No sent email campaigns yet — once the team sends one-off campaigns via GoHighLevel\'s Email Marketing tool, they\'ll show up here.</div>';
     return;
   }
-  box.innerHTML = EMAIL_DATA.campaigns.map(e => {
+  box.innerHTML = sortEmailCampaigns(EMAIL_DATA.campaigns).map(e => {
     const stats = [
       { label: 'Delivered', v: e.stats.delivered },
       { label: 'Opened', v: e.stats.opened },
@@ -530,7 +791,7 @@ function renderEmailList() {
         </div>
         <div class="email-campaign-meta">${e.sentDate ? fmtDate(e.sentDate) : 'No sent date on file'} &middot; ${e.recipients} recipient${e.recipients === 1 ? '' : 's'}</div>
         <div class="email-stat-grid">
-          ${stats.map(s => `<div class="email-stat"><div class="v">${pct(s.v)}</div><div class="l">${s.label}</div></div>`).join('')}
+          ${stats.map(s => `<div class="email-stat"><div class="v">${metricDisplay(s.v, e.recipients)}</div><div class="l">${s.label}</div></div>`).join('')}
         </div>
       </div>`;
   }).join('');
@@ -552,7 +813,7 @@ function renderDrilldownPanel(workflows, campaign) {
     return `<tr>
       <td>${w.name}</td>
       <td>${w.enrolled}</td>
-      <td>${pct(v)}</td>
+      <td>${metricDisplay(v, w.enrolled)}</td>
       <td>${linkHtml}</td>
     </tr>`;
   }).join('');
@@ -602,7 +863,8 @@ function renderReport() {
     if (reportChart) { reportChart.destroy(); reportChart = null; }
   } else {
     const values = renderReportKpis(workflows);
-    renderReportChart(campaign.label, values);
+    const totalEnrolled = workflows.reduce((s, w) => s + w.enrolled, 0);
+    renderReportChart(campaign.label, values, totalEnrolled);
   }
   renderDrilldownPanel(workflows, campaign);
   renderEmailList();
@@ -632,6 +894,14 @@ document.getElementById('report-date-clear').addEventListener('click', () => {
   reportDateFrom = '';
   reportDateTo = '';
   renderReport();
+});
+document.getElementById('stats-toggle-input').addEventListener('change', (e) => {
+  showNumbers = e.target.checked;
+  renderReport();
+});
+document.getElementById('email-sort-select').addEventListener('change', (e) => {
+  emailSort = e.target.value;
+  renderEmailList();
 });
 
 Promise.all([loadData(), loadEmailData()]).then(([data, emailData]) => {
