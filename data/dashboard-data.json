@@ -1,311 +1,38 @@
 {
-  "generatedAt": "2026-07-28T21:43:55.660860+00:00",
+  "generatedAt": "2026-07-29T16:52:52.958148+00:00",
   "campaigns": [
     {
       "key": "onboarding",
       "label": "Onboarding / Operations",
-      "enrolled": 104,
-      "opened": 38,
-      "clicked": 12,
+      "enrolled": 0,
+      "opened": 0,
+      "clicked": 0,
       "replied": null,
-      "openRate": 36.5,
-      "clickRate": 11.5,
-      "contacts": [
-        {
-          "id": "mock-0",
-          "name": "Mock Contact 0",
-          "email": "contact0@example.com",
-          "dateAdded": "2026-07-20T00:00:00Z"
-        },
-        {
-          "id": "mock-1",
-          "name": "Mock Contact 1",
-          "email": "contact1@example.com",
-          "dateAdded": "2026-07-21T00:00:00Z"
-        },
-        {
-          "id": "mock-2",
-          "name": "Mock Contact 2",
-          "email": "contact2@example.com",
-          "dateAdded": "2026-07-22T00:00:00Z"
-        },
-        {
-          "id": "mock-3",
-          "name": "Mock Contact 3",
-          "email": "contact3@example.com",
-          "dateAdded": "2026-07-23T00:00:00Z"
-        },
-        {
-          "id": "mock-4",
-          "name": "Mock Contact 4",
-          "email": "contact4@example.com",
-          "dateAdded": "2026-07-24T00:00:00Z"
-        },
-        {
-          "id": "mock-5",
-          "name": "Mock Contact 5",
-          "email": "contact5@example.com",
-          "dateAdded": "2026-07-25T00:00:00Z"
-        },
-        {
-          "id": "mock-6",
-          "name": "Mock Contact 6",
-          "email": "contact6@example.com",
-          "dateAdded": "2026-07-26T00:00:00Z"
-        },
-        {
-          "id": "mock-7",
-          "name": "Mock Contact 7",
-          "email": "contact7@example.com",
-          "dateAdded": "2026-07-27T00:00:00Z"
-        },
-        {
-          "id": "mock-8",
-          "name": "Mock Contact 8",
-          "email": "contact8@example.com",
-          "dateAdded": "2026-07-28T00:00:00Z"
-        },
-        {
-          "id": "mock-9",
-          "name": "Mock Contact 9",
-          "email": "contact9@example.com",
-          "dateAdded": "2026-07-20T00:00:00Z"
-        },
-        {
-          "id": "mock-10",
-          "name": "Mock Contact 10",
-          "email": "contact10@example.com",
-          "dateAdded": "2026-07-21T00:00:00Z"
-        },
-        {
-          "id": "mock-11",
-          "name": "Mock Contact 11",
-          "email": "contact11@example.com",
-          "dateAdded": "2026-07-22T00:00:00Z"
-        },
-        {
-          "id": "mock-12",
-          "name": "Mock Contact 12",
-          "email": "contact12@example.com",
-          "dateAdded": "2026-07-23T00:00:00Z"
-        },
-        {
-          "id": "mock-13",
-          "name": "Mock Contact 13",
-          "email": "contact13@example.com",
-          "dateAdded": "2026-07-24T00:00:00Z"
-        },
-        {
-          "id": "mock-14",
-          "name": "Mock Contact 14",
-          "email": "contact14@example.com",
-          "dateAdded": "2026-07-25T00:00:00Z"
-        }
-      ]
+      "openRate": 0,
+      "clickRate": 0,
+      "contacts": []
     },
     {
       "key": "marketing",
       "label": "Marketing",
-      "enrolled": 347,
-      "opened": 164,
-      "clicked": 63,
+      "enrolled": 0,
+      "opened": 0,
+      "clicked": 0,
       "replied": null,
-      "openRate": 47.3,
-      "clickRate": 18.2,
-      "contacts": [
-        {
-          "id": "mock-0",
-          "name": "Mock Contact 0",
-          "email": "contact0@example.com",
-          "dateAdded": "2026-07-20T00:00:00Z"
-        },
-        {
-          "id": "mock-1",
-          "name": "Mock Contact 1",
-          "email": "contact1@example.com",
-          "dateAdded": "2026-07-21T00:00:00Z"
-        },
-        {
-          "id": "mock-2",
-          "name": "Mock Contact 2",
-          "email": "contact2@example.com",
-          "dateAdded": "2026-07-22T00:00:00Z"
-        },
-        {
-          "id": "mock-3",
-          "name": "Mock Contact 3",
-          "email": "contact3@example.com",
-          "dateAdded": "2026-07-23T00:00:00Z"
-        },
-        {
-          "id": "mock-4",
-          "name": "Mock Contact 4",
-          "email": "contact4@example.com",
-          "dateAdded": "2026-07-24T00:00:00Z"
-        },
-        {
-          "id": "mock-5",
-          "name": "Mock Contact 5",
-          "email": "contact5@example.com",
-          "dateAdded": "2026-07-25T00:00:00Z"
-        },
-        {
-          "id": "mock-6",
-          "name": "Mock Contact 6",
-          "email": "contact6@example.com",
-          "dateAdded": "2026-07-26T00:00:00Z"
-        },
-        {
-          "id": "mock-7",
-          "name": "Mock Contact 7",
-          "email": "contact7@example.com",
-          "dateAdded": "2026-07-27T00:00:00Z"
-        },
-        {
-          "id": "mock-8",
-          "name": "Mock Contact 8",
-          "email": "contact8@example.com",
-          "dateAdded": "2026-07-28T00:00:00Z"
-        },
-        {
-          "id": "mock-9",
-          "name": "Mock Contact 9",
-          "email": "contact9@example.com",
-          "dateAdded": "2026-07-20T00:00:00Z"
-        },
-        {
-          "id": "mock-10",
-          "name": "Mock Contact 10",
-          "email": "contact10@example.com",
-          "dateAdded": "2026-07-21T00:00:00Z"
-        },
-        {
-          "id": "mock-11",
-          "name": "Mock Contact 11",
-          "email": "contact11@example.com",
-          "dateAdded": "2026-07-22T00:00:00Z"
-        },
-        {
-          "id": "mock-12",
-          "name": "Mock Contact 12",
-          "email": "contact12@example.com",
-          "dateAdded": "2026-07-23T00:00:00Z"
-        },
-        {
-          "id": "mock-13",
-          "name": "Mock Contact 13",
-          "email": "contact13@example.com",
-          "dateAdded": "2026-07-24T00:00:00Z"
-        },
-        {
-          "id": "mock-14",
-          "name": "Mock Contact 14",
-          "email": "contact14@example.com",
-          "dateAdded": "2026-07-25T00:00:00Z"
-        }
-      ]
+      "openRate": 0,
+      "clickRate": 0,
+      "contacts": []
     },
     {
       "key": "dlf",
       "label": "DLF",
-      "enrolled": 311,
-      "opened": 139,
-      "clicked": 38,
+      "enrolled": 0,
+      "opened": 0,
+      "clicked": 0,
       "replied": null,
-      "openRate": 44.7,
-      "clickRate": 12.2,
-      "contacts": [
-        {
-          "id": "mock-0",
-          "name": "Mock Contact 0",
-          "email": "contact0@example.com",
-          "dateAdded": "2026-07-20T00:00:00Z"
-        },
-        {
-          "id": "mock-1",
-          "name": "Mock Contact 1",
-          "email": "contact1@example.com",
-          "dateAdded": "2026-07-21T00:00:00Z"
-        },
-        {
-          "id": "mock-2",
-          "name": "Mock Contact 2",
-          "email": "contact2@example.com",
-          "dateAdded": "2026-07-22T00:00:00Z"
-        },
-        {
-          "id": "mock-3",
-          "name": "Mock Contact 3",
-          "email": "contact3@example.com",
-          "dateAdded": "2026-07-23T00:00:00Z"
-        },
-        {
-          "id": "mock-4",
-          "name": "Mock Contact 4",
-          "email": "contact4@example.com",
-          "dateAdded": "2026-07-24T00:00:00Z"
-        },
-        {
-          "id": "mock-5",
-          "name": "Mock Contact 5",
-          "email": "contact5@example.com",
-          "dateAdded": "2026-07-25T00:00:00Z"
-        },
-        {
-          "id": "mock-6",
-          "name": "Mock Contact 6",
-          "email": "contact6@example.com",
-          "dateAdded": "2026-07-26T00:00:00Z"
-        },
-        {
-          "id": "mock-7",
-          "name": "Mock Contact 7",
-          "email": "contact7@example.com",
-          "dateAdded": "2026-07-27T00:00:00Z"
-        },
-        {
-          "id": "mock-8",
-          "name": "Mock Contact 8",
-          "email": "contact8@example.com",
-          "dateAdded": "2026-07-28T00:00:00Z"
-        },
-        {
-          "id": "mock-9",
-          "name": "Mock Contact 9",
-          "email": "contact9@example.com",
-          "dateAdded": "2026-07-20T00:00:00Z"
-        },
-        {
-          "id": "mock-10",
-          "name": "Mock Contact 10",
-          "email": "contact10@example.com",
-          "dateAdded": "2026-07-21T00:00:00Z"
-        },
-        {
-          "id": "mock-11",
-          "name": "Mock Contact 11",
-          "email": "contact11@example.com",
-          "dateAdded": "2026-07-22T00:00:00Z"
-        },
-        {
-          "id": "mock-12",
-          "name": "Mock Contact 12",
-          "email": "contact12@example.com",
-          "dateAdded": "2026-07-23T00:00:00Z"
-        },
-        {
-          "id": "mock-13",
-          "name": "Mock Contact 13",
-          "email": "contact13@example.com",
-          "dateAdded": "2026-07-24T00:00:00Z"
-        },
-        {
-          "id": "mock-14",
-          "name": "Mock Contact 14",
-          "email": "contact14@example.com",
-          "dateAdded": "2026-07-25T00:00:00Z"
-        }
-      ]
+      "openRate": 0,
+      "clickRate": 0,
+      "contacts": []
     }
   ]
 }
