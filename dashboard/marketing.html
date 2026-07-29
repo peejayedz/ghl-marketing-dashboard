@@ -175,14 +175,20 @@
       <h1>Marketing Campaigns Dashboard</h1>
       <div class="sync-label" id="last-updated"><span class="dot"></span>Loading...</div>
     </div>
-    <div class="select-group" id="nav-select-group">
-      <label>View</label>
-      <select class="select-input" id="view-select" style="min-width:260px;">
-        <option value="technical">Marketing Automation List</option>
-        <option value="report">Marketing Report</option>
-        <option value="email">Email Campaigns Performance</option>
-        <option value="dlf">DLF Automations &amp; Report</option>
-      </select>
+    <div style="display:flex; align-items:flex-end; gap:20px;">
+      <div class="select-group" id="nav-select-group">
+        <label>View</label>
+        <select class="select-input" id="view-select" style="min-width:260px;">
+          <option value="technical">Marketing Automation List</option>
+          <option value="report">Marketing Report</option>
+          <option value="email">Email Campaigns Performance</option>
+          <option value="dlf">DLF Automations &amp; Report</option>
+        </select>
+      </div>
+      <label class="stats-toggle" style="margin-bottom:9px;">
+        <span class="switch"><input type="checkbox" id="stats-toggle-input"><span class="slider"></span></span>
+        <span>Show Stats in Numbers</span>
+      </label>
     </div>
   </div>
 
@@ -243,12 +249,8 @@
         <button type="button" class="view-toggle-btn" id="report-date-clear" style="background:var(--card); border:1px solid var(--border); color:var(--muted); padding:9px 14px; font-weight:500;">Clear dates</button>
       </div>
     </div>
-    <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:16px; margin: -12px 0 20px;">
+    <div style="margin: -12px 0 20px;">
       <div class="section-sub" id="report-filter-caption" style="margin:0; color: var(--muted); font-size: 12.5px;"></div>
-      <label class="stats-toggle">
-        <span class="switch"><input type="checkbox" id="stats-toggle-input"><span class="slider"></span></span>
-        <span>Show Stats in Numbers</span>
-      </label>
     </div>
 
     <div class="report-kpi-grid" id="report-kpis"></div>
@@ -312,6 +314,11 @@
           <th data-sort="executionDate">Date sent / Execution Date<span class="sort-arrow"></span></th>
           <th data-sort="status">Status<span class="sort-arrow"></span></th>
           <th data-sort="recipients">Number of contacts sent<span class="sort-arrow"></span></th>
+          <th data-sort="opened">Opened<span class="sort-arrow"></span></th>
+          <th data-sort="clicked">Clicked<span class="sort-arrow"></span></th>
+          <th data-sort="replied">Replied<span class="sort-arrow"></span></th>
+          <th data-sort="bounced">Bounced<span class="sort-arrow"></span></th>
+          <th data-sort="unsubscribed">Unsubscribed<span class="sort-arrow"></span></th>
         </tr></thead>
         <tbody></tbody>
       </table>
@@ -857,7 +864,9 @@ document.getElementById('report-date-clear').addEventListener('click', () => {
 });
 document.getElementById('stats-toggle-input').addEventListener('change', (e) => {
   showNumbers = e.target.checked;
-  renderReport();
+  if (currentView === 'report') renderReport();
+  else if (currentView === 'email') renderEmailView();
+  else if (currentView === 'dlf') renderDlfView();
 });
 
 // ---------- Email Campaigns Performance view ----------
@@ -926,7 +935,7 @@ function renderEmailKpis(campaigns) {
   EMAIL_METRIC_KEYS.forEach(key => {
     const v = weightedAvgEmail(campaigns, key);
     html += `<div class="report-kpi-card">
-      <div class="kpi-value">${pct(v)}</div>
+      <div class="kpi-value">${metricDisplay(v, totalRecipients)}</div>
       <div class="kpi-label">${EMAIL_METRIC_LABELS[key]}</div>
     </div>`;
   });
@@ -934,7 +943,7 @@ function renderEmailKpis(campaigns) {
   return EMAIL_METRIC_KEYS.map(key => weightedAvgEmail(campaigns, key));
 }
 
-function renderEmailChart(values) {
+function renderEmailChart(values, totalRecipients) {
   const ctx = document.getElementById('email-chart');
   const labels = ['Delivery', 'Open', 'Click', 'Bounce', 'Unsubscribe'];
   const colors = ['#5b8cff', '#34c98f', '#ffb454', '#ff6b6b', '#8b95ab'];
@@ -944,7 +953,9 @@ function renderEmailChart(values) {
     data: {
       labels,
       datasets: [{
-        data: values.map(v => Math.round(v * 100) / 100),
+        data: showNumbers
+          ? values.map(v => Math.round(totalRecipients * (v || 0) / 100))
+          : values.map(v => Math.round(v * 100) / 100),
         backgroundColor: colors,
         borderRadius: 8,
         borderColor: '#ffffff',
@@ -957,7 +968,7 @@ function renderEmailChart(values) {
       scales: {
         x: { ticks: { color: '#8b95ab' }, grid: { display: false } },
         y: {
-          ticks: { color: '#8b95ab', callback: v => v + '%' },
+          ticks: { color: '#8b95ab', callback: v => showNumbers ? v : v + '%' },
           grid: { color: '#262f42' }, beginAtZero: true
         }
       }
@@ -971,7 +982,12 @@ const EMAIL_TABLE_SORT_ACCESSORS = {
   lastUpdated: c => c.lastUpdated ? new Date(c.lastUpdated).getTime() : 0,
   executionDate: c => c.executionDate ? new Date(c.executionDate).getTime() : 0,
   status: c => c.status || '',
-  recipients: c => c.recipients || 0
+  recipients: c => c.recipients || 0,
+  opened: c => (c.stats && c.stats.opened) || 0,
+  clicked: c => (c.stats && c.stats.clicked) || 0,
+  replied: c => (c.stats && c.stats.replied) || 0,
+  bounced: c => (c.stats && c.stats.bounced) || 0,
+  unsubscribed: c => (c.stats && c.stats.unsubscribed) || 0
 };
 
 function sortEmailTable(campaigns) {
@@ -998,12 +1014,14 @@ function renderEmailTable(campaigns) {
   const tbody = document.querySelector('#email-table tbody');
   const sorted = sortEmailTable(campaigns);
   if (sorted.length === 0) {
-    tbody.innerHTML = `<tr><td colspan="6" style="color:var(--muted); font-style:italic;">No email campaigns match the current filters.</td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="11" style="color:var(--muted); font-style:italic;">No email campaigns match the current filters.</td></tr>`;
     updateEmailSortIndicators();
     return;
   }
+  const cell = (v) => v === 0 ? '<span class="zero">0%</span>' : pct(v);
   tbody.innerHTML = sorted.map(c => {
     const statusClass = c.status === 'Sent' ? 'status-published' : 'status-draft';
+    const stats = c.stats || {};
     return `<tr>
       <td>${c.title}</td>
       <td>${c.createdOn ? fmtDate(c.createdOn) : '<span class="zero">Unknown</span>'}</td>
@@ -1011,6 +1029,11 @@ function renderEmailTable(campaigns) {
       <td>${c.executionDate ? fmtDate(c.executionDate) : '<span class="zero">Not sent yet</span>'}</td>
       <td><span class="status-pill ${statusClass}">${c.status}</span></td>
       <td>${c.recipients}</td>
+      <td>${cell(stats.opened || 0)}</td>
+      <td>${cell(stats.clicked || 0)}</td>
+      <td>${cell(stats.replied || 0)}</td>
+      <td>${cell(stats.bounced || 0)}</td>
+      <td>${cell(stats.unsubscribed || 0)}</td>
     </tr>`;
   }).join('');
   updateEmailSortIndicators();
@@ -1041,7 +1064,8 @@ function renderEmailView() {
     if (emailChart) { emailChart.destroy(); emailChart = null; }
   } else {
     const values = renderEmailKpis(campaigns);
-    renderEmailChart(values);
+    const totalRecipients = campaigns.reduce((s, c) => s + (c.recipients || 0), 0);
+    renderEmailChart(values, totalRecipients);
   }
   renderEmailTable(campaigns);
 }
@@ -1123,28 +1147,37 @@ function renderDlfReportKpis() {
   const grid = document.getElementById('dlf-report-kpis');
   let html = `<div class="report-kpi-card"><div class="kpi-value">${totalActive}</div><div class="kpi-label">Active Contacts</div></div>`;
   html += `<div class="report-kpi-card"><div class="kpi-value">${totalNew}</div><div class="kpi-label">New Contacts <span style="font-size:11px; opacity:0.75;">(since last sync)</span></div></div>`;
+  const totalEnrolled = workflows.reduce((s, w) => s + (w.enrolled || 0), 0);
   rateKeys.forEach(key => {
     const v = weightedAvg(workflows, key);
-    html += `<div class="report-kpi-card"><div class="kpi-value">${pct(v)}</div><div class="kpi-label">${rateLabels[key]}</div></div>`;
+    html += `<div class="report-kpi-card"><div class="kpi-value">${metricDisplay(v, totalEnrolled)}</div><div class="kpi-label">${rateLabels[key]}</div></div>`;
   });
   grid.innerHTML = html;
   return rateKeys.map(key => weightedAvg(workflows, key));
 }
 
-function renderDlfReportChart(values) {
+function renderDlfReportChart(values, totalEnrolled) {
   const ctx = document.getElementById('dlf-report-chart');
   const labels = ['Open', 'Click', 'Reply', 'Unsubscribe', 'Bounce'];
   const colors = ['#34c98f', '#ffb454', '#c48bff', '#8b95ab', '#ff6b6b'];
   if (dlfChart) dlfChart.destroy();
   dlfChart = new Chart(ctx, {
     type: 'bar',
-    data: { labels, datasets: [{ data: values.map(v => Math.round(v * 100) / 100), backgroundColor: colors, borderRadius: 8, borderColor: '#ffffff', borderWidth: 0 }] },
+    data: {
+      labels,
+      datasets: [{
+        data: showNumbers
+          ? values.map(v => Math.round(totalEnrolled * (v || 0) / 100))
+          : values.map(v => Math.round(v * 100) / 100),
+        backgroundColor: colors, borderRadius: 8, borderColor: '#ffffff', borderWidth: 0
+      }]
+    },
     options: {
       maintainAspectRatio: false,
       plugins: { legend: { display: false } },
       scales: {
         x: { ticks: { color: '#8b95ab' }, grid: { display: false } },
-        y: { ticks: { color: '#8b95ab', callback: v => v + '%' }, grid: { color: '#262f42' }, beginAtZero: true }
+        y: { ticks: { color: '#8b95ab', callback: v => showNumbers ? v : v + '%' }, grid: { color: '#262f42' }, beginAtZero: true }
       }
     }
   });
@@ -1232,7 +1265,7 @@ function renderDlfEmailKpis(emails) {
   html += `<div class="report-kpi-card"><div class="kpi-value">${totalRecipients}</div><div class="kpi-label">Total Recipients</div></div>`;
   DLF_EMAIL_METRIC_KEYS.forEach(key => {
     const v = weightedAvgEmail(emails, key);
-    html += `<div class="report-kpi-card"><div class="kpi-value">${pct(v)}</div><div class="kpi-label">${DLF_EMAIL_METRIC_LABELS[key]}</div></div>`;
+    html += `<div class="report-kpi-card"><div class="kpi-value">${metricDisplay(v, totalRecipients)}</div><div class="kpi-label">${DLF_EMAIL_METRIC_LABELS[key]}</div></div>`;
   });
   grid.innerHTML = html;
   return DLF_EMAIL_METRIC_KEYS.map(key => weightedAvgEmail(emails, key));
@@ -1289,7 +1322,8 @@ function renderDlfView() {
     if (dlfChart) { dlfChart.destroy(); dlfChart = null; }
   } else {
     const values = renderDlfReportKpis();
-    renderDlfReportChart(values);
+    const totalEnrolled = workflows.reduce((s, w) => s + (w.enrolled || 0), 0);
+    renderDlfReportChart(values, totalEnrolled);
   }
   renderDlfTable();
   renderDlfEmailSection();
