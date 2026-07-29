@@ -1,0 +1,232 @@
+{
+  "generatedAt": "2026-07-29T12:15:00-04:00",
+  "source": "Scraped from GoHighLevel Automation > Workflows builder canvas for the DM Position Report & Gap Analysis, PI Summit, and AGM Podcast [Confirmed Guests] campaigns (real per-email subject lines, read directly from each Email action step). Internal-notification-only workflows (DM 6.0, PI 3.0, AGM 3.1, AGM 4.1) and workflows with zero delivered emails (AGM 3.2) are excluded — only genuine outbound marketing emails to prospects/clients are included. Nodes labeled 'Email' in name but whose actual action type is something else (e.g. 'Add task') are excluded. GHL does not expose per-email-step engagement stats or a distinct recipient count per step, so each email below reuses its parent workflow's aggregate stats and enrolled count as the closest available proxy. Where a workflow has two structurally separate Email action nodes with an identical subject (a genuine duplicate in the source data, not a scraping error), both are listed.",
+  "campaigns": [
+    {
+      "key": "dm-position-report",
+      "label": "DM Position Report & Gap Analysis",
+      "emails": [
+        {
+          "subject": "Your Digital Marketing Position Report Is Being Prepared",
+          "workflowName": "1.0 - When Gap Analysis Form Submitted",
+          "workflowId": "57a12edb-d983-4435-a9e2-4cae1b73cc2e",
+          "createdOn": "2026-06-02T16:11:00",
+          "recipients": 12,
+          "stats": { "opened": 15.71, "clicked": 0, "replied": 0, "bounced": 0, "unsubscribed": 0 }
+        },
+        {
+          "subject": "Your Digital Marketing Position Report Is Being Prepared",
+          "workflowName": "1.0 - When Gap Analysis Form Submitted",
+          "workflowId": "57a12edb-d983-4435-a9e2-4cae1b73cc2e",
+          "createdOn": "2026-06-02T16:11:00",
+          "recipients": 12,
+          "stats": { "opened": 15.71, "clicked": 0, "replied": 0, "bounced": 0, "unsubscribed": 0 }
+        },
+        {
+          "subject": "Your custom Digital Marketing Position Report & Gap Analysis is ready!",
+          "workflowName": "2.0 - When Report is Generated and Submitted, then send to client",
+          "workflowId": "fdadba92-6845-44a9-a3d7-027aa56640a5",
+          "createdOn": "2026-06-02T18:29:00",
+          "recipients": 6,
+          "stats": { "opened": 38.89, "clicked": 11.11, "replied": 0, "bounced": 0, "unsubscribed": 0 }
+        },
+        {
+          "subject": "Your Competitors Already Know Where They Stand",
+          "workflowName": "3.0 - Gap Analysis Email Sequence",
+          "workflowId": "e27fff7c-58fd-4db7-be0d-36d12d69346f",
+          "createdOn": "2026-06-02T18:44:00",
+          "recipients": 6,
+          "stats": { "opened": 36.67, "clicked": 0, "replied": 6.67, "bounced": 0, "unsubscribed": 0 }
+        },
+        {
+          "subject": "Small Visibility Gaps Can Cost Law Firms Big Opportunities",
+          "workflowName": "3.0 - Gap Analysis Email Sequence",
+          "workflowId": "e27fff7c-58fd-4db7-be0d-36d12d69346f",
+          "createdOn": "2026-06-02T18:44:00",
+          "recipients": 6,
+          "stats": { "opened": 36.67, "clicked": 0, "replied": 6.67, "bounced": 0, "unsubscribed": 0 }
+        },
+        {
+          "subject": "Small Visibility Gaps Can Cost Law Firms Big Opportunities",
+          "workflowName": "3.0 - Gap Analysis Email Sequence",
+          "workflowId": "e27fff7c-58fd-4db7-be0d-36d12d69346f",
+          "createdOn": "2026-06-02T18:44:00",
+          "recipients": 6,
+          "stats": { "opened": 36.67, "clicked": 0, "replied": 6.67, "bounced": 0, "unsubscribed": 0 }
+        },
+        {
+          "subject": "How Much Business Is Going to Competing Firms?",
+          "workflowName": "3.0 - Gap Analysis Email Sequence",
+          "workflowId": "e27fff7c-58fd-4db7-be0d-36d12d69346f",
+          "createdOn": "2026-06-02T18:44:00",
+          "recipients": 6,
+          "stats": { "opened": 36.67, "clicked": 0, "replied": 6.67, "bounced": 0, "unsubscribed": 0 }
+        },
+        {
+          "subject": "Most Law Firms Think Their Marketing Is Fine",
+          "workflowName": "3.0 - Gap Analysis Email Sequence",
+          "workflowId": "e27fff7c-58fd-4db7-be0d-36d12d69346f",
+          "createdOn": "2026-06-02T18:44:00",
+          "recipients": 6,
+          "stats": { "opened": 36.67, "clicked": 0, "replied": 6.67, "bounced": 0, "unsubscribed": 0 }
+        },
+        {
+          "subject": "We Only Prepare a Limited Number of Reports Each Month",
+          "workflowName": "3.0 - Gap Analysis Email Sequence",
+          "workflowId": "e27fff7c-58fd-4db7-be0d-36d12d69346f",
+          "createdOn": "2026-06-02T18:44:00",
+          "recipients": 6,
+          "stats": { "opened": 36.67, "clicked": 0, "replied": 6.67, "bounced": 0, "unsubscribed": 0 }
+        },
+        {
+          "subject": "Your Competitors Are Investing in Visibility",
+          "workflowName": "3.0 - Gap Analysis Email Sequence",
+          "workflowId": "e27fff7c-58fd-4db7-be0d-36d12d69346f",
+          "createdOn": "2026-06-02T18:44:00",
+          "recipients": 6,
+          "stats": { "opened": 36.67, "clicked": 0, "replied": 6.67, "bounced": 0, "unsubscribed": 0 }
+        }
+      ]
+    },
+    {
+      "key": "pi-summit",
+      "label": "PI Summit",
+      "emails": [
+        {
+          "subject": "Your Free Digital Marketing Position Report",
+          "workflowName": "1.0 - PI SUMMIT attendees",
+          "workflowId": "005fd196-113b-4c83-8220-48292c4a43ff",
+          "createdOn": "2026-06-11T14:54:00",
+          "recipients": 19,
+          "stats": { "opened": 60, "clicked": 1.21, "replied": 0, "bounced": 0, "unsubscribed": 0 }
+        },
+        {
+          "subject": "The Hidden Gaps Costing Law Firms Cases",
+          "workflowName": "1.0 - PI SUMMIT attendees",
+          "workflowId": "005fd196-113b-4c83-8220-48292c4a43ff",
+          "createdOn": "2026-06-11T14:54:00",
+          "recipients": 19,
+          "stats": { "opened": 60, "clicked": 1.21, "replied": 0, "bounced": 0, "unsubscribed": 0 }
+        },
+        {
+          "subject": "191 More Cases. Half the Marketing Spend.",
+          "workflowName": "1.0 - PI SUMMIT attendees",
+          "workflowId": "005fd196-113b-4c83-8220-48292c4a43ff",
+          "createdOn": "2026-06-11T14:54:00",
+          "recipients": 19,
+          "stats": { "opened": 60, "clicked": 1.21, "replied": 0, "bounced": 0, "unsubscribed": 0 }
+        },
+        {
+          "subject": "Want to Build More Authority in Your Market?",
+          "workflowName": "1.0 - PI SUMMIT attendees",
+          "workflowId": "005fd196-113b-4c83-8220-48292c4a43ff",
+          "createdOn": "2026-06-11T14:54:00",
+          "recipients": 19,
+          "stats": { "opened": 60, "clicked": 1.21, "replied": 0, "bounced": 0, "unsubscribed": 0 }
+        },
+        {
+          "subject": "For Aggressive Growth-Minded Attorneys Only",
+          "workflowName": "1.0 - PI SUMMIT attendees",
+          "workflowId": "005fd196-113b-4c83-8220-48292c4a43ff",
+          "createdOn": "2026-06-11T14:54:00",
+          "recipients": 19,
+          "stats": { "opened": 60, "clicked": 1.21, "replied": 0, "bounced": 0, "unsubscribed": 0 }
+        },
+        {
+          "subject": "Are You Losing Cases to Outdated Marketing?",
+          "workflowName": "1.0 - PI SUMMIT attendees",
+          "workflowId": "005fd196-113b-4c83-8220-48292c4a43ff",
+          "createdOn": "2026-06-11T14:54:00",
+          "recipients": 19,
+          "stats": { "opened": 60, "clicked": 1.21, "replied": 0, "bounced": 0, "unsubscribed": 0 }
+        },
+        {
+          "subject": "Is AI Recommending Your Law Firm?",
+          "workflowName": "1.0 - PI SUMMIT attendees",
+          "workflowId": "005fd196-113b-4c83-8220-48292c4a43ff",
+          "createdOn": "2026-06-11T14:54:00",
+          "recipients": 19,
+          "stats": { "opened": 60, "clicked": 1.21, "replied": 0, "bounced": 0, "unsubscribed": 0 }
+        },
+        {
+          "subject": "Most law firms are overcomplicating AI",
+          "workflowName": "1.0 - PI SUMMIT attendees",
+          "workflowId": "005fd196-113b-4c83-8220-48292c4a43ff",
+          "createdOn": "2026-06-11T14:54:00",
+          "recipients": 19,
+          "stats": { "opened": 60, "clicked": 1.21, "replied": 0, "bounced": 0, "unsubscribed": 0 }
+        },
+        {
+          "subject": "Why some law firms grow faster than others",
+          "workflowName": "1.0 - PI SUMMIT attendees",
+          "workflowId": "005fd196-113b-4c83-8220-48292c4a43ff",
+          "createdOn": "2026-06-11T14:54:00",
+          "recipients": 19,
+          "stats": { "opened": 60, "clicked": 1.21, "replied": 0, "bounced": 0, "unsubscribed": 0 }
+        }
+      ]
+    },
+    {
+      "key": "agm-podcast-confirmed-guests",
+      "label": "AGM Podcast [Confirmed Guests]",
+      "emails": [
+        {
+          "subject": "{{contact.first_name}}, We'd Love to Feature You on Our Podcast",
+          "workflowName": "1.0 - Podcast Event",
+          "workflowId": "43fbc10a-4fb5-41dc-b28e-ae2179831800",
+          "createdOn": "2026-06-15T15:17:00",
+          "recipients": 4,
+          "stats": { "opened": 88.89, "clicked": 11.11, "replied": 22.22, "bounced": 0, "unsubscribed": 0 }
+        },
+        {
+          "subject": "You're Booked! AGM Attorney Podcast Recording Details",
+          "workflowName": "2.0 When Booked a Call For Podcast, Then Move To Stage 2",
+          "workflowId": "b6b90a0b-e7b8-4cf5-9ef1-835e0f441998",
+          "createdOn": "2026-06-16T02:09:00",
+          "recipients": 15,
+          "stats": { "opened": 35.71, "clicked": 4.76, "replied": 0, "bounced": 0, "unsubscribed": 0 }
+        },
+        {
+          "subject": "We've Received Your Responses – AGM Attorney Podcast.",
+          "workflowName": "2.1 When Podcast Guest Form Has Been Submitted, Then Send Confirmation Email #2",
+          "workflowId": "fbf94092-7db4-4b6b-9679-7d9242ee4c91",
+          "createdOn": "2026-06-29T06:56:00",
+          "recipients": 2,
+          "stats": { "opened": 20, "clicked": 10, "replied": 0, "bounced": 0, "unsubscribed": 0 }
+        },
+        {
+          "subject": "Your AGM Attorney Podcast Interview Questions Are Ready",
+          "workflowName": "2.2 When 5 Days Before The Event, Then Send Questionnaire",
+          "workflowId": "c72d4f21-666f-4a8d-9375-bb7b9348017c",
+          "createdOn": "2026-06-29T14:28:00",
+          "recipients": 4,
+          "stats": { "opened": 66.67, "clicked": 0, "replied": 0, "bounced": 0, "unsubscribed": 0 }
+        },
+        {
+          "subject": "What Happens Next: Your AGM Attorney Podcast Episode Release & Promotion",
+          "workflowName": "3.0 When Moved To Stage 3: Post Recording",
+          "workflowId": "350887e8-8e66-41c6-98c1-174f5365732f",
+          "createdOn": "2026-06-30T12:18:00",
+          "recipients": 4,
+          "stats": { "opened": 40, "clicked": 0, "replied": 20, "bounced": 0, "unsubscribed": 0 }
+        },
+        {
+          "subject": "What Happens Next: Your AGM Attorney Podcast Episode Release & Promotion",
+          "workflowName": "3.0 When Moved To Stage 3: Post Recording",
+          "workflowId": "350887e8-8e66-41c6-98c1-174f5365732f",
+          "createdOn": "2026-06-30T12:18:00",
+          "recipients": 4,
+          "stats": { "opened": 40, "clicked": 0, "replied": 20, "bounced": 0, "unsubscribed": 0 }
+        },
+        {
+          "subject": "Your AGM Attorney Podcast Episode is LIVE!",
+          "workflowName": "4.0 When Moved To Stage 4 – Episode Live",
+          "workflowId": "81a36016-69b8-44cd-baa1-49b9971ff783",
+          "createdOn": "2026-06-30T18:32:00",
+          "recipients": 2,
+          "stats": { "opened": 100, "clicked": 0, "replied": 0, "bounced": 0, "unsubscribed": 0 }
+        }
+      ]
+    }
+  ]
+}
