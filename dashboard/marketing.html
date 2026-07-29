@@ -312,6 +312,22 @@
   <div id="dlf-view">
     <div class="note">Automations in GoHighLevel's "03_DLF" automation folder. Reports below are enrollment/recipient-weighted across DLF's workflows and email sends.</div>
 
+    <div class="report-toolbar">
+      <div class="select-group">
+        <label>From date</label>
+        <input type="date" class="select-input" id="dlf-date-from" style="min-width:160px;">
+      </div>
+      <div class="select-group">
+        <label>To date</label>
+        <input type="date" class="select-input" id="dlf-date-to" style="min-width:160px;">
+      </div>
+      <div class="select-group">
+        <label>&nbsp;</label>
+        <button type="button" class="view-toggle-btn" id="dlf-date-clear" style="background:var(--card); border:1px solid var(--border); color:var(--muted); padding:9px 14px; font-weight:500;">Clear dates</button>
+      </div>
+    </div>
+    <div class="section-sub" id="dlf-filter-caption" style="margin: -12px 0 20px; color: var(--muted); font-size: 12.5px;"></div>
+
     <div class="report-section">
       <h3>Reports</h3>
       <div class="section-sub">Current active contacts, new contacts since last sync, and engagement rates across DLF's automation workflows.</div>
@@ -391,6 +407,8 @@ let dlfSortKey = null;
 let dlfSortDir = 1;
 let dlfEmailSortKey = null;
 let dlfEmailSortDir = 1;
+let dlfDateFrom = '';
+let dlfDateTo = '';
 let dlfChart = null;
 const LOCATION_ID = 'sQ2VSMkR7cLHb46Wdemi';
 const MONTH_NAMES = ['January','February','March','April','May','June','July','August','September','October','November','December'];
@@ -1027,6 +1045,39 @@ document.querySelector('#email-table thead').addEventListener('click', (e) => {
 });
 
 // ---------- DLF Automations & Report view ----------
+function dlfDateRangeActive() {
+  return dlfDateFrom !== '' || dlfDateTo !== '';
+}
+
+function workflowsInDlfFilter() {
+  const workflows = (DLF_DATA && DLF_DATA.workflows) || [];
+  if (!dlfDateRangeActive()) return workflows;
+  return workflows.filter(w => {
+    if (!w.lastUpdated) return false;
+    const d = new Date(w.lastUpdated);
+    if (dlfDateFrom && d < new Date(dlfDateFrom + 'T00:00:00')) return false;
+    if (dlfDateTo && d > new Date(dlfDateTo + 'T23:59:59')) return false;
+    return true;
+  });
+}
+
+function emailsInDlfFilter() {
+  const emails = (DLF_DATA && DLF_DATA.emails) || [];
+  if (!dlfDateRangeActive()) return emails;
+  return emails.filter(c => {
+    if (!c.createdOn) return false;
+    const d = new Date(c.createdOn);
+    if (dlfDateFrom && d < new Date(dlfDateFrom + 'T00:00:00')) return false;
+    if (dlfDateTo && d > new Date(dlfDateTo + 'T23:59:59')) return false;
+    return true;
+  });
+}
+
+function populateDlfFilters() {
+  document.getElementById('dlf-date-from').value = dlfDateFrom;
+  document.getElementById('dlf-date-to').value = dlfDateTo;
+}
+
 const DLF_SORT_ACCESSORS = {
   name: w => (w.name || '').toLowerCase(),
   status: w => w.status || '',
@@ -1061,7 +1112,7 @@ function updateDlfSortIndicators() {
 }
 
 function renderDlfReportKpis() {
-  const workflows = (DLF_DATA && DLF_DATA.workflows) || [];
+  const workflows = workflowsInDlfFilter();
   const totalActive = workflows.reduce((s, w) => s + (w.active || 0), 0);
   const totalNew = workflows.reduce((s, w) => s + (w.newSinceLastSync || 0), 0);
   const rateKeys = ['opened', 'clicked', 'replied', 'unsubscribed', 'bounced'];
@@ -1106,10 +1157,10 @@ function renderDlfReportChart(values, totalEnrolled) {
 }
 
 function renderDlfTable() {
-  const workflows = sortDlfWorkflows((DLF_DATA && DLF_DATA.workflows) || []);
+  const workflows = sortDlfWorkflows(workflowsInDlfFilter());
   const tbody = document.querySelector('#dlf-table tbody');
   if (workflows.length === 0) {
-    tbody.innerHTML = `<tr><td colspan="10" style="color:var(--muted); font-style:italic;">No DLF workflows found.</td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="10" style="color:var(--muted); font-style:italic;">No DLF workflows match this date filter.</td></tr>`;
     updateDlfSortIndicators();
     return;
   }
@@ -1223,13 +1274,13 @@ document.querySelector('#dlf-email-table thead').addEventListener('click', (e) =
   if (!th) return;
   const key = th.dataset.sort;
   if (dlfEmailSortKey === key) { dlfEmailSortDir *= -1; } else { dlfEmailSortKey = key; dlfEmailSortDir = 1; }
-  renderDlfEmailTable((DLF_DATA && DLF_DATA.emails) || []);
+  renderDlfEmailTable(emailsInDlfFilter());
 });
 
 function renderDlfEmailSection() {
-  const emails = (DLF_DATA && DLF_DATA.emails) || [];
+  const emails = emailsInDlfFilter();
   if (emails.length === 0) {
-    document.getElementById('dlf-email-kpis').innerHTML = '<div class="empty-state">No DLF emails found.</div>';
+    document.getElementById('dlf-email-kpis').innerHTML = '<div class="empty-state">No DLF emails match this date filter.</div>';
   } else {
     renderDlfEmailKpis(emails);
   }
@@ -1237,10 +1288,23 @@ function renderDlfEmailSection() {
 }
 
 function renderDlfView() {
+  populateDlfFilters();
   document.getElementById('dlf-folder-link').href = (DLF_DATA && DLF_DATA.folderUrl) || '#';
-  const workflows = (DLF_DATA && DLF_DATA.workflows) || [];
+  const allWorkflows = (DLF_DATA && DLF_DATA.workflows) || [];
+  const workflows = workflowsInDlfFilter();
+
+  let captionText;
+  if (dlfDateRangeActive()) {
+    const fromLabel = dlfDateFrom ? fmtShortDate(dlfDateFrom) : 'the beginning';
+    const toLabel = dlfDateTo ? fmtShortDate(dlfDateTo) : 'today';
+    captionText = `Showing workflows last updated from ${fromLabel} to ${toLabel} (${workflows.length} of ${allWorkflows.length} workflows match).`;
+  } else {
+    captionText = `Showing all ${allWorkflows.length} workflows, regardless of date.`;
+  }
+  document.getElementById('dlf-filter-caption').textContent = captionText;
+
   if (workflows.length === 0) {
-    document.getElementById('dlf-report-kpis').innerHTML = '<div class="empty-state">No DLF workflows found.</div>';
+    document.getElementById('dlf-report-kpis').innerHTML = '<div class="empty-state">No DLF workflows match this date filter.</div>';
     if (dlfChart) { dlfChart.destroy(); dlfChart = null; }
   } else {
     const values = renderDlfReportKpis();
@@ -1250,6 +1314,20 @@ function renderDlfView() {
   renderDlfTable();
   renderDlfEmailSection();
 }
+
+document.getElementById('dlf-date-from').addEventListener('change', (e) => {
+  dlfDateFrom = e.target.value;
+  renderDlfView();
+});
+document.getElementById('dlf-date-to').addEventListener('change', (e) => {
+  dlfDateTo = e.target.value;
+  renderDlfView();
+});
+document.getElementById('dlf-date-clear').addEventListener('click', () => {
+  dlfDateFrom = '';
+  dlfDateTo = '';
+  renderDlfView();
+});
 
 Promise.all([loadData(), loadEmailData(), loadDlfData()]).then(([data, emailData, dlfData]) => {
   DATA = data;
