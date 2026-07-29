@@ -87,6 +87,9 @@
   table { width: 100%; border-collapse: collapse; font-size: 13px; }
   th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--border); white-space: nowrap; }
   th { color: var(--muted); font-weight: 500; }
+  th[data-sort] { cursor: pointer; user-select: none; }
+  th[data-sort]:hover { color: var(--text); }
+  .sort-arrow { display: inline-block; width: 10px; margin-left: 4px; font-size: 10px; opacity: 0.8; }
   td.wrap, th.wrap { white-space: normal; }
   .company-link { color: var(--text); cursor: pointer; font-weight: 600; }
   .company-link:hover { color: var(--accent); }
@@ -177,6 +180,26 @@ let DATA = null;
 let currentView = "active";
 let expandedCompanies = new Set();
 let visibleColumns = new Set(COLUMN_DEFS.filter(c => c.default).map(c => c.key));
+let sortKey = "company";
+let sortDir = "asc"; // "asc" | "desc"
+
+const SORTABLE = new Set(["company", "contactCount", "dateClosed", "onboardingDate", "terminationNotice", "lastDayOfService"]);
+
+function compareCompanies(a, b, key, dir) {
+  const mult = dir === "asc" ? 1 : -1;
+  if (key === "company") {
+    return a.company.toLowerCase().localeCompare(b.company.toLowerCase()) * mult;
+  }
+  if (key === "contactCount") {
+    return (a.contactCount - b.contactCount) * mult;
+  }
+  // date fields: nulls always sort to the bottom, regardless of direction
+  const av = a[key], bv = b[key];
+  if (!av && !bv) return 0;
+  if (!av) return 1;
+  if (!bv) return -1;
+  return (av < bv ? -1 : av > bv ? 1 : 0) * mult;
+}
 
 function fmtDate(iso) {
   if (!iso) return "";
@@ -287,6 +310,8 @@ function getFilteredCompanies() {
     });
   }
 
+  companies.sort((a, b) => compareCompanies(a, b, sortKey, sortDir));
+
   return companies;
 }
 
@@ -301,6 +326,24 @@ function renderTable() {
     if (!visibleColumns.has(col.key)) return;
     const th = document.createElement("th");
     th.textContent = col.label;
+    if (SORTABLE.has(col.key)) {
+      th.setAttribute("data-sort", col.key);
+      if (sortKey === col.key) {
+        const arrow = document.createElement("span");
+        arrow.className = "sort-arrow";
+        arrow.textContent = sortDir === "asc" ? "▲" : "▼";
+        th.appendChild(arrow);
+      }
+      th.addEventListener("click", () => {
+        if (sortKey === col.key) {
+          sortDir = sortDir === "asc" ? "desc" : "asc";
+        } else {
+          sortKey = col.key;
+          sortDir = "asc";
+        }
+        renderTable();
+      });
+    }
     head.appendChild(th);
   });
 
@@ -310,7 +353,7 @@ function renderTable() {
   emptyState.style.display = companies.length ? "none" : "block";
 
   companies.forEach((c, idx) => {
-    const rowKey = currentView + "|" + c.company + "|" + idx;
+    const rowKey = currentView + "|" + c.company;
     const tr = document.createElement("tr");
 
     COLUMN_DEFS.forEach(col => {
