@@ -353,9 +353,6 @@
       <h3>Emails</h3>
       <div class="section-sub">Delivered, opened, clicked, bounced and unsubscribed rate — recipient-weighted across DLF's email sends.</div>
       <div class="report-kpi-grid" id="dlf-email-kpis"></div>
-      <div style="height:160px;">
-        <canvas id="dlf-email-chart"></canvas>
-      </div>
     </div>
 
     <div class="table-card">
@@ -404,7 +401,6 @@ let dlfSortDir = 1;
 let dlfEmailSortKey = null;
 let dlfEmailSortDir = 1;
 let dlfChart = null;
-let dlfEmailChart = null;
 const LOCATION_ID = 'sQ2VSMkR7cLHb46Wdemi';
 const MONTH_NAMES = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 const METRIC_KEYS = ['delivered', 'opened', 'clicked', 'bounced', 'replied', 'unsubscribed'];
@@ -1242,25 +1238,6 @@ function renderDlfEmailKpis(emails) {
   return DLF_EMAIL_METRIC_KEYS.map(key => weightedAvgEmail(emails, key));
 }
 
-function renderDlfEmailChart(values) {
-  const ctx = document.getElementById('dlf-email-chart');
-  const labels = ['Open', 'Click', 'Reply', 'Bounce', 'Unsubscribe'];
-  const colors = ['#34c98f', '#ffb454', '#5b8cff', '#ff6b6b', '#8b95ab'];
-  if (dlfEmailChart) dlfEmailChart.destroy();
-  dlfEmailChart = new Chart(ctx, {
-    type: 'bar',
-    data: { labels, datasets: [{ data: values.map(v => Math.round(v * 100) / 100), backgroundColor: colors, borderRadius: 8, borderColor: '#ffffff', borderWidth: 0 }] },
-    options: {
-      maintainAspectRatio: false,
-      plugins: { legend: { display: false } },
-      scales: {
-        x: { ticks: { color: '#8b95ab' }, grid: { display: false } },
-        y: { ticks: { color: '#8b95ab', callback: v => v + '%' }, grid: { color: '#262f42' }, beginAtZero: true }
-      }
-    }
-  });
-}
-
 function renderDlfEmailTable(emails) {
   const sorted = sortDlfEmails(emails);
   const tbody = document.querySelector('#dlf-email-table tbody');
@@ -1298,10 +1275,8 @@ function renderDlfEmailSection() {
   const emails = (DLF_DATA && DLF_DATA.emails) || [];
   if (emails.length === 0) {
     document.getElementById('dlf-email-kpis').innerHTML = '<div class="empty-state">No DLF emails found.</div>';
-    if (dlfEmailChart) { dlfEmailChart.destroy(); dlfEmailChart = null; }
   } else {
-    const values = renderDlfEmailKpis(emails);
-    renderDlfEmailChart(values);
+    renderDlfEmailKpis(emails);
   }
   renderDlfEmailTable(emails);
 }
