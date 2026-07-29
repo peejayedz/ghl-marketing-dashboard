@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Operations & Onboarding Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  :root {
+    --bg: #0f1420;
+    --card: #171d2b;
+    --border: #262f42;
+    --text: #e8ecf4;
+    --muted: #8b95ab;
+    --accent: #5b8cff;
+    --accent2: #34c98f;
+    --accent3: #ffb454;
+    --accent4: #ff6b6b;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 32px;
+  }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  .subtitle { color: var(--muted); font-size: 13px; margin-bottom: 8px; }
+  .sync-label { display: inline-flex; align-items: center; gap: 6px; background: #1a2233; border: 1px solid var(--border); border-radius: 6px; padding: 4px 10px; font-size: 12px; color: var(--muted); margin-bottom: 20px; }
+  .sync-label .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent2); }
+  .sync-label strong { color: var(--text); font-weight: 600; }
+  .note {
+    background: #1a2233;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 22px;
+  }
+
+  .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; margin-bottom: 24px; }
+  .kpi-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px; text-align: center; }
+  .kpi-card .kpi-value { font-size: 30px; font-weight: 700; line-height: 1.1; margin-bottom: 6px; }
+  .kpi-card .kpi-label { color: var(--muted); font-size: 12.5px; }
+
+  .status-filter { display: flex; gap: 6px; margin-bottom: 18px; }
+  .status-filter button {
+    background: var(--card); color: var(--muted); border: 1px solid var(--border);
+    border-radius: 6px; padding: 7px 16px; font-size: 13px; cursor: pointer; font-family: inherit;
+  }
+  .status-filter button:hover { border-color: var(--accent); color: var(--text); }
+  .status-filter button.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+  .toolbar { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 16px; margin-bottom: 18px; position: relative; }
+  .select-group { display: flex; flex-direction: column; gap: 5px; }
+  .select-group label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+  .select-input, input[type="date"] {
+    background: var(--bg); color: var(--text); border: 1px solid var(--border);
+    border-radius: 8px; padding: 8px 12px; font-size: 13px; font-family: inherit; cursor: pointer;
+  }
+  input[type="date"] { cursor: text; }
+  input[type="search"] {
+    background: var(--bg); color: var(--text); border: 1px solid var(--border);
+    border-radius: 8px; padding: 8px 12px; font-size: 13px; font-family: inherit; min-width: 220px;
+  }
+  .btn {
+    background: var(--card); color: var(--text); border: 1px solid var(--border);
+    border-radius: 8px; padding: 8px 14px; font-size: 13px; cursor: pointer; font-family: inherit;
+  }
+  .btn:hover { border-color: var(--accent); }
+  .btn.clear { color: var(--muted); }
+
+  .columns-popover {
+    position: absolute; top: 100%; right: 0; margin-top: 6px;
+    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+    padding: 14px; min-width: 220px; z-index: 20; display: none;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.4);
+  }
+  .columns-popover.open { display: block; }
+  .columns-popover .col-title { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 10px; }
+  .columns-popover label { display: flex; align-items: center; gap: 8px; font-size: 13px; padding: 5px 0; cursor: pointer; }
+  .columns-popover input[type="checkbox"] { accent-color: var(--accent); width: 14px; height: 14px; }
+
+  .table-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; overflow-x: auto; }
+  .table-card h2 { margin: 0 0 14px; font-size: 15px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+  th { color: var(--muted); font-weight: 500; }
+  td.wrap, th.wrap { white-space: normal; }
+  .company-link { color: var(--text); cursor: pointer; font-weight: 600; }
+  .company-link:hover { color: var(--accent); }
+  .company-link .chevron { display: inline-block; width: 10px; margin-right: 6px; color: var(--muted); transition: transform 0.15s; }
+  .company-link.expanded .chevron { transform: rotate(90deg); }
+  .count-pill { display: inline-block; background: #1a2233; border: 1px solid var(--border); border-radius: 10px; padding: 2px 9px; font-size: 12px; color: var(--text); }
+  .tag-pill { display: inline-block; background: rgba(91,140,255,0.14); color: var(--accent); border-radius: 10px; padding: 2px 9px; font-size: 11.5px; font-weight: 600; }
+  .tag-pill.offboarded { background: rgba(255,107,107,0.14); color: var(--accent4); }
+  .tag-pill.wpp { background: rgba(255,180,84,0.14); color: var(--accent3); }
+  .muted { color: var(--muted); }
+  .contacts-row td { background: #131826; padding: 0; }
+  .contacts-wrap { padding: 10px 10px 14px 34px; }
+  .contact-line { display: flex; gap: 14px; padding: 5px 0; font-size: 12.5px; color: var(--text); border-bottom: 1px dashed var(--border); }
+  .contact-line:last-child { border-bottom: none; }
+  .contact-line .c-name { min-width: 170px; font-weight: 600; }
+  .contact-line .c-email { color: var(--accent); min-width: 220px; }
+  .contact-line .c-phone { color: var(--muted); }
+  .empty-state { text-align: center; padding: 40px; color: var(--muted); }
+  .error { color: var(--accent4); }
+</style>
+</head>
+<body>
+  <h1>Operations &amp; Onboarding Dashboard</h1>
+  <div class="subtitle">Client roster by lifecycle stage, sourced from GoHighLevel contact tags and company records.</div>
+  <div class="sync-label" id="last-updated"><span class="dot"></span>Loading...</div>
+
+  <div class="note">
+    Status is determined by GoHighLevel contact tags (<code>lfmp client</code>, <code>offboarded client</code>, <code>wpp client</code>).
+    Clients = company (business) name; click a company to see its associated contacts. Date fields are sourced from the Company object's custom fields.
+  </div>
+
+  <div class="kpi-grid" id="kpi-grid"></div>
+
+  <div class="status-filter" id="status-filter"></div>
+
+  <div class="toolbar">
+    <div class="select-group">
+      <label>Search company</label>
+      <input type="search" id="search-input" placeholder="Search by company or contact name…">
+    </div>
+    <div class="select-group">
+      <label>Filter by date field</label>
+      <select class="select-input" id="date-field-select">
+        <option value="">None</option>
+        <option value="dateClosed">Date Closed</option>
+        <option value="onboardingDate">Onboarding Date</option>
+        <option value="terminationNotice">Termination Notice</option>
+        <option value="lastDayOfService">Last Day of Service</option>
+      </select>
+    </div>
+    <div class="select-group">
+      <label>From</label>
+      <input type="date" id="date-from">
+    </div>
+    <div class="select-group">
+      <label>To</label>
+      <input type="date" id="date-to">
+    </div>
+    <button class="btn clear" id="clear-filters">Clear filters</button>
+    <div style="flex:1"></div>
+    <div class="select-group" style="position:relative;">
+      <button class="btn" id="columns-btn">Columns ▾</button>
+      <div class="columns-popover" id="columns-popover"></div>
+    </div>
+  </div>
+
+  <div class="table-card">
+    <h2 id="table-title">Active Clients (LFMP)</h2>
+    <table id="main-table">
+      <thead><tr id="table-head"></tr></thead>
+      <tbody id="table-body"></tbody>
+    </table>
+    <div class="empty-state" id="empty-state" style="display:none;">No companies match the current filters.</div>
+  </div>
+
+<script>
+const COLUMN_DEFS = [
+  { key: "company",           label: "Client",                default: true,  alwaysOn: true },
+  { key: "contactCount",      label: "# Contacts",            default: true },
+  { key: "tags",              label: "Tags",                  default: true },
+  { key: "dateClosed",        label: "Date Closed",           default: true },
+  { key: "onboardingDate",    label: "Onboarding Date",        default: true },
+  { key: "terminationNotice", label: "Termination Notice",    default: true },
+  { key: "lastDayOfService",  label: "Last Day of Service",    default: true },
+];
+
+let DATA = null;
+let currentView = "active";
+let expandedCompanies = new Set();
+let visibleColumns = new Set(COLUMN_DEFS.filter(c => c.default).map(c => c.key));
+
+function fmtDate(iso) {
+  if (!iso) return "";
+  const d = new Date(iso + "T00:00:00");
+  return d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+}
+
+async function loadData() {
+  try {
+    const res = await fetch("../data/operations-clients.json", { cache: "no-store" });
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    DATA = await res.json();
+  } catch (e) {
+    document.getElementById("last-updated").innerHTML =
+      '<span class="error">Could not load data/operations-clients.json — ' + e.message + "</span>";
+    throw e;
+  }
+}
+
+function renderSynced() {
+  const synced = new Date(DATA.generatedAt);
+  const label = synced.toLocaleString("en-US", {
+    timeZone: "America/New_York", month: "short", day: "numeric", year: "numeric",
+    hour: "numeric", minute: "2-digit"
+  });
+  document.getElementById("last-updated").innerHTML =
+    '<span class="dot"></span>Last synced: <strong>' + label + " EST</strong>";
+}
+
+function renderStatusFilter() {
+  const bar = document.getElementById("status-filter");
+  const views = [
+    { key: "active", label: "Active Clients (LFMP)" },
+    { key: "offboarded", label: "Offboarded Clients" },
+    { key: "wpp", label: "WPP Clients" },
+  ];
+  bar.innerHTML = "";
+  views.forEach(v => {
+    const btn = document.createElement("button");
+    btn.textContent = v.label + " (" + DATA.views[v.key].companies.length + ")";
+    if (v.key === currentView) btn.classList.add("active");
+    btn.onclick = () => { currentView = v.key; expandedCompanies.clear(); renderAll(); };
+    bar.appendChild(btn);
+  });
+}
+
+function renderKPIs() {
+  const grid = document.getElementById("kpi-grid");
+  const active = DATA.views.active.companies;
+  const off = DATA.views.offboarded.companies;
+  const wpp = DATA.views.wpp.companies;
+  const sum = arr => arr.reduce((a, c) => a + c.contactCount, 0);
+  grid.innerHTML = `
+    <div class="kpi-card"><div class="kpi-value">${active.length}</div><div class="kpi-label">Active Clients (LFMP)</div></div>
+    <div class="kpi-card"><div class="kpi-value">${off.length}</div><div class="kpi-label">Offboarded Clients</div></div>
+    <div class="kpi-card"><div class="kpi-value">${wpp.length}</div><div class="kpi-label">WPP Clients</div></div>
+    <div class="kpi-card"><div class="kpi-value">${sum(active) + sum(off) + sum(wpp)}</div><div class="kpi-label">Total Contacts</div></div>
+  `;
+}
+
+function renderColumnsPopover() {
+  const pop = document.getElementById("columns-popover");
+  pop.innerHTML = '<div class="col-title">Show / hide columns</div>';
+  COLUMN_DEFS.forEach(col => {
+    const id = "col-" + col.key;
+    const label = document.createElement("label");
+    const checked = visibleColumns.has(col.key);
+    label.innerHTML = `<input type="checkbox" id="${id}" ${checked ? "checked" : ""} ${col.alwaysOn ? "disabled" : ""}> ${col.label}`;
+    pop.appendChild(label);
+    label.querySelector("input").addEventListener("change", (e) => {
+      if (e.target.checked) visibleColumns.add(col.key); else visibleColumns.delete(col.key);
+      renderTable();
+    });
+  });
+}
+
+function tagPillsFor(viewKey) {
+  const map = {
+    active: '<span class="tag-pill">lfmp client</span>',
+    offboarded: '<span class="tag-pill offboarded">offboarded client</span>',
+    wpp: '<span class="tag-pill wpp">wpp client</span>',
+  };
+  return map[viewKey] || "";
+}
+
+function getFilteredCompanies() {
+  const view = DATA.views[currentView];
+  let companies = view.companies.slice();
+
+  const q = document.getElementById("search-input").value.trim().toLowerCase();
+  if (q) {
+    companies = companies.filter(c =>
+      c.company.toLowerCase().includes(q) ||
+      c.contacts.some(ct => ct.name.toLowerCase().includes(q))
+    );
+  }
+
+  const field = document.getElementById("date-field-select").value;
+  const from = document.getElementById("date-from").value;
+  const to = document.getElementById("date-to").value;
+  if (field && (from || to)) {
+    companies = companies.filter(c => {
+      const val = c[field];
+      if (!val) return false;
+      if (from && val < from) return false;
+      if (to && val > to) return false;
+      return true;
+    });
+  }
+
+  return companies;
+}
+
+function renderTable() {
+  const companies = getFilteredCompanies();
+  const view = DATA.views[currentView];
+  document.getElementById("table-title").textContent = view.label + " — " + companies.length + " of " + view.companies.length + " companies";
+
+  const head = document.getElementById("table-head");
+  head.innerHTML = "";
+  COLUMN_DEFS.forEach(col => {
+    if (!visibleColumns.has(col.key)) return;
+    const th = document.createElement("th");
+    th.textContent = col.label;
+    head.appendChild(th);
+  });
+
+  const body = document.getElementById("table-body");
+  body.innerHTML = "";
+  const emptyState = document.getElementById("empty-state");
+  emptyState.style.display = companies.length ? "none" : "block";
+
+  companies.forEach((c, idx) => {
+    const rowKey = currentView + "|" + c.company + "|" + idx;
+    const tr = document.createElement("tr");
+
+    COLUMN_DEFS.forEach(col => {
+      if (!visibleColumns.has(col.key)) return;
+      const td = document.createElement("td");
+      if (col.key === "company") {
+        const isOpen = expandedCompanies.has(rowKey);
+        td.className = "wrap";
+        td.innerHTML = `<span class="company-link ${isOpen ? "expanded" : ""}" data-row="${rowKey}"><span class="chevron">▸</span>${c.company}</span>`;
+      } else if (col.key === "contactCount") {
+        td.innerHTML = `<span class="count-pill">${c.contactCount}</span>`;
+      } else if (col.key === "tags") {
+        td.innerHTML = tagPillsFor(currentView);
+      } else if (["dateClosed", "onboardingDate", "terminationNotice", "lastDayOfService"].includes(col.key)) {
+        const v = c[col.key];
+        td.innerHTML = v ? fmtDate(v) : '<span class="muted">—</span>';
+      }
+      tr.appendChild(td);
+    });
+    body.appendChild(tr);
+
+    if (expandedCompanies.has(rowKey)) {
+      const trExp = document.createElement("tr");
+      trExp.className = "contacts-row";
+      const td = document.createElement("td");
+      td.colSpan = visibleColumns.size;
+      const lines = c.contacts.map(ct => `
+        <div class="contact-line">
+          <span class="c-name">${ct.name}</span>
+          <span class="c-email">${ct.email || ""}</span>
+          <span class="c-phone">${ct.phone || ""}</span>
+        </div>
+      `).join("");
+      td.innerHTML = `<div class="contacts-wrap">${lines || '<span class="muted">No contact details on file</span>'}</div>`;
+      trExp.appendChild(td);
+      body.appendChild(trExp);
+    }
+  });
+
+  body.querySelectorAll(".company-link").forEach(el => {
+    el.addEventListener("click", () => {
+      const key = el.getAttribute("data-row");
+      if (expandedCompanies.has(key)) expandedCompanies.delete(key);
+      else expandedCompanies.add(key);
+      renderTable();
+    });
+  });
+}
+
+function renderAll() {
+  renderStatusFilter();
+  renderKPIs();
+  renderTable();
+}
+
+function wireToolbar() {
+  document.getElementById("search-input").addEventListener("input", renderTable);
+  document.getElementById("date-field-select").addEventListener("change", renderTable);
+  document.getElementById("date-from").addEventListener("change", renderTable);
+  document.getElementById("date-to").addEventListener("change", renderTable);
+  document.getElementById("clear-filters").addEventListener("click", () => {
+    document.getElementById("search-input").value = "";
+    document.getElementById("date-field-select").value = "";
+    document.getElementById("date-from").value = "";
+    document.getElementById("date-to").value = "";
+    renderTable();
+  });
+  const colsBtn = document.getElementById("columns-btn");
+  const colsPop = document.getElementById("columns-popover");
+  colsBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    colsPop.classList.toggle("open");
+  });
+  document.addEventListener("click", (e) => {
+    if (!colsPop.contains(e.target) && e.target !== colsBtn) colsPop.classList.remove("open");
+  });
+}
+
+(async function init() {
+  await loadData();
+  renderSynced();
+  renderColumnsPopover();
+  wireToolbar();
+  renderAll();
+})();
+</script>
+</body>
+</html>
