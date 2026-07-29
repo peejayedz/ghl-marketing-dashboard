@@ -316,6 +316,25 @@ function workflowLink(w, campaign) {
   return campaign.folderUrl;
 }
 
+// Builds a direct link to this workflow's own email Statistics page under
+// Marketing > Emails > Workflow Campaigns, which is where GoHighLevel exposes the actual
+// contact-level Delivered/Opened/Clicked/Replied/Bounced lists (Automation's Enrollment
+// History page does not have this — it only shows enrollment status, not engagement).
+// Uses the same workflowId as the Automation section, so no separate ID is needed.
+// Returns null if we don't have a workflowId on file yet for this workflow.
+function emailStatsLink(w) {
+  if (!w.workflowId) return null;
+  return `https://app.lawfirmmarketingpros.com/v2/location/${LOCATION_ID}/marketing/emails/workflow/${w.workflowId}/statistics`;
+}
+
+const METRIC_TAB_LABELS = {
+  delivered: 'Delivered',
+  opened: 'Opened',
+  clicked: 'Clicked',
+  bounced: 'Hard Bounced or Soft Bounced',
+  replied: 'Replied'
+};
+
 function renderTable() {
   const c = DATA.campaigns.find(x => x.key === selectedKey) || DATA.campaigns[0];
   document.getElementById('table-title').textContent = c.label + ' — workflows (click Enrolled/Active to open in GoHighLevel)';
@@ -522,15 +541,19 @@ function renderDrilldownPanel(workflows, campaign) {
   if (!reportDrilldownMetric) { box.innerHTML = ''; return; }
   const metric = reportDrilldownMetric;
   const label = METRIC_LABELS[metric];
+  const tabLabel = METRIC_TAB_LABELS[metric];
   const withEnrollment = workflows.filter(w => w.enrolled > 0);
   const rows = withEnrollment.map(w => {
     const v = w.email[metric] || 0;
-    const link = workflowLink(w, campaign);
+    const link = emailStatsLink(w);
+    const linkHtml = link
+      ? `<a class="count-link" href="${link}" target="_blank" rel="noopener">View contacts &#8594;</a>`
+      : `<span class="zero">Not available yet</span>`;
     return `<tr>
       <td>${w.name}</td>
       <td>${w.enrolled}</td>
       <td>${pct(v)}</td>
-      <td><a class="count-link" href="${link}" target="_blank" rel="noopener">View in GoHighLevel &#8594;</a></td>
+      <td>${linkHtml}</td>
     </tr>`;
   }).join('');
   box.innerHTML = `
@@ -538,7 +561,7 @@ function renderDrilldownPanel(workflows, campaign) {
       <span>${label} by workflow</span>
       <button type="button" id="report-drilldown-close" class="drilldown-close-btn">Close &times;</button>
     </div>
-    <div class="drilldown-note">GoHighLevel doesn't expose a filtered "who opened/clicked" contact list anywhere in its UI, so each link below opens that workflow's full Enrollment History in GoHighLevel instead — the closest contact-level view it provides.</div>
+    <div class="drilldown-note">Each link opens that workflow's own Email Statistics page in GoHighLevel (Marketing &gt; Emails &gt; Workflow Campaigns) — once there, click the "${tabLabel}" tab under Details to see the exact contacts and their emails. Workflows marked "Not available yet" haven't had their GoHighLevel workflow ID captured by the daily sync yet — that fills in automatically over the next few runs.</div>
     <table class="drilldown-table">
       <thead><tr><th>Workflow</th><th>Enrolled</th><th>${label}</th><th></th></tr></thead>
       <tbody>${rows || '<tr><td colspan="4" style="color:var(--muted); font-style:italic;">No workflows with enrollment in this filter.</td></tr>'}</tbody>
