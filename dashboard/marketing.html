@@ -188,29 +188,6 @@
         <button data-status="Published">Published</button>
         <button data-status="Draft">Draft</button>
       </div>
-      <div class="report-toolbar" style="margin-bottom:10px;">
-        <div class="select-group">
-          <label>Month</label>
-          <select class="select-input" id="tech-month-select" style="min-width:140px;"></select>
-        </div>
-        <div class="select-group">
-          <label>Year</label>
-          <select class="select-input" id="tech-year-select" style="min-width:110px;"></select>
-        </div>
-        <div class="select-group">
-          <label>From date</label>
-          <input type="date" class="select-input" id="tech-date-from" style="min-width:150px;">
-        </div>
-        <div class="select-group">
-          <label>To date</label>
-          <input type="date" class="select-input" id="tech-date-to" style="min-width:150px;">
-        </div>
-        <div class="select-group">
-          <label>&nbsp;</label>
-          <button type="button" class="view-toggle-btn" id="tech-date-clear" style="background:var(--card); border:1px solid var(--border); color:var(--muted); padding:9px 14px; font-weight:500;">Clear dates</button>
-        </div>
-      </div>
-      <div id="tech-filter-caption" style="margin: -4px 0 14px; color: var(--muted); font-size: 12px;"></div>
       <table id="wf-table">
         <thead><tr>
           <th data-sort="name">Workflow<span class="sort-arrow"></span></th>
@@ -277,26 +254,6 @@
       Note: GoHighLevel's workflow and email statistics don't expose hour-of-day open/click timing (only day-level trend lines and totals), so a "best time to send" breakdown isn't available here — the metrics above are the most granular engagement data GHL's reporting provides for these campaigns.
     </div>
 
-    <div class="report-section">
-      <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
-        <h3 style="margin:0;">Email Campaign performance</h3>
-        <div class="select-group" style="min-width:190px;">
-          <label>Sort by</label>
-          <select class="select-input" id="email-sort-select" style="min-width:190px;">
-            <option value="sentDate-desc">Sent date (newest first)</option>
-            <option value="sentDate-asc">Sent date (oldest first)</option>
-            <option value="status">Status</option>
-            <option value="delivered">Delivered rate</option>
-            <option value="opened">Open rate</option>
-            <option value="clicked">Click rate</option>
-            <option value="bounced">Bounce rate</option>
-            <option value="unsubscribed">Unsubscribe rate</option>
-          </select>
-        </div>
-      </div>
-      <div class="section-sub">Standalone one-off email campaigns sent via GoHighLevel's Email Marketing tool (separate from the automation workflows above).</div>
-      <div id="report-email-list"></div>
-    </div>
   </div>
 
 <script>
@@ -312,10 +269,6 @@ let reportDateTo = '';
 let reportChart = null;
 let reportDrilldownMetric = null;
 let showNumbers = false;
-let techMonth = 'all';
-let techYear = 'all';
-let techDateFrom = '';
-let techDateTo = '';
 let techSortKey = null;
 let techSortDir = 1;
 let emailSort = 'sentDate-desc';
@@ -428,48 +381,6 @@ const METRIC_TAB_LABELS = {
   unsubscribed: 'Unsubscribed'
 };
 
-// ---------- Technical View date filter ----------
-function techDateRangeActive() {
-  return techDateFrom !== '' || techDateTo !== '';
-}
-
-function workflowsInTechFilter(workflows) {
-  return workflows.filter(w => {
-    if (!w.lastUpdated) return !techDateRangeActive() && techMonth === 'all' && techYear === 'all';
-    const d = new Date(w.lastUpdated);
-    if (techDateRangeActive()) {
-      if (techDateFrom && d < new Date(techDateFrom + 'T00:00:00')) return false;
-      if (techDateTo && d > new Date(techDateTo + 'T23:59:59')) return false;
-      return true;
-    }
-    if (techYear !== 'all' && d.getFullYear() !== Number(techYear)) return false;
-    if (techMonth !== 'all' && d.getMonth() !== Number(techMonth)) return false;
-    return true;
-  });
-}
-
-function populateTechFilters() {
-  const monthSel = document.getElementById('tech-month-select');
-  monthSel.innerHTML = '<option value="all">All months</option>' +
-    MONTH_NAMES.map((m, i) => `<option value="${i}">${m}</option>`).join('');
-  monthSel.value = techMonth;
-
-  const years = new Set();
-  DATA.campaigns.forEach(c => c.workflows.forEach(w => {
-    if (w.lastUpdated) years.add(new Date(w.lastUpdated).getFullYear());
-  }));
-  const yearSel = document.getElementById('tech-year-select');
-  yearSel.innerHTML = '<option value="all">All years</option>' +
-    Array.from(years).sort((a, b) => b - a).map(y => `<option value="${y}">${y}</option>`).join('');
-  yearSel.value = techYear;
-
-  document.getElementById('tech-date-from').value = techDateFrom;
-  document.getElementById('tech-date-to').value = techDateTo;
-  const rangeActive = techDateRangeActive();
-  monthSel.disabled = rangeActive;
-  yearSel.disabled = rangeActive;
-}
-
 // ---------- Technical View sort ----------
 const TECH_SORT_ACCESSORS = {
   name: w => (w.name || '').toLowerCase(),
@@ -508,28 +419,11 @@ function renderTable() {
   const c = DATA.campaigns.find(x => x.key === selectedKey) || DATA.campaigns[0];
   document.getElementById('table-title').textContent = c.label + ' — workflows (click Enrolled/Active to open in GoHighLevel)';
   document.getElementById('folder-link').href = c.folderUrl;
-  populateTechFilters();
 
   const tbody = document.querySelector('#wf-table tbody');
   let html = '';
   let workflows = statusFilter === 'all' ? c.workflows : c.workflows.filter(w => w.status === statusFilter);
-  workflows = workflowsInTechFilter(workflows);
   workflows = sortWorkflows(workflows);
-
-  let captionText;
-  if (techDateRangeActive()) {
-    const fromLabel = techDateFrom ? fmtShortDate(techDateFrom) : 'the beginning';
-    const toLabel = techDateTo ? fmtShortDate(techDateTo) : 'today';
-    captionText = `Showing workflows last updated from ${fromLabel} to ${toLabel} (${workflows.length} of ${c.workflows.length} workflows match).`;
-  } else {
-    const captionParts = [];
-    if (techMonth !== 'all') captionParts.push(MONTH_NAMES[Number(techMonth)]);
-    if (techYear !== 'all') captionParts.push(techYear);
-    captionText = captionParts.length
-      ? `Showing workflows last updated in ${captionParts.join(' ')} (${workflows.length} of ${c.workflows.length} workflows match).`
-      : '';
-  }
-  document.getElementById('tech-filter-caption').textContent = captionText;
 
   if (workflows.length === 0) {
     tbody.innerHTML = `<tr><td colspan="10" style="color:var(--muted); font-style:italic;">No workflows match the current filters.</td></tr>`;
@@ -569,27 +463,6 @@ document.getElementById('status-filter').addEventListener('click', (e) => {
   renderTable();
 });
 
-document.getElementById('tech-month-select').addEventListener('change', (e) => {
-  techMonth = e.target.value;
-  renderTable();
-});
-document.getElementById('tech-year-select').addEventListener('change', (e) => {
-  techYear = e.target.value;
-  renderTable();
-});
-document.getElementById('tech-date-from').addEventListener('change', (e) => {
-  techDateFrom = e.target.value;
-  renderTable();
-});
-document.getElementById('tech-date-to').addEventListener('change', (e) => {
-  techDateTo = e.target.value;
-  renderTable();
-});
-document.getElementById('tech-date-clear').addEventListener('click', () => {
-  techDateFrom = '';
-  techDateTo = '';
-  renderTable();
-});
 document.querySelector('#wf-table thead').addEventListener('click', (e) => {
   const th = e.target.closest('th[data-sort]');
   if (!th) return;
@@ -613,7 +486,7 @@ document.getElementById('view-toggle-btn').addEventListener('click', () => {
   if (reportViewActive) {
     techView.style.display = 'none';
     reportView.style.display = 'block';
-    btn.textContent = 'Switch to Technical View';
+    btn.textContent = 'View Automation List';
     renderReport();
   } else {
     reportView.style.display = 'none';
@@ -672,9 +545,13 @@ function populateReportFilters() {
 
 function renderReportKpis(workflows) {
   const totalEnrolled = workflows.reduce((s, w) => s + w.enrolled, 0);
+  const totalActive = workflows.reduce((s, w) => s + (w.active || 0), 0);
+  const totalNew = workflows.reduce((s, w) => s + (w.newSinceLastSync || 0), 0);
   const metrics = METRIC_KEYS.map(key => ({ key, label: METRIC_LABELS[key] }));
   const grid = document.getElementById('report-kpis');
   let html = `<div class="report-kpi-card"><div class="kpi-value">${totalEnrolled}</div><div class="kpi-label">Total Enrolled</div></div>`;
+  html += `<div class="report-kpi-card"><div class="kpi-value">${totalActive}</div><div class="kpi-label">Active in Workflow</div></div>`;
+  html += `<div class="report-kpi-card"><div class="kpi-value">${totalNew}</div><div class="kpi-label">New Contacts <span style="font-size:11px; opacity:0.75;">(since last sync)</span></div></div>`;
   metrics.forEach(m => {
     const v = weightedAvg(workflows, m.key);
     const activeClass = reportDrilldownMetric === m.key ? ' active' : '';
@@ -736,65 +613,6 @@ function renderReportChart(campaignLabel, values, totalEnrolled) {
       }
     }
   });
-}
-
-const EMAIL_SORT_ACCESSORS = {
-  delivered: e => e.stats.delivered || 0,
-  opened: e => e.stats.opened || 0,
-  clicked: e => e.stats.clicked || 0,
-  bounced: e => e.stats.bounced || 0,
-  unsubscribed: e => e.stats.unsubscribed || 0
-};
-
-function sortEmailCampaigns(campaigns) {
-  const list = [...campaigns];
-  if (emailSort === 'sentDate-desc' || emailSort === 'sentDate-asc') {
-    const dir = emailSort === 'sentDate-desc' ? -1 : 1;
-    list.sort((a, b) => {
-      const av = a.sentDate ? new Date(a.sentDate).getTime() : 0;
-      const bv = b.sentDate ? new Date(b.sentDate).getTime() : 0;
-      return (av - bv) * dir;
-    });
-    return list;
-  }
-  if (emailSort === 'status') {
-    list.sort((a, b) => (a.status || '').localeCompare(b.status || ''));
-    return list;
-  }
-  const accessor = EMAIL_SORT_ACCESSORS[emailSort];
-  if (accessor) {
-    list.sort((a, b) => accessor(b) - accessor(a)); // highest first
-  }
-  return list;
-}
-
-function renderEmailList() {
-  const box = document.getElementById('report-email-list');
-  if (!EMAIL_DATA || !EMAIL_DATA.campaigns || EMAIL_DATA.campaigns.length === 0) {
-    box.innerHTML = '<div class="empty-state">No sent email campaigns yet — once the team sends one-off campaigns via GoHighLevel\'s Email Marketing tool, they\'ll show up here.</div>';
-    return;
-  }
-  box.innerHTML = sortEmailCampaigns(EMAIL_DATA.campaigns).map(e => {
-    const stats = [
-      { label: 'Delivered', v: e.stats.delivered },
-      { label: 'Opened', v: e.stats.opened },
-      { label: 'Clicked', v: e.stats.clicked },
-      { label: 'Bounced', v: e.stats.bounced },
-      { label: 'Unsubscribed', v: e.stats.unsubscribed },
-    ];
-    const statusClass = e.status === 'Sent' ? 'status-published' : 'status-draft';
-    return `
-      <div class="email-campaign-card">
-        <div class="email-campaign-header">
-          <div class="email-campaign-title">${e.title}</div>
-          <span class="status-pill ${statusClass}">${e.status}</span>
-        </div>
-        <div class="email-campaign-meta">${e.sentDate ? fmtDate(e.sentDate) : 'No sent date on file'} &middot; ${e.recipients} recipient${e.recipients === 1 ? '' : 's'}</div>
-        <div class="email-stat-grid">
-          ${stats.map(s => `<div class="email-stat"><div class="v">${metricDisplay(s.v, e.recipients)}</div><div class="l">${s.label}</div></div>`).join('')}
-        </div>
-      </div>`;
-  }).join('');
 }
 
 function renderDrilldownPanel(workflows, campaign) {
@@ -867,7 +685,6 @@ function renderReport() {
     renderReportChart(campaign.label, values, totalEnrolled);
   }
   renderDrilldownPanel(workflows, campaign);
-  renderEmailList();
 }
 
 document.getElementById('report-campaign-select').addEventListener('change', (e) => {
@@ -899,11 +716,6 @@ document.getElementById('stats-toggle-input').addEventListener('change', (e) => 
   showNumbers = e.target.checked;
   renderReport();
 });
-document.getElementById('email-sort-select').addEventListener('change', (e) => {
-  emailSort = e.target.value;
-  renderEmailList();
-});
-
 Promise.all([loadData(), loadEmailData()]).then(([data, emailData]) => {
   DATA = data;
   EMAIL_DATA = emailData;
