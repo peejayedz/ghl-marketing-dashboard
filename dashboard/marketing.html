@@ -229,14 +229,6 @@
         <select class="select-input" id="report-campaign-select"></select>
       </div>
       <div class="select-group">
-        <label>Month</label>
-        <select class="select-input" id="report-month-select"></select>
-      </div>
-      <div class="select-group">
-        <label>Year</label>
-        <select class="select-input" id="report-year-select"></select>
-      </div>
-      <div class="select-group">
         <label>From date</label>
         <input type="date" class="select-input" id="report-date-from" style="min-width:160px;">
       </div>
@@ -271,14 +263,6 @@
   <div id="email-view">
     <div class="note">Standalone one-off Email Campaigns sent via GoHighLevel's Marketing &gt; Emails &gt; Campaigns tool (separate from the automation workflows). Includes campaigns still sitting as unsent Drafts.</div>
     <div class="report-toolbar">
-      <div class="select-group">
-        <label>Month</label>
-        <select class="select-input" id="email-month-select" style="min-width:140px;"></select>
-      </div>
-      <div class="select-group">
-        <label>Year</label>
-        <select class="select-input" id="email-year-select" style="min-width:110px;"></select>
-      </div>
       <div class="select-group">
         <label>From date</label>
         <input type="date" class="select-input" id="email-date-from" style="min-width:160px;">
@@ -671,26 +655,8 @@ function populateReportFilters() {
   campaignSel.innerHTML = DATA.campaigns.map(c => `<option value="${c.key}">${c.label}</option>`).join('');
   campaignSel.value = reportKey;
 
-  const monthSel = document.getElementById('report-month-select');
-  monthSel.innerHTML = '<option value="all">All months</option>' +
-    MONTH_NAMES.map((m, i) => `<option value="${i}">${m}</option>`).join('');
-  monthSel.value = reportMonth;
-
-  const years = new Set();
-  DATA.campaigns.forEach(c => c.workflows.forEach(w => {
-    if (w.lastUpdated) years.add(new Date(w.lastUpdated).getFullYear());
-  }));
-  const yearSel = document.getElementById('report-year-select');
-  yearSel.innerHTML = '<option value="all">All years</option>' +
-    Array.from(years).sort((a, b) => b - a).map(y => `<option value="${y}">${y}</option>`).join('');
-  yearSel.value = reportYear;
-
   document.getElementById('report-date-from').value = reportDateFrom;
   document.getElementById('report-date-to').value = reportDateTo;
-  // A custom date range takes precedence, so grey out Month/Year while one is set.
-  const rangeActive = dateRangeActive();
-  monthSel.disabled = rangeActive;
-  yearSel.disabled = rangeActive;
 }
 
 function renderReportKpis(workflows) {
@@ -816,12 +782,7 @@ function renderReport() {
     const toLabel = reportDateTo ? fmtShortDate(reportDateTo) : 'today';
     captionText = `Showing workflows last updated from ${fromLabel} to ${toLabel} (${workflows.length} of ${campaign.workflows.length} workflows match).`;
   } else {
-    const captionParts = [];
-    if (reportMonth !== 'all') captionParts.push(MONTH_NAMES[Number(reportMonth)]);
-    if (reportYear !== 'all') captionParts.push(reportYear);
-    captionText = captionParts.length
-      ? `Showing workflows last updated in ${captionParts.join(' ')} (${workflows.length} of ${campaign.workflows.length} workflows match).`
-      : `Showing all ${campaign.workflows.length} workflows in this campaign, regardless of date.`;
+    captionText = `Showing all ${campaign.workflows.length} workflows in this campaign, regardless of date.`;
   }
   document.getElementById('report-filter-caption').textContent = captionText;
 
@@ -839,14 +800,6 @@ function renderReport() {
 
 document.getElementById('report-campaign-select').addEventListener('change', (e) => {
   reportKey = e.target.value;
-  renderReport();
-});
-document.getElementById('report-month-select').addEventListener('change', (e) => {
-  reportMonth = e.target.value;
-  renderReport();
-});
-document.getElementById('report-year-select').addEventListener('change', (e) => {
-  reportYear = e.target.value;
   renderReport();
 });
 document.getElementById('report-date-from').addEventListener('change', (e) => {
@@ -898,26 +851,8 @@ function campaignsInEmailFilter() {
 }
 
 function populateEmailFilters() {
-  const monthSel = document.getElementById('email-month-select');
-  monthSel.innerHTML = '<option value="all">All months</option>' +
-    MONTH_NAMES.map((m, i) => `<option value="${i}">${m}</option>`).join('');
-  monthSel.value = emailMonth;
-
-  const years = new Set();
-  (EMAIL_DATA && EMAIL_DATA.campaigns || []).forEach(c => {
-    const key = campaignDateKey(c);
-    if (key) years.add(new Date(key).getFullYear());
-  });
-  const yearSel = document.getElementById('email-year-select');
-  yearSel.innerHTML = '<option value="all">All years</option>' +
-    Array.from(years).sort((a, b) => b - a).map(y => `<option value="${y}">${y}</option>`).join('');
-  yearSel.value = emailYear;
-
   document.getElementById('email-date-from').value = emailDateFrom;
   document.getElementById('email-date-to').value = emailDateTo;
-  const rangeActive = emailDateRangeActive();
-  monthSel.disabled = rangeActive;
-  yearSel.disabled = rangeActive;
 }
 
 function weightedAvgEmail(campaigns, field) {
@@ -1050,12 +985,7 @@ function renderEmailView() {
     const toLabel = emailDateTo ? fmtShortDate(emailDateTo) : 'today';
     captionText = `Showing campaigns sent (or last updated, for drafts) from ${fromLabel} to ${toLabel} (${campaigns.length} of ${total} campaigns match).`;
   } else {
-    const captionParts = [];
-    if (emailMonth !== 'all') captionParts.push(MONTH_NAMES[Number(emailMonth)]);
-    if (emailYear !== 'all') captionParts.push(emailYear);
-    captionText = captionParts.length
-      ? `Showing campaigns sent (or last updated, for drafts) in ${captionParts.join(' ')} (${campaigns.length} of ${total} campaigns match).`
-      : `Showing all ${total} email campaigns, regardless of date.`;
+    captionText = `Showing all ${total} email campaigns, regardless of date.`;
   }
   document.getElementById('email-filter-caption').textContent = captionText;
 
@@ -1070,14 +1000,6 @@ function renderEmailView() {
   renderEmailTable(campaigns);
 }
 
-document.getElementById('email-month-select').addEventListener('change', (e) => {
-  emailMonth = e.target.value;
-  renderEmailView();
-});
-document.getElementById('email-year-select').addEventListener('change', (e) => {
-  emailYear = e.target.value;
-  renderEmailView();
-});
 document.getElementById('email-date-from').addEventListener('change', (e) => {
   emailDateFrom = e.target.value;
   renderEmailView();
