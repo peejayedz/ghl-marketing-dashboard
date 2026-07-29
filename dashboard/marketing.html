@@ -99,6 +99,7 @@
 
   /* Marketing Report view — larger, simpler, presentation-friendly */
   #report-view { display: none; }
+  #email-view { display: none; }
   .report-toolbar { display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 24px; }
   .select-group { display: flex; flex-direction: column; gap: 5px; }
   .select-group label { font-size: 11.5px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
@@ -173,7 +174,10 @@
       <h1>Marketing Campaigns Dashboard</h1>
       <div class="sync-label" id="last-updated"><span class="dot"></span>Loading...</div>
     </div>
-    <button class="view-toggle-btn" id="view-toggle-btn">Switch to Marketing Report</button>
+    <div style="display:flex; gap:10px; flex-wrap:wrap;">
+      <button class="view-toggle-btn" id="view-toggle-btn">Switch to Marketing Report</button>
+      <button class="view-toggle-btn" id="email-view-btn" style="background:var(--card); border:1px solid var(--border); color:var(--text);">View Email Campaigns Performance</button>
+    </div>
   </div>
 
   <div id="technical-view">
@@ -256,6 +260,58 @@
 
   </div>
 
+  <div id="email-view">
+    <div class="note">Standalone one-off Email Campaigns sent via GoHighLevel's Marketing &gt; Emails &gt; Campaigns tool (separate from the automation workflows). Includes campaigns still sitting as unsent Drafts.</div>
+    <div class="report-toolbar">
+      <div class="select-group">
+        <label>Month</label>
+        <select class="select-input" id="email-month-select" style="min-width:140px;"></select>
+      </div>
+      <div class="select-group">
+        <label>Year</label>
+        <select class="select-input" id="email-year-select" style="min-width:110px;"></select>
+      </div>
+      <div class="select-group">
+        <label>From date</label>
+        <input type="date" class="select-input" id="email-date-from" style="min-width:160px;">
+      </div>
+      <div class="select-group">
+        <label>To date</label>
+        <input type="date" class="select-input" id="email-date-to" style="min-width:160px;">
+      </div>
+      <div class="select-group">
+        <label>&nbsp;</label>
+        <button type="button" class="view-toggle-btn" id="email-date-clear" style="background:var(--card); border:1px solid var(--border); color:var(--muted); padding:9px 14px; font-weight:500;">Clear dates</button>
+      </div>
+    </div>
+    <div class="section-sub" id="email-filter-caption" style="margin: -12px 0 20px; color: var(--muted); font-size: 12.5px;"></div>
+
+    <div class="report-kpi-grid" id="email-kpis"></div>
+
+    <div class="report-section">
+      <h3>Email engagement</h3>
+      <div class="section-sub">Delivered, opened, clicked, bounced and unsubscribed rate — recipient-weighted across the filtered campaigns.</div>
+      <div style="height:160px;">
+        <canvas id="email-chart"></canvas>
+      </div>
+    </div>
+
+    <div class="table-card">
+      <h2><span>Email Campaigns</span></h2>
+      <table id="email-table">
+        <thead><tr>
+          <th data-sort="title">Campaign Name<span class="sort-arrow"></span></th>
+          <th data-sort="createdOn">Created on<span class="sort-arrow"></span></th>
+          <th data-sort="lastUpdated">Last updated<span class="sort-arrow"></span></th>
+          <th data-sort="executionDate">Date sent / Execution Date<span class="sort-arrow"></span></th>
+          <th data-sort="status">Status<span class="sort-arrow"></span></th>
+          <th data-sort="recipients">Number of contacts sent<span class="sort-arrow"></span></th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
 <script>
 let DATA = null;
 let EMAIL_DATA = null;
@@ -271,11 +327,19 @@ let reportDrilldownMetric = null;
 let showNumbers = false;
 let techSortKey = null;
 let techSortDir = 1;
-let emailSort = 'sentDate-desc';
+let emailMonth = 'all';
+let emailYear = 'all';
+let emailDateFrom = '';
+let emailDateTo = '';
+let emailChart = null;
+let emailSortKey = null;
+let emailSortDir = 1;
 const LOCATION_ID = 'sQ2VSMkR7cLHb46Wdemi';
 const MONTH_NAMES = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 const METRIC_KEYS = ['delivered', 'opened', 'clicked', 'bounced', 'replied', 'unsubscribed'];
 const METRIC_LABELS = { delivered: 'Delivery rate', opened: 'Open rate', clicked: 'Click rate', bounced: 'Bounce rate', replied: 'Reply rate', unsubscribed: 'Unsubscribe rate' };
+const EMAIL_METRIC_KEYS = ['delivered', 'opened', 'clicked', 'bounced', 'unsubscribed'];
+const EMAIL_METRIC_LABELS = { delivered: 'Delivery rate', opened: 'Open rate', clicked: 'Click rate', bounced: 'Bounce rate', unsubscribed: 'Unsubscribe rate' };
 
 function fmtDate(iso) {
   if (!iso) return '';
@@ -476,23 +540,33 @@ document.querySelector('#wf-table thead').addEventListener('click', (e) => {
   renderTable();
 });
 
-// ---------- View toggle ----------
-let reportViewActive = false;
+// ---------- View toggle (technical / report / email) ----------
+let currentView = 'technical';
+let previousMainView = 'technical'; // last non-email view, so the email button can return to it
+
+function showView(view) {
+  document.getElementById('technical-view').style.display = view === 'technical' ? 'block' : 'none';
+  document.getElementById('report-view').style.display = view === 'report' ? 'block' : 'none';
+  document.getElementById('email-view').style.display = view === 'email' ? 'block' : 'none';
+  currentView = view;
+  if (view !== 'email') previousMainView = view;
+
+  document.getElementById('view-toggle-btn').textContent =
+    view === 'report' ? 'View Automation List' : 'Switch to Marketing Report';
+  document.getElementById('email-view-btn').textContent =
+    view === 'email'
+      ? ('Back to ' + (previousMainView === 'report' ? 'Marketing Report' : 'Automation List'))
+      : 'View Email Campaigns Performance';
+
+  if (view === 'report') renderReport();
+  if (view === 'email') renderEmailView();
+}
+
 document.getElementById('view-toggle-btn').addEventListener('click', () => {
-  const techView = document.getElementById('technical-view');
-  const reportView = document.getElementById('report-view');
-  const btn = document.getElementById('view-toggle-btn');
-  reportViewActive = !reportViewActive;
-  if (reportViewActive) {
-    techView.style.display = 'none';
-    reportView.style.display = 'block';
-    btn.textContent = 'View Automation List';
-    renderReport();
-  } else {
-    reportView.style.display = 'none';
-    techView.style.display = 'block';
-    btn.textContent = 'Switch to Marketing Report';
-  }
+  showView(currentView === 'report' ? 'technical' : 'report');
+});
+document.getElementById('email-view-btn').addEventListener('click', () => {
+  showView(currentView === 'email' ? previousMainView : 'email');
 });
 
 // ---------- Marketing Report view ----------
@@ -716,6 +790,227 @@ document.getElementById('stats-toggle-input').addEventListener('change', (e) => 
   showNumbers = e.target.checked;
   renderReport();
 });
+
+// ---------- Email Campaigns Performance view ----------
+// Campaigns are dated by their sent/execution date when available (Sent campaigns),
+// falling back to Last Updated for Drafts that haven't been sent yet.
+function campaignDateKey(c) {
+  return c.executionDate || c.lastUpdated || null;
+}
+
+function emailDateRangeActive() {
+  return emailDateFrom !== '' || emailDateTo !== '';
+}
+
+function campaignsInEmailFilter() {
+  if (!EMAIL_DATA || !EMAIL_DATA.campaigns) return [];
+  return EMAIL_DATA.campaigns.filter(c => {
+    const key = campaignDateKey(c);
+    if (!key) return !emailDateRangeActive() && emailMonth === 'all' && emailYear === 'all';
+    const d = new Date(key);
+    if (emailDateRangeActive()) {
+      if (emailDateFrom && d < new Date(emailDateFrom + 'T00:00:00')) return false;
+      if (emailDateTo && d > new Date(emailDateTo + 'T23:59:59')) return false;
+      return true;
+    }
+    if (emailYear !== 'all' && d.getFullYear() !== Number(emailYear)) return false;
+    if (emailMonth !== 'all' && d.getMonth() !== Number(emailMonth)) return false;
+    return true;
+  });
+}
+
+function populateEmailFilters() {
+  const monthSel = document.getElementById('email-month-select');
+  monthSel.innerHTML = '<option value="all">All months</option>' +
+    MONTH_NAMES.map((m, i) => `<option value="${i}">${m}</option>`).join('');
+  monthSel.value = emailMonth;
+
+  const years = new Set();
+  (EMAIL_DATA && EMAIL_DATA.campaigns || []).forEach(c => {
+    const key = campaignDateKey(c);
+    if (key) years.add(new Date(key).getFullYear());
+  });
+  const yearSel = document.getElementById('email-year-select');
+  yearSel.innerHTML = '<option value="all">All years</option>' +
+    Array.from(years).sort((a, b) => b - a).map(y => `<option value="${y}">${y}</option>`).join('');
+  yearSel.value = emailYear;
+
+  document.getElementById('email-date-from').value = emailDateFrom;
+  document.getElementById('email-date-to').value = emailDateTo;
+  const rangeActive = emailDateRangeActive();
+  monthSel.disabled = rangeActive;
+  yearSel.disabled = rangeActive;
+}
+
+function weightedAvgEmail(campaigns, field) {
+  const totalRecipients = campaigns.reduce((s, c) => s + (c.recipients || 0), 0);
+  if (totalRecipients === 0) return 0;
+  const sum = campaigns.reduce((s, c) => s + (c.recipients || 0) * (c.stats[field] || 0), 0);
+  return sum / totalRecipients;
+}
+
+function renderEmailKpis(campaigns) {
+  const totalRecipients = campaigns.reduce((s, c) => s + (c.recipients || 0), 0);
+  const grid = document.getElementById('email-kpis');
+  let html = `<div class="report-kpi-card"><div class="kpi-value">${campaigns.length}</div><div class="kpi-label">Total Campaigns</div></div>`;
+  html += `<div class="report-kpi-card"><div class="kpi-value">${totalRecipients}</div><div class="kpi-label">Total Recipients</div></div>`;
+  EMAIL_METRIC_KEYS.forEach(key => {
+    const v = weightedAvgEmail(campaigns, key);
+    html += `<div class="report-kpi-card">
+      <div class="kpi-value">${pct(v)}</div>
+      <div class="kpi-label">${EMAIL_METRIC_LABELS[key]}</div>
+    </div>`;
+  });
+  grid.innerHTML = html;
+  return EMAIL_METRIC_KEYS.map(key => weightedAvgEmail(campaigns, key));
+}
+
+function renderEmailChart(values) {
+  const ctx = document.getElementById('email-chart');
+  const labels = ['Delivery', 'Open', 'Click', 'Bounce', 'Unsubscribe'];
+  const colors = ['#5b8cff', '#34c98f', '#ffb454', '#ff6b6b', '#8b95ab'];
+  if (emailChart) emailChart.destroy();
+  emailChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [{
+        data: values.map(v => Math.round(v * 100) / 100),
+        backgroundColor: colors,
+        borderRadius: 8,
+        borderColor: '#ffffff',
+        borderWidth: 0
+      }]
+    },
+    options: {
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { ticks: { color: '#8b95ab' }, grid: { display: false } },
+        y: {
+          ticks: { color: '#8b95ab', callback: v => v + '%' },
+          grid: { color: '#262f42' }, beginAtZero: true
+        }
+      }
+    }
+  });
+}
+
+const EMAIL_TABLE_SORT_ACCESSORS = {
+  title: c => (c.title || '').toLowerCase(),
+  createdOn: c => c.createdOn ? new Date(c.createdOn).getTime() : 0,
+  lastUpdated: c => c.lastUpdated ? new Date(c.lastUpdated).getTime() : 0,
+  executionDate: c => c.executionDate ? new Date(c.executionDate).getTime() : 0,
+  status: c => c.status || '',
+  recipients: c => c.recipients || 0
+};
+
+function sortEmailTable(campaigns) {
+  if (!emailSortKey) return campaigns;
+  const accessor = EMAIL_TABLE_SORT_ACCESSORS[emailSortKey];
+  if (!accessor) return campaigns;
+  return [...campaigns].sort((a, b) => {
+    const av = accessor(a), bv = accessor(b);
+    if (av < bv) return -1 * emailSortDir;
+    if (av > bv) return 1 * emailSortDir;
+    return 0;
+  });
+}
+
+function updateEmailSortIndicators() {
+  document.querySelectorAll('#email-table th[data-sort]').forEach(th => {
+    const arrow = th.querySelector('.sort-arrow');
+    if (!arrow) return;
+    arrow.textContent = th.dataset.sort === emailSortKey ? (emailSortDir === 1 ? '▲' : '▼') : '';
+  });
+}
+
+function renderEmailTable(campaigns) {
+  const tbody = document.querySelector('#email-table tbody');
+  const sorted = sortEmailTable(campaigns);
+  if (sorted.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="6" style="color:var(--muted); font-style:italic;">No email campaigns match the current filters.</td></tr>`;
+    updateEmailSortIndicators();
+    return;
+  }
+  tbody.innerHTML = sorted.map(c => {
+    const statusClass = c.status === 'Sent' ? 'status-published' : 'status-draft';
+    return `<tr>
+      <td>${c.title}</td>
+      <td>${c.createdOn ? fmtDate(c.createdOn) : '<span class="zero">Unknown</span>'}</td>
+      <td>${c.lastUpdated ? fmtDate(c.lastUpdated) : '<span class="zero">—</span>'}</td>
+      <td>${c.executionDate ? fmtDate(c.executionDate) : '<span class="zero">Not sent yet</span>'}</td>
+      <td><span class="status-pill ${statusClass}">${c.status}</span></td>
+      <td>${c.recipients}</td>
+    </tr>`;
+  }).join('');
+  updateEmailSortIndicators();
+}
+
+function renderEmailView() {
+  populateEmailFilters();
+  const campaigns = campaignsInEmailFilter();
+  const total = (EMAIL_DATA && EMAIL_DATA.campaigns || []).length;
+
+  let captionText;
+  if (emailDateRangeActive()) {
+    const fromLabel = emailDateFrom ? fmtShortDate(emailDateFrom) : 'the beginning';
+    const toLabel = emailDateTo ? fmtShortDate(emailDateTo) : 'today';
+    captionText = `Showing campaigns sent (or last updated, for drafts) from ${fromLabel} to ${toLabel} (${campaigns.length} of ${total} campaigns match).`;
+  } else {
+    const captionParts = [];
+    if (emailMonth !== 'all') captionParts.push(MONTH_NAMES[Number(emailMonth)]);
+    if (emailYear !== 'all') captionParts.push(emailYear);
+    captionText = captionParts.length
+      ? `Showing campaigns sent (or last updated, for drafts) in ${captionParts.join(' ')} (${campaigns.length} of ${total} campaigns match).`
+      : `Showing all ${total} email campaigns, regardless of date.`;
+  }
+  document.getElementById('email-filter-caption').textContent = captionText;
+
+  if (campaigns.length === 0) {
+    document.getElementById('email-kpis').innerHTML = '<div class="empty-state">No email campaigns match this date filter.</div>';
+    if (emailChart) { emailChart.destroy(); emailChart = null; }
+  } else {
+    const values = renderEmailKpis(campaigns);
+    renderEmailChart(values);
+  }
+  renderEmailTable(campaigns);
+}
+
+document.getElementById('email-month-select').addEventListener('change', (e) => {
+  emailMonth = e.target.value;
+  renderEmailView();
+});
+document.getElementById('email-year-select').addEventListener('change', (e) => {
+  emailYear = e.target.value;
+  renderEmailView();
+});
+document.getElementById('email-date-from').addEventListener('change', (e) => {
+  emailDateFrom = e.target.value;
+  renderEmailView();
+});
+document.getElementById('email-date-to').addEventListener('change', (e) => {
+  emailDateTo = e.target.value;
+  renderEmailView();
+});
+document.getElementById('email-date-clear').addEventListener('click', () => {
+  emailDateFrom = '';
+  emailDateTo = '';
+  renderEmailView();
+});
+document.querySelector('#email-table thead').addEventListener('click', (e) => {
+  const th = e.target.closest('th[data-sort]');
+  if (!th) return;
+  const key = th.dataset.sort;
+  if (emailSortKey === key) {
+    emailSortDir *= -1;
+  } else {
+    emailSortKey = key;
+    emailSortDir = 1;
+  }
+  renderEmailView();
+});
+
 Promise.all([loadData(), loadEmailData()]).then(([data, emailData]) => {
   DATA = data;
   EMAIL_DATA = emailData;
