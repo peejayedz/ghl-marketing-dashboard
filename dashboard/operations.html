@@ -611,10 +611,8 @@ function renderSummary() {
   panel.innerHTML = `
     <div class="summary-title">Client Lifetime Summary</div>
     <div class="summary-desc">
-      How long, on average, a client stays with the firm — measured from <strong>Date Closed</strong> (when the deal closed) to the end of the relationship.
-      Two bases are shown side by side because "end" can mean different things: <strong>Last Day of Service</strong> is the actual last day the client was served,
-      while <strong>Termination Notice</strong> is the day they gave notice (typically earlier, before any wind-down period). Only clients with both dates on file
-      are counted — active clients aren't included yet since their lifetime isn't final. This recalculates automatically every time the underlying data refreshes.
+      Average time from <strong>Date Closed</strong> to end of relationship, shown two ways: actual <strong>Last Day of Service</strong> vs. when <strong>Termination Notice</strong> was given.
+      Only clients with both dates recorded are counted.
     </div>
     <div class="summary-grid">
       <div class="summary-stat">
