@@ -115,7 +115,24 @@
   .empty-state { text-align: center; padding: 40px; color: var(--muted); }
   .error { color: var(--accent4); }
 
+  .summary-panel {
+    background: linear-gradient(135deg, rgba(91,140,255,0.14), rgba(255,180,84,0.10));
+    border: 1px solid var(--accent);
+    border-radius: 14px;
+    padding: 20px 24px;
+    margin-bottom: 22px;
+    box-shadow: 0 0 0 1px rgba(91,140,255,0.08), 0 8px 28px rgba(91,140,255,0.10);
+  }
+  .summary-title { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); font-weight: 700; margin-bottom: 14px; }
+  .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+  .summary-value { font-size: 36px; font-weight: 800; color: var(--text); line-height: 1.05; }
+  .summary-value .summary-unit { font-size: 15px; font-weight: 600; color: var(--muted); margin-left: 6px; }
+  .summary-label { font-size: 13.5px; color: var(--text); margin-top: 6px; font-weight: 600; }
+  .summary-sub { font-size: 11.5px; color: var(--muted); margin-top: 2px; }
+
   @media print {
+    .summary-panel { background: #fff; border: 1px solid #000; box-shadow: none; }
+    .summary-value, .summary-label { color: #000; }
     .toolbar, .status-filter, .columns-popover, .export-popover, .kpi-grid, .sync-label { display: none !important; }
     body { background: #fff; color: #000; padding: 12px; }
     .table-card { background: #fff; border: none; box-shadow: none; padding: 0; }
@@ -180,6 +197,8 @@
     </div>
   </div>
 
+  <div class="summary-panel" id="summary-panel"></div>
+
   <div class="table-card">
     <h2 id="table-title">Active Clients (LFMP)</h2>
     <table id="main-table">
@@ -198,7 +217,32 @@ const COLUMN_DEFS = [
   { key: "onboardingDate",    label: "Onboarding Date",        default: true },
   { key: "terminationNotice", label: "Termination Notice",    default: true },
   { key: "lastDayOfService",  label: "Last Day of Service",    default: true },
+  { key: "lifespanLastDay",      label: "Lifespan – Last Day (mo.)",       default: true },
+  { key: "lifespanTermNotice",   label: "Lifespan – Term. Notice (mo.)",   default: true },
 ];
+
+// which raw date field each lifespan column measures to, starting from dateClosed
+const LIFESPAN_END_FIELD = {
+  lifespanLastDay: "lastDayOfService",
+  lifespanTermNotice: "terminationNotice",
+};
+
+// months between two ISO dates (dateClosed -> end field), 1 decimal place.
+// Returns null if either date is missing (i.e. the relationship hasn't ended yet
+// on that basis, or Date Closed was never recorded) — by design, still-active
+// clients don't get a lifespan number since it isn't final.
+function monthsBetween(startISO, endISO) {
+  if (!startISO || !endISO) return null;
+  const start = new Date(startISO + "T00:00:00");
+  const end = new Date(endISO + "T00:00:00");
+  const days = (end - start) / 86400000;
+  if (!isFinite(days) || days < 0) return null;
+  return Math.round((days / 30.4375) * 10) / 10;
+}
+
+function lifespanFor(c, colKey) {
+  return monthsBetween(c.dateClosed, c[LIFESPAN_END_FIELD[colKey]]);
+}
 
 let DATA = null;
 let currentView = "active";
@@ -214,7 +258,7 @@ const TAG_PILL_HTML = {
   "wpp client": '<span class="tag-pill wpp">wpp client</span>',
 };
 
-const SORTABLE = new Set(["company", "contactCount", "dateClosed", "onboardingDate", "terminationNotice", "lastDayOfService"]);
+const SORTABLE = new Set(["company", "contactCount", "dateClosed", "onboardingDate", "terminationNotice", "lastDayOfService", "lifespanLastDay", "lifespanTermNotice"]);
 
 function compareCompanies(a, b, key, dir) {
   const mult = dir === "asc" ? 1 : -1;
@@ -223,6 +267,13 @@ function compareCompanies(a, b, key, dir) {
   }
   if (key === "contactCount") {
     return (a.contactCount - b.contactCount) * mult;
+  }
+  if (key === "lifespanLastDay" || key === "lifespanTermNotice") {
+    const av = lifespanFor(a, key), bv = lifespanFor(b, key);
+    if (av == null && bv == null) return 0;
+    if (av == null) return 1;
+    if (bv == null) return -1;
+    return (av - bv) * mult;
   }
   // date fields: nulls always sort to the bottom, regardless of direction
   const av = a[key], bv = b[key];
@@ -398,6 +449,9 @@ function renderTable() {
       } else if (["dateClosed", "onboardingDate", "terminationNotice", "lastDayOfService"].includes(col.key)) {
         const v = c[col.key];
         td.innerHTML = v ? fmtDate(v) : '<span class="muted">—</span>';
+      } else if (col.key === "lifespanLastDay" || col.key === "lifespanTermNotice") {
+        const v = lifespanFor(c, col.key);
+        td.innerHTML = v != null ? v.toFixed(1) : '<span class="muted">—</span>';
       }
       tr.appendChild(td);
     });
@@ -439,6 +493,10 @@ function buildExportTable() {
     if (col.key === "contactCount") return c.contactCount;
     if (col.key === "tags") return (c.tags || []).join("; ");
     if (dateKeys.includes(col.key)) return c[col.key] ? fmtDate(c[col.key]) : "";
+    if (col.key === "lifespanLastDay" || col.key === "lifespanTermNotice") {
+      const v = lifespanFor(c, col.key);
+      return v != null ? v.toFixed(1) : "";
+    }
     return "";
   }));
   return { headers, rows };
@@ -502,9 +560,46 @@ function exportPDF() {
   window.print();
 }
 
+// Retention summary is computed from the deduplicated "All Clients" master list
+// (not the currently selected tab) so a company counted under more than one tag
+// isn't double-counted, and recomputes automatically every time fresh data loads.
+function renderSummary() {
+  const panel = document.getElementById("summary-panel");
+  const companies = (DATA.views.all && DATA.views.all.companies) || [];
+
+  const statsFor = (colKey) => {
+    const vals = companies.map(c => lifespanFor(c, colKey)).filter(v => v != null);
+    if (!vals.length) return { avg: null, count: 0 };
+    const avg = vals.reduce((a, b) => a + b, 0) / vals.length;
+    return { avg: Math.round(avg * 10) / 10, count: vals.length };
+  };
+
+  const lastDay = statsFor("lifespanLastDay");
+  const termNotice = statsFor("lifespanTermNotice");
+  const fmtStat = (s) => s.avg != null ? s.avg.toFixed(1) : "—";
+  const fmtSub = (s) => s.count ? `Based on ${s.count} client${s.count === 1 ? "" : "s"} with a recorded end date` : "No clients with both dates recorded yet";
+
+  panel.innerHTML = `
+    <div class="summary-title">Client Lifetime Summary — updates automatically with each data refresh</div>
+    <div class="summary-grid">
+      <div class="summary-stat">
+        <div class="summary-value">${fmtStat(lastDay)}<span class="summary-unit">months avg.</span></div>
+        <div class="summary-label">Average client lifetime — Last Day of Service basis</div>
+        <div class="summary-sub">${fmtSub(lastDay)}</div>
+      </div>
+      <div class="summary-stat">
+        <div class="summary-value">${fmtStat(termNotice)}<span class="summary-unit">months avg.</span></div>
+        <div class="summary-label">Average client lifetime — Termination Notice basis</div>
+        <div class="summary-sub">${fmtSub(termNotice)}</div>
+      </div>
+    </div>
+  `;
+}
+
 function renderAll() {
   renderStatusFilter();
   renderKPIs();
+  renderSummary();
   renderTable();
 }
 
