@@ -123,9 +123,10 @@
     margin-bottom: 22px;
     box-shadow: 0 0 0 1px rgba(91,140,255,0.08), 0 8px 28px rgba(91,140,255,0.10);
   }
-  .summary-title { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); font-weight: 700; margin-bottom: 14px; }
+  .summary-title { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); font-weight: 700; margin-bottom: 8px; }
+  .summary-desc { font-size: 12.5px; color: var(--muted); line-height: 1.5; margin-bottom: 16px; max-width: 780px; }
   .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
-  .summary-value { font-size: 36px; font-weight: 800; color: var(--text); line-height: 1.05; }
+  .summary-value { font-size: 26px; font-weight: 800; color: var(--text); line-height: 1.2; }
   .summary-value .summary-unit { font-size: 15px; font-weight: 600; color: var(--muted); margin-left: 6px; }
   .summary-label { font-size: 13.5px; color: var(--text); margin-top: 6px; font-weight: 600; }
   .summary-sub { font-size: 11.5px; color: var(--muted); margin-top: 2px; }
@@ -153,6 +154,8 @@
   </div>
 
   <div class="kpi-grid" id="kpi-grid"></div>
+
+  <div class="summary-panel" id="summary-panel"></div>
 
   <div class="status-filter" id="status-filter"></div>
 
@@ -197,8 +200,6 @@
     </div>
   </div>
 
-  <div class="summary-panel" id="summary-panel"></div>
-
   <div class="table-card">
     <h2 id="table-title">Active Clients (LFMP)</h2>
     <table id="main-table">
@@ -217,8 +218,8 @@ const COLUMN_DEFS = [
   { key: "onboardingDate",    label: "Onboarding Date",        default: true },
   { key: "terminationNotice", label: "Termination Notice",    default: true },
   { key: "lastDayOfService",  label: "Last Day of Service",    default: true },
-  { key: "lifespanLastDay",      label: "Lifespan – Last Day (mo.)",       default: true },
-  { key: "lifespanTermNotice",   label: "Lifespan – Term. Notice (mo.)",   default: true },
+  { key: "lifespanLastDay",      label: "Lifespan – Last Day",       default: true },
+  { key: "lifespanTermNotice",   label: "Lifespan – Term. Notice",   default: true },
 ];
 
 // which raw date field each lifespan column measures to, starting from dateClosed
@@ -227,21 +228,49 @@ const LIFESPAN_END_FIELD = {
   lifespanTermNotice: "terminationNotice",
 };
 
-// months between two ISO dates (dateClosed -> end field), 1 decimal place.
+// calendar-accurate breakdown between two ISO dates (dateClosed -> end field) as
+// whole months + remaining days (e.g. "6 Months and 12 Days"), not a decimal.
 // Returns null if either date is missing (i.e. the relationship hasn't ended yet
 // on that basis, or Date Closed was never recorded) — by design, still-active
 // clients don't get a lifespan number since it isn't final.
-function monthsBetween(startISO, endISO) {
+function monthsDaysBetween(startISO, endISO) {
   if (!startISO || !endISO) return null;
   const start = new Date(startISO + "T00:00:00");
   const end = new Date(endISO + "T00:00:00");
-  const days = (end - start) / 86400000;
-  if (!isFinite(days) || days < 0) return null;
-  return Math.round((days / 30.4375) * 10) / 10;
+  if (!isFinite(start) || !isFinite(end) || end < start) return null;
+
+  let months = (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth());
+  let anchor = new Date(start.getFullYear(), start.getMonth() + months, start.getDate());
+  if (anchor > end) {
+    months--;
+    anchor = new Date(start.getFullYear(), start.getMonth() + months, start.getDate());
+  }
+  const days = Math.round((end - anchor) / 86400000);
+  const totalDays = Math.round((end - start) / 86400000);
+  return { months, days, totalDays };
 }
 
 function lifespanFor(c, colKey) {
-  return monthsBetween(c.dateClosed, c[LIFESPAN_END_FIELD[colKey]]);
+  return monthsDaysBetween(c.dateClosed, c[LIFESPAN_END_FIELD[colKey]]);
+}
+
+function lifespanLabel(parts) {
+  if (!parts) return null;
+  const mLabel = parts.months + " Month" + (parts.months === 1 ? "" : "s");
+  const dLabel = parts.days + " Day" + (parts.days === 1 ? "" : "s");
+  if (parts.months === 0) return dLabel;
+  if (parts.days === 0) return mLabel;
+  return mLabel + " and " + dLabel;
+}
+
+// converts an average day-count (not tied to real calendar dates) into a
+// "Months and Days" label using an average month length — used only for the
+// summary panel's aggregate figures.
+function avgDaysLabel(avgDays) {
+  if (avgDays == null) return null;
+  const months = Math.floor(avgDays / 30.4375);
+  const days = Math.round(avgDays - months * 30.4375);
+  return lifespanLabel({ months, days });
 }
 
 let DATA = null;
@@ -270,10 +299,10 @@ function compareCompanies(a, b, key, dir) {
   }
   if (key === "lifespanLastDay" || key === "lifespanTermNotice") {
     const av = lifespanFor(a, key), bv = lifespanFor(b, key);
-    if (av == null && bv == null) return 0;
-    if (av == null) return 1;
-    if (bv == null) return -1;
-    return (av - bv) * mult;
+    if (!av && !bv) return 0;
+    if (!av) return 1;
+    if (!bv) return -1;
+    return (av.totalDays - bv.totalDays) * mult;
   }
   // date fields: nulls always sort to the bottom, regardless of direction
   const av = a[key], bv = b[key];
@@ -451,7 +480,7 @@ function renderTable() {
         td.innerHTML = v ? fmtDate(v) : '<span class="muted">—</span>';
       } else if (col.key === "lifespanLastDay" || col.key === "lifespanTermNotice") {
         const v = lifespanFor(c, col.key);
-        td.innerHTML = v != null ? v.toFixed(1) : '<span class="muted">—</span>';
+        td.innerHTML = v ? lifespanLabel(v) : '<span class="muted">—</span>';
       }
       tr.appendChild(td);
     });
@@ -495,7 +524,7 @@ function buildExportTable() {
     if (dateKeys.includes(col.key)) return c[col.key] ? fmtDate(c[col.key]) : "";
     if (col.key === "lifespanLastDay" || col.key === "lifespanTermNotice") {
       const v = lifespanFor(c, col.key);
-      return v != null ? v.toFixed(1) : "";
+      return v ? lifespanLabel(v) : "";
     }
     return "";
   }));
@@ -568,28 +597,34 @@ function renderSummary() {
   const companies = (DATA.views.all && DATA.views.all.companies) || [];
 
   const statsFor = (colKey) => {
-    const vals = companies.map(c => lifespanFor(c, colKey)).filter(v => v != null);
-    if (!vals.length) return { avg: null, count: 0 };
-    const avg = vals.reduce((a, b) => a + b, 0) / vals.length;
-    return { avg: Math.round(avg * 10) / 10, count: vals.length };
+    const vals = companies.map(c => lifespanFor(c, colKey)).filter(v => v != null).map(v => v.totalDays);
+    if (!vals.length) return { avgDays: null, count: 0 };
+    const avgDays = vals.reduce((a, b) => a + b, 0) / vals.length;
+    return { avgDays, count: vals.length };
   };
 
   const lastDay = statsFor("lifespanLastDay");
   const termNotice = statsFor("lifespanTermNotice");
-  const fmtStat = (s) => s.avg != null ? s.avg.toFixed(1) : "—";
-  const fmtSub = (s) => s.count ? `Based on ${s.count} client${s.count === 1 ? "" : "s"} with a recorded end date` : "No clients with both dates recorded yet";
+  const fmtStat = (s) => s.avgDays != null ? avgDaysLabel(s.avgDays) : "—";
+  const fmtSub = (s) => s.count ? `Based on ${s.count} client${s.count === 1 ? "" : "s"} with both Date Closed and an end date recorded` : "No clients with both Date Closed and an end date recorded yet";
 
   panel.innerHTML = `
-    <div class="summary-title">Client Lifetime Summary — updates automatically with each data refresh</div>
+    <div class="summary-title">Client Lifetime Summary</div>
+    <div class="summary-desc">
+      How long, on average, a client stays with the firm — measured from <strong>Date Closed</strong> (when the deal closed) to the end of the relationship.
+      Two bases are shown side by side because "end" can mean different things: <strong>Last Day of Service</strong> is the actual last day the client was served,
+      while <strong>Termination Notice</strong> is the day they gave notice (typically earlier, before any wind-down period). Only clients with both dates on file
+      are counted — active clients aren't included yet since their lifetime isn't final. This recalculates automatically every time the underlying data refreshes.
+    </div>
     <div class="summary-grid">
       <div class="summary-stat">
-        <div class="summary-value">${fmtStat(lastDay)}<span class="summary-unit">months avg.</span></div>
-        <div class="summary-label">Average client lifetime — Last Day of Service basis</div>
+        <div class="summary-value">${fmtStat(lastDay)}</div>
+        <div class="summary-label">Average client lifetime — Date Closed to Last Day of Service</div>
         <div class="summary-sub">${fmtSub(lastDay)}</div>
       </div>
       <div class="summary-stat">
-        <div class="summary-value">${fmtStat(termNotice)}<span class="summary-unit">months avg.</span></div>
-        <div class="summary-label">Average client lifetime — Termination Notice basis</div>
+        <div class="summary-value">${fmtStat(termNotice)}</div>
+        <div class="summary-label">Average client lifetime — Date Closed to Termination Notice</div>
         <div class="summary-sub">${fmtSub(termNotice)}</div>
       </div>
     </div>
