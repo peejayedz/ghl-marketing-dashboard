@@ -267,7 +267,7 @@ function renderStatusFilter() {
     { key: "all", label: "All Clients" },
     { key: "active", label: "Active Clients (LFMP)" },
     { key: "offboarded", label: "Offboarded Clients" },
-    { key: "wpp", label: "WPP Clients" },
+    { key: "wpp", label: "Active WPP Clients" },
   ];
   bar.innerHTML = "";
   views.forEach(v => {
@@ -288,7 +288,7 @@ function renderKPIs() {
   grid.innerHTML = `
     <div class="kpi-card"><div class="kpi-value">${active.length}</div><div class="kpi-label">Active Clients (LFMP)</div></div>
     <div class="kpi-card"><div class="kpi-value">${off.length}</div><div class="kpi-label">Offboarded Clients</div></div>
-    <div class="kpi-card"><div class="kpi-value">${wpp.length}</div><div class="kpi-label">WPP Clients</div></div>
+    <div class="kpi-card"><div class="kpi-value">${wpp.length}</div><div class="kpi-label">Active WPP Clients</div></div>
     <div class="kpi-card"><div class="kpi-value">${sum(active) + sum(off) + sum(wpp)}</div><div class="kpi-label">Total Contacts</div></div>
   `;
 }
