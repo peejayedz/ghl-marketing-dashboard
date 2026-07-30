@@ -112,7 +112,6 @@
   .contact-line:last-child { border-bottom: none; }
   .contact-line .c-name { min-width: 170px; font-weight: 600; }
   .contact-line .c-email { color: var(--accent); min-width: 220px; }
-  .contact-line .c-phone { color: var(--muted); }
   .empty-state { text-align: center; padding: 40px; color: var(--muted); }
   .error { color: var(--accent4); }
 
@@ -413,7 +412,6 @@ function renderTable() {
         <div class="contact-line">
           <span class="c-name">${ct.name}</span>
           <span class="c-email">${ct.email || ""}</span>
-          <span class="c-phone">${ct.phone || ""}</span>
         </div>
       `).join("");
       td.innerHTML = `<div class="contacts-wrap">${lines || '<span class="muted">No contact details on file</span>'}</div>`;
