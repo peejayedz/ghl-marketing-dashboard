@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-30T20:18:12.862Z",
-  "source": "Companies pulled via GoHighLevel API v2 (Contacts search by tag: 'lfmp client', 'offboarded client', 'wpp client'; Businesses endpoint for company custom fields), joined by businessId.",
+  "generatedAt": "2026-07-30T20:41:37.790Z",
+  "source": "Companies pulled via GoHighLevel API v2 (Contacts search by tag; Businesses endpoint for company custom fields), joined by businessId.",
   "views": {
     "all": {
       "label": "All Clients",
@@ -1481,7 +1481,7 @@
             },
             {
               "name": "kimberly butler",
-              "email": null
+              "email": ""
             },
             {
               "name": "david rainen",
@@ -3335,7 +3335,7 @@
             },
             {
               "name": "kimberly butler",
-              "email": null
+              "email": ""
             },
             {
               "name": "david rainen",
