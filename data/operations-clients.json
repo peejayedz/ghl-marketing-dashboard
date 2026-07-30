@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-30T16:30:18+08:00",
+  "generatedAt": "2026-07-30T16:59:11+08:00",
   "source": "Scraped from GoHighLevel Contacts (filtered by tag: lfmp client, offboarded client, wpp client) and Companies (custom fields: Date Closed, Onboarding Date, Termination Notice, Last Day Of Service).",
   "views": {
     "all": {
@@ -3712,107 +3712,9 @@
       ]
     },
     "wpp": {
-      "label": "WPP Clients",
+      "label": "Active WPP Clients",
       "tag": "wpp client",
-      "companies": [
-        {
-          "company": "Barry M. Weintraub, M.D., F.A.C.S., P.C",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "Jill Sand",
-              "phone": null,
-              "email": "jill@drbarryweintraub.com"
-            },
-            {
-              "name": "Barry M. Weintraub",
-              "phone": null,
-              "email": "barry@drbarryweintraub.com"
-            }
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": "2025-08-28",
-          "lastDayOfService": "2025-10-01",
-          "tags": [
-            "wpp client"
-          ]
-        },
-        {
-          "company": "Coral Gables Plumbing",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "Ayla Shove",
-              "phone": null,
-              "email": "info@coralgablesplumbing.com"
-            },
-            {
-              "name": "Brandon Swanson",
-              "phone": null,
-              "email": "brandon@coralgablesplumbing.com"
-            }
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": "2025-07-16",
-          "lastDayOfService": "2025-08-15",
-          "tags": [
-            "wpp client"
-          ]
-        },
-        {
-          "company": "Vargas Orthodontics",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "Molly Fry",
-              "phone": null,
-              "email": "molly@vargasorthodontics.com"
-            },
-            {
-              "name": "Dr. Vargas",
-              "phone": null,
-              "email": "drvargas@vargasorthodontics.com"
-            }
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": null,
-          "lastDayOfService": null,
-          "tags": [
-            "wpp client"
-          ]
-        },
-        {
-          "company": "Vivid Vascular",
-          "contactCount": 3,
-          "contacts": [
-            {
-              "name": "Kari Gropper",
-              "phone": null,
-              "email": "kgropper@northbeachvascular.com"
-            },
-            {
-              "name": "Dena Pennacchio",
-              "phone": null,
-              "email": "dena.pennacchio@vividvascular.com"
-            },
-            {
-              "name": "Adam Gropper",
-              "phone": null,
-              "email": "agropper@northbeachvascular.com"
-            }
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": "2025-12-03",
-          "lastDayOfService": "2026-01-15",
-          "tags": [
-            "wpp client"
-          ]
-        }
-      ]
+      "companies": []
     }
   }
 }
