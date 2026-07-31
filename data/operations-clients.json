@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-31T04:04:06.611Z",
-  "source": "Companies pulled via GoHighLevel API v2 (Contacts search by tag; Businesses endpoint for company custom fields), joined by businessId.",
+  "generatedAt": "2026-07-31T14:36:57.007Z",
+  "source": "Companies pulled via GoHighLevel API v2 (Contacts search by tag: 'lfmp client', 'offboarded client', 'wpp client'; Businesses endpoint for company custom fields), joined by businessId.",
   "views": {
     "all": {
       "label": "All Clients",
@@ -86,6 +86,23 @@
           "onboardingDate": "2024-11-15",
           "terminationNotice": "2025-08-28",
           "lastDayOfService": "2025-10-01"
+        },
+        {
+          "company": "Behavioral Family Solutions",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "david gonzalez",
+              "email": "david@behavioralfamilysolutions.com"
+            }
+          ],
+          "tags": [
+            "wpp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
         },
         {
           "company": "Britto & Herman Injury Lawyers",
@@ -830,8 +847,8 @@
           "tags": [
             "lfmp client"
           ],
-          "dateClosed": null,
-          "onboardingDate": null,
+          "dateClosed": "2020-06-08",
+          "onboardingDate": "2020-06-09",
           "terminationNotice": null,
           "lastDayOfService": null
         },
@@ -859,8 +876,8 @@
           "tags": [
             "lfmp client"
           ],
-          "dateClosed": null,
-          "onboardingDate": null,
+          "dateClosed": "2021-11-12",
+          "onboardingDate": "2021-11-22",
           "terminationNotice": null,
           "lastDayOfService": null
         },
@@ -2084,8 +2101,8 @@
           "tags": [
             "lfmp client"
           ],
-          "dateClosed": null,
-          "onboardingDate": null,
+          "dateClosed": "2020-06-08",
+          "onboardingDate": "2020-06-09",
           "terminationNotice": null,
           "lastDayOfService": null
         },
@@ -2113,8 +2130,8 @@
           "tags": [
             "lfmp client"
           ],
-          "dateClosed": null,
-          "onboardingDate": null,
+          "dateClosed": "2021-11-12",
+          "onboardingDate": "2021-11-22",
           "terminationNotice": null,
           "lastDayOfService": null
         },
@@ -3481,7 +3498,25 @@
     "wpp": {
       "label": "Active WPP Clients",
       "tag": "wpp client",
-      "companies": []
+      "companies": [
+        {
+          "company": "Behavioral Family Solutions",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "david gonzalez",
+              "email": "david@behavioralfamilysolutions.com"
+            }
+          ],
+          "tags": [
+            "wpp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
+        }
+      ]
     }
   }
 }
