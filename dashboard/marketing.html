@@ -221,6 +221,10 @@
   <div id="report-view">
     <div class="report-toolbar">
       <div class="select-group">
+        <label>Campaign</label>
+        <select class="select-input" id="report-campaign-select" style="min-width:220px; border-color: var(--accent);"></select>
+      </div>
+      <div class="select-group">
         <label>From date</label>
         <input type="date" class="select-input" id="report-date-from" style="min-width:160px;">
       </div>
@@ -235,10 +239,6 @@
       <div class="select-group">
         <label>&nbsp;</label>
         <button type="button" class="view-toggle-btn" id="report-date-clear" style="background:#ff5c5c; border:1px solid #ff5c5c; color:#fff; padding:9px 14px; font-weight:500;">Clear dates</button>
-      </div>
-      <div class="select-group">
-        <label>Campaign</label>
-        <select class="select-input" id="report-campaign-select" style="min-width:220px; border-color: var(--accent);"></select>
       </div>
       <label class="stats-toggle" style="align-self:center; margin-top:16px;">
         <span class="switch"><input type="checkbox" id="stats-toggle-input"><span class="slider"></span></span>
