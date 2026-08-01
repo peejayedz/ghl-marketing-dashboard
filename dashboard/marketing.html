@@ -112,18 +112,6 @@
     display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 16px; margin-bottom: 28px;
   }
-  .report-summary {
-    background: linear-gradient(135deg, rgba(91,140,255,0.10), rgba(52,201,143,0.05));
-    border: 1px solid var(--accent);
-    border-radius: 14px;
-    padding: 20px 22px;
-    margin-bottom: 24px;
-  }
-  .report-summary h3 { margin: 0 0 14px; font-size: 15px; }
-  .report-summary .summary-row { display: flex; flex-wrap: wrap; gap: 28px; }
-  .report-summary .summary-row + .summary-row { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border); }
-  .report-summary .summary-item { font-size: 12.5px; color: var(--muted); line-height: 1.5; }
-  .report-summary .summary-item strong { display: block; color: var(--text); font-size: 15px; font-weight: 600; margin-top: 2px; }
   .report-kpi-card {
     background: var(--card); border: 1px solid var(--border); border-radius: 14px;
     padding: 22px 20px; text-align: center;
@@ -235,10 +223,7 @@
   </div>
 
   <div id="report-view">
-    <h2 id="report-headline" style="margin: 0 0 2px; font-size: 20px;"></h2>
-    <div class="section-sub" style="margin-bottom:18px;">Email performance for this campaign. Use the Campaign dropdown on the right to switch.</div>
-
-    <div class="report-toolbar">
+    <div class="report-toolbar" style="justify-content:flex-end;">
       <div class="select-group">
         <label>From date</label>
         <input type="date" class="select-input" id="report-date-from" style="min-width:160px;">
@@ -249,9 +234,13 @@
       </div>
       <div class="select-group">
         <label>&nbsp;</label>
+        <button type="button" class="view-toggle-btn" id="report-date-apply" style="padding:9px 14px;">Apply filters</button>
+      </div>
+      <div class="select-group">
+        <label>&nbsp;</label>
         <button type="button" class="view-toggle-btn" id="report-date-clear" style="background:var(--card); border:1px solid var(--border); color:var(--muted); padding:9px 14px; font-weight:500;">Clear dates</button>
       </div>
-      <div class="select-group" style="margin-left:auto;">
+      <div class="select-group">
         <label>Campaign</label>
         <select class="select-input" id="report-campaign-select" style="min-width:220px; border-color: var(--accent);"></select>
       </div>
@@ -259,8 +248,6 @@
     <div style="margin: -12px 0 20px;">
       <div class="section-sub" id="report-filter-caption" style="margin:0; color: var(--muted); font-size: 12.5px;"></div>
     </div>
-
-    <div class="report-summary" id="report-summary"></div>
 
     <div class="report-kpi-grid" id="report-kpis"></div>
 
@@ -949,50 +936,11 @@ document.querySelector('#report-email-table thead').addEventListener('click', (e
   renderReportEmailTable(emailsInReportFilter(campaign.key));
 });
 
-function renderReportSummary(workflows, campaign) {
-  document.getElementById('report-headline').textContent = campaign.label + ' — Campaign Report';
-  const panel = document.getElementById('report-summary');
-  const withTraffic = workflows.filter(w => w.enrolled > 0);
-
-  if (withTraffic.length === 0) {
-    panel.innerHTML = `<h3>Summary</h3><div class="summary-item">No enrolled contacts yet for this campaign's workflows in the current filter.</div>`;
-    return;
-  }
-
-  const avgOpen = weightedAvg(workflows, 'opened');
-  const avgClick = weightedAvg(workflows, 'clicked');
-  const avgReply = weightedAvg(workflows, 'replied');
-  const avgBounce = weightedAvg(workflows, 'bounced');
-  const avgUnsub = weightedAvg(workflows, 'unsubscribed');
-
-  let html = `<h3>Summary</h3>
-    <div class="summary-row">
-      <div class="summary-item">Avg open rate<strong>${pct(avgOpen)}</strong></div>
-      <div class="summary-item">Avg click rate<strong>${pct(avgClick)}</strong></div>
-      <div class="summary-item">Avg reply rate<strong>${pct(avgReply)}</strong></div>
-      <div class="summary-item">Avg bounce rate<strong>${pct(avgBounce)}</strong></div>
-      <div class="summary-item">Avg unsubscribe rate<strong>${pct(avgUnsub)}</strong></div>
-    </div>`;
-
-  if (withTraffic.length > 1) {
-    const best = withTraffic.reduce((a, b) => (b.email.opened > a.email.opened ? b : a));
-    const worst = withTraffic.reduce((a, b) => (b.email.opened < a.email.opened ? b : a));
-    if (best.name !== worst.name) {
-      html += `<div class="summary-row">
-        <div class="summary-item">🏆 Best performing workflow<strong>${best.name} — ${pct(best.email.opened)} open rate</strong></div>
-        <div class="summary-item">⚠️ Needs attention<strong>${worst.name} — ${pct(worst.email.opened)} open rate</strong></div>
-      </div>`;
-    }
-  }
-  panel.innerHTML = html;
-}
-
 function renderReport() {
   if (!reportKey) reportKey = DATA.campaigns[0].key;
   populateReportFilters();
   const campaign = DATA.campaigns.find(c => c.key === reportKey) || DATA.campaigns[0];
   const workflows = workflowsInFilter(campaign);
-  renderReportSummary(workflows, campaign);
 
   let captionText;
   if (dateRangeActive()) {
@@ -1023,10 +971,11 @@ document.getElementById('report-campaign-select').addEventListener('change', (e)
 });
 document.getElementById('report-date-from').addEventListener('change', (e) => {
   reportDateFrom = e.target.value;
-  renderReport();
 });
 document.getElementById('report-date-to').addEventListener('change', (e) => {
   reportDateTo = e.target.value;
+});
+document.getElementById('report-date-apply').addEventListener('click', () => {
   renderReport();
 });
 document.getElementById('report-date-clear').addEventListener('click', () => {
