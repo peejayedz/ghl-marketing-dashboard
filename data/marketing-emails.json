@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-02T00:00:00-04:00",
+  "generatedAt": "2026-08-02T12:00:00-04:00",
   "source": "Scraped from GoHighLevel Automation > Workflows builder canvas for the DM Position Report & Gap Analysis, PI Summit, and AGM Podcast [Confirmed Guests] campaigns. Subject lines and recipient counts are from the original subject-line scrape; opened/clicked/replied/bounced/unsubscribed stats have been re-scraped and corrected using each workflow's 'Stats view' toggle (pie-chart icon), which exposes REAL per-email-node percentages (not proxied from the parent workflow's aggregate stats, which was the prior, inaccurate methodology). Two additional real email steps discovered in workflow '2.0 When Booked a Call For Podcast, Then Move To Stage 2' during this re-scrape (a 2nd and 3rd email in that sequence) have been added below using their in-canvas step labels as subject, since their exact Subject-field text was not re-scraped. Internal-notification-only workflows and non-email 'Add task'/'Internal Notification' steps remain excluded — only genuine outbound marketing emails to prospects/clients are included. A 'delivered' rate was added to every email via the GHL Email API's per-workflow aggregate stats endpoint (services.leadconnectorhq.com/emails/locations/{loc}/campaigns/stats/workflow-campaigns/{workflowId}) on 2026-08-01 — every tracked workflow showed 100% delivery (0 bounces at delivery time), so 100 is applied uniformly per workflow rather than re-deriving per individual email step.",
   "campaigns": [
     {
@@ -275,6 +275,16 @@
           "stats": { "delivered": 100, "opened": 100, "clicked": 0, "replied": 0, "bounced": 0, "unsubscribed": 0 }
         }
       ]
+    },
+    {
+      "key": "agm-podcast-be-our-next-guest",
+      "label": "AGM Podcast [Be Our Next Guest]",
+      "emails": []
+    },
+    {
+      "key": "agm-podcast-new-episode",
+      "label": "AGM Podcast [New Episode]",
+      "emails": []
     }
   ]
 }
