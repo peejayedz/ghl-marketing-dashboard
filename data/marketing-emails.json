@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-01T00:00:00-04:00",
+  "generatedAt": "2026-08-02T00:00:00-04:00",
   "source": "Scraped from GoHighLevel Automation > Workflows builder canvas for the DM Position Report & Gap Analysis, PI Summit, and AGM Podcast [Confirmed Guests] campaigns. Subject lines and recipient counts are from the original subject-line scrape; opened/clicked/replied/bounced/unsubscribed stats have been re-scraped and corrected using each workflow's 'Stats view' toggle (pie-chart icon), which exposes REAL per-email-node percentages (not proxied from the parent workflow's aggregate stats, which was the prior, inaccurate methodology). Two additional real email steps discovered in workflow '2.0 When Booked a Call For Podcast, Then Move To Stage 2' during this re-scrape (a 2nd and 3rd email in that sequence) have been added below using their in-canvas step labels as subject, since their exact Subject-field text was not re-scraped. Internal-notification-only workflows and non-email 'Add task'/'Internal Notification' steps remain excluded — only genuine outbound marketing emails to prospects/clients are included. A 'delivered' rate was added to every email via the GHL Email API's per-workflow aggregate stats endpoint (services.leadconnectorhq.com/emails/locations/{loc}/campaigns/stats/workflow-campaigns/{workflowId}) on 2026-08-01 — every tracked workflow showed 100% delivery (0 bounces at delivery time), so 100 is applied uniformly per workflow rather than re-deriving per individual email step.",
   "campaigns": [
     {
@@ -240,6 +240,38 @@
           "workflowId": "81a36016-69b8-44cd-baa1-49b9971ff783",
           "createdOn": "2026-06-30T18:32:00",
           "recipients": 2,
+          "stats": { "delivered": 100, "opened": 100, "clicked": 0, "replied": 0, "bounced": 0, "unsubscribed": 0 }
+        },
+        {
+          "subject": "Send Recording Checklist",
+          "workflowName": "2.3 When 2 Days Before The Recording Date, Then Send Checklist",
+          "workflowId": "4cdb1257-4bb2-4c67-b1f7-5177b90451f8",
+          "createdOn": "2026-07-15T15:46:48",
+          "recipients": 0,
+          "stats": { "delivered": 0, "opened": 0, "clicked": 0, "replied": 0, "bounced": 0, "unsubscribed": 0 }
+        },
+        {
+          "subject": "Email #5. Episode promotion and PR",
+          "workflowName": "3.1 When Podcast Launch in 1 Month, Then Send Internal Notification",
+          "workflowId": "e721a4e0-97da-47d9-a6de-98ef1a7048c4",
+          "createdOn": "2026-06-30T18:18:58",
+          "recipients": 0,
+          "stats": { "delivered": 0, "opened": 0, "clicked": 0, "replied": 0, "bounced": 0, "unsubscribed": 0 }
+        },
+        {
+          "subject": "Email #6. We left a Google Review.",
+          "workflowName": "3.2 When the review is confirmed by Josh, Then Send Google Review Email",
+          "workflowId": "bd03a6ca-f641-4b98-90c1-0b5ea2ad4484",
+          "createdOn": "2026-06-30T17:52:14",
+          "recipients": 0,
+          "stats": { "delivered": 0, "opened": 0, "clicked": 0, "replied": 0, "bounced": 0, "unsubscribed": 0 }
+        },
+        {
+          "subject": "Send Press Release for Approval",
+          "workflowName": "4.1 When Press Release Received",
+          "workflowId": "fd7ffe37-be7a-4bd4-a2fd-a7e231b71214",
+          "createdOn": "2026-06-30T18:43:05",
+          "recipients": 1,
           "stats": { "delivered": 100, "opened": 100, "clicked": 0, "replied": 0, "bounced": 0, "unsubscribed": 0 }
         }
       ]
