@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-01T07:50:34.545Z",
+  "generatedAt": "2026-08-02T16:23:22.783Z",
   "source": "Pulled via GoHighLevel API (Workflows API, Email Campaigns Statistics API incl. per-step subSourceId stats). Per-email 'subject' fields are GHL's own internal step labels (not the original polished subject lines) since GHL doesn't expose real subject text via API. Steps with identical labels on the same workflow (if/else branches of the same email) are merged into one entry with summed stats. Enrolled/Active counts carried over from last manual scrape.",
   "folderUrl": "https://app.lawfirmmarketingpros.com/v2/location/sQ2VSMkR7cLHb46Wdemi/automation/workflows?listTab=all&folder=a4f0cd90-0852-4926-9f52-2a946026e0da",
   "workflows": [
@@ -50,7 +50,8 @@
         "clicked": 0,
         "replied": 0,
         "bounced": 0,
-        "unsubscribed": 0
+        "unsubscribed": 0,
+        "delivered": 100
       }
     },
     {
@@ -64,7 +65,8 @@
         "clicked": 0,
         "replied": 0,
         "bounced": 0,
-        "unsubscribed": 0
+        "unsubscribed": 0,
+        "delivered": 100
       }
     },
     {
@@ -78,7 +80,8 @@
         "clicked": 0,
         "replied": 0,
         "bounced": 0,
-        "unsubscribed": 0
+        "unsubscribed": 0,
+        "delivered": 100
       }
     },
     {
@@ -92,7 +95,8 @@
         "clicked": 0,
         "replied": 0,
         "bounced": 0,
-        "unsubscribed": 0
+        "unsubscribed": 0,
+        "delivered": 100
       }
     },
     {
@@ -106,7 +110,8 @@
         "clicked": 0,
         "replied": 0,
         "bounced": 0,
-        "unsubscribed": 0
+        "unsubscribed": 0,
+        "delivered": 100
       }
     },
     {
@@ -120,7 +125,8 @@
         "clicked": 0,
         "replied": 0,
         "bounced": 0,
-        "unsubscribed": 0
+        "unsubscribed": 0,
+        "delivered": 100
       }
     },
     {
@@ -134,7 +140,8 @@
         "clicked": 0,
         "replied": 0,
         "bounced": 0,
-        "unsubscribed": 0
+        "unsubscribed": 0,
+        "delivered": 100
       }
     },
     {
@@ -148,7 +155,8 @@
         "clicked": 0,
         "replied": 0,
         "bounced": 0,
-        "unsubscribed": 0
+        "unsubscribed": 0,
+        "delivered": 100
       }
     },
     {
@@ -162,7 +170,8 @@
         "clicked": 0,
         "replied": 0,
         "bounced": 0,
-        "unsubscribed": 0
+        "unsubscribed": 0,
+        "delivered": 100
       }
     },
     {
@@ -176,7 +185,8 @@
         "clicked": 0,
         "replied": 0,
         "bounced": 0,
-        "unsubscribed": 0
+        "unsubscribed": 0,
+        "delivered": 100
       }
     }
   ]
