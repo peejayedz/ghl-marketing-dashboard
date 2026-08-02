@@ -356,15 +356,6 @@
     </div>
     <div class="section-sub" id="dlf-filter-caption" style="margin: -12px 0 20px; color: var(--muted); font-size: 12.5px;"></div>
 
-    <div class="report-section">
-      <h3>Reports</h3>
-      <div class="section-sub">Current active contacts, new contacts since last sync, and engagement rates across DLF's automation workflows.</div>
-      <div class="report-kpi-grid" id="dlf-report-kpis"></div>
-      <div style="height:160px;">
-        <canvas id="dlf-report-chart"></canvas>
-      </div>
-    </div>
-
     <div class="table-card">
       <h2><span>Automations</span> <a id="dlf-folder-link" href="#" target="_blank">Open in GoHighLevel &#8594;</a></h2>
       <table id="dlf-table">
@@ -388,6 +379,14 @@
       <h3>Emails</h3>
       <div class="section-sub">Delivered, opened, clicked, bounced and unsubscribed rate — recipient-weighted across DLF's email sends.</div>
       <div class="report-kpi-grid" id="dlf-email-kpis"></div>
+    </div>
+
+    <div class="report-section">
+      <h3>Engagement rates</h3>
+      <div class="section-sub">Delivery, open, click, reply, bounce and unsubscribe rate — recipient-weighted across DLF's emails.</div>
+      <div style="height:320px;">
+        <canvas id="dlf-email-chart"></canvas>
+      </div>
     </div>
 
     <div class="table-card">
@@ -1183,51 +1182,6 @@ function updateDlfSortIndicators() {
   });
 }
 
-function renderDlfReportKpis() {
-  const workflows = workflowsInDlfFilter();
-  const totalActive = workflows.reduce((s, w) => s + (w.active || 0), 0);
-  const totalNew = workflows.reduce((s, w) => s + (w.newSinceLastSync || 0), 0);
-  const rateKeys = ['opened', 'clicked', 'replied', 'unsubscribed', 'bounced'];
-  const rateLabels = { opened: 'Open rate', clicked: 'Click rate', replied: 'Reply rate', unsubscribed: 'Unsubscribe rate', bounced: 'Bounce rate' };
-  const grid = document.getElementById('dlf-report-kpis');
-  let html = `<div class="report-kpi-card"><div class="kpi-value">${totalActive}</div><div class="kpi-label">Active Contacts</div></div>`;
-  html += `<div class="report-kpi-card"><div class="kpi-value">${totalNew}</div><div class="kpi-label">New Contacts <span style="font-size:11px; opacity:0.75;">(since last sync)</span></div></div>`;
-  const totalEnrolled = workflows.reduce((s, w) => s + (w.enrolled || 0), 0);
-  rateKeys.forEach(key => {
-    const v = weightedAvg(workflows, key);
-    html += `<div class="report-kpi-card"><div class="kpi-value">${metricDisplay(v, totalEnrolled)}</div><div class="kpi-label">${rateLabels[key]}</div></div>`;
-  });
-  grid.innerHTML = html;
-  return rateKeys.map(key => weightedAvg(workflows, key));
-}
-
-function renderDlfReportChart(values, totalEnrolled) {
-  const ctx = document.getElementById('dlf-report-chart');
-  const labels = ['Open', 'Click', 'Reply', 'Unsubscribe', 'Bounce'];
-  const colors = ['#34c98f', '#ffb454', '#c48bff', '#8b95ab', '#ff6b6b'];
-  if (dlfChart) dlfChart.destroy();
-  dlfChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels,
-      datasets: [{
-        data: showNumbers
-          ? values.map(v => Math.round(totalEnrolled * (v || 0) / 100))
-          : values.map(v => Math.round(v * 100) / 100),
-        backgroundColor: colors, borderRadius: 8, borderColor: '#ffffff', borderWidth: 0
-      }]
-    },
-    options: {
-      maintainAspectRatio: false,
-      plugins: { legend: { display: false } },
-      scales: {
-        x: { ticks: { color: '#8b95ab' }, grid: { display: false } },
-        y: { ticks: { color: '#8b95ab', callback: v => showNumbers ? v : v + '%' }, grid: { color: '#262f42' }, beginAtZero: true }
-      }
-    }
-  });
-}
-
 function renderDlfTable() {
   const workflows = sortDlfWorkflows(workflowsInDlfFilter());
   const tbody = document.querySelector('#dlf-table tbody');
@@ -1349,12 +1303,44 @@ document.querySelector('#dlf-email-table thead').addEventListener('click', (e) =
   renderDlfEmailTable(emailsInDlfFilter());
 });
 
+const DLF_CHART_METRIC_KEYS = ['delivered', 'opened', 'clicked', 'replied', 'bounced', 'unsubscribed'];
+
+function renderDlfEmailChart(emails) {
+  const ctx = document.getElementById('dlf-email-chart');
+  const labels = ['Delivery', 'Open', 'Click', 'Reply', 'Bounce', 'Unsubscribe'];
+  const colors = ['#5b8cff', '#34c98f', '#ffb454', '#c48bff', '#ff6b6b', '#8b95ab'];
+  const totalRecipients = emails.reduce((s, c) => s + (c.recipients || 0), 0);
+  const values = DLF_CHART_METRIC_KEYS.map(key => weightedAvgEmail(emails, key));
+  const chartValues = showNumbers
+    ? values.map(v => Math.round(totalRecipients * v / 100))
+    : values.map(v => Math.round(v * 100) / 100);
+  if (dlfChart) dlfChart.destroy();
+  dlfChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [{ data: chartValues, backgroundColor: colors, borderRadius: 8 }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { ticks: { color: '#8b95ab' }, grid: { display: false } },
+        y: { ticks: { color: '#8b95ab', callback: v => showNumbers ? v : v + '%' }, grid: { color: '#262f42' }, beginAtZero: true }
+      }
+    }
+  });
+}
+
 function renderDlfEmailSection() {
   const emails = emailsInDlfFilter();
   if (emails.length === 0) {
     document.getElementById('dlf-email-kpis').innerHTML = '<div class="empty-state">No DLF emails match this date filter.</div>';
+    if (dlfChart) { dlfChart.destroy(); dlfChart = null; }
   } else {
     renderDlfEmailKpis(emails);
+    renderDlfEmailChart(emails);
   }
   renderDlfEmailTable(emails);
 }
@@ -1375,14 +1361,6 @@ function renderDlfView() {
   }
   document.getElementById('dlf-filter-caption').textContent = captionText;
 
-  if (workflows.length === 0) {
-    document.getElementById('dlf-report-kpis').innerHTML = '<div class="empty-state">No DLF workflows match this date filter.</div>';
-    if (dlfChart) { dlfChart.destroy(); dlfChart = null; }
-  } else {
-    const values = renderDlfReportKpis();
-    const totalEnrolled = workflows.reduce((s, w) => s + (w.enrolled || 0), 0);
-    renderDlfReportChart(values, totalEnrolled);
-  }
   renderDlfTable();
   renderDlfEmailSection();
 }
