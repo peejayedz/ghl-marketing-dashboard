@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-31T14:36:57.007Z",
-  "source": "Companies pulled via GoHighLevel API v2 (Contacts search by tag: 'lfmp client', 'offboarded client', 'wpp client'; Businesses endpoint for company custom fields), joined by businessId.",
+  "generatedAt": "2026-08-02T11:09:15.732Z",
+  "source": "Companies pulled via GoHighLevel API v2 (Contacts search by tag; Businesses endpoint for company custom fields), joined by businessId.",
   "views": {
     "all": {
       "label": "All Clients",
@@ -258,6 +258,27 @@
           ],
           "dateClosed": "2022-02-28",
           "onboardingDate": "2022-03-10",
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Exit Path Partners LLC",
+          "contactCount": 2,
+          "contacts": [
+            {
+              "name": "cassie pinkerton",
+              "email": "cassie@exitpathpartners.com"
+            },
+            {
+              "name": "alex gertsburg",
+              "email": "alex@exitpathpartners.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
           "terminationNotice": null,
           "lastDayOfService": null
         },
@@ -792,8 +813,8 @@
           "tags": [
             "offboarded client"
           ],
-          "dateClosed": null,
-          "onboardingDate": null,
+          "dateClosed": "2023-11-08",
+          "onboardingDate": "2023-11-29",
           "terminationNotice": null,
           "lastDayOfService": null
         },
@@ -897,8 +918,8 @@
           "tags": [
             "offboarded client"
           ],
-          "dateClosed": null,
-          "onboardingDate": null,
+          "dateClosed": "2022-06-15",
+          "onboardingDate": "2022-06-29",
           "terminationNotice": null,
           "lastDayOfService": null
         },
@@ -935,8 +956,8 @@
           "tags": [
             "lfmp client"
           ],
-          "dateClosed": null,
-          "onboardingDate": null,
+          "dateClosed": "2025-01-29",
+          "onboardingDate": "2025-03-12",
           "terminationNotice": null,
           "lastDayOfService": null
         },
@@ -956,7 +977,7 @@
           "tags": [
             "offboarded client"
           ],
-          "dateClosed": null,
+          "dateClosed": "2021-04-07",
           "onboardingDate": null,
           "terminationNotice": null,
           "lastDayOfService": null
@@ -981,8 +1002,8 @@
           "tags": [
             "lfmp client"
           ],
-          "dateClosed": null,
-          "onboardingDate": null,
+          "dateClosed": "2025-04-24",
+          "onboardingDate": "2025-05-01",
           "terminationNotice": null,
           "lastDayOfService": null
         },
@@ -1015,8 +1036,8 @@
           "tags": [
             "lfmp client"
           ],
-          "dateClosed": null,
-          "onboardingDate": null,
+          "dateClosed": "2021-04-07",
+          "onboardingDate": "2021-04-21",
           "terminationNotice": null,
           "lastDayOfService": null
         },
@@ -1036,8 +1057,8 @@
           "tags": [
             "offboarded client"
           ],
-          "dateClosed": null,
-          "onboardingDate": null,
+          "dateClosed": "2024-12-27",
+          "onboardingDate": "2025-01-24",
           "terminationNotice": "2025-08-22",
           "lastDayOfService": "2025-10-15"
         },
@@ -1053,8 +1074,8 @@
           "tags": [
             "offboarded client"
           ],
-          "dateClosed": null,
-          "onboardingDate": null,
+          "dateClosed": "2024-06-10",
+          "onboardingDate": "2024-06-14",
           "terminationNotice": "2026-04-29",
           "lastDayOfService": "2026-05-15"
         },
@@ -1078,8 +1099,8 @@
           "tags": [
             "lfmp client"
           ],
-          "dateClosed": null,
-          "onboardingDate": null,
+          "dateClosed": "2023-03-01",
+          "onboardingDate": "2023-03-20",
           "terminationNotice": null,
           "lastDayOfService": null
         },
@@ -1095,8 +1116,8 @@
           "tags": [
             "lfmp client"
           ],
-          "dateClosed": null,
-          "onboardingDate": null,
+          "dateClosed": "2021-12-24",
+          "onboardingDate": "2021-12-27",
           "terminationNotice": null,
           "lastDayOfService": null
         },
@@ -1112,8 +1133,8 @@
           "tags": [
             "offboarded client"
           ],
-          "dateClosed": null,
-          "onboardingDate": null,
+          "dateClosed": "2024-09-19",
+          "onboardingDate": "2024-09-26",
           "terminationNotice": "2026-03-16",
           "lastDayOfService": "2026-04-16"
         },
@@ -1141,8 +1162,8 @@
           "tags": [
             "offboarded client"
           ],
-          "dateClosed": null,
-          "onboardingDate": null,
+          "dateClosed": "2020-11-25",
+          "onboardingDate": "2021-01-31",
           "terminationNotice": null,
           "lastDayOfService": null
         },
@@ -1162,8 +1183,8 @@
           "tags": [
             "offboarded client"
           ],
-          "dateClosed": null,
-          "onboardingDate": null,
+          "dateClosed": "2020-11-10",
+          "onboardingDate": "2020-11-23",
           "terminationNotice": "2025-08-13",
           "lastDayOfService": "2025-09-15"
         },
@@ -1196,7 +1217,7 @@
           "tags": [
             "lfmp client"
           ],
-          "dateClosed": null,
+          "dateClosed": "2020-08-18",
           "onboardingDate": null,
           "terminationNotice": null,
           "lastDayOfService": null
@@ -1213,8 +1234,8 @@
           "tags": [
             "lfmp client"
           ],
-          "dateClosed": null,
-          "onboardingDate": null,
+          "dateClosed": "2022-04-15",
+          "onboardingDate": "2022-04-26",
           "terminationNotice": null,
           "lastDayOfService": null
         },
@@ -1234,8 +1255,8 @@
           "tags": [
             "lfmp client"
           ],
-          "dateClosed": null,
-          "onboardingDate": null,
+          "dateClosed": "2024-08-20",
+          "onboardingDate": "2024-08-23",
           "terminationNotice": null,
           "lastDayOfService": null
         },
@@ -1255,8 +1276,8 @@
           "tags": [
             "offboarded client"
           ],
-          "dateClosed": null,
-          "onboardingDate": null,
+          "dateClosed": "2020-11-24",
+          "onboardingDate": "2020-12-09",
           "terminationNotice": null,
           "lastDayOfService": null
         },
@@ -1293,8 +1314,8 @@
           "tags": [
             "lfmp client"
           ],
-          "dateClosed": null,
-          "onboardingDate": null,
+          "dateClosed": "2023-10-28",
+          "onboardingDate": "2023-11-09",
           "terminationNotice": null,
           "lastDayOfService": null
         },
@@ -1310,8 +1331,8 @@
           "tags": [
             "lfmp client"
           ],
-          "dateClosed": null,
-          "onboardingDate": null,
+          "dateClosed": "2024-07-12",
+          "onboardingDate": "2024-07-23",
           "terminationNotice": null,
           "lastDayOfService": null
         },
@@ -1326,6 +1347,23 @@
           ],
           "tags": [
             "offboarded client"
+          ],
+          "dateClosed": "2023-02-24",
+          "onboardingDate": "2023-03-08",
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "The Arnold Law Firm",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "venisha arnold, esq.",
+              "email": "info@attorneyarnold.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -1373,8 +1411,8 @@
           "tags": [
             "lfmp client"
           ],
-          "dateClosed": null,
-          "onboardingDate": null,
+          "dateClosed": "2023-08-10",
+          "onboardingDate": "2023-08-15",
           "terminationNotice": null,
           "lastDayOfService": null
         },
@@ -1849,6 +1887,27 @@
           "lastDayOfService": null
         },
         {
+          "company": "Exit Path Partners LLC",
+          "contactCount": 2,
+          "contacts": [
+            {
+              "name": "cassie pinkerton",
+              "email": "cassie@exitpathpartners.com"
+            },
+            {
+              "name": "alex gertsburg",
+              "email": "alex@exitpathpartners.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
           "company": "Greathouse Trial Law, LLC",
           "contactCount": 4,
           "contacts": [
@@ -2168,8 +2227,8 @@
           "tags": [
             "lfmp client"
           ],
-          "dateClosed": null,
-          "onboardingDate": null,
+          "dateClosed": "2025-01-29",
+          "onboardingDate": "2025-03-12",
           "terminationNotice": null,
           "lastDayOfService": null
         },
@@ -2193,8 +2252,8 @@
           "tags": [
             "lfmp client"
           ],
-          "dateClosed": null,
-          "onboardingDate": null,
+          "dateClosed": "2025-04-24",
+          "onboardingDate": "2025-05-01",
           "terminationNotice": null,
           "lastDayOfService": null
         },
@@ -2227,8 +2286,8 @@
           "tags": [
             "lfmp client"
           ],
-          "dateClosed": null,
-          "onboardingDate": null,
+          "dateClosed": "2021-04-07",
+          "onboardingDate": "2021-04-21",
           "terminationNotice": null,
           "lastDayOfService": null
         },
@@ -2252,8 +2311,8 @@
           "tags": [
             "lfmp client"
           ],
-          "dateClosed": null,
-          "onboardingDate": null,
+          "dateClosed": "2023-03-01",
+          "onboardingDate": "2023-03-20",
           "terminationNotice": null,
           "lastDayOfService": null
         },
@@ -2269,8 +2328,8 @@
           "tags": [
             "lfmp client"
           ],
-          "dateClosed": null,
-          "onboardingDate": null,
+          "dateClosed": "2021-12-24",
+          "onboardingDate": "2021-12-27",
           "terminationNotice": null,
           "lastDayOfService": null
         },
@@ -2303,7 +2362,7 @@
           "tags": [
             "lfmp client"
           ],
-          "dateClosed": null,
+          "dateClosed": "2020-08-18",
           "onboardingDate": null,
           "terminationNotice": null,
           "lastDayOfService": null
@@ -2320,8 +2379,8 @@
           "tags": [
             "lfmp client"
           ],
-          "dateClosed": null,
-          "onboardingDate": null,
+          "dateClosed": "2022-04-15",
+          "onboardingDate": "2022-04-26",
           "terminationNotice": null,
           "lastDayOfService": null
         },
@@ -2341,8 +2400,8 @@
           "tags": [
             "lfmp client"
           ],
-          "dateClosed": null,
-          "onboardingDate": null,
+          "dateClosed": "2024-08-20",
+          "onboardingDate": "2024-08-23",
           "terminationNotice": null,
           "lastDayOfService": null
         },
@@ -2362,8 +2421,8 @@
           "tags": [
             "lfmp client"
           ],
-          "dateClosed": null,
-          "onboardingDate": null,
+          "dateClosed": "2023-10-28",
+          "onboardingDate": "2023-11-09",
           "terminationNotice": null,
           "lastDayOfService": null
         },
@@ -2374,6 +2433,23 @@
             {
               "name": "ali talai",
               "email": "ali@talailaw.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2024-07-12",
+          "onboardingDate": "2024-07-23",
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "The Arnold Law Firm",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "venisha arnold, esq.",
+              "email": "info@attorneyarnold.com"
             }
           ],
           "tags": [
@@ -2400,8 +2476,8 @@
           "tags": [
             "lfmp client"
           ],
-          "dateClosed": null,
-          "onboardingDate": null,
+          "dateClosed": "2023-08-10",
+          "onboardingDate": "2023-08-15",
           "terminationNotice": null,
           "lastDayOfService": null
         },
@@ -3021,8 +3097,8 @@
           "tags": [
             "offboarded client"
           ],
-          "dateClosed": null,
-          "onboardingDate": null,
+          "dateClosed": "2023-11-08",
+          "onboardingDate": "2023-11-29",
           "terminationNotice": null,
           "lastDayOfService": null
         },
@@ -3042,8 +3118,8 @@
           "tags": [
             "offboarded client"
           ],
-          "dateClosed": null,
-          "onboardingDate": null,
+          "dateClosed": "2022-06-15",
+          "onboardingDate": "2022-06-29",
           "terminationNotice": null,
           "lastDayOfService": null
         },
@@ -3063,7 +3139,7 @@
           "tags": [
             "offboarded client"
           ],
-          "dateClosed": null,
+          "dateClosed": "2021-04-07",
           "onboardingDate": null,
           "terminationNotice": null,
           "lastDayOfService": null
@@ -3084,8 +3160,8 @@
           "tags": [
             "offboarded client"
           ],
-          "dateClosed": null,
-          "onboardingDate": null,
+          "dateClosed": "2024-12-27",
+          "onboardingDate": "2025-01-24",
           "terminationNotice": "2025-08-22",
           "lastDayOfService": "2025-10-15"
         },
@@ -3101,8 +3177,8 @@
           "tags": [
             "offboarded client"
           ],
-          "dateClosed": null,
-          "onboardingDate": null,
+          "dateClosed": "2024-06-10",
+          "onboardingDate": "2024-06-14",
           "terminationNotice": "2026-04-29",
           "lastDayOfService": "2026-05-15"
         },
@@ -3118,8 +3194,8 @@
           "tags": [
             "offboarded client"
           ],
-          "dateClosed": null,
-          "onboardingDate": null,
+          "dateClosed": "2024-09-19",
+          "onboardingDate": "2024-09-26",
           "terminationNotice": "2026-03-16",
           "lastDayOfService": "2026-04-16"
         },
@@ -3147,8 +3223,8 @@
           "tags": [
             "offboarded client"
           ],
-          "dateClosed": null,
-          "onboardingDate": null,
+          "dateClosed": "2020-11-25",
+          "onboardingDate": "2021-01-31",
           "terminationNotice": null,
           "lastDayOfService": null
         },
@@ -3168,8 +3244,8 @@
           "tags": [
             "offboarded client"
           ],
-          "dateClosed": null,
-          "onboardingDate": null,
+          "dateClosed": "2020-11-10",
+          "onboardingDate": "2020-11-23",
           "terminationNotice": "2025-08-13",
           "lastDayOfService": "2025-09-15"
         },
@@ -3189,8 +3265,8 @@
           "tags": [
             "offboarded client"
           ],
-          "dateClosed": null,
-          "onboardingDate": null,
+          "dateClosed": "2020-11-24",
+          "onboardingDate": "2020-12-09",
           "terminationNotice": null,
           "lastDayOfService": null
         },
@@ -3223,8 +3299,8 @@
           "tags": [
             "offboarded client"
           ],
-          "dateClosed": null,
-          "onboardingDate": null,
+          "dateClosed": "2023-02-24",
+          "onboardingDate": "2023-03-08",
           "terminationNotice": null,
           "lastDayOfService": null
         },
