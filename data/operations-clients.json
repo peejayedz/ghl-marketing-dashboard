@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-03T21:35:02.650Z",
+  "generatedAt": "2026-08-03T21:57:46.381Z",
   "source": "Companies pulled via GoHighLevel API v2 (Contacts search by tag; Businesses endpoint for company custom fields), joined by businessId.",
   "views": {
     "all": {
@@ -526,29 +526,16 @@
           "lastDayOfService": "2024-07-31"
         },
         {
-          "company": "Josh Jones Law",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "josh jones",
-              "email": "marketing@joshjoneslaw.com"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
           "company": "Josh Jones Law, P.A",
-          "contactCount": 1,
+          "contactCount": 2,
           "contacts": [
             {
               "name": "josh jones",
               "email": "josh@joshjoneslaw.com"
+            },
+            {
+              "name": "josh jones",
+              "email": "marketing@joshjoneslaw.com"
             }
           ],
           "tags": [
@@ -629,28 +616,15 @@
         },
         {
           "company": "LAW OFFICE OF GARY M. LANDAU",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "gary landau",
-              "email": "garylandauattorney@gmail.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "Law Office of Gary M. Landau, P.A.",
-          "contactCount": 1,
+          "contactCount": 2,
           "contacts": [
             {
               "name": "meryl davids",
               "email": "meryldavids2@gmail.com"
+            },
+            {
+              "name": "gary landau",
+              "email": "garylandauattorney@gmail.com"
             }
           ],
           "tags": [
@@ -1262,8 +1236,12 @@
         },
         {
           "company": "STERN Law",
-          "contactCount": 2,
+          "contactCount": 3,
           "contacts": [
+            {
+              "name": "justin ball",
+              "email": "marketing@sternlawfirm.us"
+            },
             {
               "name": "jessica stern",
               "email": "jessica@sternlawfirm.us"
@@ -1280,23 +1258,6 @@
           "onboardingDate": "2020-12-09",
           "terminationNotice": "2024-02-28",
           "lastDayOfService": "2024-03-15"
-        },
-        {
-          "company": "Stern Law, LLC",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "justin ball",
-              "email": "marketing@sternlawfirm.us"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": null,
-          "lastDayOfService": null
         },
         {
           "company": "Suzuki Law Offices",
@@ -1536,7 +1497,7 @@
             },
             {
               "name": "kimberly butler",
-              "email": ""
+              "email": null
             },
             {
               "name": "david rainen",
@@ -2027,28 +1988,15 @@
         },
         {
           "company": "LAW OFFICE OF GARY M. LANDAU",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "gary landau",
-              "email": "garylandauattorney@gmail.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "Law Office of Gary M. Landau, P.A.",
-          "contactCount": 1,
+          "contactCount": 2,
           "contacts": [
             {
               "name": "meryl davids",
               "email": "meryldavids2@gmail.com"
+            },
+            {
+              "name": "gary landau",
+              "email": "garylandauattorney@gmail.com"
             }
           ],
           "tags": [
@@ -2946,29 +2894,16 @@
           "lastDayOfService": "2024-07-31"
         },
         {
-          "company": "Josh Jones Law",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "josh jones",
-              "email": "marketing@joshjoneslaw.com"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
           "company": "Josh Jones Law, P.A",
-          "contactCount": 1,
+          "contactCount": 2,
           "contacts": [
             {
               "name": "josh jones",
               "email": "josh@joshjoneslaw.com"
+            },
+            {
+              "name": "josh jones",
+              "email": "marketing@joshjoneslaw.com"
             }
           ],
           "tags": [
@@ -3251,8 +3186,12 @@
         },
         {
           "company": "STERN Law",
-          "contactCount": 2,
+          "contactCount": 3,
           "contacts": [
+            {
+              "name": "justin ball",
+              "email": "marketing@sternlawfirm.us"
+            },
             {
               "name": "jessica stern",
               "email": "jessica@sternlawfirm.us"
@@ -3269,23 +3208,6 @@
           "onboardingDate": "2020-12-09",
           "terminationNotice": "2024-02-28",
           "lastDayOfService": "2024-03-15"
-        },
-        {
-          "company": "Stern Law, LLC",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "justin ball",
-              "email": "marketing@sternlawfirm.us"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": null,
-          "lastDayOfService": null
         },
         {
           "company": "Tax Workout Group",
@@ -3428,7 +3350,7 @@
             },
             {
               "name": "kimberly butler",
-              "email": ""
+              "email": null
             },
             {
               "name": "david rainen",
