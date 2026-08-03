@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-03T21:57:46.381Z",
+  "generatedAt": "2026-08-03T22:40:04.209Z",
   "source": "Companies pulled via GoHighLevel API v2 (Contacts search by tag; Businesses endpoint for company custom fields), joined by businessId.",
   "views": {
     "all": {
@@ -1497,7 +1497,7 @@
             },
             {
               "name": "kimberly butler",
-              "email": null
+              "email": ""
             },
             {
               "name": "david rainen",
@@ -3350,7 +3350,7 @@
             },
             {
               "name": "kimberly butler",
-              "email": null
+              "email": ""
             },
             {
               "name": "david rainen",
