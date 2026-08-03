@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-02T16:23:22.783Z",
+  "generatedAt": "2026-08-03T14:25:33.151Z",
   "source": "Pulled via GoHighLevel API (Workflows API, Email Campaigns Statistics API incl. per-step subSourceId stats). Per-email 'subject' fields are GHL's own internal step labels (not the original polished subject lines) since GHL doesn't expose real subject text via API. Steps with identical labels on the same workflow (if/else branches of the same email) are merged into one entry with summed stats. Enrolled/Active counts carried over from last manual scrape.",
   "folderUrl": "https://app.lawfirmmarketingpros.com/v2/location/sQ2VSMkR7cLHb46Wdemi/automation/workflows?listTab=all&folder=a4f0cd90-0852-4926-9f52-2a946026e0da",
   "workflows": [
@@ -30,7 +30,7 @@
       "lastUpdated": "2026-07-22T14:04:49",
       "email": {
         "delivered": 100,
-        "opened": 50,
+        "opened": 100,
         "clicked": 0,
         "replied": 0,
         "bounced": 0,
@@ -91,7 +91,7 @@
       "createdOn": "2026-07-17T15:26:45",
       "recipients": 1,
       "stats": {
-        "opened": 0,
+        "opened": 100,
         "clicked": 0,
         "replied": 0,
         "bounced": 0,
@@ -111,7 +111,7 @@
         "replied": 0,
         "bounced": 0,
         "unsubscribed": 0,
-        "delivered": 100
+        "delivered": 0
       }
     },
     {
@@ -119,9 +119,9 @@
       "workflowName": "2.0 - When Contact Tag Added AI Cheat Sheet IE, Then Send Email Sequence",
       "workflowId": "81854e4d-ca61-4e75-a48e-49848143b6de",
       "createdOn": "2026-07-17T15:26:45",
-      "recipients": 0,
+      "recipients": 1,
       "stats": {
-        "opened": 0,
+        "opened": 100,
         "clicked": 0,
         "replied": 0,
         "bounced": 0,
@@ -141,7 +141,7 @@
         "replied": 0,
         "bounced": 0,
         "unsubscribed": 0,
-        "delivered": 100
+        "delivered": 0
       }
     },
     {
@@ -151,7 +151,7 @@
       "createdOn": "2026-07-17T15:26:45",
       "recipients": 1,
       "stats": {
-        "opened": 0,
+        "opened": 100,
         "clicked": 0,
         "replied": 0,
         "bounced": 0,
@@ -164,9 +164,9 @@
       "workflowName": "2.0 - When Contact Tag Added AI Cheat Sheet IE, Then Send Email Sequence",
       "workflowId": "81854e4d-ca61-4e75-a48e-49848143b6de",
       "createdOn": "2026-07-17T15:26:45",
-      "recipients": 0,
+      "recipients": 1,
       "stats": {
-        "opened": 0,
+        "opened": 100,
         "clicked": 0,
         "replied": 0,
         "bounced": 0,
@@ -186,7 +186,7 @@
         "replied": 0,
         "bounced": 0,
         "unsubscribed": 0,
-        "delivered": 100
+        "delivered": 0
       }
     }
   ]
