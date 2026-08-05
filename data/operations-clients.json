@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-05T16:08:46.644Z",
+  "generatedAt": "2026-08-05T16:58:44.165Z",
   "source": "Companies pulled via GoHighLevel API v2 (Contacts search by tag; Businesses endpoint for company custom fields), joined by businessId.",
   "views": {
     "all": {
@@ -86,6 +86,23 @@
           "onboardingDate": "2024-11-15",
           "terminationNotice": "2025-08-28",
           "lastDayOfService": "2025-10-01"
+        },
+        {
+          "company": "Batten Insurance",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "ann-marie batten",
+              "email": "annmariebatten@gmail.com"
+            }
+          ],
+          "tags": [
+            "wpp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
         },
         {
           "company": "Behavioral Family Solutions",
@@ -3636,6 +3653,23 @@
       "label": "Active WPP Clients",
       "tag": "wpp client",
       "companies": [
+        {
+          "company": "Batten Insurance",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "ann-marie batten",
+              "email": "annmariebatten@gmail.com"
+            }
+          ],
+          "tags": [
+            "wpp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
         {
           "company": "Behavioral Family Solutions",
           "contactCount": 3,
