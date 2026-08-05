@@ -388,6 +388,32 @@ function avgDaysLabel(avgDays) {
   return lifespanLabel({ months, days });
 }
 
+// Retention rate over the trailing 12 months, computed against the deduplicated
+// "All Clients" master list. A company counts as part of the cohort if it was
+// already a client (dateClosed) before the 12-month window started, and hadn't
+// already churned (on the given basis) before the window started either.
+// Retention = cohort members still active today (no churn date recorded on that
+// basis) / cohort size. Two parallel bases are reported, mirroring the lifetime
+// summary above: Last Day of Service (actual end) and Termination Notice (when
+// the client gave notice).
+function windowStartISO(monthsBack) {
+  const d = new Date();
+  d.setMonth(d.getMonth() - monthsBack);
+  return d.toISOString().slice(0, 10);
+}
+
+function retentionRateFor(companies, endField, windowStart) {
+  let cohortSize = 0, stillActive = 0;
+  companies.forEach(c => {
+    if (!c.dateClosed || c.dateClosed > windowStart) return;
+    const churnDate = c[endField];
+    if (churnDate && churnDate <= windowStart) return;
+    cohortSize++;
+    if (!churnDate) stillActive++;
+  });
+  return { cohortSize, stillActive, rate: cohortSize ? (stillActive / cohortSize) * 100 : null };
+}
+
 let DATA = null;
 let currentView = "active";
 let expandedCompanies = new Set();
@@ -723,6 +749,12 @@ function renderSummary() {
   const fmtStat = (s) => s.avgDays != null ? avgDaysLabel(s.avgDays) : "—";
   const fmtSub = (s) => s.count ? `Based on ${s.count} client${s.count === 1 ? "" : "s"} with both Date Closed and an end date recorded` : "No clients with both Date Closed and an end date recorded yet";
 
+  const windowStart = windowStartISO(12);
+  const retLastDay = retentionRateFor(companies, "lastDayOfService", windowStart);
+  const retTermNotice = retentionRateFor(companies, "terminationNotice", windowStart);
+  const fmtRet = (r) => r.rate != null ? r.rate.toFixed(1) + "%" : "—";
+  const fmtRetSub = (r) => r.cohortSize ? `${r.stillActive} of ${r.cohortSize} clients who were already onboard 12 months ago are still active` : "No clients were onboard 12 months ago yet";
+
   panel.innerHTML = `
     <div class="summary-title">Client Lifetime Summary</div>
     <div class="summary-desc">
@@ -739,6 +771,16 @@ function renderSummary() {
         <div class="summary-value">${fmtStat(termNotice)}</div>
         <div class="summary-label">Average client lifetime — Date Closed to Termination Notice</div>
         <div class="summary-sub">${fmtSub(termNotice)}</div>
+      </div>
+      <div class="summary-stat">
+        <div class="summary-value">${fmtRet(retLastDay)}</div>
+        <div class="summary-label">12-month retention rate — based on Last Day of Service</div>
+        <div class="summary-sub">${fmtRetSub(retLastDay)}</div>
+      </div>
+      <div class="summary-stat">
+        <div class="summary-value">${fmtRet(retTermNotice)}</div>
+        <div class="summary-label">12-month retention rate — based on Termination Notice</div>
+        <div class="summary-sub">${fmtRetSub(retTermNotice)}</div>
       </div>
     </div>
   `;
