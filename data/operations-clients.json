@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-05T15:08:46.743Z",
+  "generatedAt": "2026-08-05T16:08:46.644Z",
   "source": "Companies pulled via GoHighLevel API v2 (Contacts search by tag; Businesses endpoint for company custom fields), joined by businessId.",
   "views": {
     "all": {
@@ -89,11 +89,44 @@
         },
         {
           "company": "Behavioral Family Solutions",
-          "contactCount": 1,
+          "contactCount": 3,
           "contacts": [
+            {
+              "name": "amanda cardoso",
+              "email": "cardosoa@behavioralfamilysolutions.com"
+            },
+            {
+              "name": "juan carlos gonzalez",
+              "email": "jc@behavioralfamilysolutions.com"
+            },
             {
               "name": "david gonzalez",
               "email": "david@behavioralfamilysolutions.com"
+            }
+          ],
+          "tags": [
+            "wpp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Boca Dental",
+          "contactCount": 3,
+          "contacts": [
+            {
+              "name": "daniella",
+              "email": "daniella@weinsteindental.com"
+            },
+            {
+              "name": "gregg weinstein",
+              "email": "drgregg@comcast.net"
+            },
+            {
+              "name": "dita weinstein",
+              "email": "dita@weinsteindental.com"
             }
           ],
           "tags": [
@@ -184,6 +217,23 @@
           "onboardingDate": null,
           "terminationNotice": "2025-07-16",
           "lastDayOfService": "2025-08-15"
+        },
+        {
+          "company": "Dino's Pressure Cleaning, Inc.",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "dean tomasulo",
+              "email": "dinodobe@gmail.com"
+            }
+          ],
+          "tags": [
+            "wpp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
         },
         {
           "company": "Doncaster Law PLLC",
@@ -326,6 +376,23 @@
           "dateClosed": null,
           "onboardingDate": null,
           "terminationNotice": "2022-05-05",
+          "lastDayOfService": null
+        },
+        {
+          "company": "Gardens Jewish Experience",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "bracha cheplowitz",
+              "email": "gardensje@gmail.com"
+            }
+          ],
+          "tags": [
+            "wpp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
           "lastDayOfService": null
         },
         {
@@ -793,7 +860,7 @@
           "lastDayOfService": "2024-09-05"
         },
         {
-          "company": "Lone Star Injury Attorneys, PLLC",
+          "company": "Lone Star Injury Attorneys",
           "contactCount": 2,
           "contacts": [
             {
@@ -808,8 +875,8 @@
           "tags": [
             "lfmp client"
           ],
-          "dateClosed": null,
-          "onboardingDate": null,
+          "dateClosed": "2025-03-26",
+          "onboardingDate": "2025-04-04",
           "terminationNotice": null,
           "lastDayOfService": null
         },
@@ -954,6 +1021,27 @@
           "dateClosed": "2021-04-07",
           "onboardingDate": null,
           "terminationNotice": "2023-04-21",
+          "lastDayOfService": null
+        },
+        {
+          "company": "Palm Beach Plastic & Cosmetic Surgery",
+          "contactCount": 2,
+          "contacts": [
+            {
+              "name": "ladonna diller",
+              "email": ""
+            },
+            {
+              "name": "carla pisani",
+              "email": "carlapisani@gmail.com"
+            }
+          ],
+          "tags": [
+            "wpp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
           "lastDayOfService": null
         },
         {
@@ -1258,6 +1346,23 @@
           "onboardingDate": "2020-12-09",
           "terminationNotice": "2024-02-28",
           "lastDayOfService": "2024-03-15"
+        },
+        {
+          "company": "Susan J Christiansen Ph.D., LMFT",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "susan christiansen",
+              "email": "susiechrist@gmail.com"
+            }
+          ],
+          "tags": [
+            "wpp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
         },
         {
           "company": "Suzuki Law Offices",
@@ -1686,6 +1791,23 @@
           "lastDayOfService": "2025-03-01"
         },
         {
+          "company": "Visionary Eye Center",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "jacqueline c. westcott o.d., f.a.a.o.",
+              "email": "westcott@visionaryeyecenterfl.com"
+            }
+          ],
+          "tags": [
+            "wpp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
           "company": "Vivid Vascular",
           "contactCount": 3,
           "contacts": [
@@ -1729,6 +1851,23 @@
           ],
           "dateClosed": "2024-05-29",
           "onboardingDate": "2024-06-04",
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Web Promotion Partners",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "andy leonard",
+              "email": "aleonard@lawfirmmarketingpros.com"
+            }
+          ],
+          "tags": [
+            "wpp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
           "terminationNotice": null,
           "lastDayOfService": null
         },
@@ -2059,7 +2198,7 @@
           "lastDayOfService": null
         },
         {
-          "company": "Lone Star Injury Attorneys, PLLC",
+          "company": "Lone Star Injury Attorneys",
           "contactCount": 2,
           "contacts": [
             {
@@ -2074,8 +2213,8 @@
           "tags": [
             "lfmp client"
           ],
-          "dateClosed": null,
-          "onboardingDate": null,
+          "dateClosed": "2025-03-26",
+          "onboardingDate": "2025-04-04",
           "terminationNotice": null,
           "lastDayOfService": null
         },
@@ -3499,11 +3638,150 @@
       "companies": [
         {
           "company": "Behavioral Family Solutions",
-          "contactCount": 1,
+          "contactCount": 3,
           "contacts": [
+            {
+              "name": "amanda cardoso",
+              "email": "cardosoa@behavioralfamilysolutions.com"
+            },
+            {
+              "name": "juan carlos gonzalez",
+              "email": "jc@behavioralfamilysolutions.com"
+            },
             {
               "name": "david gonzalez",
               "email": "david@behavioralfamilysolutions.com"
+            }
+          ],
+          "tags": [
+            "wpp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Boca Dental",
+          "contactCount": 3,
+          "contacts": [
+            {
+              "name": "daniella",
+              "email": "daniella@weinsteindental.com"
+            },
+            {
+              "name": "gregg weinstein",
+              "email": "drgregg@comcast.net"
+            },
+            {
+              "name": "dita weinstein",
+              "email": "dita@weinsteindental.com"
+            }
+          ],
+          "tags": [
+            "wpp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Dino's Pressure Cleaning, Inc.",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "dean tomasulo",
+              "email": "dinodobe@gmail.com"
+            }
+          ],
+          "tags": [
+            "wpp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Gardens Jewish Experience",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "bracha cheplowitz",
+              "email": "gardensje@gmail.com"
+            }
+          ],
+          "tags": [
+            "wpp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Palm Beach Plastic & Cosmetic Surgery",
+          "contactCount": 2,
+          "contacts": [
+            {
+              "name": "ladonna diller",
+              "email": ""
+            },
+            {
+              "name": "carla pisani",
+              "email": "carlapisani@gmail.com"
+            }
+          ],
+          "tags": [
+            "wpp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Susan J Christiansen Ph.D., LMFT",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "susan christiansen",
+              "email": "susiechrist@gmail.com"
+            }
+          ],
+          "tags": [
+            "wpp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Visionary Eye Center",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "jacqueline c. westcott o.d., f.a.a.o.",
+              "email": "westcott@visionaryeyecenterfl.com"
+            }
+          ],
+          "tags": [
+            "wpp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Web Promotion Partners",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "andy leonard",
+              "email": "aleonard@lawfirmmarketingpros.com"
             }
           ],
           "tags": [
