@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-06T13:05:08.291Z",
+  "generatedAt": "2026-08-07T05:39:11.991Z",
   "source": "Companies pulled via GoHighLevel API v2 (Contacts search by tag; Businesses endpoint for company custom fields), joined by businessId.",
   "views": {
     "all": {
@@ -236,6 +236,23 @@
           "lastDayOfService": "2025-08-15"
         },
         {
+          "company": "DiBiaggio Law",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "deirdre dibiaggio",
+              "email": "djd@dibiaggiolaw.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
           "company": "Dino's Pressure Cleaning, Inc.",
           "contactCount": 1,
           "contacts": [
@@ -377,6 +394,23 @@
           "onboardingDate": "2022-05-12",
           "terminationNotice": "2024-11-21",
           "lastDayOfService": "2024-12-15"
+        },
+        {
+          "company": "Florida National Title Services",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "michele lewis",
+              "email": "michele@floridanationaltitle.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
         },
         {
           "company": "Florida Women’s Law Group",
@@ -648,6 +682,23 @@
           "lastDayOfService": "2024-08-31"
         },
         {
+          "company": "KynLi Consulting & Accounting LLC",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "cameron williams",
+              "email": "cameron@kynliconsulting.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
           "company": "LaBre Law Office",
           "contactCount": 1,
           "contacts": [
@@ -678,23 +729,6 @@
           ],
           "dateClosed": "2019-12-31",
           "onboardingDate": "2020-01-01",
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "Law Office of Deirdre DiBiaggio",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "deirdre dibiaggio",
-              "email": "djd@dibiaggiolaw.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2020-05-05",
-          "onboardingDate": "2020-05-06",
           "terminationNotice": null,
           "lastDayOfService": null
         },
@@ -1046,7 +1080,7 @@
           "contacts": [
             {
               "name": "ladonna diller",
-              "email": null
+              "email": ""
             },
             {
               "name": "carla pisani",
@@ -1283,23 +1317,6 @@
           "onboardingDate": "2025-07-02",
           "terminationNotice": "2026-07-20",
           "lastDayOfService": "2026-08-20"
-        },
-        {
-          "company": "Solano Law Firm",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "hector espinosa",
-              "email": "heesnaq1@gmail.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2020-08-18",
-          "onboardingDate": null,
-          "terminationNotice": null,
-          "lastDayOfService": null
         },
         {
           "company": "Speaks Law Firm",
@@ -1619,7 +1636,7 @@
             },
             {
               "name": "kimberly butler",
-              "email": null
+              "email": ""
             },
             {
               "name": "david rainen",
@@ -1698,6 +1715,23 @@
           ],
           "dateClosed": "2025-08-27",
           "onboardingDate": "2025-09-12",
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "The Mendoza Law Firm, LLC",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "maría mendoza",
+              "email": "abogada@mendozafirm.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2025-11-19",
+          "onboardingDate": "2025-11-19",
           "terminationNotice": null,
           "lastDayOfService": null
         },
@@ -1983,6 +2017,23 @@
           "lastDayOfService": null
         },
         {
+          "company": "DiBiaggio Law",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "deirdre dibiaggio",
+              "email": "djd@dibiaggiolaw.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
           "company": "Emery Law Office",
           "contactCount": 2,
           "contacts": [
@@ -2014,6 +2065,23 @@
             {
               "name": "alex gertsburg",
               "email": "alex@exitpathpartners.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Florida National Title Services",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "michele lewis",
+              "email": "michele@floridanationaltitle.com"
             }
           ],
           "tags": [
@@ -2092,6 +2160,23 @@
           "lastDayOfService": null
         },
         {
+          "company": "KynLi Consulting & Accounting LLC",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "cameron williams",
+              "email": "cameron@kynliconsulting.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
           "company": "LaBre Law Office",
           "contactCount": 1,
           "contacts": [
@@ -2122,23 +2207,6 @@
           ],
           "dateClosed": "2019-12-31",
           "onboardingDate": "2020-01-01",
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "Law Office of Deirdre DiBiaggio",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "deirdre dibiaggio",
-              "email": "djd@dibiaggiolaw.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2020-05-05",
-          "onboardingDate": "2020-05-06",
           "terminationNotice": null,
           "lastDayOfService": null
         },
@@ -2455,23 +2523,6 @@
           "lastDayOfService": "2026-08-20"
         },
         {
-          "company": "Solano Law Firm",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "hector espinosa",
-              "email": "heesnaq1@gmail.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2020-08-18",
-          "onboardingDate": null,
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
           "company": "Speaks Law Firm",
           "contactCount": 1,
           "contacts": [
@@ -2670,6 +2721,23 @@
           ],
           "dateClosed": "2025-08-27",
           "onboardingDate": "2025-09-12",
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "The Mendoza Law Firm, LLC",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "maría mendoza",
+              "email": "abogada@mendozafirm.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2025-11-19",
+          "onboardingDate": "2025-11-19",
           "terminationNotice": null,
           "lastDayOfService": null
         },
@@ -3506,7 +3574,7 @@
             },
             {
               "name": "kimberly butler",
-              "email": null
+              "email": ""
             },
             {
               "name": "david rainen",
@@ -3760,7 +3828,7 @@
           "contacts": [
             {
               "name": "ladonna diller",
-              "email": null
+              "email": ""
             },
             {
               "name": "carla pisani",
