@@ -828,12 +828,33 @@ function wireToolbar() {
   });
 }
 
+function startAutoRefreshWatcher(intervalMs) {
+  const loadedGeneratedAt = DATA && DATA.generatedAt;
+  setInterval(async () => {
+    try {
+      const res = await fetch("../data/operations-clients.json?check=" + Date.now(), { cache: "no-store" });
+      if (!res.ok) return;
+      const fresh = await res.json();
+      if (fresh.generatedAt && fresh.generatedAt !== loadedGeneratedAt) {
+        const banner = document.createElement("div");
+        banner.textContent = "New data synced — refreshing the page…";
+        banner.style.cssText = "position:fixed; top:0; left:0; right:0; background:#0d1b2e; color:#fff; text-align:center; padding:10px 16px; font:600 13px Arial, Helvetica, sans-serif; z-index:9999;";
+        document.body.appendChild(banner);
+        setTimeout(() => location.reload(), 1500);
+      }
+    } catch (e) {
+      // Silently ignore — a failed background check shouldn't disrupt anyone actively using the page.
+    }
+  }, intervalMs);
+}
+
 (async function init() {
   await loadData();
   renderSynced();
   renderColumnsPopover();
   wireToolbar();
   renderAll();
+  startAutoRefreshWatcher(5 * 60 * 1000); // check every 5 minutes for freshly pushed data
 })();
 </script>
 </body>
