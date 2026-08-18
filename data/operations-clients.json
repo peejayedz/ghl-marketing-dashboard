@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-17T15:39:13.699Z",
+  "generatedAt": "2026-08-18T13:04:43.672Z",
   "source": "Companies pulled via GoHighLevel API v2 (Contacts search by tag; Businesses endpoint for company custom fields), joined by businessId.",
   "views": {
     "all": {
@@ -8,7 +8,6 @@
       "companies": [
         {
           "company": "Albrecht Law PLLC",
-          "contactCount": 2,
           "contacts": [
             {
               "name": "matthew albrecht",
@@ -25,11 +24,11 @@
           "dateClosed": "2023-06-23",
           "onboardingDate": "2023-07-12",
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 2
         },
         {
           "company": "Bade Law Group, LLC",
-          "contactCount": 2,
           "contacts": [
             {
               "name": "keith simper",
@@ -46,11 +45,11 @@
           "dateClosed": "2026-05-07",
           "onboardingDate": "2026-05-15",
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 2
         },
         {
           "company": "Bangerter Law, LLC",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "matthew bangerter",
@@ -63,11 +62,11 @@
           "dateClosed": "2020-11-11",
           "onboardingDate": null,
           "terminationNotice": "2022-09-13",
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 1
         },
         {
           "company": "Barry M. Weintraub, M.D., F.A.C.S., P.C",
-          "contactCount": 2,
           "contacts": [
             {
               "name": "jill sand",
@@ -85,11 +84,11 @@
           "dateClosed": "2024-10-23",
           "onboardingDate": "2024-11-15",
           "terminationNotice": "2025-08-28",
-          "lastDayOfService": "2025-10-01"
+          "lastDayOfService": "2025-10-01",
+          "contactCount": 2
         },
         {
           "company": "Batten Insurance",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "ann-marie batten",
@@ -102,11 +101,11 @@
           "dateClosed": null,
           "onboardingDate": null,
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 1
         },
         {
           "company": "Behavioral Family Solutions",
-          "contactCount": 3,
           "contacts": [
             {
               "name": "amanda cardoso",
@@ -127,11 +126,11 @@
           "dateClosed": null,
           "onboardingDate": null,
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 3
         },
         {
           "company": "Boca Dental",
-          "contactCount": 3,
           "contacts": [
             {
               "name": "daniella",
@@ -152,11 +151,11 @@
           "dateClosed": null,
           "onboardingDate": null,
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 3
         },
         {
           "company": "Britto & Herman Injury Lawyers",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "michael herman, esq.",
@@ -169,11 +168,11 @@
           "dateClosed": "2023-08-23",
           "onboardingDate": "2023-09-08",
           "terminationNotice": "2025-02-09",
-          "lastDayOfService": "2025-03-01"
+          "lastDayOfService": "2025-03-01",
+          "contactCount": 1
         },
         {
           "company": "Cohen and Cohen Law",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "adam mann, esq.",
@@ -186,11 +185,11 @@
           "dateClosed": "2023-09-22",
           "onboardingDate": "2023-09-27",
           "terminationNotice": "2026-05-26",
-          "lastDayOfService": "2026-06-30"
+          "lastDayOfService": "2026-06-30",
+          "contactCount": 1
         },
         {
           "company": "Cohen and Juda P.A.",
-          "contactCount": 3,
           "contacts": [
             {
               "name": "harvey cohen",
@@ -211,11 +210,11 @@
           "dateClosed": "2018-12-28",
           "onboardingDate": "2018-12-31",
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 3
         },
         {
           "company": "Coral Gables Plumbing",
-          "contactCount": 2,
           "contacts": [
             {
               "name": "ayla shove",
@@ -233,11 +232,11 @@
           "dateClosed": null,
           "onboardingDate": null,
           "terminationNotice": "2025-07-16",
-          "lastDayOfService": "2025-08-15"
+          "lastDayOfService": "2025-08-15",
+          "contactCount": 2
         },
         {
           "company": "DiBiaggio Law",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "deirdre dibiaggio",
@@ -250,11 +249,11 @@
           "dateClosed": null,
           "onboardingDate": null,
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 1
         },
         {
           "company": "Dino's Pressure Cleaning, Inc.",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "dean tomasulo",
@@ -267,11 +266,11 @@
           "dateClosed": null,
           "onboardingDate": null,
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 1
         },
         {
           "company": "Doncaster Law PLLC",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "sam doncaster",
@@ -284,11 +283,11 @@
           "dateClosed": "2021-08-16",
           "onboardingDate": null,
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 1
         },
         {
           "company": "Emery Law Office",
-          "contactCount": 2,
           "contacts": [
             {
               "name": "matthew",
@@ -305,11 +304,11 @@
           "dateClosed": "2025-05-23",
           "onboardingDate": "2025-05-30",
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 2
         },
         {
           "company": "ER Law Trial Lawyers",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "eric richardson",
@@ -322,11 +321,11 @@
           "dateClosed": "2023-08-13",
           "onboardingDate": "2023-08-30",
           "terminationNotice": "2025-08-28",
-          "lastDayOfService": "2025-10-15"
+          "lastDayOfService": "2025-10-15",
+          "contactCount": 1
         },
         {
           "company": "Eric Blank Injury Attorneys",
-          "contactCount": 2,
           "contacts": [
             {
               "name": "eric blank",
@@ -343,11 +342,11 @@
           "dateClosed": "2022-02-28",
           "onboardingDate": "2022-03-10",
           "terminationNotice": "2024-05-18",
-          "lastDayOfService": "2024-05-31"
+          "lastDayOfService": "2024-05-31",
+          "contactCount": 2
         },
         {
           "company": "Exit Path Partners LLC",
-          "contactCount": 2,
           "contacts": [
             {
               "name": "cassie pinkerton",
@@ -364,11 +363,11 @@
           "dateClosed": null,
           "onboardingDate": null,
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 2
         },
         {
           "company": "Family First Firm - Medicaid & Elder Law Attorneys",
-          "contactCount": 4,
           "contacts": [
             {
               "name": "geoff hoatson",
@@ -393,11 +392,11 @@
           "dateClosed": "2022-05-02",
           "onboardingDate": "2022-05-12",
           "terminationNotice": "2024-11-21",
-          "lastDayOfService": "2024-12-15"
+          "lastDayOfService": "2024-12-15",
+          "contactCount": 4
         },
         {
           "company": "Florida National Title Services",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "michele lewis",
@@ -410,11 +409,11 @@
           "dateClosed": null,
           "onboardingDate": null,
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 1
         },
         {
           "company": "Florida Women’s Law Group",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "hilliary tabone",
@@ -427,11 +426,11 @@
           "dateClosed": null,
           "onboardingDate": null,
           "terminationNotice": "2022-05-05",
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 1
         },
         {
           "company": "Gardens Jewish Experience",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "bracha cheplowitz",
@@ -444,11 +443,11 @@
           "dateClosed": null,
           "onboardingDate": null,
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 1
         },
         {
           "company": "Greathouse Trial Law, LLC",
-          "contactCount": 4,
           "contacts": [
             {
               "name": "damaris nadal",
@@ -473,11 +472,11 @@
           "dateClosed": "2020-04-13",
           "onboardingDate": "2020-04-14",
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 4
         },
         {
           "company": "Hammack Law Firm",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "paul hammack",
@@ -490,11 +489,11 @@
           "dateClosed": "2023-11-03",
           "onboardingDate": "2023-11-17",
           "terminationNotice": "2025-02-28",
-          "lastDayOfService": "2025-06-01"
+          "lastDayOfService": "2025-06-01",
+          "contactCount": 1
         },
         {
           "company": "Hammond Law Group PC",
-          "contactCount": 2,
           "contacts": [
             {
               "name": "catherine hammond",
@@ -511,11 +510,11 @@
           "dateClosed": "2025-09-22",
           "onboardingDate": "2025-10-24",
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 2
         },
         {
           "company": "Hedayati Law Group, P.C.",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "al hedayati",
@@ -528,11 +527,11 @@
           "dateClosed": "2024-04-20",
           "onboardingDate": "2024-04-26",
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 1
         },
         {
           "company": "Herrin Injury Attorneys",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "cara herrin",
@@ -545,11 +544,11 @@
           "dateClosed": null,
           "onboardingDate": null,
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 1
         },
         {
           "company": "Herrin Kervin Injury Attorneys",
-          "contactCount": 2,
           "contacts": [
             {
               "name": "gordon herrin",
@@ -566,11 +565,11 @@
           "dateClosed": null,
           "onboardingDate": null,
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 2
         },
         {
           "company": "Heuser & Heuser, LLP",
-          "contactCount": 4,
           "contacts": [
             {
               "name": "brennan heuser",
@@ -595,11 +594,11 @@
           "dateClosed": "2024-07-24",
           "onboardingDate": "2024-08-02",
           "terminationNotice": "2026-07-24",
-          "lastDayOfService": "2026-08-31"
+          "lastDayOfService": "2026-08-31",
+          "contactCount": 4
         },
         {
           "company": "Hughes Law Firm, P.A.",
-          "contactCount": 2,
           "contacts": [
             {
               "name": "howard hughes",
@@ -616,11 +615,11 @@
           "dateClosed": "2019-11-07",
           "onboardingDate": "2019-11-08",
           "terminationNotice": "2023-12-22",
-          "lastDayOfService": "2024-01-15"
+          "lastDayOfService": "2024-01-15",
+          "contactCount": 2
         },
         {
           "company": "John Rizvi, P.A. - The Idea Attorneys",
-          "contactCount": 3,
           "contacts": [
             {
               "name": "jenny lam",
@@ -641,11 +640,11 @@
           "dateClosed": "2019-08-05",
           "onboardingDate": "2019-08-06",
           "terminationNotice": "2024-06-07",
-          "lastDayOfService": "2024-07-31"
+          "lastDayOfService": "2024-07-31",
+          "contactCount": 3
         },
         {
           "company": "Josh Jones Law, P.A",
-          "contactCount": 2,
           "contacts": [
             {
               "name": "josh jones",
@@ -662,11 +661,11 @@
           "dateClosed": "2021-03-26",
           "onboardingDate": "2021-04-05",
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 2
         },
         {
           "company": "Keller Swan, PLLC",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "blake swan",
@@ -679,11 +678,11 @@
           "dateClosed": null,
           "onboardingDate": null,
           "terminationNotice": "2024-07-31",
-          "lastDayOfService": "2024-08-31"
+          "lastDayOfService": "2024-08-31",
+          "contactCount": 1
         },
         {
           "company": "KynLi Consulting & Accounting LLC",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "cameron williams",
@@ -696,11 +695,11 @@
           "dateClosed": null,
           "onboardingDate": null,
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 1
         },
         {
           "company": "LaBre Law Office",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "rob labre esq.",
@@ -713,11 +712,11 @@
           "dateClosed": null,
           "onboardingDate": null,
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 1
         },
         {
           "company": "Law Office of Bobby D. Mills, PLLC",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "bobby mills",
@@ -730,11 +729,11 @@
           "dateClosed": "2019-12-31",
           "onboardingDate": "2020-01-01",
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 1
         },
         {
           "company": "LAW OFFICE OF GARY M. LANDAU",
-          "contactCount": 2,
           "contacts": [
             {
               "name": "meryl davids",
@@ -751,11 +750,11 @@
           "dateClosed": null,
           "onboardingDate": null,
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 2
         },
         {
           "company": "Law Office of Thomas G. Briody",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "thomas briody",
@@ -768,11 +767,11 @@
           "dateClosed": "2023-03-11",
           "onboardingDate": "2023-03-22",
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 1
         },
         {
           "company": "Law Offices of Connie Kaplan, P.A.",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "connie kaplan",
@@ -785,11 +784,11 @@
           "dateClosed": "2020-11-12",
           "onboardingDate": "2020-12-22",
           "terminationNotice": "2023-11-30",
-          "lastDayOfService": "2023-12-07"
+          "lastDayOfService": "2023-12-07",
+          "contactCount": 1
         },
         {
           "company": "Law Offices of Daniel A. Seigel, P.A.",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "daniel seigel",
@@ -802,11 +801,11 @@
           "dateClosed": null,
           "onboardingDate": null,
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 1
         },
         {
           "company": "Law Offices of David M. Benenfeld, P.A.",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "david m. benenfeld",
@@ -819,11 +818,11 @@
           "dateClosed": "2024-01-29",
           "onboardingDate": "2024-02-02",
           "terminationNotice": "2024-12-13",
-          "lastDayOfService": "2025-02-01"
+          "lastDayOfService": "2025-02-01",
+          "contactCount": 1
         },
         {
           "company": "Law Offices of Denise Jomarron PLLC",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "denise jomarron",
@@ -836,11 +835,11 @@
           "dateClosed": "2021-12-08",
           "onboardingDate": "2021-12-16",
           "terminationNotice": "2025-08-26",
-          "lastDayOfService": "2025-10-15"
+          "lastDayOfService": "2025-10-15",
+          "contactCount": 1
         },
         {
           "company": "Law Offices of Ellen L. Lee, LLC",
-          "contactCount": 2,
           "contacts": [
             {
               "name": "barbara rexroad",
@@ -857,11 +856,11 @@
           "dateClosed": "2023-06-01",
           "onboardingDate": "2023-06-15",
           "terminationNotice": "2026-01-01",
-          "lastDayOfService": "2026-02-01"
+          "lastDayOfService": "2026-02-01",
+          "contactCount": 2
         },
         {
           "company": "Law Offices of Paul Burkhart",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "linette",
@@ -874,11 +873,11 @@
           "dateClosed": null,
           "onboardingDate": null,
           "terminationNotice": "2022-11-02",
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 1
         },
         {
           "company": "Law Offices of R. David Williams",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "david williams",
@@ -891,11 +890,11 @@
           "dateClosed": "2022-03-01",
           "onboardingDate": "2022-03-03",
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 1
         },
         {
           "company": "Lincoln-Goldfinch Law",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "kate lincoln-goldfinch",
@@ -908,11 +907,11 @@
           "dateClosed": "2023-11-08",
           "onboardingDate": "2023-11-29",
           "terminationNotice": "2024-09-04",
-          "lastDayOfService": "2024-09-05"
+          "lastDayOfService": "2024-09-05",
+          "contactCount": 1
         },
         {
           "company": "Lone Star Injury Attorneys",
-          "contactCount": 2,
           "contacts": [
             {
               "name": "rafael dela cruz",
@@ -929,11 +928,11 @@
           "dateClosed": "2025-03-26",
           "onboardingDate": "2025-04-04",
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 2
         },
         {
           "company": "Lunn Law LLC",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "tiffany lunn white",
@@ -946,11 +945,11 @@
           "dateClosed": "2025-07-23",
           "onboardingDate": "2025-08-08",
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 1
         },
         {
           "company": "Lyle B. Masnikoff & Associates, P.A.",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "lyle b. masnikoff",
@@ -963,11 +962,11 @@
           "dateClosed": "2020-06-08",
           "onboardingDate": "2020-06-09",
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 1
         },
         {
           "company": "McCarthy & Akers, PLC",
-          "contactCount": 4,
           "contacts": [
             {
               "name": "douglas mccarthy",
@@ -992,11 +991,11 @@
           "dateClosed": "2021-11-12",
           "onboardingDate": "2021-11-22",
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 4
         },
         {
           "company": "McLaurin Law",
-          "contactCount": 2,
           "contacts": [
             {
               "name": "jason mclaurin",
@@ -1013,11 +1012,11 @@
           "dateClosed": "2022-06-15",
           "onboardingDate": "2022-06-29",
           "terminationNotice": "2023-09-28",
-          "lastDayOfService": "2023-10-31"
+          "lastDayOfService": "2023-10-31",
+          "contactCount": 2
         },
         {
           "company": "Morgan Divorce Law",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "andrea morgan, esquire.",
@@ -1030,11 +1029,11 @@
           "dateClosed": "2025-07-18",
           "onboardingDate": "2025-08-13",
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 1
         },
         {
           "company": "My Car Accident Attorney",
-          "contactCount": 2,
           "contacts": [
             {
               "name": "dani flynngreathouse",
@@ -1051,11 +1050,11 @@
           "dateClosed": "2025-01-29",
           "onboardingDate": "2025-03-12",
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 2
         },
         {
           "company": "Oldham & Delcamp LLC.",
-          "contactCount": 2,
           "contacts": [
             {
               "name": "gordon g. oldham, esq.",
@@ -1072,11 +1071,11 @@
           "dateClosed": "2021-04-07",
           "onboardingDate": null,
           "terminationNotice": "2023-04-21",
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 2
         },
         {
           "company": "Palm Beach Plastic & Cosmetic Surgery",
-          "contactCount": 2,
           "contacts": [
             {
               "name": "ladonna diller",
@@ -1093,11 +1092,11 @@
           "dateClosed": null,
           "onboardingDate": null,
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 2
         },
         {
           "company": "Panteva Law Group, LLC",
-          "contactCount": 3,
           "contacts": [
             {
               "name": "erika diaz",
@@ -1118,11 +1117,11 @@
           "dateClosed": "2025-04-24",
           "onboardingDate": "2025-05-01",
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 3
         },
         {
           "company": "Pardy & Rodriguez, P.A.",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "eduardo rodriguez, esq.",
@@ -1135,11 +1134,11 @@
           "dateClosed": "2026-02-23",
           "onboardingDate": "2026-03-10",
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 1
         },
         {
           "company": "PJI Law, PLC",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "paul j. abraham",
@@ -1152,11 +1151,11 @@
           "dateClosed": "2021-04-07",
           "onboardingDate": "2021-04-21",
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 1
         },
         {
           "company": "Reana Garcia Law Group",
-          "contactCount": 2,
           "contacts": [
             {
               "name": "vanessa vitorio",
@@ -1173,11 +1172,11 @@
           "dateClosed": "2024-12-27",
           "onboardingDate": "2025-01-24",
           "terminationNotice": "2025-08-22",
-          "lastDayOfService": "2025-10-15"
+          "lastDayOfService": "2025-10-15",
+          "contactCount": 2
         },
         {
           "company": "Rivas & Associates",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "lorena rivas, esq.",
@@ -1190,11 +1189,11 @@
           "dateClosed": "2024-06-10",
           "onboardingDate": "2024-06-14",
           "terminationNotice": "2026-04-29",
-          "lastDayOfService": "2026-05-15"
+          "lastDayOfService": "2026-05-15",
+          "contactCount": 1
         },
         {
           "company": "Robichaud, Schroepfer & Correia, P.A.",
-          "contactCount": 3,
           "contacts": [
             {
               "name": "b.j robichaud",
@@ -1215,11 +1214,11 @@
           "dateClosed": "2023-03-01",
           "onboardingDate": "2023-03-20",
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 3
         },
         {
           "company": "Ronald S. Chapman, P.A.",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "ronald chapman",
@@ -1232,11 +1231,11 @@
           "dateClosed": "2021-12-24",
           "onboardingDate": "2021-12-27",
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 1
         },
         {
           "company": "RUDIN LAW",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "lee rudin",
@@ -1249,11 +1248,11 @@
           "dateClosed": "2024-09-19",
           "onboardingDate": "2024-09-26",
           "terminationNotice": "2026-03-16",
-          "lastDayOfService": "2026-04-16"
+          "lastDayOfService": "2026-04-16",
+          "contactCount": 1
         },
         {
           "company": "Seabrook Law Offices",
-          "contactCount": 4,
           "contacts": [
             {
               "name": "paul seabrook",
@@ -1278,11 +1277,11 @@
           "dateClosed": "2020-11-25",
           "onboardingDate": "2021-01-31",
           "terminationNotice": "2024-08-21",
-          "lastDayOfService": "2024-09-21"
+          "lastDayOfService": "2024-09-21",
+          "contactCount": 4
         },
         {
           "company": "Sheryll Law, P.C.",
-          "contactCount": 2,
           "contacts": [
             {
               "name": "courtney benediktsson",
@@ -1299,11 +1298,11 @@
           "dateClosed": "2020-11-10",
           "onboardingDate": "2020-11-23",
           "terminationNotice": "2025-08-13",
-          "lastDayOfService": "2025-09-15"
+          "lastDayOfService": "2025-09-15",
+          "contactCount": 2
         },
         {
           "company": "Smith & Vanture",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "brian william. smith, esq.",
@@ -1316,11 +1315,11 @@
           "dateClosed": "2025-06-25",
           "onboardingDate": "2025-07-02",
           "terminationNotice": "2026-07-20",
-          "lastDayOfService": "2026-08-20"
+          "lastDayOfService": "2026-08-20",
+          "contactCount": 1
         },
         {
           "company": "Speaks Law Firm",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "richard speaks",
@@ -1333,11 +1332,11 @@
           "dateClosed": "2022-04-15",
           "onboardingDate": "2022-04-26",
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 1
         },
         {
           "company": "Sralla Family Law, PLLC",
-          "contactCount": 2,
           "contacts": [
             {
               "name": "patty sralla",
@@ -1354,11 +1353,11 @@
           "dateClosed": "2024-08-20",
           "onboardingDate": "2024-08-23",
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 2
         },
         {
           "company": "STERN Law",
-          "contactCount": 3,
           "contacts": [
             {
               "name": "justin ball",
@@ -1379,11 +1378,11 @@
           "dateClosed": "2020-11-24",
           "onboardingDate": "2020-12-09",
           "terminationNotice": "2024-02-28",
-          "lastDayOfService": "2024-03-15"
+          "lastDayOfService": "2024-03-15",
+          "contactCount": 3
         },
         {
           "company": "Susan J Christiansen Ph.D., LMFT",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "susan christiansen",
@@ -1396,11 +1395,11 @@
           "dateClosed": null,
           "onboardingDate": null,
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 1
         },
         {
           "company": "Suzuki Law Offices",
-          "contactCount": 2,
           "contacts": [
             {
               "name": "pearl contreras",
@@ -1417,11 +1416,11 @@
           "dateClosed": "2023-10-28",
           "onboardingDate": "2023-11-09",
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 2
         },
         {
           "company": "Talai Law Offices, Inc.",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "ali talai",
@@ -1434,11 +1433,11 @@
           "dateClosed": "2024-07-12",
           "onboardingDate": "2024-07-23",
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 1
         },
         {
           "company": "Tax Workout Group",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "jeffrey sherman",
@@ -1451,11 +1450,11 @@
           "dateClosed": "2023-02-24",
           "onboardingDate": "2023-03-08",
           "terminationNotice": "2024-05-08",
-          "lastDayOfService": "2024-06-01"
+          "lastDayOfService": "2024-06-01",
+          "contactCount": 1
         },
         {
           "company": "The Arnold Law Firm",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "venisha arnold, esq.",
@@ -1468,11 +1467,11 @@
           "dateClosed": null,
           "onboardingDate": null,
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 1
         },
         {
           "company": "The Capital Law Firm, P.C.",
-          "contactCount": 3,
           "contacts": [
             {
               "name": "alejandra velasco",
@@ -1493,11 +1492,11 @@
           "dateClosed": "2026-01-12",
           "onboardingDate": "2026-01-23",
           "terminationNotice": "2026-05-26",
-          "lastDayOfService": "2026-07-18"
+          "lastDayOfService": "2026-07-18",
+          "contactCount": 3
         },
         {
           "company": "The Collins Firm, PLLC",
-          "contactCount": 2,
           "contacts": [
             {
               "name": "james collins",
@@ -1514,11 +1513,11 @@
           "dateClosed": "2023-08-10",
           "onboardingDate": "2023-08-15",
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 2
         },
         {
           "company": "The Foley Law Firm",
-          "contactCount": 2,
           "contacts": [
             {
               "name": "david foley",
@@ -1535,11 +1534,11 @@
           "dateClosed": "2022-12-09",
           "onboardingDate": "2022-12-21",
           "terminationNotice": "2023-09-21",
-          "lastDayOfService": "2024-09-30"
+          "lastDayOfService": "2024-09-30",
+          "contactCount": 2
         },
         {
           "company": "The Gordon Agency",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "michael gordon",
@@ -1552,11 +1551,11 @@
           "dateClosed": null,
           "onboardingDate": null,
           "terminationNotice": "2026-03-09",
-          "lastDayOfService": "2026-04-15"
+          "lastDayOfService": "2026-04-15",
+          "contactCount": 1
         },
         {
           "company": "The Harrison Law Group, P.C.",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "brett harrison",
@@ -1569,11 +1568,11 @@
           "dateClosed": "2022-12-09",
           "onboardingDate": "2022-12-19",
           "terminationNotice": "2026-03-13",
-          "lastDayOfService": "2026-03-31"
+          "lastDayOfService": "2026-03-31",
+          "contactCount": 1
         },
         {
           "company": "The Hazzard Law Firm, LLC",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "wakisha hazzard, esq.",
@@ -1586,11 +1585,11 @@
           "dateClosed": "2024-10-15",
           "onboardingDate": "2024-10-22",
           "terminationNotice": "2025-06-18",
-          "lastDayOfService": "2025-08-01"
+          "lastDayOfService": "2025-08-01",
+          "contactCount": 1
         },
         {
           "company": "The Horn Law Firm, P.C.",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "douglas \"doug\" horn",
@@ -1603,11 +1602,11 @@
           "dateClosed": "2025-07-24",
           "onboardingDate": "2025-08-01",
           "terminationNotice": "2026-01-01",
-          "lastDayOfService": "2026-02-01"
+          "lastDayOfService": "2026-02-01",
+          "contactCount": 1
         },
         {
           "company": "The Law Office of Polly Tatum",
-          "contactCount": 2,
           "contacts": [
             {
               "name": "jamese tatum",
@@ -1624,11 +1623,11 @@
           "dateClosed": "2024-06-04",
           "onboardingDate": "2024-06-11",
           "terminationNotice": "2026-07-10",
-          "lastDayOfService": "2026-08-15"
+          "lastDayOfService": "2026-08-15",
+          "contactCount": 2
         },
         {
           "company": "The Law Offices Of Kimberly Butler Rainen",
-          "contactCount": 3,
           "contacts": [
             {
               "name": "nikkea devida",
@@ -1649,11 +1648,11 @@
           "dateClosed": "2021-07-16",
           "onboardingDate": "2021-07-27",
           "terminationNotice": "2022-11-30",
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 3
         },
         {
           "company": "The Law Offices of Nugent Zborowski",
-          "contactCount": 3,
           "contacts": [
             {
               "name": "adam zborowski",
@@ -1674,11 +1673,11 @@
           "dateClosed": null,
           "onboardingDate": null,
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 3
         },
         {
           "company": "The Law Offices of Peter N. Davis & Associates, LLC",
-          "contactCount": 2,
           "contacts": [
             {
               "name": "jessica jimenez",
@@ -1695,11 +1694,11 @@
           "dateClosed": "2024-05-14",
           "onboardingDate": "2024-05-23",
           "terminationNotice": "2026-07-24",
-          "lastDayOfService": "2026-08-31"
+          "lastDayOfService": "2026-08-31",
+          "contactCount": 2
         },
         {
           "company": "The Mahdavi Law Firm PLLC",
-          "contactCount": 2,
           "contacts": [
             {
               "name": "cyrus mahdavi, esq.",
@@ -1716,11 +1715,11 @@
           "dateClosed": "2025-08-27",
           "onboardingDate": "2025-09-12",
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 2
         },
         {
           "company": "The Mendoza Law Firm, LLC",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "maría mendoza",
@@ -1733,11 +1732,11 @@
           "dateClosed": "2025-11-19",
           "onboardingDate": "2025-11-19",
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 1
         },
         {
           "company": "The Shamsi Law Firm APC",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "sean shamsi",
@@ -1750,11 +1749,11 @@
           "dateClosed": "2024-04-12",
           "onboardingDate": "2024-04-19",
           "terminationNotice": "2026-05-22",
-          "lastDayOfService": "2026-06-15"
+          "lastDayOfService": "2026-06-15",
+          "contactCount": 1
         },
         {
           "company": "The Siegel Law Group, P.A.",
-          "contactCount": 2,
           "contacts": [
             {
               "name": "barry siegel, esq.",
@@ -1771,11 +1770,11 @@
           "dateClosed": "2023-09-27",
           "onboardingDate": "2023-10-11",
           "terminationNotice": "2025-03-11",
-          "lastDayOfService": "2025-05-01"
+          "lastDayOfService": "2025-05-01",
+          "contactCount": 2
         },
         {
           "company": "Tibbott & Richardson, P.C.",
-          "contactCount": 3,
           "contacts": [
             {
               "name": "beth tibbott",
@@ -1796,11 +1795,11 @@
           "dateClosed": "2024-10-02",
           "onboardingDate": "2024-10-11",
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 3
         },
         {
           "company": "Trelles & Bichler",
-          "contactCount": 2,
           "contacts": [
             {
               "name": "margaret bichler",
@@ -1817,11 +1816,11 @@
           "dateClosed": "2020-02-20",
           "onboardingDate": "2020-02-21",
           "terminationNotice": "2023-08-15",
-          "lastDayOfService": "2023-09-15"
+          "lastDayOfService": "2023-09-15",
+          "contactCount": 2
         },
         {
           "company": "Vargas Orthodontics",
-          "contactCount": 2,
           "contacts": [
             {
               "name": "molly fry",
@@ -1839,11 +1838,11 @@
           "dateClosed": null,
           "onboardingDate": null,
           "terminationNotice": "2025-01-21",
-          "lastDayOfService": "2025-03-01"
+          "lastDayOfService": "2025-03-01",
+          "contactCount": 2
         },
         {
           "company": "Visionary Eye Center",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "jacqueline c. westcott o.d., f.a.a.o.",
@@ -1856,11 +1855,11 @@
           "dateClosed": null,
           "onboardingDate": null,
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 1
         },
         {
           "company": "Vivid Vascular",
-          "contactCount": 3,
           "contacts": [
             {
               "name": "kari gropper",
@@ -1882,11 +1881,11 @@
           "dateClosed": null,
           "onboardingDate": null,
           "terminationNotice": "2025-12-03",
-          "lastDayOfService": "2026-01-15"
+          "lastDayOfService": "2026-01-15",
+          "contactCount": 3
         },
         {
           "company": "Ward Ruddock, PLLC",
-          "contactCount": 2,
           "contacts": [
             {
               "name": "omari ruddock",
@@ -1903,11 +1902,11 @@
           "dateClosed": "2024-05-29",
           "onboardingDate": "2024-06-04",
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 2
         },
         {
           "company": "Web Promotion Partners",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "andy leonard",
@@ -1920,11 +1919,11 @@
           "dateClosed": null,
           "onboardingDate": null,
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 1
         },
         {
           "company": "Your Legacy Legal Care",
-          "contactCount": 2,
           "contacts": [
             {
               "name": "kimberly hegwood",
@@ -1941,7 +1940,8 @@
           "dateClosed": "2024-11-13",
           "onboardingDate": "2024-11-22",
           "terminationNotice": "2025-11-03",
-          "lastDayOfService": "2025-12-01"
+          "lastDayOfService": "2025-12-01",
+          "contactCount": 2
         }
       ]
     },
