@@ -1,10 +1,1953 @@
 {
-  "generatedAt": "2026-08-18T13:04:43.672Z",
+  "generatedAt": "2026-08-20T13:04:13.106Z",
   "source": "Companies pulled via GoHighLevel API v2 (Contacts search by tag; Businesses endpoint for company custom fields), joined by businessId.",
   "views": {
     "all": {
       "label": "All Clients",
       "tag": null,
+      "companies": [
+        {
+          "company": "Albrecht Law PLLC",
+          "contactCount": 2,
+          "contacts": [
+            {
+              "name": "matthew albrecht",
+              "email": "matt@albrechtlawfirm.com"
+            },
+            {
+              "name": "melanie evans",
+              "email": "melanie@albrechtlawfirm.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2023-06-23",
+          "onboardingDate": "2023-07-12",
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Bade Law Group, LLC",
+          "contactCount": 2,
+          "contacts": [
+            {
+              "name": "keith simper",
+              "email": "keithsimperfractionalcfo@outlook.com"
+            },
+            {
+              "name": "jennifer bade, esq.",
+              "email": "jennifer@badelawgroup.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2026-05-07",
+          "onboardingDate": "2026-05-15",
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Bangerter Law, LLC",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "matthew bangerter",
+              "email": "matt@bangerterlaw.com"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": "2020-11-11",
+          "onboardingDate": null,
+          "terminationNotice": "2022-09-13",
+          "lastDayOfService": null
+        },
+        {
+          "company": "Barry M. Weintraub, M.D., F.A.C.S., P.C",
+          "contactCount": 2,
+          "contacts": [
+            {
+              "name": "jill sand",
+              "email": "jill@drbarryweintraub.com"
+            },
+            {
+              "name": "barry m. weintraub",
+              "email": "barry@drbarryweintraub.com"
+            }
+          ],
+          "tags": [
+            "offboarded client",
+            "wpp client"
+          ],
+          "dateClosed": "2024-10-23",
+          "onboardingDate": "2024-11-15",
+          "terminationNotice": "2025-08-28",
+          "lastDayOfService": "2025-10-01"
+        },
+        {
+          "company": "Batten Insurance",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "ann-marie batten",
+              "email": "annmariebatten@gmail.com"
+            }
+          ],
+          "tags": [
+            "wpp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Behavioral Family Solutions",
+          "contactCount": 3,
+          "contacts": [
+            {
+              "name": "amanda cardoso",
+              "email": "cardosoa@behavioralfamilysolutions.com"
+            },
+            {
+              "name": "juan carlos gonzalez",
+              "email": "jc@behavioralfamilysolutions.com"
+            },
+            {
+              "name": "david gonzalez",
+              "email": "david@behavioralfamilysolutions.com"
+            }
+          ],
+          "tags": [
+            "wpp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Boca Dental",
+          "contactCount": 3,
+          "contacts": [
+            {
+              "name": "daniella",
+              "email": "daniella@weinsteindental.com"
+            },
+            {
+              "name": "gregg weinstein",
+              "email": "drgregg@comcast.net"
+            },
+            {
+              "name": "dita weinstein",
+              "email": "dita@weinsteindental.com"
+            }
+          ],
+          "tags": [
+            "wpp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Britto & Herman Injury Lawyers",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "michael herman, esq.",
+              "email": "mh@brittoherman.com"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": "2023-08-23",
+          "onboardingDate": "2023-09-08",
+          "terminationNotice": "2025-02-09",
+          "lastDayOfService": "2025-03-01"
+        },
+        {
+          "company": "Cohen and Cohen Law",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "adam mann, esq.",
+              "email": "adamm@cohencohenpa.com"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": "2023-09-22",
+          "onboardingDate": "2023-09-27",
+          "terminationNotice": "2026-05-26",
+          "lastDayOfService": "2026-06-30"
+        },
+        {
+          "company": "Cohen and Juda P.A.",
+          "contactCount": 3,
+          "contacts": [
+            {
+              "name": "harvey cohen",
+              "email": "harvey@cohenandjuda.com"
+            },
+            {
+              "name": "kimberly sinclair",
+              "email": "kim@cohenandjuda.com"
+            },
+            {
+              "name": "gary h. juda",
+              "email": "gary@cohenandjuda.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2018-12-28",
+          "onboardingDate": "2018-12-31",
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Coral Gables Plumbing",
+          "contactCount": 2,
+          "contacts": [
+            {
+              "name": "ayla shove",
+              "email": "info@coralgablesplumbing.com"
+            },
+            {
+              "name": "brandon swanson",
+              "email": "brandon@coralgablesplumbing.com"
+            }
+          ],
+          "tags": [
+            "offboarded client",
+            "wpp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": "2025-07-16",
+          "lastDayOfService": "2025-08-15"
+        },
+        {
+          "company": "DiBiaggio Law",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "deirdre dibiaggio",
+              "email": "djd@dibiaggiolaw.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Dino's Pressure Cleaning, Inc.",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "dean tomasulo",
+              "email": "dinodobe@gmail.com"
+            }
+          ],
+          "tags": [
+            "wpp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Doncaster Law PLLC",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "sam doncaster",
+              "email": "samuel@doncasterlawpllc.com"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": "2021-08-16",
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Emery Law Office",
+          "contactCount": 2,
+          "contacts": [
+            {
+              "name": "matthew",
+              "email": "admin@emerylawoffice.com"
+            },
+            {
+              "name": "melissa emery",
+              "email": "melissa@emerylawoffice.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2025-05-23",
+          "onboardingDate": "2025-05-30",
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "ER Law Trial Lawyers",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "eric richardson",
+              "email": "eric@erlaw-nc.com"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": "2023-08-13",
+          "onboardingDate": "2023-08-30",
+          "terminationNotice": "2025-08-28",
+          "lastDayOfService": "2025-10-15"
+        },
+        {
+          "company": "Eric Blank Injury Attorneys",
+          "contactCount": 2,
+          "contacts": [
+            {
+              "name": "eric blank",
+              "email": "eblank@ericblanklaw.com"
+            },
+            {
+              "name": "mark fink",
+              "email": "accounts@ericblanklaw.com"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": "2022-02-28",
+          "onboardingDate": "2022-03-10",
+          "terminationNotice": "2024-05-18",
+          "lastDayOfService": "2024-05-31"
+        },
+        {
+          "company": "Exit Path Partners LLC",
+          "contactCount": 2,
+          "contacts": [
+            {
+              "name": "cassie pinkerton",
+              "email": "cassie@exitpathpartners.com"
+            },
+            {
+              "name": "alex gertsburg",
+              "email": "alex@exitpathpartners.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Family First Firm - Medicaid & Elder Law Attorneys",
+          "contactCount": 4,
+          "contacts": [
+            {
+              "name": "geoff hoatson",
+              "email": "geoff@familyfirstfirm.com"
+            },
+            {
+              "name": "emily manuel",
+              "email": "emily@familyfirstfirm.com"
+            },
+            {
+              "name": "kathy evans",
+              "email": "kathy.evans@familyfirstfirm.com"
+            },
+            {
+              "name": "stephanie garcia",
+              "email": "stephanie.garcia@familyfirstfirm.com"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": "2022-05-02",
+          "onboardingDate": "2022-05-12",
+          "terminationNotice": "2024-11-21",
+          "lastDayOfService": "2024-12-15"
+        },
+        {
+          "company": "Florida National Title Services",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "michele lewis",
+              "email": "michele@floridanationaltitle.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Florida Women’s Law Group",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "hilliary tabone",
+              "email": "hilliary@4womenlaw.com"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": "2022-05-05",
+          "lastDayOfService": null
+        },
+        {
+          "company": "Gardens Jewish Experience",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "bracha cheplowitz",
+              "email": "gardensje@gmail.com"
+            }
+          ],
+          "tags": [
+            "wpp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Greathouse Trial Law, LLC",
+          "contactCount": 4,
+          "contacts": [
+            {
+              "name": "damaris nadal",
+              "email": "damaris@atltriallaw.com"
+            },
+            {
+              "name": "riah greathouse",
+              "email": "riah@atltriallaw.com"
+            },
+            {
+              "name": "amina greathouse",
+              "email": "amina@atltriallaw.com"
+            },
+            {
+              "name": "alex",
+              "email": "alex@atltriallaw.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2020-04-13",
+          "onboardingDate": "2020-04-14",
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Hammack Law Firm",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "paul hammack",
+              "email": "paul@hammacklawfirm.com"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": "2023-11-03",
+          "onboardingDate": "2023-11-17",
+          "terminationNotice": "2025-02-28",
+          "lastDayOfService": "2025-06-01"
+        },
+        {
+          "company": "Hammond Law Group PC",
+          "contactCount": 2,
+          "contacts": [
+            {
+              "name": "catherine hammond",
+              "email": "catherine@coloradoestateplan.com"
+            },
+            {
+              "name": "brian van way",
+              "email": "brian@coloradoestateplan.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2025-09-22",
+          "onboardingDate": "2025-10-24",
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Hedayati Law Group, P.C.",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "al hedayati",
+              "email": "ah@hedayatilaw.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2024-04-20",
+          "onboardingDate": "2024-04-26",
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Herrin Injury Attorneys",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "cara herrin",
+              "email": "cara@pushdesigngroup.com"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Herrin Kervin Injury Attorneys",
+          "contactCount": 2,
+          "contacts": [
+            {
+              "name": "gordon herrin",
+              "email": "gordon@herrinkervin.com"
+            },
+            {
+              "name": "david kervin jr.",
+              "email": "david@herrinkervin.com"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Heuser & Heuser, LLP",
+          "contactCount": 4,
+          "contacts": [
+            {
+              "name": "brennan heuser",
+              "email": "brennan@heuserlaw.com"
+            },
+            {
+              "name": "gordon heuser",
+              "email": "gordon@heuserlaw.com"
+            },
+            {
+              "name": "shannon colt",
+              "email": "shannon.colt@heuserlaw.com"
+            },
+            {
+              "name": "emily higgins",
+              "email": "emily.higgins@heuserlaw.com"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": "2024-07-24",
+          "onboardingDate": "2024-08-02",
+          "terminationNotice": "2026-07-24",
+          "lastDayOfService": "2026-08-31"
+        },
+        {
+          "company": "Hughes Law Firm, P.A.",
+          "contactCount": 2,
+          "contacts": [
+            {
+              "name": "howard hughes",
+              "email": "hhughes@handmlaw.net"
+            },
+            {
+              "name": "michelle newell",
+              "email": "mnewell@handmlaw.net"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": "2019-11-07",
+          "onboardingDate": "2019-11-08",
+          "terminationNotice": "2023-12-22",
+          "lastDayOfService": "2024-01-15"
+        },
+        {
+          "company": "John Rizvi, P.A. - The Idea Attorneys",
+          "contactCount": 3,
+          "contacts": [
+            {
+              "name": "jenny lam",
+              "email": "jenny@thepatentprofessor.com"
+            },
+            {
+              "name": "john rizvi",
+              "email": "john@ideaattorneys.com"
+            },
+            {
+              "name": "john rizvi esq.",
+              "email": "john@thepatentprofessor.com"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": "2019-08-05",
+          "onboardingDate": "2019-08-06",
+          "terminationNotice": "2024-06-07",
+          "lastDayOfService": "2024-07-31"
+        },
+        {
+          "company": "Josh Jones Law, P.A",
+          "contactCount": 2,
+          "contacts": [
+            {
+              "name": "josh jones",
+              "email": "josh@joshjoneslaw.com"
+            },
+            {
+              "name": "josh jones",
+              "email": "marketing@joshjoneslaw.com"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": "2021-03-26",
+          "onboardingDate": "2021-04-05",
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Keller Swan, PLLC",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "blake swan",
+              "email": "bswan@swanlawfirm.com"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": "2024-07-31",
+          "lastDayOfService": "2024-08-31"
+        },
+        {
+          "company": "KynLi Consulting & Accounting LLC",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "cameron williams",
+              "email": "cameron@kynliconsulting.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "LaBre Law Office",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "rob labre esq.",
+              "email": "labrelawoffice@gmail.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Law Office of Bobby D. Mills, PLLC",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "bobby mills",
+              "email": "bmills@millsadoptionlaw.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2019-12-31",
+          "onboardingDate": "2020-01-01",
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "LAW OFFICE OF GARY M. LANDAU",
+          "contactCount": 2,
+          "contacts": [
+            {
+              "name": "meryl davids",
+              "email": "meryldavids2@gmail.com"
+            },
+            {
+              "name": "gary landau",
+              "email": "garylandauattorney@gmail.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Law Office of Thomas G. Briody",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "thomas briody",
+              "email": "tbriodylaw@aol.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2023-03-11",
+          "onboardingDate": "2023-03-22",
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Law Offices of Connie Kaplan, P.A.",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "connie kaplan",
+              "email": "ck@conniekaplanlawyer.com"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": "2020-11-12",
+          "onboardingDate": "2020-12-22",
+          "terminationNotice": "2023-11-30",
+          "lastDayOfService": "2023-12-07"
+        },
+        {
+          "company": "Law Offices of Daniel A. Seigel, P.A.",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "daniel seigel",
+              "email": "dseigel@seigel-law.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Law Offices of David M. Benenfeld, P.A.",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "david m. benenfeld",
+              "email": "dbenenfeld@injurylawservice.com"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": "2024-01-29",
+          "onboardingDate": "2024-02-02",
+          "terminationNotice": "2024-12-13",
+          "lastDayOfService": "2025-02-01"
+        },
+        {
+          "company": "Law Offices of Denise Jomarron PLLC",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "denise jomarron",
+              "email": "denise@djlegalgroup.com"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": "2021-12-08",
+          "onboardingDate": "2021-12-16",
+          "terminationNotice": "2025-08-26",
+          "lastDayOfService": "2025-10-15"
+        },
+        {
+          "company": "Law Offices of Ellen L. Lee, LLC",
+          "contactCount": 2,
+          "contacts": [
+            {
+              "name": "barbara rexroad",
+              "email": "barbara@attorneydivorce.com"
+            },
+            {
+              "name": "ellen lee",
+              "email": "ellenlee@attorneydivorce.com"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": "2023-06-01",
+          "onboardingDate": "2023-06-15",
+          "terminationNotice": "2026-01-01",
+          "lastDayOfService": "2026-02-01"
+        },
+        {
+          "company": "Law Offices of Paul Burkhart",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "linette",
+              "email": "alvarado@paulburkhart.net"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": "2022-11-02",
+          "lastDayOfService": null
+        },
+        {
+          "company": "Law Offices of R. David Williams",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "david williams",
+              "email": "david@dwilliamslaw.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2022-03-01",
+          "onboardingDate": "2022-03-03",
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Lincoln-Goldfinch Law",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "kate lincoln-goldfinch",
+              "email": "kate@lincolngoldfinch.com"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": "2023-11-08",
+          "onboardingDate": "2023-11-29",
+          "terminationNotice": "2024-09-04",
+          "lastDayOfService": "2024-09-05"
+        },
+        {
+          "company": "Lone Star Injury Attorneys",
+          "contactCount": 2,
+          "contacts": [
+            {
+              "name": "rafael dela cruz",
+              "email": "rafael@lonestarinjuryattorneys.com"
+            },
+            {
+              "name": "maxwell paderewski",
+              "email": "max@lonestarinjuryattorneys.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2025-03-26",
+          "onboardingDate": "2025-04-04",
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Lunn Law LLC",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "tiffany lunn white",
+              "email": "tlunn@lunnlaw.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2025-07-23",
+          "onboardingDate": "2025-08-08",
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Lyle B. Masnikoff & Associates, P.A.",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "lyle b. masnikoff",
+              "email": "lmasnikoff@yahoo.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2020-06-08",
+          "onboardingDate": "2020-06-09",
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "McCarthy & Akers, PLC",
+          "contactCount": 4,
+          "contacts": [
+            {
+              "name": "douglas mccarthy",
+              "email": "douglasmccarthy@mccarthyakers.com"
+            },
+            {
+              "name": "matthew s. akers",
+              "email": "makers@mccarthyakers.com"
+            },
+            {
+              "name": "maura fisher",
+              "email": "maurajfisher2@gmail.com"
+            },
+            {
+              "name": "joshua petersen",
+              "email": "jpetersen@mccarthyakers.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2021-11-12",
+          "onboardingDate": "2021-11-22",
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "McLaurin Law",
+          "contactCount": 2,
+          "contacts": [
+            {
+              "name": "jason mclaurin",
+              "email": "jmclaurin@mdlawtex.com"
+            },
+            {
+              "name": "julie jackson",
+              "email": "julie@mdlawtex.com"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": "2022-06-15",
+          "onboardingDate": "2022-06-29",
+          "terminationNotice": "2023-09-28",
+          "lastDayOfService": "2023-10-31"
+        },
+        {
+          "company": "Morgan Divorce Law",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "andrea morgan, esquire.",
+              "email": "andrea@morgandivorcelaw.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2025-07-18",
+          "onboardingDate": "2025-08-13",
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "My Car Accident Attorney",
+          "contactCount": 2,
+          "contacts": [
+            {
+              "name": "dani flynngreathouse",
+              "email": "dani@flynngreathouse.com"
+            },
+            {
+              "name": "james flynn, esq.",
+              "email": "theflynnlawfirm@gmail.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2025-01-29",
+          "onboardingDate": "2025-03-12",
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Oldham & Delcamp LLC.",
+          "contactCount": 2,
+          "contacts": [
+            {
+              "name": "gordon g. oldham, esq.",
+              "email": "gordon@oldhamdelcamp.com"
+            },
+            {
+              "name": "jack e. delcamp",
+              "email": "jack@oldhamdelcamp.com"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": "2021-04-07",
+          "onboardingDate": null,
+          "terminationNotice": "2023-04-21",
+          "lastDayOfService": null
+        },
+        {
+          "company": "Palm Beach Plastic & Cosmetic Surgery",
+          "contactCount": 2,
+          "contacts": [
+            {
+              "name": "ladonna diller",
+              "email": null
+            },
+            {
+              "name": "carla pisani",
+              "email": "carlapisani@gmail.com"
+            }
+          ],
+          "tags": [
+            "wpp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Panteva Law Group, LLC",
+          "contactCount": 3,
+          "contacts": [
+            {
+              "name": "erika diaz",
+              "email": "erika@panteva.com"
+            },
+            {
+              "name": "marina sol lorenzo",
+              "email": "marina@panteva.com"
+            },
+            {
+              "name": "iskra panteva, esq.",
+              "email": "iskra@panteva.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2025-04-24",
+          "onboardingDate": "2025-05-01",
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Pardy & Rodriguez, P.A.",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "eduardo rodriguez, esq.",
+              "email": "erodriguez@pardyrodriguezlaw.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2026-02-23",
+          "onboardingDate": "2026-03-10",
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "PJI Law, PLC",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "paul j. abraham",
+              "email": "pabraham@pjilaw.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2021-04-07",
+          "onboardingDate": "2021-04-21",
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Reana Garcia Law Group",
+          "contactCount": 2,
+          "contacts": [
+            {
+              "name": "vanessa vitorio",
+              "email": "vanessa@reanagarcialawgroup.com"
+            },
+            {
+              "name": "reana garcia",
+              "email": "rgarcia@reanagarcialawgroup.com"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": "2024-12-27",
+          "onboardingDate": "2025-01-24",
+          "terminationNotice": "2025-08-22",
+          "lastDayOfService": "2025-10-15"
+        },
+        {
+          "company": "Rivas & Associates",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "lorena rivas, esq.",
+              "email": "lorena@rivasassociates.com"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": "2024-06-10",
+          "onboardingDate": "2024-06-14",
+          "terminationNotice": "2026-04-29",
+          "lastDayOfService": "2026-05-15"
+        },
+        {
+          "company": "Robichaud, Schroepfer & Correia, P.A.",
+          "contactCount": 3,
+          "contacts": [
+            {
+              "name": "b.j robichaud",
+              "email": "bj@robichaudlaw.com"
+            },
+            {
+              "name": "paul schroepfer",
+              "email": "paul@robichaudlaw.com"
+            },
+            {
+              "name": "robert correia",
+              "email": "robert@robichaudlaw.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2023-03-01",
+          "onboardingDate": "2023-03-20",
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Ronald S. Chapman, P.A.",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "ronald chapman",
+              "email": "ronchapman@justiceflorida.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2021-12-24",
+          "onboardingDate": "2021-12-27",
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "RUDIN LAW",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "lee rudin",
+              "email": "lee@getrude.com"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": "2024-09-19",
+          "onboardingDate": "2024-09-26",
+          "terminationNotice": "2026-03-16",
+          "lastDayOfService": "2026-04-16"
+        },
+        {
+          "company": "Seabrook Law Offices",
+          "contactCount": 4,
+          "contacts": [
+            {
+              "name": "paul seabrook",
+              "email": "paul@seabrooklawoffices.com"
+            },
+            {
+              "name": "annique asghedom",
+              "email": "annique@seabrooklawoffices.com"
+            },
+            {
+              "name": "alexa iscoa gale",
+              "email": "alexa@seabrooklawoffices.com"
+            },
+            {
+              "name": "tracie zerr",
+              "email": "tracie@seabrooklawoffices.com"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": "2020-11-25",
+          "onboardingDate": "2021-01-31",
+          "terminationNotice": "2024-08-21",
+          "lastDayOfService": "2024-09-21"
+        },
+        {
+          "company": "Sheryll Law, P.C.",
+          "contactCount": 2,
+          "contacts": [
+            {
+              "name": "courtney benediktsson",
+              "email": "courtney@sheryll-law.com"
+            },
+            {
+              "name": "jay sheryll",
+              "email": "jaypsheryll@sheryll-law.com"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": "2020-11-10",
+          "onboardingDate": "2020-11-23",
+          "terminationNotice": "2025-08-13",
+          "lastDayOfService": "2025-09-15"
+        },
+        {
+          "company": "Smith & Vanture",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "brian william. smith, esq.",
+              "email": "bws@smithvanture.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2025-06-25",
+          "onboardingDate": "2025-07-02",
+          "terminationNotice": "2026-07-20",
+          "lastDayOfService": "2026-08-20"
+        },
+        {
+          "company": "Speaks Law Firm",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "richard speaks",
+              "email": "clarke@speakslaw.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2022-04-15",
+          "onboardingDate": "2022-04-26",
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Sralla Family Law, PLLC",
+          "contactCount": 2,
+          "contacts": [
+            {
+              "name": "patty sralla",
+              "email": "patricia@familylawsanantonio.com"
+            },
+            {
+              "name": "kevin buck sralla, esq.",
+              "email": "ksralla@familylawsanantonio.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2024-08-20",
+          "onboardingDate": "2024-08-23",
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "STERN Law",
+          "contactCount": 3,
+          "contacts": [
+            {
+              "name": "justin ball",
+              "email": "marketing@sternlawfirm.us"
+            },
+            {
+              "name": "jessica stern",
+              "email": "jessica@sternlawfirm.us"
+            },
+            {
+              "name": "nyiesha showers",
+              "email": "nyiesha@sternlawfirm.us"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": "2020-11-24",
+          "onboardingDate": "2020-12-09",
+          "terminationNotice": "2024-02-28",
+          "lastDayOfService": "2024-03-15"
+        },
+        {
+          "company": "Susan J Christiansen Ph.D., LMFT",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "susan christiansen",
+              "email": "susiechrist@gmail.com"
+            }
+          ],
+          "tags": [
+            "wpp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Suzuki Law Offices",
+          "contactCount": 2,
+          "contacts": [
+            {
+              "name": "pearl contreras",
+              "email": "pearl@suzukilawoffices.com"
+            },
+            {
+              "name": "richard \"rj\" suzuki",
+              "email": "rj@suzukilawoffices.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2023-10-28",
+          "onboardingDate": "2023-11-09",
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Talai Law Offices, Inc.",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "ali talai",
+              "email": "ali@talailaw.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2024-07-12",
+          "onboardingDate": "2024-07-23",
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Tax Workout Group",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "jeffrey sherman",
+              "email": "jsherman@taxworkoutgroup.com"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": "2023-02-24",
+          "onboardingDate": "2023-03-08",
+          "terminationNotice": "2024-05-08",
+          "lastDayOfService": "2024-06-01"
+        },
+        {
+          "company": "The Arnold Law Firm",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "venisha arnold, esq.",
+              "email": "info@attorneyarnold.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "The Capital Law Firm, P.C.",
+          "contactCount": 3,
+          "contacts": [
+            {
+              "name": "alejandra velasco",
+              "email": "avelasco@capfirm.com"
+            },
+            {
+              "name": "aldayr guitron",
+              "email": "aguitron@capfirm.com"
+            },
+            {
+              "name": "beau gardiner",
+              "email": "beau@capfirm.com"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": "2026-01-12",
+          "onboardingDate": "2026-01-23",
+          "terminationNotice": "2026-05-26",
+          "lastDayOfService": "2026-07-18"
+        },
+        {
+          "company": "The Collins Firm, PLLC",
+          "contactCount": 2,
+          "contacts": [
+            {
+              "name": "james collins",
+              "email": "jjc@mikecollins.com"
+            },
+            {
+              "name": "mike collins",
+              "email": "mtc@mikecollins.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2023-08-10",
+          "onboardingDate": "2023-08-15",
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "The Foley Law Firm",
+          "contactCount": 2,
+          "contacts": [
+            {
+              "name": "david foley",
+              "email": "df@davidfoley.net"
+            },
+            {
+              "name": "kayla becker",
+              "email": "kb@davidfoley.net"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": "2022-12-09",
+          "onboardingDate": "2022-12-21",
+          "terminationNotice": "2023-09-21",
+          "lastDayOfService": "2024-09-30"
+        },
+        {
+          "company": "The Gordon Agency",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "michael gordon",
+              "email": "michael@tgafl.com"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": "2026-03-09",
+          "lastDayOfService": "2026-04-15"
+        },
+        {
+          "company": "The Harrison Law Group, P.C.",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "brett harrison",
+              "email": "brett@hlgny.com"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": "2022-12-09",
+          "onboardingDate": "2022-12-19",
+          "terminationNotice": "2026-03-13",
+          "lastDayOfService": "2026-03-31"
+        },
+        {
+          "company": "The Hazzard Law Firm, LLC",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "wakisha hazzard, esq.",
+              "email": "thehazzardlawfirm@gmail.com"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": "2024-10-15",
+          "onboardingDate": "2024-10-22",
+          "terminationNotice": "2025-06-18",
+          "lastDayOfService": "2025-08-01"
+        },
+        {
+          "company": "The Horn Law Firm, P.C.",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "douglas \"doug\" horn",
+              "email": "dhorn@hornlaw.com"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": "2025-07-24",
+          "onboardingDate": "2025-08-01",
+          "terminationNotice": "2026-01-01",
+          "lastDayOfService": "2026-02-01"
+        },
+        {
+          "company": "The Law Office of Polly Tatum",
+          "contactCount": 2,
+          "contacts": [
+            {
+              "name": "jamese tatum",
+              "email": "jamese@lawofficeofpollytatum.com"
+            },
+            {
+              "name": "polly tatum",
+              "email": "polly@lawofficeofpollytatum.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2024-06-04",
+          "onboardingDate": "2024-06-11",
+          "terminationNotice": "2026-07-10",
+          "lastDayOfService": "2026-08-15"
+        },
+        {
+          "company": "The Law Offices Of Kimberly Butler Rainen",
+          "contactCount": 3,
+          "contacts": [
+            {
+              "name": "nikkea devida",
+              "email": "nikkead@howtomanage.com"
+            },
+            {
+              "name": "kimberly butler",
+              "email": null
+            },
+            {
+              "name": "david rainen",
+              "email": "davidrainen@gmail.com"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": "2021-07-16",
+          "onboardingDate": "2021-07-27",
+          "terminationNotice": "2022-11-30",
+          "lastDayOfService": null
+        },
+        {
+          "company": "The Law Offices of Nugent Zborowski",
+          "contactCount": 3,
+          "contacts": [
+            {
+              "name": "adam zborowski",
+              "email": "azborowski@nugentlawfirm.com"
+            },
+            {
+              "name": "matthew nugent",
+              "email": "mnugent@nugentlawfirm.com"
+            },
+            {
+              "name": "karen garrison",
+              "email": "kgarrison@nugentlawfirm.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "The Law Offices of Peter N. Davis & Associates, LLC",
+          "contactCount": 2,
+          "contacts": [
+            {
+              "name": "jessica jimenez",
+              "email": "jjimenez@peterdavislaw.com"
+            },
+            {
+              "name": "peter n davis, esq.",
+              "email": "pdavis@peterdavislaw.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2024-05-14",
+          "onboardingDate": "2024-05-23",
+          "terminationNotice": "2026-07-24",
+          "lastDayOfService": "2026-08-31"
+        },
+        {
+          "company": "The Mahdavi Law Firm PLLC",
+          "contactCount": 2,
+          "contacts": [
+            {
+              "name": "cyrus mahdavi, esq.",
+              "email": "cm@mahdavilawfirm.com"
+            },
+            {
+              "name": "hanieh mahdavi",
+              "email": "hm@mahdavilawfirm.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2025-08-27",
+          "onboardingDate": "2025-09-12",
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "The Mendoza Law Firm, LLC",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "maría mendoza",
+              "email": "abogada@mendozafirm.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2025-11-19",
+          "onboardingDate": "2025-11-19",
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "The Shamsi Law Firm APC",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "sean shamsi",
+              "email": "sean@shamsilaw.com"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": "2024-04-12",
+          "onboardingDate": "2024-04-19",
+          "terminationNotice": "2026-05-22",
+          "lastDayOfService": "2026-06-15"
+        },
+        {
+          "company": "The Siegel Law Group, P.A.",
+          "contactCount": 2,
+          "contacts": [
+            {
+              "name": "barry siegel, esq.",
+              "email": "bsiegel@siegellawgroup.com"
+            },
+            {
+              "name": "michelle astor",
+              "email": "mastor@siegellawgroup.com"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": "2023-09-27",
+          "onboardingDate": "2023-10-11",
+          "terminationNotice": "2025-03-11",
+          "lastDayOfService": "2025-05-01"
+        },
+        {
+          "company": "Tibbott & Richardson, P.C.",
+          "contactCount": 3,
+          "contacts": [
+            {
+              "name": "beth tibbott",
+              "email": "bmt@tibbottrichardson.com"
+            },
+            {
+              "name": "jessica ash",
+              "email": "jessica@tibbottrichardson.com"
+            },
+            {
+              "name": "dana richardson",
+              "email": "djr@tibbottrichardson.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2024-10-02",
+          "onboardingDate": "2024-10-11",
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Trelles & Bichler",
+          "contactCount": 2,
+          "contacts": [
+            {
+              "name": "margaret bichler",
+              "email": "mbichler@tbinjurylaw.com"
+            },
+            {
+              "name": "yvette trelles",
+              "email": "ytrelles@tbinjurylaw.com"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": "2020-02-20",
+          "onboardingDate": "2020-02-21",
+          "terminationNotice": "2023-08-15",
+          "lastDayOfService": "2023-09-15"
+        },
+        {
+          "company": "Vargas Orthodontics",
+          "contactCount": 2,
+          "contacts": [
+            {
+              "name": "molly fry",
+              "email": "molly@vargasorthodontics.com"
+            },
+            {
+              "name": "dr. vargas",
+              "email": "drvargas@vargasorthodontics.com"
+            }
+          ],
+          "tags": [
+            "offboarded client",
+            "wpp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": "2025-01-21",
+          "lastDayOfService": "2025-03-01"
+        },
+        {
+          "company": "Visionary Eye Center",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "jacqueline c. westcott o.d., f.a.a.o.",
+              "email": "westcott@visionaryeyecenterfl.com"
+            }
+          ],
+          "tags": [
+            "wpp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Vivid Vascular",
+          "contactCount": 3,
+          "contacts": [
+            {
+              "name": "kari gropper",
+              "email": "kgropper@northbeachvascular.com"
+            },
+            {
+              "name": "dena pennacchio",
+              "email": "dena.pennacchio@vividvascular.com"
+            },
+            {
+              "name": "adam gropper",
+              "email": "agropper@northbeachvascular.com"
+            }
+          ],
+          "tags": [
+            "offboarded client",
+            "wpp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": "2025-12-03",
+          "lastDayOfService": "2026-01-15"
+        },
+        {
+          "company": "Ward Ruddock, PLLC",
+          "contactCount": 2,
+          "contacts": [
+            {
+              "name": "omari ruddock",
+              "email": "omari@wardruddock.com"
+            },
+            {
+              "name": "ian ward",
+              "email": "ian@wardruddock.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2024-05-29",
+          "onboardingDate": "2024-06-04",
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Web Promotion Partners",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "andy leonard",
+              "email": "aleonard@lawfirmmarketingpros.com"
+            }
+          ],
+          "tags": [
+            "wpp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Your Legacy Legal Care",
+          "contactCount": 2,
+          "contacts": [
+            {
+              "name": "kimberly hegwood",
+              "email": "kim@yourlegacylegalcare.com"
+            },
+            {
+              "name": "adam hundley",
+              "email": "adam@yourlegacylegalcare.com"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": "2024-11-13",
+          "onboardingDate": "2024-11-22",
+          "terminationNotice": "2025-11-03",
+          "lastDayOfService": "2025-12-01"
+        }
+      ]
+    },
+    "active": {
+      "label": "Active Clients (LFMP)",
+      "tag": "lfmp client",
       "companies": [
         {
           "company": "Albrecht Law PLLC",
@@ -49,6 +1992,808 @@
           "contactCount": 2
         },
         {
+          "company": "Cohen and Juda P.A.",
+          "contacts": [
+            {
+              "name": "harvey cohen",
+              "email": "harvey@cohenandjuda.com"
+            },
+            {
+              "name": "kimberly sinclair",
+              "email": "kim@cohenandjuda.com"
+            },
+            {
+              "name": "gary h. juda",
+              "email": "gary@cohenandjuda.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2018-12-28",
+          "onboardingDate": "2018-12-31",
+          "terminationNotice": null,
+          "lastDayOfService": null,
+          "contactCount": 3
+        },
+        {
+          "company": "DiBiaggio Law",
+          "contacts": [
+            {
+              "name": "deirdre dibiaggio",
+              "email": "djd@dibiaggiolaw.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null,
+          "contactCount": 1
+        },
+        {
+          "company": "Emery Law Office",
+          "contacts": [
+            {
+              "name": "matthew",
+              "email": "admin@emerylawoffice.com"
+            },
+            {
+              "name": "melissa emery",
+              "email": "melissa@emerylawoffice.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2025-05-23",
+          "onboardingDate": "2025-05-30",
+          "terminationNotice": null,
+          "lastDayOfService": null,
+          "contactCount": 2
+        },
+        {
+          "company": "Exit Path Partners LLC",
+          "contacts": [
+            {
+              "name": "cassie pinkerton",
+              "email": "cassie@exitpathpartners.com"
+            },
+            {
+              "name": "alex gertsburg",
+              "email": "alex@exitpathpartners.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null,
+          "contactCount": 2
+        },
+        {
+          "company": "Florida National Title Services",
+          "contacts": [
+            {
+              "name": "michele lewis",
+              "email": "michele@floridanationaltitle.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null,
+          "contactCount": 1
+        },
+        {
+          "company": "Greathouse Trial Law, LLC",
+          "contacts": [
+            {
+              "name": "damaris nadal",
+              "email": "damaris@atltriallaw.com"
+            },
+            {
+              "name": "riah greathouse",
+              "email": "riah@atltriallaw.com"
+            },
+            {
+              "name": "amina greathouse",
+              "email": "amina@atltriallaw.com"
+            },
+            {
+              "name": "alex",
+              "email": "alex@atltriallaw.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2020-04-13",
+          "onboardingDate": "2020-04-14",
+          "terminationNotice": null,
+          "lastDayOfService": null,
+          "contactCount": 4
+        },
+        {
+          "company": "Hammond Law Group PC",
+          "contacts": [
+            {
+              "name": "catherine hammond",
+              "email": "catherine@coloradoestateplan.com"
+            },
+            {
+              "name": "brian van way",
+              "email": "brian@coloradoestateplan.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2025-09-22",
+          "onboardingDate": "2025-10-24",
+          "terminationNotice": null,
+          "lastDayOfService": null,
+          "contactCount": 2
+        },
+        {
+          "company": "Hedayati Law Group, P.C.",
+          "contacts": [
+            {
+              "name": "al hedayati",
+              "email": "ah@hedayatilaw.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2024-04-20",
+          "onboardingDate": "2024-04-26",
+          "terminationNotice": null,
+          "lastDayOfService": null,
+          "contactCount": 1
+        },
+        {
+          "company": "KynLi Consulting & Accounting LLC",
+          "contacts": [
+            {
+              "name": "cameron williams",
+              "email": "cameron@kynliconsulting.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null,
+          "contactCount": 1
+        },
+        {
+          "company": "LaBre Law Office",
+          "contacts": [
+            {
+              "name": "rob labre esq.",
+              "email": "labrelawoffice@gmail.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null,
+          "contactCount": 1
+        },
+        {
+          "company": "Law Office of Bobby D. Mills, PLLC",
+          "contacts": [
+            {
+              "name": "bobby mills",
+              "email": "bmills@millsadoptionlaw.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2019-12-31",
+          "onboardingDate": "2020-01-01",
+          "terminationNotice": null,
+          "lastDayOfService": null,
+          "contactCount": 1
+        },
+        {
+          "company": "LAW OFFICE OF GARY M. LANDAU",
+          "contacts": [
+            {
+              "name": "meryl davids",
+              "email": "meryldavids2@gmail.com"
+            },
+            {
+              "name": "gary landau",
+              "email": "garylandauattorney@gmail.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null,
+          "contactCount": 2
+        },
+        {
+          "company": "Law Office of Thomas G. Briody",
+          "contacts": [
+            {
+              "name": "thomas briody",
+              "email": "tbriodylaw@aol.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2023-03-11",
+          "onboardingDate": "2023-03-22",
+          "terminationNotice": null,
+          "lastDayOfService": null,
+          "contactCount": 1
+        },
+        {
+          "company": "Law Offices of Daniel A. Seigel, P.A.",
+          "contacts": [
+            {
+              "name": "daniel seigel",
+              "email": "dseigel@seigel-law.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null,
+          "contactCount": 1
+        },
+        {
+          "company": "Law Offices of R. David Williams",
+          "contacts": [
+            {
+              "name": "david williams",
+              "email": "david@dwilliamslaw.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2022-03-01",
+          "onboardingDate": "2022-03-03",
+          "terminationNotice": null,
+          "lastDayOfService": null,
+          "contactCount": 1
+        },
+        {
+          "company": "Lone Star Injury Attorneys",
+          "contacts": [
+            {
+              "name": "rafael dela cruz",
+              "email": "rafael@lonestarinjuryattorneys.com"
+            },
+            {
+              "name": "maxwell paderewski",
+              "email": "max@lonestarinjuryattorneys.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2025-03-26",
+          "onboardingDate": "2025-04-04",
+          "terminationNotice": null,
+          "lastDayOfService": null,
+          "contactCount": 2
+        },
+        {
+          "company": "Lunn Law LLC",
+          "contacts": [
+            {
+              "name": "tiffany lunn white",
+              "email": "tlunn@lunnlaw.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2025-07-23",
+          "onboardingDate": "2025-08-08",
+          "terminationNotice": null,
+          "lastDayOfService": null,
+          "contactCount": 1
+        },
+        {
+          "company": "Lyle B. Masnikoff & Associates, P.A.",
+          "contacts": [
+            {
+              "name": "lyle b. masnikoff",
+              "email": "lmasnikoff@yahoo.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2020-06-08",
+          "onboardingDate": "2020-06-09",
+          "terminationNotice": null,
+          "lastDayOfService": null,
+          "contactCount": 1
+        },
+        {
+          "company": "McCarthy & Akers, PLC",
+          "contacts": [
+            {
+              "name": "douglas mccarthy",
+              "email": "douglasmccarthy@mccarthyakers.com"
+            },
+            {
+              "name": "matthew s. akers",
+              "email": "makers@mccarthyakers.com"
+            },
+            {
+              "name": "maura fisher",
+              "email": "maurajfisher2@gmail.com"
+            },
+            {
+              "name": "joshua petersen",
+              "email": "jpetersen@mccarthyakers.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2021-11-12",
+          "onboardingDate": "2021-11-22",
+          "terminationNotice": null,
+          "lastDayOfService": null,
+          "contactCount": 4
+        },
+        {
+          "company": "Morgan Divorce Law",
+          "contacts": [
+            {
+              "name": "andrea morgan, esquire.",
+              "email": "andrea@morgandivorcelaw.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2025-07-18",
+          "onboardingDate": "2025-08-13",
+          "terminationNotice": null,
+          "lastDayOfService": null,
+          "contactCount": 1
+        },
+        {
+          "company": "My Car Accident Attorney",
+          "contacts": [
+            {
+              "name": "dani flynngreathouse",
+              "email": "dani@flynngreathouse.com"
+            },
+            {
+              "name": "james flynn, esq.",
+              "email": "theflynnlawfirm@gmail.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2025-01-29",
+          "onboardingDate": "2025-03-12",
+          "terminationNotice": null,
+          "lastDayOfService": null,
+          "contactCount": 2
+        },
+        {
+          "company": "Panteva Law Group, LLC",
+          "contacts": [
+            {
+              "name": "erika diaz",
+              "email": "erika@panteva.com"
+            },
+            {
+              "name": "marina sol lorenzo",
+              "email": "marina@panteva.com"
+            },
+            {
+              "name": "iskra panteva, esq.",
+              "email": "iskra@panteva.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2025-04-24",
+          "onboardingDate": "2025-05-01",
+          "terminationNotice": null,
+          "lastDayOfService": null,
+          "contactCount": 3
+        },
+        {
+          "company": "Pardy & Rodriguez, P.A.",
+          "contacts": [
+            {
+              "name": "eduardo rodriguez, esq.",
+              "email": "erodriguez@pardyrodriguezlaw.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2026-02-23",
+          "onboardingDate": "2026-03-10",
+          "terminationNotice": null,
+          "lastDayOfService": null,
+          "contactCount": 1
+        },
+        {
+          "company": "PJI Law, PLC",
+          "contacts": [
+            {
+              "name": "paul j. abraham",
+              "email": "pabraham@pjilaw.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2021-04-07",
+          "onboardingDate": "2021-04-21",
+          "terminationNotice": null,
+          "lastDayOfService": null,
+          "contactCount": 1
+        },
+        {
+          "company": "Robichaud, Schroepfer & Correia, P.A.",
+          "contacts": [
+            {
+              "name": "b.j robichaud",
+              "email": "bj@robichaudlaw.com"
+            },
+            {
+              "name": "paul schroepfer",
+              "email": "paul@robichaudlaw.com"
+            },
+            {
+              "name": "robert correia",
+              "email": "robert@robichaudlaw.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2023-03-01",
+          "onboardingDate": "2023-03-20",
+          "terminationNotice": null,
+          "lastDayOfService": null,
+          "contactCount": 3
+        },
+        {
+          "company": "Ronald S. Chapman, P.A.",
+          "contacts": [
+            {
+              "name": "ronald chapman",
+              "email": "ronchapman@justiceflorida.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2021-12-24",
+          "onboardingDate": "2021-12-27",
+          "terminationNotice": null,
+          "lastDayOfService": null,
+          "contactCount": 1
+        },
+        {
+          "company": "Smith & Vanture",
+          "contacts": [
+            {
+              "name": "brian william. smith, esq.",
+              "email": "bws@smithvanture.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2025-06-25",
+          "onboardingDate": "2025-07-02",
+          "terminationNotice": "2026-07-20",
+          "lastDayOfService": "2026-08-20",
+          "contactCount": 1
+        },
+        {
+          "company": "Speaks Law Firm",
+          "contacts": [
+            {
+              "name": "richard speaks",
+              "email": "clarke@speakslaw.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2022-04-15",
+          "onboardingDate": "2022-04-26",
+          "terminationNotice": null,
+          "lastDayOfService": null,
+          "contactCount": 1
+        },
+        {
+          "company": "Sralla Family Law, PLLC",
+          "contacts": [
+            {
+              "name": "patty sralla",
+              "email": "patricia@familylawsanantonio.com"
+            },
+            {
+              "name": "kevin buck sralla, esq.",
+              "email": "ksralla@familylawsanantonio.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2024-08-20",
+          "onboardingDate": "2024-08-23",
+          "terminationNotice": null,
+          "lastDayOfService": null,
+          "contactCount": 2
+        },
+        {
+          "company": "Suzuki Law Offices",
+          "contacts": [
+            {
+              "name": "pearl contreras",
+              "email": "pearl@suzukilawoffices.com"
+            },
+            {
+              "name": "richard \"rj\" suzuki",
+              "email": "rj@suzukilawoffices.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2023-10-28",
+          "onboardingDate": "2023-11-09",
+          "terminationNotice": null,
+          "lastDayOfService": null,
+          "contactCount": 2
+        },
+        {
+          "company": "Talai Law Offices, Inc.",
+          "contacts": [
+            {
+              "name": "ali talai",
+              "email": "ali@talailaw.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2024-07-12",
+          "onboardingDate": "2024-07-23",
+          "terminationNotice": null,
+          "lastDayOfService": null,
+          "contactCount": 1
+        },
+        {
+          "company": "The Arnold Law Firm",
+          "contacts": [
+            {
+              "name": "venisha arnold, esq.",
+              "email": "info@attorneyarnold.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null,
+          "contactCount": 1
+        },
+        {
+          "company": "The Collins Firm, PLLC",
+          "contacts": [
+            {
+              "name": "james collins",
+              "email": "jjc@mikecollins.com"
+            },
+            {
+              "name": "mike collins",
+              "email": "mtc@mikecollins.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2023-08-10",
+          "onboardingDate": "2023-08-15",
+          "terminationNotice": null,
+          "lastDayOfService": null,
+          "contactCount": 2
+        },
+        {
+          "company": "The Law Office of Polly Tatum",
+          "contacts": [
+            {
+              "name": "jamese tatum",
+              "email": "jamese@lawofficeofpollytatum.com"
+            },
+            {
+              "name": "polly tatum",
+              "email": "polly@lawofficeofpollytatum.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2024-06-04",
+          "onboardingDate": "2024-06-11",
+          "terminationNotice": "2026-07-10",
+          "lastDayOfService": "2026-08-15",
+          "contactCount": 2
+        },
+        {
+          "company": "The Law Offices of Nugent Zborowski",
+          "contacts": [
+            {
+              "name": "adam zborowski",
+              "email": "azborowski@nugentlawfirm.com"
+            },
+            {
+              "name": "matthew nugent",
+              "email": "mnugent@nugentlawfirm.com"
+            },
+            {
+              "name": "karen garrison",
+              "email": "kgarrison@nugentlawfirm.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null,
+          "contactCount": 3
+        },
+        {
+          "company": "The Law Offices of Peter N. Davis & Associates, LLC",
+          "contacts": [
+            {
+              "name": "jessica jimenez",
+              "email": "jjimenez@peterdavislaw.com"
+            },
+            {
+              "name": "peter n davis, esq.",
+              "email": "pdavis@peterdavislaw.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2024-05-14",
+          "onboardingDate": "2024-05-23",
+          "terminationNotice": "2026-07-24",
+          "lastDayOfService": "2026-08-31",
+          "contactCount": 2
+        },
+        {
+          "company": "The Mahdavi Law Firm PLLC",
+          "contacts": [
+            {
+              "name": "cyrus mahdavi, esq.",
+              "email": "cm@mahdavilawfirm.com"
+            },
+            {
+              "name": "hanieh mahdavi",
+              "email": "hm@mahdavilawfirm.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2025-08-27",
+          "onboardingDate": "2025-09-12",
+          "terminationNotice": null,
+          "lastDayOfService": null,
+          "contactCount": 2
+        },
+        {
+          "company": "The Mendoza Law Firm, LLC",
+          "contacts": [
+            {
+              "name": "maría mendoza",
+              "email": "abogada@mendozafirm.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2025-11-19",
+          "onboardingDate": "2025-11-19",
+          "terminationNotice": null,
+          "lastDayOfService": null,
+          "contactCount": 1
+        },
+        {
+          "company": "Tibbott & Richardson, P.C.",
+          "contacts": [
+            {
+              "name": "beth tibbott",
+              "email": "bmt@tibbottrichardson.com"
+            },
+            {
+              "name": "jessica ash",
+              "email": "jessica@tibbottrichardson.com"
+            },
+            {
+              "name": "dana richardson",
+              "email": "djr@tibbottrichardson.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2024-10-02",
+          "onboardingDate": "2024-10-11",
+          "terminationNotice": null,
+          "lastDayOfService": null,
+          "contactCount": 3
+        },
+        {
+          "company": "Ward Ruddock, PLLC",
+          "contacts": [
+            {
+              "name": "omari ruddock",
+              "email": "omari@wardruddock.com"
+            },
+            {
+              "name": "ian ward",
+              "email": "ian@wardruddock.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2024-05-29",
+          "onboardingDate": "2024-06-04",
+          "terminationNotice": null,
+          "lastDayOfService": null,
+          "contactCount": 2
+        }
+      ]
+    },
+    "offboarded": {
+      "label": "Offboarded Clients",
+      "tag": "offboarded client",
+      "companies": [
+        {
           "company": "Bangerter Law, LLC",
           "contacts": [
             {
@@ -78,81 +2823,13 @@
             }
           ],
           "tags": [
-            "offboarded client",
-            "wpp client"
+            "offboarded client"
           ],
           "dateClosed": "2024-10-23",
           "onboardingDate": "2024-11-15",
           "terminationNotice": "2025-08-28",
           "lastDayOfService": "2025-10-01",
           "contactCount": 2
-        },
-        {
-          "company": "Batten Insurance",
-          "contacts": [
-            {
-              "name": "ann-marie batten",
-              "email": "annmariebatten@gmail.com"
-            }
-          ],
-          "tags": [
-            "wpp client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": null,
-          "lastDayOfService": null,
-          "contactCount": 1
-        },
-        {
-          "company": "Behavioral Family Solutions",
-          "contacts": [
-            {
-              "name": "amanda cardoso",
-              "email": "cardosoa@behavioralfamilysolutions.com"
-            },
-            {
-              "name": "juan carlos gonzalez",
-              "email": "jc@behavioralfamilysolutions.com"
-            },
-            {
-              "name": "david gonzalez",
-              "email": "david@behavioralfamilysolutions.com"
-            }
-          ],
-          "tags": [
-            "wpp client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": null,
-          "lastDayOfService": null,
-          "contactCount": 3
-        },
-        {
-          "company": "Boca Dental",
-          "contacts": [
-            {
-              "name": "daniella",
-              "email": "daniella@weinsteindental.com"
-            },
-            {
-              "name": "gregg weinstein",
-              "email": "drgregg@comcast.net"
-            },
-            {
-              "name": "dita weinstein",
-              "email": "dita@weinsteindental.com"
-            }
-          ],
-          "tags": [
-            "wpp client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": null,
-          "lastDayOfService": null,
-          "contactCount": 3
         },
         {
           "company": "Britto & Herman Injury Lawyers",
@@ -189,31 +2866,6 @@
           "contactCount": 1
         },
         {
-          "company": "Cohen and Juda P.A.",
-          "contacts": [
-            {
-              "name": "harvey cohen",
-              "email": "harvey@cohenandjuda.com"
-            },
-            {
-              "name": "kimberly sinclair",
-              "email": "kim@cohenandjuda.com"
-            },
-            {
-              "name": "gary h. juda",
-              "email": "gary@cohenandjuda.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2018-12-28",
-          "onboardingDate": "2018-12-31",
-          "terminationNotice": null,
-          "lastDayOfService": null,
-          "contactCount": 3
-        },
-        {
           "company": "Coral Gables Plumbing",
           "contacts": [
             {
@@ -226,48 +2878,13 @@
             }
           ],
           "tags": [
-            "offboarded client",
-            "wpp client"
+            "offboarded client"
           ],
           "dateClosed": null,
           "onboardingDate": null,
           "terminationNotice": "2025-07-16",
           "lastDayOfService": "2025-08-15",
           "contactCount": 2
-        },
-        {
-          "company": "DiBiaggio Law",
-          "contacts": [
-            {
-              "name": "deirdre dibiaggio",
-              "email": "djd@dibiaggiolaw.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": null,
-          "lastDayOfService": null,
-          "contactCount": 1
-        },
-        {
-          "company": "Dino's Pressure Cleaning, Inc.",
-          "contacts": [
-            {
-              "name": "dean tomasulo",
-              "email": "dinodobe@gmail.com"
-            }
-          ],
-          "tags": [
-            "wpp client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": null,
-          "lastDayOfService": null,
-          "contactCount": 1
         },
         {
           "company": "Doncaster Law PLLC",
@@ -285,27 +2902,6 @@
           "terminationNotice": null,
           "lastDayOfService": null,
           "contactCount": 1
-        },
-        {
-          "company": "Emery Law Office",
-          "contacts": [
-            {
-              "name": "matthew",
-              "email": "admin@emerylawoffice.com"
-            },
-            {
-              "name": "melissa emery",
-              "email": "melissa@emerylawoffice.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2025-05-23",
-          "onboardingDate": "2025-05-30",
-          "terminationNotice": null,
-          "lastDayOfService": null,
-          "contactCount": 2
         },
         {
           "company": "ER Law Trial Lawyers",
@@ -346,27 +2942,6 @@
           "contactCount": 2
         },
         {
-          "company": "Exit Path Partners LLC",
-          "contacts": [
-            {
-              "name": "cassie pinkerton",
-              "email": "cassie@exitpathpartners.com"
-            },
-            {
-              "name": "alex gertsburg",
-              "email": "alex@exitpathpartners.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": null,
-          "lastDayOfService": null,
-          "contactCount": 2
-        },
-        {
           "company": "Family First Firm - Medicaid & Elder Law Attorneys",
           "contacts": [
             {
@@ -396,23 +2971,6 @@
           "contactCount": 4
         },
         {
-          "company": "Florida National Title Services",
-          "contacts": [
-            {
-              "name": "michele lewis",
-              "email": "michele@floridanationaltitle.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": null,
-          "lastDayOfService": null,
-          "contactCount": 1
-        },
-        {
           "company": "Florida Women’s Law Group",
           "contacts": [
             {
@@ -430,52 +2988,6 @@
           "contactCount": 1
         },
         {
-          "company": "Gardens Jewish Experience",
-          "contacts": [
-            {
-              "name": "bracha cheplowitz",
-              "email": "gardensje@gmail.com"
-            }
-          ],
-          "tags": [
-            "wpp client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": null,
-          "lastDayOfService": null,
-          "contactCount": 1
-        },
-        {
-          "company": "Greathouse Trial Law, LLC",
-          "contacts": [
-            {
-              "name": "damaris nadal",
-              "email": "damaris@atltriallaw.com"
-            },
-            {
-              "name": "riah greathouse",
-              "email": "riah@atltriallaw.com"
-            },
-            {
-              "name": "amina greathouse",
-              "email": "amina@atltriallaw.com"
-            },
-            {
-              "name": "alex",
-              "email": "alex@atltriallaw.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2020-04-13",
-          "onboardingDate": "2020-04-14",
-          "terminationNotice": null,
-          "lastDayOfService": null,
-          "contactCount": 4
-        },
-        {
           "company": "Hammack Law Firm",
           "contacts": [
             {
@@ -490,44 +3002,6 @@
           "onboardingDate": "2023-11-17",
           "terminationNotice": "2025-02-28",
           "lastDayOfService": "2025-06-01",
-          "contactCount": 1
-        },
-        {
-          "company": "Hammond Law Group PC",
-          "contacts": [
-            {
-              "name": "catherine hammond",
-              "email": "catherine@coloradoestateplan.com"
-            },
-            {
-              "name": "brian van way",
-              "email": "brian@coloradoestateplan.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2025-09-22",
-          "onboardingDate": "2025-10-24",
-          "terminationNotice": null,
-          "lastDayOfService": null,
-          "contactCount": 2
-        },
-        {
-          "company": "Hedayati Law Group, P.C.",
-          "contacts": [
-            {
-              "name": "al hedayati",
-              "email": "ah@hedayatilaw.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2024-04-20",
-          "onboardingDate": "2024-04-26",
-          "terminationNotice": null,
-          "lastDayOfService": null,
           "contactCount": 1
         },
         {
@@ -682,95 +3156,6 @@
           "contactCount": 1
         },
         {
-          "company": "KynLi Consulting & Accounting LLC",
-          "contacts": [
-            {
-              "name": "cameron williams",
-              "email": "cameron@kynliconsulting.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": null,
-          "lastDayOfService": null,
-          "contactCount": 1
-        },
-        {
-          "company": "LaBre Law Office",
-          "contacts": [
-            {
-              "name": "rob labre esq.",
-              "email": "labrelawoffice@gmail.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": null,
-          "lastDayOfService": null,
-          "contactCount": 1
-        },
-        {
-          "company": "Law Office of Bobby D. Mills, PLLC",
-          "contacts": [
-            {
-              "name": "bobby mills",
-              "email": "bmills@millsadoptionlaw.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2019-12-31",
-          "onboardingDate": "2020-01-01",
-          "terminationNotice": null,
-          "lastDayOfService": null,
-          "contactCount": 1
-        },
-        {
-          "company": "LAW OFFICE OF GARY M. LANDAU",
-          "contacts": [
-            {
-              "name": "meryl davids",
-              "email": "meryldavids2@gmail.com"
-            },
-            {
-              "name": "gary landau",
-              "email": "garylandauattorney@gmail.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": null,
-          "lastDayOfService": null,
-          "contactCount": 2
-        },
-        {
-          "company": "Law Office of Thomas G. Briody",
-          "contacts": [
-            {
-              "name": "thomas briody",
-              "email": "tbriodylaw@aol.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2023-03-11",
-          "onboardingDate": "2023-03-22",
-          "terminationNotice": null,
-          "lastDayOfService": null,
-          "contactCount": 1
-        },
-        {
           "company": "Law Offices of Connie Kaplan, P.A.",
           "contacts": [
             {
@@ -785,23 +3170,6 @@
           "onboardingDate": "2020-12-22",
           "terminationNotice": "2023-11-30",
           "lastDayOfService": "2023-12-07",
-          "contactCount": 1
-        },
-        {
-          "company": "Law Offices of Daniel A. Seigel, P.A.",
-          "contacts": [
-            {
-              "name": "daniel seigel",
-              "email": "dseigel@seigel-law.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": null,
-          "lastDayOfService": null,
           "contactCount": 1
         },
         {
@@ -877,23 +3245,6 @@
           "contactCount": 1
         },
         {
-          "company": "Law Offices of R. David Williams",
-          "contacts": [
-            {
-              "name": "david williams",
-              "email": "david@dwilliamslaw.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2022-03-01",
-          "onboardingDate": "2022-03-03",
-          "terminationNotice": null,
-          "lastDayOfService": null,
-          "contactCount": 1
-        },
-        {
           "company": "Lincoln-Goldfinch Law",
           "contacts": [
             {
@@ -909,90 +3260,6 @@
           "terminationNotice": "2024-09-04",
           "lastDayOfService": "2024-09-05",
           "contactCount": 1
-        },
-        {
-          "company": "Lone Star Injury Attorneys",
-          "contacts": [
-            {
-              "name": "rafael dela cruz",
-              "email": "rafael@lonestarinjuryattorneys.com"
-            },
-            {
-              "name": "maxwell paderewski",
-              "email": "max@lonestarinjuryattorneys.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2025-03-26",
-          "onboardingDate": "2025-04-04",
-          "terminationNotice": null,
-          "lastDayOfService": null,
-          "contactCount": 2
-        },
-        {
-          "company": "Lunn Law LLC",
-          "contacts": [
-            {
-              "name": "tiffany lunn white",
-              "email": "tlunn@lunnlaw.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2025-07-23",
-          "onboardingDate": "2025-08-08",
-          "terminationNotice": null,
-          "lastDayOfService": null,
-          "contactCount": 1
-        },
-        {
-          "company": "Lyle B. Masnikoff & Associates, P.A.",
-          "contacts": [
-            {
-              "name": "lyle b. masnikoff",
-              "email": "lmasnikoff@yahoo.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2020-06-08",
-          "onboardingDate": "2020-06-09",
-          "terminationNotice": null,
-          "lastDayOfService": null,
-          "contactCount": 1
-        },
-        {
-          "company": "McCarthy & Akers, PLC",
-          "contacts": [
-            {
-              "name": "douglas mccarthy",
-              "email": "douglasmccarthy@mccarthyakers.com"
-            },
-            {
-              "name": "matthew s. akers",
-              "email": "makers@mccarthyakers.com"
-            },
-            {
-              "name": "maura fisher",
-              "email": "maurajfisher2@gmail.com"
-            },
-            {
-              "name": "joshua petersen",
-              "email": "jpetersen@mccarthyakers.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2021-11-12",
-          "onboardingDate": "2021-11-22",
-          "terminationNotice": null,
-          "lastDayOfService": null,
-          "contactCount": 4
         },
         {
           "company": "McLaurin Law",
@@ -1016,44 +3283,6 @@
           "contactCount": 2
         },
         {
-          "company": "Morgan Divorce Law",
-          "contacts": [
-            {
-              "name": "andrea morgan, esquire.",
-              "email": "andrea@morgandivorcelaw.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2025-07-18",
-          "onboardingDate": "2025-08-13",
-          "terminationNotice": null,
-          "lastDayOfService": null,
-          "contactCount": 1
-        },
-        {
-          "company": "My Car Accident Attorney",
-          "contacts": [
-            {
-              "name": "dani flynngreathouse",
-              "email": "dani@flynngreathouse.com"
-            },
-            {
-              "name": "james flynn, esq.",
-              "email": "theflynnlawfirm@gmail.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2025-01-29",
-          "onboardingDate": "2025-03-12",
-          "terminationNotice": null,
-          "lastDayOfService": null,
-          "contactCount": 2
-        },
-        {
           "company": "Oldham & Delcamp LLC.",
           "contacts": [
             {
@@ -1073,86 +3302,6 @@
           "terminationNotice": "2023-04-21",
           "lastDayOfService": null,
           "contactCount": 2
-        },
-        {
-          "company": "Palm Beach Plastic & Cosmetic Surgery",
-          "contacts": [
-            {
-              "name": "ladonna diller",
-              "email": ""
-            },
-            {
-              "name": "carla pisani",
-              "email": "carlapisani@gmail.com"
-            }
-          ],
-          "tags": [
-            "wpp client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": null,
-          "lastDayOfService": null,
-          "contactCount": 2
-        },
-        {
-          "company": "Panteva Law Group, LLC",
-          "contacts": [
-            {
-              "name": "erika diaz",
-              "email": "erika@panteva.com"
-            },
-            {
-              "name": "marina sol lorenzo",
-              "email": "marina@panteva.com"
-            },
-            {
-              "name": "iskra panteva, esq.",
-              "email": "iskra@panteva.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2025-04-24",
-          "onboardingDate": "2025-05-01",
-          "terminationNotice": null,
-          "lastDayOfService": null,
-          "contactCount": 3
-        },
-        {
-          "company": "Pardy & Rodriguez, P.A.",
-          "contacts": [
-            {
-              "name": "eduardo rodriguez, esq.",
-              "email": "erodriguez@pardyrodriguezlaw.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2026-02-23",
-          "onboardingDate": "2026-03-10",
-          "terminationNotice": null,
-          "lastDayOfService": null,
-          "contactCount": 1
-        },
-        {
-          "company": "PJI Law, PLC",
-          "contacts": [
-            {
-              "name": "paul j. abraham",
-              "email": "pabraham@pjilaw.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2021-04-07",
-          "onboardingDate": "2021-04-21",
-          "terminationNotice": null,
-          "lastDayOfService": null,
-          "contactCount": 1
         },
         {
           "company": "Reana Garcia Law Group",
@@ -1190,48 +3339,6 @@
           "onboardingDate": "2024-06-14",
           "terminationNotice": "2026-04-29",
           "lastDayOfService": "2026-05-15",
-          "contactCount": 1
-        },
-        {
-          "company": "Robichaud, Schroepfer & Correia, P.A.",
-          "contacts": [
-            {
-              "name": "b.j robichaud",
-              "email": "bj@robichaudlaw.com"
-            },
-            {
-              "name": "paul schroepfer",
-              "email": "paul@robichaudlaw.com"
-            },
-            {
-              "name": "robert correia",
-              "email": "robert@robichaudlaw.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2023-03-01",
-          "onboardingDate": "2023-03-20",
-          "terminationNotice": null,
-          "lastDayOfService": null,
-          "contactCount": 3
-        },
-        {
-          "company": "Ronald S. Chapman, P.A.",
-          "contacts": [
-            {
-              "name": "ronald chapman",
-              "email": "ronchapman@justiceflorida.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2021-12-24",
-          "onboardingDate": "2021-12-27",
-          "terminationNotice": null,
-          "lastDayOfService": null,
           "contactCount": 1
         },
         {
@@ -1302,61 +3409,6 @@
           "contactCount": 2
         },
         {
-          "company": "Smith & Vanture",
-          "contacts": [
-            {
-              "name": "brian william. smith, esq.",
-              "email": "bws@smithvanture.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2025-06-25",
-          "onboardingDate": "2025-07-02",
-          "terminationNotice": "2026-07-20",
-          "lastDayOfService": "2026-08-20",
-          "contactCount": 1
-        },
-        {
-          "company": "Speaks Law Firm",
-          "contacts": [
-            {
-              "name": "richard speaks",
-              "email": "clarke@speakslaw.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2022-04-15",
-          "onboardingDate": "2022-04-26",
-          "terminationNotice": null,
-          "lastDayOfService": null,
-          "contactCount": 1
-        },
-        {
-          "company": "Sralla Family Law, PLLC",
-          "contacts": [
-            {
-              "name": "patty sralla",
-              "email": "patricia@familylawsanantonio.com"
-            },
-            {
-              "name": "kevin buck sralla, esq.",
-              "email": "ksralla@familylawsanantonio.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2024-08-20",
-          "onboardingDate": "2024-08-23",
-          "terminationNotice": null,
-          "lastDayOfService": null,
-          "contactCount": 2
-        },
-        {
           "company": "STERN Law",
           "contacts": [
             {
@@ -1382,61 +3434,6 @@
           "contactCount": 3
         },
         {
-          "company": "Susan J Christiansen Ph.D., LMFT",
-          "contacts": [
-            {
-              "name": "susan christiansen",
-              "email": "susiechrist@gmail.com"
-            }
-          ],
-          "tags": [
-            "wpp client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": null,
-          "lastDayOfService": null,
-          "contactCount": 1
-        },
-        {
-          "company": "Suzuki Law Offices",
-          "contacts": [
-            {
-              "name": "pearl contreras",
-              "email": "pearl@suzukilawoffices.com"
-            },
-            {
-              "name": "richard \"rj\" suzuki",
-              "email": "rj@suzukilawoffices.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2023-10-28",
-          "onboardingDate": "2023-11-09",
-          "terminationNotice": null,
-          "lastDayOfService": null,
-          "contactCount": 2
-        },
-        {
-          "company": "Talai Law Offices, Inc.",
-          "contacts": [
-            {
-              "name": "ali talai",
-              "email": "ali@talailaw.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2024-07-12",
-          "onboardingDate": "2024-07-23",
-          "terminationNotice": null,
-          "lastDayOfService": null,
-          "contactCount": 1
-        },
-        {
           "company": "Tax Workout Group",
           "contacts": [
             {
@@ -1451,23 +3448,6 @@
           "onboardingDate": "2023-03-08",
           "terminationNotice": "2024-05-08",
           "lastDayOfService": "2024-06-01",
-          "contactCount": 1
-        },
-        {
-          "company": "The Arnold Law Firm",
-          "contacts": [
-            {
-              "name": "venisha arnold, esq.",
-              "email": "info@attorneyarnold.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": null,
-          "lastDayOfService": null,
           "contactCount": 1
         },
         {
@@ -1494,27 +3474,6 @@
           "terminationNotice": "2026-05-26",
           "lastDayOfService": "2026-07-18",
           "contactCount": 3
-        },
-        {
-          "company": "The Collins Firm, PLLC",
-          "contacts": [
-            {
-              "name": "james collins",
-              "email": "jjc@mikecollins.com"
-            },
-            {
-              "name": "mike collins",
-              "email": "mtc@mikecollins.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2023-08-10",
-          "onboardingDate": "2023-08-15",
-          "terminationNotice": null,
-          "lastDayOfService": null,
-          "contactCount": 2
         },
         {
           "company": "The Foley Law Firm",
@@ -1606,27 +3565,6 @@
           "contactCount": 1
         },
         {
-          "company": "The Law Office of Polly Tatum",
-          "contacts": [
-            {
-              "name": "jamese tatum",
-              "email": "jamese@lawofficeofpollytatum.com"
-            },
-            {
-              "name": "polly tatum",
-              "email": "polly@lawofficeofpollytatum.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2024-06-04",
-          "onboardingDate": "2024-06-11",
-          "terminationNotice": "2026-07-10",
-          "lastDayOfService": "2026-08-15",
-          "contactCount": 2
-        },
-        {
           "company": "The Law Offices Of Kimberly Butler Rainen",
           "contacts": [
             {
@@ -1635,7 +3573,7 @@
             },
             {
               "name": "kimberly butler",
-              "email": ""
+              "email": null
             },
             {
               "name": "david rainen",
@@ -1650,90 +3588,6 @@
           "terminationNotice": "2022-11-30",
           "lastDayOfService": null,
           "contactCount": 3
-        },
-        {
-          "company": "The Law Offices of Nugent Zborowski",
-          "contacts": [
-            {
-              "name": "adam zborowski",
-              "email": "azborowski@nugentlawfirm.com"
-            },
-            {
-              "name": "matthew nugent",
-              "email": "mnugent@nugentlawfirm.com"
-            },
-            {
-              "name": "karen garrison",
-              "email": "kgarrison@nugentlawfirm.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": null,
-          "lastDayOfService": null,
-          "contactCount": 3
-        },
-        {
-          "company": "The Law Offices of Peter N. Davis & Associates, LLC",
-          "contacts": [
-            {
-              "name": "jessica jimenez",
-              "email": "jjimenez@peterdavislaw.com"
-            },
-            {
-              "name": "peter n davis, esq.",
-              "email": "pdavis@peterdavislaw.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2024-05-14",
-          "onboardingDate": "2024-05-23",
-          "terminationNotice": "2026-07-24",
-          "lastDayOfService": "2026-08-31",
-          "contactCount": 2
-        },
-        {
-          "company": "The Mahdavi Law Firm PLLC",
-          "contacts": [
-            {
-              "name": "cyrus mahdavi, esq.",
-              "email": "cm@mahdavilawfirm.com"
-            },
-            {
-              "name": "hanieh mahdavi",
-              "email": "hm@mahdavilawfirm.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2025-08-27",
-          "onboardingDate": "2025-09-12",
-          "terminationNotice": null,
-          "lastDayOfService": null,
-          "contactCount": 2
-        },
-        {
-          "company": "The Mendoza Law Firm, LLC",
-          "contacts": [
-            {
-              "name": "maría mendoza",
-              "email": "abogada@mendozafirm.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2025-11-19",
-          "onboardingDate": "2025-11-19",
-          "terminationNotice": null,
-          "lastDayOfService": null,
-          "contactCount": 1
         },
         {
           "company": "The Shamsi Law Firm APC",
@@ -1774,31 +3628,6 @@
           "contactCount": 2
         },
         {
-          "company": "Tibbott & Richardson, P.C.",
-          "contacts": [
-            {
-              "name": "beth tibbott",
-              "email": "bmt@tibbottrichardson.com"
-            },
-            {
-              "name": "jessica ash",
-              "email": "jessica@tibbottrichardson.com"
-            },
-            {
-              "name": "dana richardson",
-              "email": "djr@tibbottrichardson.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2024-10-02",
-          "onboardingDate": "2024-10-11",
-          "terminationNotice": null,
-          "lastDayOfService": null,
-          "contactCount": 3
-        },
-        {
           "company": "Trelles & Bichler",
           "contacts": [
             {
@@ -1832,31 +3661,13 @@
             }
           ],
           "tags": [
-            "offboarded client",
-            "wpp client"
+            "offboarded client"
           ],
           "dateClosed": null,
           "onboardingDate": null,
           "terminationNotice": "2025-01-21",
           "lastDayOfService": "2025-03-01",
           "contactCount": 2
-        },
-        {
-          "company": "Visionary Eye Center",
-          "contacts": [
-            {
-              "name": "jacqueline c. westcott o.d., f.a.a.o.",
-              "email": "westcott@visionaryeyecenterfl.com"
-            }
-          ],
-          "tags": [
-            "wpp client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": null,
-          "lastDayOfService": null,
-          "contactCount": 1
         },
         {
           "company": "Vivid Vascular",
@@ -1875,52 +3686,13 @@
             }
           ],
           "tags": [
-            "offboarded client",
-            "wpp client"
+            "offboarded client"
           ],
           "dateClosed": null,
           "onboardingDate": null,
           "terminationNotice": "2025-12-03",
           "lastDayOfService": "2026-01-15",
           "contactCount": 3
-        },
-        {
-          "company": "Ward Ruddock, PLLC",
-          "contacts": [
-            {
-              "name": "omari ruddock",
-              "email": "omari@wardruddock.com"
-            },
-            {
-              "name": "ian ward",
-              "email": "ian@wardruddock.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2024-05-29",
-          "onboardingDate": "2024-06-04",
-          "terminationNotice": null,
-          "lastDayOfService": null,
-          "contactCount": 2
-        },
-        {
-          "company": "Web Promotion Partners",
-          "contacts": [
-            {
-              "name": "andy leonard",
-              "email": "aleonard@lawfirmmarketingpros.com"
-            }
-          ],
-          "tags": [
-            "wpp client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": null,
-          "lastDayOfService": null,
-          "contactCount": 1
         },
         {
           "company": "Your Legacy Legal Care",
@@ -1945,1785 +3717,12 @@
         }
       ]
     },
-    "active": {
-      "label": "Active Clients (LFMP)",
-      "tag": "lfmp client",
-      "companies": [
-        {
-          "company": "Albrecht Law PLLC",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "matthew albrecht",
-              "email": "matt@albrechtlawfirm.com"
-            },
-            {
-              "name": "melanie evans",
-              "email": "melanie@albrechtlawfirm.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2023-06-23",
-          "onboardingDate": "2023-07-12",
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "Bade Law Group, LLC",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "keith simper",
-              "email": "keithsimperfractionalcfo@outlook.com"
-            },
-            {
-              "name": "jennifer bade, esq.",
-              "email": "jennifer@badelawgroup.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2026-05-07",
-          "onboardingDate": "2026-05-15",
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "Cohen and Juda P.A.",
-          "contactCount": 3,
-          "contacts": [
-            {
-              "name": "harvey cohen",
-              "email": "harvey@cohenandjuda.com"
-            },
-            {
-              "name": "kimberly sinclair",
-              "email": "kim@cohenandjuda.com"
-            },
-            {
-              "name": "gary h. juda",
-              "email": "gary@cohenandjuda.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2018-12-28",
-          "onboardingDate": "2018-12-31",
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "DiBiaggio Law",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "deirdre dibiaggio",
-              "email": "djd@dibiaggiolaw.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "Emery Law Office",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "matthew",
-              "email": "admin@emerylawoffice.com"
-            },
-            {
-              "name": "melissa emery",
-              "email": "melissa@emerylawoffice.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2025-05-23",
-          "onboardingDate": "2025-05-30",
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "Exit Path Partners LLC",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "cassie pinkerton",
-              "email": "cassie@exitpathpartners.com"
-            },
-            {
-              "name": "alex gertsburg",
-              "email": "alex@exitpathpartners.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "Florida National Title Services",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "michele lewis",
-              "email": "michele@floridanationaltitle.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "Greathouse Trial Law, LLC",
-          "contactCount": 4,
-          "contacts": [
-            {
-              "name": "damaris nadal",
-              "email": "damaris@atltriallaw.com"
-            },
-            {
-              "name": "riah greathouse",
-              "email": "riah@atltriallaw.com"
-            },
-            {
-              "name": "amina greathouse",
-              "email": "amina@atltriallaw.com"
-            },
-            {
-              "name": "alex",
-              "email": "alex@atltriallaw.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2020-04-13",
-          "onboardingDate": "2020-04-14",
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "Hammond Law Group PC",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "catherine hammond",
-              "email": "catherine@coloradoestateplan.com"
-            },
-            {
-              "name": "brian van way",
-              "email": "brian@coloradoestateplan.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2025-09-22",
-          "onboardingDate": "2025-10-24",
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "Hedayati Law Group, P.C.",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "al hedayati",
-              "email": "ah@hedayatilaw.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2024-04-20",
-          "onboardingDate": "2024-04-26",
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "KynLi Consulting & Accounting LLC",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "cameron williams",
-              "email": "cameron@kynliconsulting.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "LaBre Law Office",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "rob labre esq.",
-              "email": "labrelawoffice@gmail.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "Law Office of Bobby D. Mills, PLLC",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "bobby mills",
-              "email": "bmills@millsadoptionlaw.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2019-12-31",
-          "onboardingDate": "2020-01-01",
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "LAW OFFICE OF GARY M. LANDAU",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "meryl davids",
-              "email": "meryldavids2@gmail.com"
-            },
-            {
-              "name": "gary landau",
-              "email": "garylandauattorney@gmail.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "Law Office of Thomas G. Briody",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "thomas briody",
-              "email": "tbriodylaw@aol.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2023-03-11",
-          "onboardingDate": "2023-03-22",
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "Law Offices of Daniel A. Seigel, P.A.",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "daniel seigel",
-              "email": "dseigel@seigel-law.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "Law Offices of R. David Williams",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "david williams",
-              "email": "david@dwilliamslaw.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2022-03-01",
-          "onboardingDate": "2022-03-03",
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "Lone Star Injury Attorneys",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "rafael dela cruz",
-              "email": "rafael@lonestarinjuryattorneys.com"
-            },
-            {
-              "name": "maxwell paderewski",
-              "email": "max@lonestarinjuryattorneys.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2025-03-26",
-          "onboardingDate": "2025-04-04",
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "Lunn Law LLC",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "tiffany lunn white",
-              "email": "tlunn@lunnlaw.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2025-07-23",
-          "onboardingDate": "2025-08-08",
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "Lyle B. Masnikoff & Associates, P.A.",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "lyle b. masnikoff",
-              "email": "lmasnikoff@yahoo.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2020-06-08",
-          "onboardingDate": "2020-06-09",
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "McCarthy & Akers, PLC",
-          "contactCount": 4,
-          "contacts": [
-            {
-              "name": "douglas mccarthy",
-              "email": "douglasmccarthy@mccarthyakers.com"
-            },
-            {
-              "name": "matthew s. akers",
-              "email": "makers@mccarthyakers.com"
-            },
-            {
-              "name": "maura fisher",
-              "email": "maurajfisher2@gmail.com"
-            },
-            {
-              "name": "joshua petersen",
-              "email": "jpetersen@mccarthyakers.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2021-11-12",
-          "onboardingDate": "2021-11-22",
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "Morgan Divorce Law",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "andrea morgan, esquire.",
-              "email": "andrea@morgandivorcelaw.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2025-07-18",
-          "onboardingDate": "2025-08-13",
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "My Car Accident Attorney",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "dani flynngreathouse",
-              "email": "dani@flynngreathouse.com"
-            },
-            {
-              "name": "james flynn, esq.",
-              "email": "theflynnlawfirm@gmail.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2025-01-29",
-          "onboardingDate": "2025-03-12",
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "Panteva Law Group, LLC",
-          "contactCount": 3,
-          "contacts": [
-            {
-              "name": "erika diaz",
-              "email": "erika@panteva.com"
-            },
-            {
-              "name": "marina sol lorenzo",
-              "email": "marina@panteva.com"
-            },
-            {
-              "name": "iskra panteva, esq.",
-              "email": "iskra@panteva.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2025-04-24",
-          "onboardingDate": "2025-05-01",
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "Pardy & Rodriguez, P.A.",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "eduardo rodriguez, esq.",
-              "email": "erodriguez@pardyrodriguezlaw.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2026-02-23",
-          "onboardingDate": "2026-03-10",
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "PJI Law, PLC",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "paul j. abraham",
-              "email": "pabraham@pjilaw.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2021-04-07",
-          "onboardingDate": "2021-04-21",
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "Robichaud, Schroepfer & Correia, P.A.",
-          "contactCount": 3,
-          "contacts": [
-            {
-              "name": "b.j robichaud",
-              "email": "bj@robichaudlaw.com"
-            },
-            {
-              "name": "paul schroepfer",
-              "email": "paul@robichaudlaw.com"
-            },
-            {
-              "name": "robert correia",
-              "email": "robert@robichaudlaw.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2023-03-01",
-          "onboardingDate": "2023-03-20",
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "Ronald S. Chapman, P.A.",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "ronald chapman",
-              "email": "ronchapman@justiceflorida.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2021-12-24",
-          "onboardingDate": "2021-12-27",
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "Smith & Vanture",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "brian william. smith, esq.",
-              "email": "bws@smithvanture.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2025-06-25",
-          "onboardingDate": "2025-07-02",
-          "terminationNotice": "2026-07-20",
-          "lastDayOfService": "2026-08-20"
-        },
-        {
-          "company": "Speaks Law Firm",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "richard speaks",
-              "email": "clarke@speakslaw.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2022-04-15",
-          "onboardingDate": "2022-04-26",
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "Sralla Family Law, PLLC",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "patty sralla",
-              "email": "patricia@familylawsanantonio.com"
-            },
-            {
-              "name": "kevin buck sralla, esq.",
-              "email": "ksralla@familylawsanantonio.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2024-08-20",
-          "onboardingDate": "2024-08-23",
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "Suzuki Law Offices",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "pearl contreras",
-              "email": "pearl@suzukilawoffices.com"
-            },
-            {
-              "name": "richard \"rj\" suzuki",
-              "email": "rj@suzukilawoffices.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2023-10-28",
-          "onboardingDate": "2023-11-09",
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "Talai Law Offices, Inc.",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "ali talai",
-              "email": "ali@talailaw.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2024-07-12",
-          "onboardingDate": "2024-07-23",
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "The Arnold Law Firm",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "venisha arnold, esq.",
-              "email": "info@attorneyarnold.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "The Collins Firm, PLLC",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "james collins",
-              "email": "jjc@mikecollins.com"
-            },
-            {
-              "name": "mike collins",
-              "email": "mtc@mikecollins.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2023-08-10",
-          "onboardingDate": "2023-08-15",
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "The Law Office of Polly Tatum",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "jamese tatum",
-              "email": "jamese@lawofficeofpollytatum.com"
-            },
-            {
-              "name": "polly tatum",
-              "email": "polly@lawofficeofpollytatum.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2024-06-04",
-          "onboardingDate": "2024-06-11",
-          "terminationNotice": "2026-07-10",
-          "lastDayOfService": "2026-08-15"
-        },
-        {
-          "company": "The Law Offices of Nugent Zborowski",
-          "contactCount": 3,
-          "contacts": [
-            {
-              "name": "adam zborowski",
-              "email": "azborowski@nugentlawfirm.com"
-            },
-            {
-              "name": "matthew nugent",
-              "email": "mnugent@nugentlawfirm.com"
-            },
-            {
-              "name": "karen garrison",
-              "email": "kgarrison@nugentlawfirm.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "The Law Offices of Peter N. Davis & Associates, LLC",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "jessica jimenez",
-              "email": "jjimenez@peterdavislaw.com"
-            },
-            {
-              "name": "peter n davis, esq.",
-              "email": "pdavis@peterdavislaw.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2024-05-14",
-          "onboardingDate": "2024-05-23",
-          "terminationNotice": "2026-07-24",
-          "lastDayOfService": "2026-08-31"
-        },
-        {
-          "company": "The Mahdavi Law Firm PLLC",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "cyrus mahdavi, esq.",
-              "email": "cm@mahdavilawfirm.com"
-            },
-            {
-              "name": "hanieh mahdavi",
-              "email": "hm@mahdavilawfirm.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2025-08-27",
-          "onboardingDate": "2025-09-12",
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "The Mendoza Law Firm, LLC",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "maría mendoza",
-              "email": "abogada@mendozafirm.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2025-11-19",
-          "onboardingDate": "2025-11-19",
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "Tibbott & Richardson, P.C.",
-          "contactCount": 3,
-          "contacts": [
-            {
-              "name": "beth tibbott",
-              "email": "bmt@tibbottrichardson.com"
-            },
-            {
-              "name": "jessica ash",
-              "email": "jessica@tibbottrichardson.com"
-            },
-            {
-              "name": "dana richardson",
-              "email": "djr@tibbottrichardson.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2024-10-02",
-          "onboardingDate": "2024-10-11",
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "Ward Ruddock, PLLC",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "omari ruddock",
-              "email": "omari@wardruddock.com"
-            },
-            {
-              "name": "ian ward",
-              "email": "ian@wardruddock.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2024-05-29",
-          "onboardingDate": "2024-06-04",
-          "terminationNotice": null,
-          "lastDayOfService": null
-        }
-      ]
-    },
-    "offboarded": {
-      "label": "Offboarded Clients",
-      "tag": "offboarded client",
-      "companies": [
-        {
-          "company": "Bangerter Law, LLC",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "matthew bangerter",
-              "email": "matt@bangerterlaw.com"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": "2020-11-11",
-          "onboardingDate": null,
-          "terminationNotice": "2022-09-13",
-          "lastDayOfService": null
-        },
-        {
-          "company": "Barry M. Weintraub, M.D., F.A.C.S., P.C",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "jill sand",
-              "email": "jill@drbarryweintraub.com"
-            },
-            {
-              "name": "barry m. weintraub",
-              "email": "barry@drbarryweintraub.com"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": "2024-10-23",
-          "onboardingDate": "2024-11-15",
-          "terminationNotice": "2025-08-28",
-          "lastDayOfService": "2025-10-01"
-        },
-        {
-          "company": "Britto & Herman Injury Lawyers",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "michael herman, esq.",
-              "email": "mh@brittoherman.com"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": "2023-08-23",
-          "onboardingDate": "2023-09-08",
-          "terminationNotice": "2025-02-09",
-          "lastDayOfService": "2025-03-01"
-        },
-        {
-          "company": "Cohen and Cohen Law",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "adam mann, esq.",
-              "email": "adamm@cohencohenpa.com"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": "2023-09-22",
-          "onboardingDate": "2023-09-27",
-          "terminationNotice": "2026-05-26",
-          "lastDayOfService": "2026-06-30"
-        },
-        {
-          "company": "Coral Gables Plumbing",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "ayla shove",
-              "email": "info@coralgablesplumbing.com"
-            },
-            {
-              "name": "brandon swanson",
-              "email": "brandon@coralgablesplumbing.com"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": "2025-07-16",
-          "lastDayOfService": "2025-08-15"
-        },
-        {
-          "company": "Doncaster Law PLLC",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "sam doncaster",
-              "email": "samuel@doncasterlawpllc.com"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": "2021-08-16",
-          "onboardingDate": null,
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "ER Law Trial Lawyers",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "eric richardson",
-              "email": "eric@erlaw-nc.com"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": "2023-08-13",
-          "onboardingDate": "2023-08-30",
-          "terminationNotice": "2025-08-28",
-          "lastDayOfService": "2025-10-15"
-        },
-        {
-          "company": "Eric Blank Injury Attorneys",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "eric blank",
-              "email": "eblank@ericblanklaw.com"
-            },
-            {
-              "name": "mark fink",
-              "email": "accounts@ericblanklaw.com"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": "2022-02-28",
-          "onboardingDate": "2022-03-10",
-          "terminationNotice": "2024-05-18",
-          "lastDayOfService": "2024-05-31"
-        },
-        {
-          "company": "Family First Firm - Medicaid & Elder Law Attorneys",
-          "contactCount": 4,
-          "contacts": [
-            {
-              "name": "geoff hoatson",
-              "email": "geoff@familyfirstfirm.com"
-            },
-            {
-              "name": "emily manuel",
-              "email": "emily@familyfirstfirm.com"
-            },
-            {
-              "name": "kathy evans",
-              "email": "kathy.evans@familyfirstfirm.com"
-            },
-            {
-              "name": "stephanie garcia",
-              "email": "stephanie.garcia@familyfirstfirm.com"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": "2022-05-02",
-          "onboardingDate": "2022-05-12",
-          "terminationNotice": "2024-11-21",
-          "lastDayOfService": "2024-12-15"
-        },
-        {
-          "company": "Florida Women’s Law Group",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "hilliary tabone",
-              "email": "hilliary@4womenlaw.com"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": "2022-05-05",
-          "lastDayOfService": null
-        },
-        {
-          "company": "Hammack Law Firm",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "paul hammack",
-              "email": "paul@hammacklawfirm.com"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": "2023-11-03",
-          "onboardingDate": "2023-11-17",
-          "terminationNotice": "2025-02-28",
-          "lastDayOfService": "2025-06-01"
-        },
-        {
-          "company": "Herrin Injury Attorneys",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "cara herrin",
-              "email": "cara@pushdesigngroup.com"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "Herrin Kervin Injury Attorneys",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "gordon herrin",
-              "email": "gordon@herrinkervin.com"
-            },
-            {
-              "name": "david kervin jr.",
-              "email": "david@herrinkervin.com"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "Heuser & Heuser, LLP",
-          "contactCount": 4,
-          "contacts": [
-            {
-              "name": "brennan heuser",
-              "email": "brennan@heuserlaw.com"
-            },
-            {
-              "name": "gordon heuser",
-              "email": "gordon@heuserlaw.com"
-            },
-            {
-              "name": "shannon colt",
-              "email": "shannon.colt@heuserlaw.com"
-            },
-            {
-              "name": "emily higgins",
-              "email": "emily.higgins@heuserlaw.com"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": "2024-07-24",
-          "onboardingDate": "2024-08-02",
-          "terminationNotice": "2026-07-24",
-          "lastDayOfService": "2026-08-31"
-        },
-        {
-          "company": "Hughes Law Firm, P.A.",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "howard hughes",
-              "email": "hhughes@handmlaw.net"
-            },
-            {
-              "name": "michelle newell",
-              "email": "mnewell@handmlaw.net"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": "2019-11-07",
-          "onboardingDate": "2019-11-08",
-          "terminationNotice": "2023-12-22",
-          "lastDayOfService": "2024-01-15"
-        },
-        {
-          "company": "John Rizvi, P.A. - The Idea Attorneys",
-          "contactCount": 3,
-          "contacts": [
-            {
-              "name": "jenny lam",
-              "email": "jenny@thepatentprofessor.com"
-            },
-            {
-              "name": "john rizvi",
-              "email": "john@ideaattorneys.com"
-            },
-            {
-              "name": "john rizvi esq.",
-              "email": "john@thepatentprofessor.com"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": "2019-08-05",
-          "onboardingDate": "2019-08-06",
-          "terminationNotice": "2024-06-07",
-          "lastDayOfService": "2024-07-31"
-        },
-        {
-          "company": "Josh Jones Law, P.A",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "josh jones",
-              "email": "josh@joshjoneslaw.com"
-            },
-            {
-              "name": "josh jones",
-              "email": "marketing@joshjoneslaw.com"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": "2021-03-26",
-          "onboardingDate": "2021-04-05",
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "Keller Swan, PLLC",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "blake swan",
-              "email": "bswan@swanlawfirm.com"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": "2024-07-31",
-          "lastDayOfService": "2024-08-31"
-        },
-        {
-          "company": "Law Offices of Connie Kaplan, P.A.",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "connie kaplan",
-              "email": "ck@conniekaplanlawyer.com"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": "2020-11-12",
-          "onboardingDate": "2020-12-22",
-          "terminationNotice": "2023-11-30",
-          "lastDayOfService": "2023-12-07"
-        },
-        {
-          "company": "Law Offices of David M. Benenfeld, P.A.",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "david m. benenfeld",
-              "email": "dbenenfeld@injurylawservice.com"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": "2024-01-29",
-          "onboardingDate": "2024-02-02",
-          "terminationNotice": "2024-12-13",
-          "lastDayOfService": "2025-02-01"
-        },
-        {
-          "company": "Law Offices of Denise Jomarron PLLC",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "denise jomarron",
-              "email": "denise@djlegalgroup.com"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": "2021-12-08",
-          "onboardingDate": "2021-12-16",
-          "terminationNotice": "2025-08-26",
-          "lastDayOfService": "2025-10-15"
-        },
-        {
-          "company": "Law Offices of Ellen L. Lee, LLC",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "barbara rexroad",
-              "email": "barbara@attorneydivorce.com"
-            },
-            {
-              "name": "ellen lee",
-              "email": "ellenlee@attorneydivorce.com"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": "2023-06-01",
-          "onboardingDate": "2023-06-15",
-          "terminationNotice": "2026-01-01",
-          "lastDayOfService": "2026-02-01"
-        },
-        {
-          "company": "Law Offices of Paul Burkhart",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "linette",
-              "email": "alvarado@paulburkhart.net"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": "2022-11-02",
-          "lastDayOfService": null
-        },
-        {
-          "company": "Lincoln-Goldfinch Law",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "kate lincoln-goldfinch",
-              "email": "kate@lincolngoldfinch.com"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": "2023-11-08",
-          "onboardingDate": "2023-11-29",
-          "terminationNotice": "2024-09-04",
-          "lastDayOfService": "2024-09-05"
-        },
-        {
-          "company": "McLaurin Law",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "jason mclaurin",
-              "email": "jmclaurin@mdlawtex.com"
-            },
-            {
-              "name": "julie jackson",
-              "email": "julie@mdlawtex.com"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": "2022-06-15",
-          "onboardingDate": "2022-06-29",
-          "terminationNotice": "2023-09-28",
-          "lastDayOfService": "2023-10-31"
-        },
-        {
-          "company": "Oldham & Delcamp LLC.",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "gordon g. oldham, esq.",
-              "email": "gordon@oldhamdelcamp.com"
-            },
-            {
-              "name": "jack e. delcamp",
-              "email": "jack@oldhamdelcamp.com"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": "2021-04-07",
-          "onboardingDate": null,
-          "terminationNotice": "2023-04-21",
-          "lastDayOfService": null
-        },
-        {
-          "company": "Reana Garcia Law Group",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "vanessa vitorio",
-              "email": "vanessa@reanagarcialawgroup.com"
-            },
-            {
-              "name": "reana garcia",
-              "email": "rgarcia@reanagarcialawgroup.com"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": "2024-12-27",
-          "onboardingDate": "2025-01-24",
-          "terminationNotice": "2025-08-22",
-          "lastDayOfService": "2025-10-15"
-        },
-        {
-          "company": "Rivas & Associates",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "lorena rivas, esq.",
-              "email": "lorena@rivasassociates.com"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": "2024-06-10",
-          "onboardingDate": "2024-06-14",
-          "terminationNotice": "2026-04-29",
-          "lastDayOfService": "2026-05-15"
-        },
-        {
-          "company": "RUDIN LAW",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "lee rudin",
-              "email": "lee@getrude.com"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": "2024-09-19",
-          "onboardingDate": "2024-09-26",
-          "terminationNotice": "2026-03-16",
-          "lastDayOfService": "2026-04-16"
-        },
-        {
-          "company": "Seabrook Law Offices",
-          "contactCount": 4,
-          "contacts": [
-            {
-              "name": "paul seabrook",
-              "email": "paul@seabrooklawoffices.com"
-            },
-            {
-              "name": "annique asghedom",
-              "email": "annique@seabrooklawoffices.com"
-            },
-            {
-              "name": "alexa iscoa gale",
-              "email": "alexa@seabrooklawoffices.com"
-            },
-            {
-              "name": "tracie zerr",
-              "email": "tracie@seabrooklawoffices.com"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": "2020-11-25",
-          "onboardingDate": "2021-01-31",
-          "terminationNotice": "2024-08-21",
-          "lastDayOfService": "2024-09-21"
-        },
-        {
-          "company": "Sheryll Law, P.C.",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "courtney benediktsson",
-              "email": "courtney@sheryll-law.com"
-            },
-            {
-              "name": "jay sheryll",
-              "email": "jaypsheryll@sheryll-law.com"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": "2020-11-10",
-          "onboardingDate": "2020-11-23",
-          "terminationNotice": "2025-08-13",
-          "lastDayOfService": "2025-09-15"
-        },
-        {
-          "company": "STERN Law",
-          "contactCount": 3,
-          "contacts": [
-            {
-              "name": "justin ball",
-              "email": "marketing@sternlawfirm.us"
-            },
-            {
-              "name": "jessica stern",
-              "email": "jessica@sternlawfirm.us"
-            },
-            {
-              "name": "nyiesha showers",
-              "email": "nyiesha@sternlawfirm.us"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": "2020-11-24",
-          "onboardingDate": "2020-12-09",
-          "terminationNotice": "2024-02-28",
-          "lastDayOfService": "2024-03-15"
-        },
-        {
-          "company": "Tax Workout Group",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "jeffrey sherman",
-              "email": "jsherman@taxworkoutgroup.com"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": "2023-02-24",
-          "onboardingDate": "2023-03-08",
-          "terminationNotice": "2024-05-08",
-          "lastDayOfService": "2024-06-01"
-        },
-        {
-          "company": "The Capital Law Firm, P.C.",
-          "contactCount": 3,
-          "contacts": [
-            {
-              "name": "alejandra velasco",
-              "email": "avelasco@capfirm.com"
-            },
-            {
-              "name": "aldayr guitron",
-              "email": "aguitron@capfirm.com"
-            },
-            {
-              "name": "beau gardiner",
-              "email": "beau@capfirm.com"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": "2026-01-12",
-          "onboardingDate": "2026-01-23",
-          "terminationNotice": "2026-05-26",
-          "lastDayOfService": "2026-07-18"
-        },
-        {
-          "company": "The Foley Law Firm",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "david foley",
-              "email": "df@davidfoley.net"
-            },
-            {
-              "name": "kayla becker",
-              "email": "kb@davidfoley.net"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": "2022-12-09",
-          "onboardingDate": "2022-12-21",
-          "terminationNotice": "2023-09-21",
-          "lastDayOfService": "2024-09-30"
-        },
-        {
-          "company": "The Gordon Agency",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "michael gordon",
-              "email": "michael@tgafl.com"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": "2026-03-09",
-          "lastDayOfService": "2026-04-15"
-        },
-        {
-          "company": "The Harrison Law Group, P.C.",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "brett harrison",
-              "email": "brett@hlgny.com"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": "2022-12-09",
-          "onboardingDate": "2022-12-19",
-          "terminationNotice": "2026-03-13",
-          "lastDayOfService": "2026-03-31"
-        },
-        {
-          "company": "The Hazzard Law Firm, LLC",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "wakisha hazzard, esq.",
-              "email": "thehazzardlawfirm@gmail.com"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": "2024-10-15",
-          "onboardingDate": "2024-10-22",
-          "terminationNotice": "2025-06-18",
-          "lastDayOfService": "2025-08-01"
-        },
-        {
-          "company": "The Horn Law Firm, P.C.",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "douglas \"doug\" horn",
-              "email": "dhorn@hornlaw.com"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": "2025-07-24",
-          "onboardingDate": "2025-08-01",
-          "terminationNotice": "2026-01-01",
-          "lastDayOfService": "2026-02-01"
-        },
-        {
-          "company": "The Law Offices Of Kimberly Butler Rainen",
-          "contactCount": 3,
-          "contacts": [
-            {
-              "name": "nikkea devida",
-              "email": "nikkead@howtomanage.com"
-            },
-            {
-              "name": "kimberly butler",
-              "email": ""
-            },
-            {
-              "name": "david rainen",
-              "email": "davidrainen@gmail.com"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": "2021-07-16",
-          "onboardingDate": "2021-07-27",
-          "terminationNotice": "2022-11-30",
-          "lastDayOfService": null
-        },
-        {
-          "company": "The Shamsi Law Firm APC",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "sean shamsi",
-              "email": "sean@shamsilaw.com"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": "2024-04-12",
-          "onboardingDate": "2024-04-19",
-          "terminationNotice": "2026-05-22",
-          "lastDayOfService": "2026-06-15"
-        },
-        {
-          "company": "The Siegel Law Group, P.A.",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "barry siegel, esq.",
-              "email": "bsiegel@siegellawgroup.com"
-            },
-            {
-              "name": "michelle astor",
-              "email": "mastor@siegellawgroup.com"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": "2023-09-27",
-          "onboardingDate": "2023-10-11",
-          "terminationNotice": "2025-03-11",
-          "lastDayOfService": "2025-05-01"
-        },
-        {
-          "company": "Trelles & Bichler",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "margaret bichler",
-              "email": "mbichler@tbinjurylaw.com"
-            },
-            {
-              "name": "yvette trelles",
-              "email": "ytrelles@tbinjurylaw.com"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": "2020-02-20",
-          "onboardingDate": "2020-02-21",
-          "terminationNotice": "2023-08-15",
-          "lastDayOfService": "2023-09-15"
-        },
-        {
-          "company": "Vargas Orthodontics",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "molly fry",
-              "email": "molly@vargasorthodontics.com"
-            },
-            {
-              "name": "dr. vargas",
-              "email": "drvargas@vargasorthodontics.com"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": "2025-01-21",
-          "lastDayOfService": "2025-03-01"
-        },
-        {
-          "company": "Vivid Vascular",
-          "contactCount": 3,
-          "contacts": [
-            {
-              "name": "kari gropper",
-              "email": "kgropper@northbeachvascular.com"
-            },
-            {
-              "name": "dena pennacchio",
-              "email": "dena.pennacchio@vividvascular.com"
-            },
-            {
-              "name": "adam gropper",
-              "email": "agropper@northbeachvascular.com"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": "2025-12-03",
-          "lastDayOfService": "2026-01-15"
-        },
-        {
-          "company": "Your Legacy Legal Care",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "kimberly hegwood",
-              "email": "kim@yourlegacylegalcare.com"
-            },
-            {
-              "name": "adam hundley",
-              "email": "adam@yourlegacylegalcare.com"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": "2024-11-13",
-          "onboardingDate": "2024-11-22",
-          "terminationNotice": "2025-11-03",
-          "lastDayOfService": "2025-12-01"
-        }
-      ]
-    },
     "wpp": {
       "label": "Active WPP Clients",
       "tag": "wpp client",
       "companies": [
         {
           "company": "Batten Insurance",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "ann-marie batten",
@@ -3736,11 +3735,11 @@
           "dateClosed": null,
           "onboardingDate": null,
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 1
         },
         {
           "company": "Behavioral Family Solutions",
-          "contactCount": 3,
           "contacts": [
             {
               "name": "amanda cardoso",
@@ -3761,11 +3760,11 @@
           "dateClosed": null,
           "onboardingDate": null,
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 3
         },
         {
           "company": "Boca Dental",
-          "contactCount": 3,
           "contacts": [
             {
               "name": "daniella",
@@ -3786,11 +3785,11 @@
           "dateClosed": null,
           "onboardingDate": null,
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 3
         },
         {
           "company": "Dino's Pressure Cleaning, Inc.",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "dean tomasulo",
@@ -3803,11 +3802,11 @@
           "dateClosed": null,
           "onboardingDate": null,
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 1
         },
         {
           "company": "Gardens Jewish Experience",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "bracha cheplowitz",
@@ -3820,15 +3819,15 @@
           "dateClosed": null,
           "onboardingDate": null,
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 1
         },
         {
           "company": "Palm Beach Plastic & Cosmetic Surgery",
-          "contactCount": 2,
           "contacts": [
             {
               "name": "ladonna diller",
-              "email": ""
+              "email": null
             },
             {
               "name": "carla pisani",
@@ -3841,11 +3840,11 @@
           "dateClosed": null,
           "onboardingDate": null,
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 2
         },
         {
           "company": "Susan J Christiansen Ph.D., LMFT",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "susan christiansen",
@@ -3858,11 +3857,11 @@
           "dateClosed": null,
           "onboardingDate": null,
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 1
         },
         {
           "company": "Visionary Eye Center",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "jacqueline c. westcott o.d., f.a.a.o.",
@@ -3875,11 +3874,11 @@
           "dateClosed": null,
           "onboardingDate": null,
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 1
         },
         {
           "company": "Web Promotion Partners",
-          "contactCount": 1,
           "contacts": [
             {
               "name": "andy leonard",
@@ -3892,7 +3891,8 @@
           "dateClosed": null,
           "onboardingDate": null,
           "terminationNotice": null,
-          "lastDayOfService": null
+          "lastDayOfService": null,
+          "contactCount": 1
         }
       ]
     }
