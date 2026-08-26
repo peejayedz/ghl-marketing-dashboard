@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-25T13:05:31.084Z",
+  "generatedAt": "2026-08-26T13:04:04.339Z",
   "source": "Companies pulled via GoHighLevel API v2 (Contacts search by tag; Businesses endpoint for company custom fields), joined by businessId.",
   "views": {
     "all": {
@@ -1080,7 +1080,7 @@
           "contacts": [
             {
               "name": "ladonna diller",
-              "email": null
+              "email": ""
             },
             {
               "name": "carla pisani",
@@ -1619,7 +1619,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "offboarded client"
           ],
           "dateClosed": "2024-06-04",
           "onboardingDate": "2024-06-11",
@@ -1636,7 +1636,7 @@
             },
             {
               "name": "kimberly butler",
-              "email": null
+              "email": ""
             },
             {
               "name": "david rainen",
@@ -1843,20 +1843,24 @@
         },
         {
           "company": "Visionary Eye Center",
-          "contactCount": 1,
+          "contactCount": 2,
           "contacts": [
+            {
+              "name": "antonio",
+              "email": "admin@visionaryeyecenterfl.com"
+            },
             {
               "name": "jacqueline c. westcott o.d., f.a.a.o.",
               "email": "westcott@visionaryeyecenterfl.com"
             }
           ],
           "tags": [
-            "wpp client"
+            "offboarded client"
           ],
           "dateClosed": null,
           "onboardingDate": null,
-          "terminationNotice": null,
-          "lastDayOfService": null
+          "terminationNotice": "2026-07-14",
+          "lastDayOfService": "2026-09-01"
         },
         {
           "company": "Vivid Vascular",
@@ -2635,27 +2639,6 @@
           "onboardingDate": "2023-08-15",
           "terminationNotice": null,
           "lastDayOfService": null
-        },
-        {
-          "company": "The Law Office of Polly Tatum",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "jamese tatum",
-              "email": "jamese@lawofficeofpollytatum.com"
-            },
-            {
-              "name": "polly tatum",
-              "email": "polly@lawofficeofpollytatum.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2024-06-04",
-          "onboardingDate": "2024-06-11",
-          "terminationNotice": "2026-07-10",
-          "lastDayOfService": "2026-08-15"
         },
         {
           "company": "The Law Offices of Nugent Zborowski",
@@ -3565,6 +3548,27 @@
           "lastDayOfService": "2026-02-01"
         },
         {
+          "company": "The Law Office of Polly Tatum",
+          "contactCount": 2,
+          "contacts": [
+            {
+              "name": "jamese tatum",
+              "email": "jamese@lawofficeofpollytatum.com"
+            },
+            {
+              "name": "polly tatum",
+              "email": "polly@lawofficeofpollytatum.com"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": "2024-06-04",
+          "onboardingDate": "2024-06-11",
+          "terminationNotice": "2026-07-10",
+          "lastDayOfService": "2026-08-15"
+        },
+        {
           "company": "The Law Offices Of Kimberly Butler Rainen",
           "contactCount": 3,
           "contacts": [
@@ -3574,7 +3578,7 @@
             },
             {
               "name": "kimberly butler",
-              "email": null
+              "email": ""
             },
             {
               "name": "david rainen",
@@ -3668,6 +3672,27 @@
           "onboardingDate": null,
           "terminationNotice": "2025-01-21",
           "lastDayOfService": "2025-03-01"
+        },
+        {
+          "company": "Visionary Eye Center",
+          "contactCount": 2,
+          "contacts": [
+            {
+              "name": "antonio",
+              "email": "admin@visionaryeyecenterfl.com"
+            },
+            {
+              "name": "jacqueline c. westcott o.d., f.a.a.o.",
+              "email": "westcott@visionaryeyecenterfl.com"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": "2026-07-14",
+          "lastDayOfService": "2026-09-01"
         },
         {
           "company": "Vivid Vascular",
@@ -3828,7 +3853,7 @@
           "contacts": [
             {
               "name": "ladonna diller",
-              "email": null
+              "email": ""
             },
             {
               "name": "carla pisani",
@@ -3850,23 +3875,6 @@
             {
               "name": "susan christiansen",
               "email": "susiechrist@gmail.com"
-            }
-          ],
-          "tags": [
-            "wpp client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
-          "company": "Visionary Eye Center",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "jacqueline c. westcott o.d., f.a.a.o.",
-              "email": "westcott@visionaryeyecenterfl.com"
             }
           ],
           "tags": [
