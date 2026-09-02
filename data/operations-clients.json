@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-01T13:04:06.292Z",
+  "generatedAt": "2026-09-02T13:03:26.067Z",
   "source": "Companies pulled via GoHighLevel API v2 (Contacts search by tag; Businesses endpoint for company custom fields), joined by businessId.",
   "views": {
     "all": {
@@ -20,12 +20,12 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "offboarded client"
           ],
           "dateClosed": "2023-06-23",
           "onboardingDate": "2023-07-12",
-          "terminationNotice": null,
-          "lastDayOfService": null
+          "terminationNotice": "2026-08-31",
+          "lastDayOfService": "2026-09-30"
         },
         {
           "company": "Bade Law Group, LLC",
@@ -282,6 +282,27 @@
             "offboarded client"
           ],
           "dateClosed": "2021-08-16",
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Dumas & Sanclemente",
+          "contactCount": 2,
+          "contacts": [
+            {
+              "name": "jonathan sanclemente, esq.",
+              "email": "jsanclemente@dsinjury.com"
+            },
+            {
+              "name": "axel dumas, esq.",
+              "email": "adumas@dsinjury.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": null,
           "onboardingDate": null,
           "terminationNotice": null,
           "lastDayOfService": null
@@ -1311,7 +1332,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "offboarded client"
           ],
           "dateClosed": "2025-06-25",
           "onboardingDate": "2025-07-02",
@@ -1690,7 +1711,8 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "lfmp client",
+            "offboarded client"
           ],
           "dateClosed": "2024-05-14",
           "onboardingDate": "2024-05-23",
@@ -1954,27 +1976,6 @@
       "tag": "lfmp client",
       "companies": [
         {
-          "company": "Albrecht Law PLLC",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "matthew albrecht",
-              "email": "matt@albrechtlawfirm.com"
-            },
-            {
-              "name": "melanie evans",
-              "email": "melanie@albrechtlawfirm.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2023-06-23",
-          "onboardingDate": "2023-07-12",
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
           "company": "Bade Law Group, LLC",
           "contactCount": 2,
           "contacts": [
@@ -2027,6 +2028,27 @@
             {
               "name": "deirdre dibiaggio",
               "email": "djd@dibiaggiolaw.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Dumas & Sanclemente",
+          "contactCount": 2,
+          "contacts": [
+            {
+              "name": "jonathan sanclemente, esq.",
+              "email": "jsanclemente@dsinjury.com"
+            },
+            {
+              "name": "axel dumas, esq.",
+              "email": "adumas@dsinjury.com"
             }
           ],
           "tags": [
@@ -2510,23 +2532,6 @@
           "lastDayOfService": null
         },
         {
-          "company": "Smith & Vanture",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "brian william. smith, esq.",
-              "email": "bws@smithvanture.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2025-06-25",
-          "onboardingDate": "2025-07-02",
-          "terminationNotice": "2026-07-20",
-          "lastDayOfService": "2026-08-20"
-        },
-        {
           "company": "Speaks Law Firm",
           "contactCount": 1,
           "contacts": [
@@ -2667,15 +2672,11 @@
         },
         {
           "company": "The Law Offices of Peter N. Davis & Associates, LLC",
-          "contactCount": 2,
+          "contactCount": 1,
           "contacts": [
             {
               "name": "jessica jimenez",
               "email": "jjimenez@peterdavislaw.com"
-            },
-            {
-              "name": "peter n davis, esq.",
-              "email": "pdavis@peterdavislaw.com"
             }
           ],
           "tags": [
@@ -2776,6 +2777,27 @@
       "label": "Offboarded Clients",
       "tag": "offboarded client",
       "companies": [
+        {
+          "company": "Albrecht Law PLLC",
+          "contactCount": 2,
+          "contacts": [
+            {
+              "name": "matthew albrecht",
+              "email": "matt@albrechtlawfirm.com"
+            },
+            {
+              "name": "melanie evans",
+              "email": "melanie@albrechtlawfirm.com"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": "2023-06-23",
+          "onboardingDate": "2023-07-12",
+          "terminationNotice": "2026-08-31",
+          "lastDayOfService": "2026-09-30"
+        },
         {
           "company": "Bangerter Law, LLC",
           "contactCount": 1,
@@ -3392,6 +3414,23 @@
           "lastDayOfService": "2025-09-15"
         },
         {
+          "company": "Smith & Vanture",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "brian william. smith, esq.",
+              "email": "bws@smithvanture.com"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": "2025-06-25",
+          "onboardingDate": "2025-07-02",
+          "terminationNotice": "2026-07-20",
+          "lastDayOfService": "2026-08-20"
+        },
+        {
           "company": "STERN Law",
           "contactCount": 3,
           "contacts": [
@@ -3592,6 +3631,23 @@
           "onboardingDate": "2021-07-27",
           "terminationNotice": "2022-11-30",
           "lastDayOfService": null
+        },
+        {
+          "company": "The Law Offices of Peter N. Davis & Associates, LLC",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "peter n davis, esq.",
+              "email": "pdavis@peterdavislaw.com"
+            }
+          ],
+          "tags": [
+            "offboarded client"
+          ],
+          "dateClosed": "2024-05-14",
+          "onboardingDate": "2024-05-23",
+          "terminationNotice": "2026-07-24",
+          "lastDayOfService": "2026-08-31"
         },
         {
           "company": "The Shamsi Law Firm APC",
