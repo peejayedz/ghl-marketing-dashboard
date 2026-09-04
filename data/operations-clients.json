@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-03T13:03:27.032Z",
+  "generatedAt": "2026-09-04T13:03:46.101Z",
   "source": "Companies pulled via GoHighLevel API v2 (Contacts search by tag; Businesses endpoint for company custom fields), joined by businessId.",
   "views": {
     "all": {
@@ -1101,7 +1101,7 @@
           "contacts": [
             {
               "name": "ladonna diller",
-              "email": null
+              "email": ""
             },
             {
               "name": "carla pisani",
@@ -1657,7 +1657,7 @@
             },
             {
               "name": "kimberly butler",
-              "email": null
+              "email": ""
             },
             {
               "name": "david rainen",
@@ -3617,7 +3617,7 @@
             },
             {
               "name": "kimberly butler",
-              "email": null
+              "email": ""
             },
             {
               "name": "david rainen",
@@ -3909,7 +3909,7 @@
           "contacts": [
             {
               "name": "ladonna diller",
-              "email": null
+              "email": ""
             },
             {
               "name": "carla pisani",
