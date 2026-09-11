@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-10T13:03:38.921Z",
+  "generatedAt": "2026-09-11T13:03:43.829Z",
   "source": "Companies pulled via GoHighLevel API v2 (Contacts search by tag; Businesses endpoint for company custom fields), joined by businessId.",
   "views": {
     "all": {
@@ -8,17 +8,8 @@
       "companies": [
         {
           "company": "Albrecht Law PLLC",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "matthew albrecht",
-              "email": "matt@albrechtlawfirm.com"
-            },
-            {
-              "name": "melanie evans",
-              "email": "melanie@albrechtlawfirm.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "offboarded client"
           ],
@@ -29,17 +20,8 @@
         },
         {
           "company": "Bade Law Group, LLC",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "keith simper",
-              "email": "keithsimperfractionalcfo@outlook.com"
-            },
-            {
-              "name": "jennifer bade, esq.",
-              "email": "jennifer@badelawgroup.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "lfmp client"
           ],
@@ -50,13 +32,8 @@
         },
         {
           "company": "Bangerter Law, LLC",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "matthew bangerter",
-              "email": "matt@bangerterlaw.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "offboarded client"
           ],
@@ -89,13 +66,8 @@
         },
         {
           "company": "Batten Insurance",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "ann-marie batten",
-              "email": "annmariebatten@gmail.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "wpp client"
           ],
@@ -106,21 +78,8 @@
         },
         {
           "company": "Behavioral Family Solutions",
-          "contactCount": 3,
-          "contacts": [
-            {
-              "name": "amanda cardoso",
-              "email": "cardosoa@behavioralfamilysolutions.com"
-            },
-            {
-              "name": "juan carlos gonzalez",
-              "email": "jc@behavioralfamilysolutions.com"
-            },
-            {
-              "name": "david gonzalez",
-              "email": "david@behavioralfamilysolutions.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "wpp client"
           ],
@@ -131,21 +90,8 @@
         },
         {
           "company": "Boca Dental",
-          "contactCount": 3,
-          "contacts": [
-            {
-              "name": "daniella",
-              "email": "daniella@weinsteindental.com"
-            },
-            {
-              "name": "gregg weinstein",
-              "email": "drgregg@comcast.net"
-            },
-            {
-              "name": "dita weinstein",
-              "email": "dita@weinsteindental.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "wpp client"
           ],
@@ -156,13 +102,8 @@
         },
         {
           "company": "Britto & Herman Injury Lawyers",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "michael herman, esq.",
-              "email": "mh@brittoherman.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "offboarded client"
           ],
@@ -173,13 +114,8 @@
         },
         {
           "company": "Cohen and Cohen Law",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "adam mann, esq.",
-              "email": "adamm@cohencohenpa.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "offboarded client"
           ],
@@ -190,21 +126,8 @@
         },
         {
           "company": "Cohen and Juda P.A.",
-          "contactCount": 3,
-          "contacts": [
-            {
-              "name": "harvey cohen",
-              "email": "harvey@cohenandjuda.com"
-            },
-            {
-              "name": "kimberly sinclair",
-              "email": "kim@cohenandjuda.com"
-            },
-            {
-              "name": "gary h. juda",
-              "email": "gary@cohenandjuda.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "lfmp client"
           ],
@@ -237,13 +160,8 @@
         },
         {
           "company": "DiBiaggio Law",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "deirdre dibiaggio",
-              "email": "djd@dibiaggiolaw.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "lfmp client"
           ],
@@ -254,13 +172,8 @@
         },
         {
           "company": "Dino's Pressure Cleaning, Inc.",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "dean tomasulo",
-              "email": "dinodobe@gmail.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "wpp client"
           ],
@@ -271,13 +184,8 @@
         },
         {
           "company": "Doncaster Law PLLC",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "sam doncaster",
-              "email": "samuel@doncasterlawpllc.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "offboarded client"
           ],
@@ -288,17 +196,8 @@
         },
         {
           "company": "Dumas & Sanclemente",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "jonathan sanclemente, esq.",
-              "email": "jsanclemente@dsinjury.com"
-            },
-            {
-              "name": "axel dumas, esq.",
-              "email": "adumas@dsinjury.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "lfmp client"
           ],
@@ -309,17 +208,8 @@
         },
         {
           "company": "Emery Law Office",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "matthew",
-              "email": "admin@emerylawoffice.com"
-            },
-            {
-              "name": "melissa emery",
-              "email": "melissa@emerylawoffice.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "lfmp client"
           ],
@@ -330,13 +220,8 @@
         },
         {
           "company": "ER Law Trial Lawyers",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "eric richardson",
-              "email": "eric@erlaw-nc.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "offboarded client"
           ],
@@ -347,17 +232,8 @@
         },
         {
           "company": "Eric Blank Injury Attorneys",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "eric blank",
-              "email": "eblank@ericblanklaw.com"
-            },
-            {
-              "name": "mark fink",
-              "email": "accounts@ericblanklaw.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "offboarded client"
           ],
@@ -368,17 +244,8 @@
         },
         {
           "company": "Exit Path Partners LLC",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "cassie pinkerton",
-              "email": "cassie@exitpathpartners.com"
-            },
-            {
-              "name": "alex gertsburg",
-              "email": "alex@exitpathpartners.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "lfmp client"
           ],
@@ -389,25 +256,8 @@
         },
         {
           "company": "Family First Firm - Medicaid & Elder Law Attorneys",
-          "contactCount": 4,
-          "contacts": [
-            {
-              "name": "geoff hoatson",
-              "email": "geoff@familyfirstfirm.com"
-            },
-            {
-              "name": "emily manuel",
-              "email": "emily@familyfirstfirm.com"
-            },
-            {
-              "name": "kathy evans",
-              "email": "kathy.evans@familyfirstfirm.com"
-            },
-            {
-              "name": "stephanie garcia",
-              "email": "stephanie.garcia@familyfirstfirm.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "offboarded client"
           ],
@@ -418,13 +268,8 @@
         },
         {
           "company": "Florida National Title Services",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "michele lewis",
-              "email": "michele@floridanationaltitle.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "lfmp client"
           ],
@@ -435,13 +280,8 @@
         },
         {
           "company": "Florida Women’s Law Group",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "hilliary tabone",
-              "email": "hilliary@4womenlaw.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "offboarded client"
           ],
@@ -452,13 +292,8 @@
         },
         {
           "company": "Gardens Jewish Experience",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "bracha cheplowitz",
-              "email": "gardensje@gmail.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "wpp client"
           ],
@@ -469,25 +304,8 @@
         },
         {
           "company": "Greathouse Trial Law, LLC",
-          "contactCount": 4,
-          "contacts": [
-            {
-              "name": "damaris nadal",
-              "email": "damaris@atltriallaw.com"
-            },
-            {
-              "name": "riah greathouse",
-              "email": "riah@atltriallaw.com"
-            },
-            {
-              "name": "amina greathouse",
-              "email": "amina@atltriallaw.com"
-            },
-            {
-              "name": "alex",
-              "email": "alex@atltriallaw.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "lfmp client"
           ],
@@ -498,13 +316,8 @@
         },
         {
           "company": "Hammack Law Firm",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "paul hammack",
-              "email": "paul@hammacklawfirm.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "offboarded client"
           ],
@@ -515,17 +328,8 @@
         },
         {
           "company": "Hammond Law Group PC",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "catherine hammond",
-              "email": "catherine@coloradoestateplan.com"
-            },
-            {
-              "name": "brian van way",
-              "email": "brian@coloradoestateplan.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "lfmp client"
           ],
@@ -536,13 +340,8 @@
         },
         {
           "company": "Hedayati Law Group, P.C.",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "al hedayati",
-              "email": "ah@hedayatilaw.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "lfmp client"
           ],
@@ -553,13 +352,8 @@
         },
         {
           "company": "Herrin Injury Attorneys",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "cara herrin",
-              "email": "cara@pushdesigngroup.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "offboarded client"
           ],
@@ -570,17 +364,8 @@
         },
         {
           "company": "Herrin Kervin Injury Attorneys",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "gordon herrin",
-              "email": "gordon@herrinkervin.com"
-            },
-            {
-              "name": "david kervin jr.",
-              "email": "david@herrinkervin.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "offboarded client"
           ],
@@ -591,25 +376,8 @@
         },
         {
           "company": "Heuser & Heuser, LLP",
-          "contactCount": 4,
-          "contacts": [
-            {
-              "name": "brennan heuser",
-              "email": "brennan@heuserlaw.com"
-            },
-            {
-              "name": "gordon heuser",
-              "email": "gordon@heuserlaw.com"
-            },
-            {
-              "name": "shannon colt",
-              "email": "shannon.colt@heuserlaw.com"
-            },
-            {
-              "name": "emily higgins",
-              "email": "emily.higgins@heuserlaw.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "offboarded client"
           ],
@@ -620,17 +388,8 @@
         },
         {
           "company": "Hughes Law Firm, P.A.",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "howard hughes",
-              "email": "hhughes@handmlaw.net"
-            },
-            {
-              "name": "michelle newell",
-              "email": "mnewell@handmlaw.net"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "offboarded client"
           ],
@@ -641,21 +400,8 @@
         },
         {
           "company": "John Rizvi, P.A. - The Idea Attorneys",
-          "contactCount": 3,
-          "contacts": [
-            {
-              "name": "jenny lam",
-              "email": "jenny@thepatentprofessor.com"
-            },
-            {
-              "name": "john rizvi",
-              "email": "john@ideaattorneys.com"
-            },
-            {
-              "name": "john rizvi esq.",
-              "email": "john@thepatentprofessor.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "offboarded client"
           ],
@@ -666,17 +412,8 @@
         },
         {
           "company": "Josh Jones Law, P.A",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "josh jones",
-              "email": "josh@joshjoneslaw.com"
-            },
-            {
-              "name": "josh jones",
-              "email": "marketing@joshjoneslaw.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "offboarded client"
           ],
@@ -687,13 +424,8 @@
         },
         {
           "company": "Keller Swan, PLLC",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "blake swan",
-              "email": "bswan@swanlawfirm.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "offboarded client"
           ],
@@ -704,13 +436,8 @@
         },
         {
           "company": "KynLi Consulting & Accounting LLC",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "cameron williams",
-              "email": "cameron@kynliconsulting.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "lfmp client"
           ],
@@ -721,13 +448,8 @@
         },
         {
           "company": "LaBre Law Office",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "rob labre esq.",
-              "email": "labrelawoffice@gmail.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "lfmp client"
           ],
@@ -738,13 +460,8 @@
         },
         {
           "company": "Law Office of Bobby D. Mills, PLLC",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "bobby mills",
-              "email": "bmills@millsadoptionlaw.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "lfmp client"
           ],
@@ -755,17 +472,8 @@
         },
         {
           "company": "LAW OFFICE OF GARY M. LANDAU",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "meryl davids",
-              "email": "meryldavids2@gmail.com"
-            },
-            {
-              "name": "gary landau",
-              "email": "garylandauattorney@gmail.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "lfmp client"
           ],
@@ -776,13 +484,8 @@
         },
         {
           "company": "Law Office of Thomas G. Briody",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "thomas briody",
-              "email": "tbriodylaw@aol.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "lfmp client"
           ],
@@ -793,13 +496,8 @@
         },
         {
           "company": "Law Offices of Connie Kaplan, P.A.",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "connie kaplan",
-              "email": "ck@conniekaplanlawyer.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "offboarded client"
           ],
@@ -810,13 +508,8 @@
         },
         {
           "company": "Law Offices of Daniel A. Seigel, P.A.",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "daniel seigel",
-              "email": "dseigel@seigel-law.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "lfmp client"
           ],
@@ -827,13 +520,8 @@
         },
         {
           "company": "Law Offices of David M. Benenfeld, P.A.",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "david m. benenfeld",
-              "email": "dbenenfeld@injurylawservice.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "offboarded client"
           ],
@@ -844,13 +532,8 @@
         },
         {
           "company": "Law Offices of Denise Jomarron PLLC",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "denise jomarron",
-              "email": "denise@djlegalgroup.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "offboarded client"
           ],
@@ -861,17 +544,8 @@
         },
         {
           "company": "Law Offices of Ellen L. Lee, LLC",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "barbara rexroad",
-              "email": "barbara@attorneydivorce.com"
-            },
-            {
-              "name": "ellen lee",
-              "email": "ellenlee@attorneydivorce.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "offboarded client"
           ],
@@ -882,13 +556,8 @@
         },
         {
           "company": "Law Offices of Paul Burkhart",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "linette",
-              "email": "alvarado@paulburkhart.net"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "offboarded client"
           ],
@@ -899,13 +568,8 @@
         },
         {
           "company": "Law Offices of R. David Williams",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "david williams",
-              "email": "david@dwilliamslaw.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "lfmp client"
           ],
@@ -916,13 +580,8 @@
         },
         {
           "company": "Lincoln-Goldfinch Law",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "kate lincoln-goldfinch",
-              "email": "kate@lincolngoldfinch.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "offboarded client"
           ],
@@ -933,17 +592,8 @@
         },
         {
           "company": "Lone Star Injury Attorneys",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "rafael dela cruz",
-              "email": "rafael@lonestarinjuryattorneys.com"
-            },
-            {
-              "name": "maxwell paderewski",
-              "email": "max@lonestarinjuryattorneys.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "lfmp client"
           ],
@@ -954,13 +604,8 @@
         },
         {
           "company": "Lunn Law LLC",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "tiffany lunn white",
-              "email": "tlunn@lunnlaw.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "lfmp client"
           ],
@@ -971,13 +616,8 @@
         },
         {
           "company": "Lyle B. Masnikoff & Associates, P.A.",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "lyle b. masnikoff",
-              "email": "lmasnikoff@yahoo.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "lfmp client"
           ],
@@ -988,25 +628,8 @@
         },
         {
           "company": "McCarthy & Akers, PLC",
-          "contactCount": 4,
-          "contacts": [
-            {
-              "name": "douglas mccarthy",
-              "email": "douglasmccarthy@mccarthyakers.com"
-            },
-            {
-              "name": "matthew s. akers",
-              "email": "makers@mccarthyakers.com"
-            },
-            {
-              "name": "maura fisher",
-              "email": "maurajfisher2@gmail.com"
-            },
-            {
-              "name": "joshua petersen",
-              "email": "jpetersen@mccarthyakers.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "lfmp client"
           ],
@@ -1017,17 +640,8 @@
         },
         {
           "company": "McLaurin Law",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "jason mclaurin",
-              "email": "jmclaurin@mdlawtex.com"
-            },
-            {
-              "name": "julie jackson",
-              "email": "julie@mdlawtex.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "offboarded client"
           ],
@@ -1038,13 +652,8 @@
         },
         {
           "company": "Morgan Divorce Law",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "andrea morgan, esquire.",
-              "email": "andrea@morgandivorcelaw.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "lfmp client"
           ],
@@ -1055,17 +664,8 @@
         },
         {
           "company": "My Car Accident Attorney",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "dani flynngreathouse",
-              "email": "dani@flynngreathouse.com"
-            },
-            {
-              "name": "james flynn, esq.",
-              "email": "theflynnlawfirm@gmail.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "lfmp client"
           ],
@@ -1076,17 +676,8 @@
         },
         {
           "company": "Oldham & Delcamp LLC.",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "gordon g. oldham, esq.",
-              "email": "gordon@oldhamdelcamp.com"
-            },
-            {
-              "name": "jack e. delcamp",
-              "email": "jack@oldhamdelcamp.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "offboarded client"
           ],
@@ -1097,17 +688,8 @@
         },
         {
           "company": "Palm Beach Plastic & Cosmetic Surgery",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "ladonna diller",
-              "email": null
-            },
-            {
-              "name": "carla pisani",
-              "email": "carlapisani@gmail.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "wpp client"
           ],
@@ -1118,21 +700,8 @@
         },
         {
           "company": "Panteva Law Group, LLC",
-          "contactCount": 3,
-          "contacts": [
-            {
-              "name": "erika diaz",
-              "email": "erika@panteva.com"
-            },
-            {
-              "name": "marina sol lorenzo",
-              "email": "marina@panteva.com"
-            },
-            {
-              "name": "iskra panteva, esq.",
-              "email": "iskra@panteva.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "lfmp client"
           ],
@@ -1143,13 +712,8 @@
         },
         {
           "company": "Pardy & Rodriguez, P.A.",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "eduardo rodriguez, esq.",
-              "email": "erodriguez@pardyrodriguezlaw.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "lfmp client"
           ],
@@ -1160,13 +724,8 @@
         },
         {
           "company": "PJI Law, PLC",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "paul j. abraham",
-              "email": "pabraham@pjilaw.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "lfmp client"
           ],
@@ -1177,17 +736,8 @@
         },
         {
           "company": "Reana Garcia Law Group",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "vanessa vitorio",
-              "email": "vanessa@reanagarcialawgroup.com"
-            },
-            {
-              "name": "reana garcia",
-              "email": "rgarcia@reanagarcialawgroup.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "offboarded client"
           ],
@@ -1198,13 +748,8 @@
         },
         {
           "company": "Rivas & Associates",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "lorena rivas, esq.",
-              "email": "lorena@rivasassociates.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "offboarded client"
           ],
@@ -1215,21 +760,8 @@
         },
         {
           "company": "Robichaud, Schroepfer & Correia, P.A.",
-          "contactCount": 3,
-          "contacts": [
-            {
-              "name": "b.j robichaud",
-              "email": "bj@robichaudlaw.com"
-            },
-            {
-              "name": "paul schroepfer",
-              "email": "paul@robichaudlaw.com"
-            },
-            {
-              "name": "robert correia",
-              "email": "robert@robichaudlaw.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "lfmp client"
           ],
@@ -1240,13 +772,8 @@
         },
         {
           "company": "Ronald S. Chapman, P.A.",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "ronald chapman",
-              "email": "ronchapman@justiceflorida.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "lfmp client"
           ],
@@ -1257,13 +784,8 @@
         },
         {
           "company": "RUDIN LAW",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "lee rudin",
-              "email": "lee@getrude.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "offboarded client"
           ],
@@ -1274,25 +796,8 @@
         },
         {
           "company": "Seabrook Law Offices",
-          "contactCount": 4,
-          "contacts": [
-            {
-              "name": "paul seabrook",
-              "email": "paul@seabrooklawoffices.com"
-            },
-            {
-              "name": "annique asghedom",
-              "email": "annique@seabrooklawoffices.com"
-            },
-            {
-              "name": "alexa iscoa gale",
-              "email": "alexa@seabrooklawoffices.com"
-            },
-            {
-              "name": "tracie zerr",
-              "email": "tracie@seabrooklawoffices.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "offboarded client"
           ],
@@ -1303,17 +808,8 @@
         },
         {
           "company": "Sheryll Law, P.C.",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "courtney benediktsson",
-              "email": "courtney@sheryll-law.com"
-            },
-            {
-              "name": "jay sheryll",
-              "email": "jaypsheryll@sheryll-law.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "offboarded client"
           ],
@@ -1324,13 +820,8 @@
         },
         {
           "company": "Smith & Vanture",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "brian william. smith, esq.",
-              "email": "bws@smithvanture.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "offboarded client"
           ],
@@ -1341,13 +832,8 @@
         },
         {
           "company": "Speaks Law Firm",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "richard speaks",
-              "email": "clarke@speakslaw.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "lfmp client"
           ],
@@ -1358,17 +844,8 @@
         },
         {
           "company": "Sralla Family Law, PLLC",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "patty sralla",
-              "email": "patricia@familylawsanantonio.com"
-            },
-            {
-              "name": "kevin buck sralla, esq.",
-              "email": "ksralla@familylawsanantonio.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "lfmp client"
           ],
@@ -1379,21 +856,8 @@
         },
         {
           "company": "STERN Law",
-          "contactCount": 3,
-          "contacts": [
-            {
-              "name": "justin ball",
-              "email": "marketing@sternlawfirm.us"
-            },
-            {
-              "name": "jessica stern",
-              "email": "jessica@sternlawfirm.us"
-            },
-            {
-              "name": "nyiesha showers",
-              "email": "nyiesha@sternlawfirm.us"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "offboarded client"
           ],
@@ -1404,13 +868,8 @@
         },
         {
           "company": "Susan J Christiansen Ph.D., LMFT",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "susan christiansen",
-              "email": "susiechrist@gmail.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "wpp client"
           ],
@@ -1421,17 +880,8 @@
         },
         {
           "company": "Suzuki Law Offices",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "pearl contreras",
-              "email": "pearl@suzukilawoffices.com"
-            },
-            {
-              "name": "richard \"rj\" suzuki",
-              "email": "rj@suzukilawoffices.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "lfmp client"
           ],
@@ -1442,13 +892,8 @@
         },
         {
           "company": "Talai Law Offices, Inc.",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "ali talai",
-              "email": "ali@talailaw.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "lfmp client"
           ],
@@ -1459,13 +904,8 @@
         },
         {
           "company": "Tax Workout Group",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "jeffrey sherman",
-              "email": "jsherman@taxworkoutgroup.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "offboarded client"
           ],
@@ -1476,13 +916,8 @@
         },
         {
           "company": "The Arnold Law Firm",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "venisha arnold, esq.",
-              "email": "info@attorneyarnold.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "lfmp client"
           ],
@@ -1493,21 +928,8 @@
         },
         {
           "company": "The Capital Law Firm, P.C.",
-          "contactCount": 3,
-          "contacts": [
-            {
-              "name": "alejandra velasco",
-              "email": "avelasco@capfirm.com"
-            },
-            {
-              "name": "aldayr guitron",
-              "email": "aguitron@capfirm.com"
-            },
-            {
-              "name": "beau gardiner",
-              "email": "beau@capfirm.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "offboarded client"
           ],
@@ -1518,17 +940,8 @@
         },
         {
           "company": "The Collins Firm, PLLC",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "james collins",
-              "email": "jjc@mikecollins.com"
-            },
-            {
-              "name": "mike collins",
-              "email": "mtc@mikecollins.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "lfmp client"
           ],
@@ -1539,17 +952,8 @@
         },
         {
           "company": "The Foley Law Firm",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "david foley",
-              "email": "df@davidfoley.net"
-            },
-            {
-              "name": "kayla becker",
-              "email": "kb@davidfoley.net"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "offboarded client"
           ],
@@ -1560,13 +964,8 @@
         },
         {
           "company": "The Gordon Agency",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "michael gordon",
-              "email": "michael@tgafl.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "offboarded client"
           ],
@@ -1577,13 +976,8 @@
         },
         {
           "company": "The Harrison Law Group, P.C.",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "brett harrison",
-              "email": "brett@hlgny.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "offboarded client"
           ],
@@ -1594,13 +988,8 @@
         },
         {
           "company": "The Hazzard Law Firm, LLC",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "wakisha hazzard, esq.",
-              "email": "thehazzardlawfirm@gmail.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "offboarded client"
           ],
@@ -1611,13 +1000,8 @@
         },
         {
           "company": "The Horn Law Firm, P.C.",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "douglas \"doug\" horn",
-              "email": "dhorn@hornlaw.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "offboarded client"
           ],
@@ -1628,17 +1012,8 @@
         },
         {
           "company": "The Law Office of Polly Tatum",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "jamese tatum",
-              "email": "jamese@lawofficeofpollytatum.com"
-            },
-            {
-              "name": "polly tatum",
-              "email": "polly@lawofficeofpollytatum.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "offboarded client"
           ],
@@ -1649,21 +1024,8 @@
         },
         {
           "company": "The Law Offices Of Kimberly Butler Rainen",
-          "contactCount": 3,
-          "contacts": [
-            {
-              "name": "nikkea devida",
-              "email": "nikkead@howtomanage.com"
-            },
-            {
-              "name": "kimberly butler",
-              "email": null
-            },
-            {
-              "name": "david rainen",
-              "email": "davidrainen@gmail.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "offboarded client"
           ],
@@ -1674,21 +1036,8 @@
         },
         {
           "company": "The Law Offices of Nugent Zborowski",
-          "contactCount": 3,
-          "contacts": [
-            {
-              "name": "adam zborowski",
-              "email": "azborowski@nugentlawfirm.com"
-            },
-            {
-              "name": "matthew nugent",
-              "email": "mnugent@nugentlawfirm.com"
-            },
-            {
-              "name": "karen garrison",
-              "email": "kgarrison@nugentlawfirm.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "lfmp client"
           ],
@@ -1699,12 +1048,8 @@
         },
         {
           "company": "The Law Offices of Peter N. Davis & Associates, LLC",
-          "contactCount": 2,
+          "contactCount": 1,
           "contacts": [
-            {
-              "name": "jessica jimenez",
-              "email": "jjimenez@peterdavislaw.com"
-            },
             {
               "name": "peter n davis, esq.",
               "email": "pdavis@peterdavislaw.com"
@@ -1721,17 +1066,8 @@
         },
         {
           "company": "The Mahdavi Law Firm PLLC",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "cyrus mahdavi, esq.",
-              "email": "cm@mahdavilawfirm.com"
-            },
-            {
-              "name": "hanieh mahdavi",
-              "email": "hm@mahdavilawfirm.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "lfmp client"
           ],
@@ -1742,13 +1078,8 @@
         },
         {
           "company": "The Mendoza Law Firm, LLC",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "maría mendoza",
-              "email": "abogada@mendozafirm.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "lfmp client"
           ],
@@ -1759,13 +1090,8 @@
         },
         {
           "company": "The Shamsi Law Firm APC",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "sean shamsi",
-              "email": "sean@shamsilaw.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "offboarded client"
           ],
@@ -1776,17 +1102,8 @@
         },
         {
           "company": "The Siegel Law Group, P.A.",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "barry siegel, esq.",
-              "email": "bsiegel@siegellawgroup.com"
-            },
-            {
-              "name": "michelle astor",
-              "email": "mastor@siegellawgroup.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "offboarded client"
           ],
@@ -1797,21 +1114,8 @@
         },
         {
           "company": "Tibbott & Richardson, P.C.",
-          "contactCount": 3,
-          "contacts": [
-            {
-              "name": "beth tibbott",
-              "email": "bmt@tibbottrichardson.com"
-            },
-            {
-              "name": "jessica ash",
-              "email": "jessica@tibbottrichardson.com"
-            },
-            {
-              "name": "dana richardson",
-              "email": "djr@tibbottrichardson.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "lfmp client"
           ],
@@ -1822,17 +1126,8 @@
         },
         {
           "company": "Trelles & Bichler",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "margaret bichler",
-              "email": "mbichler@tbinjurylaw.com"
-            },
-            {
-              "name": "yvette trelles",
-              "email": "ytrelles@tbinjurylaw.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "offboarded client"
           ],
@@ -1865,17 +1160,8 @@
         },
         {
           "company": "Visionary Eye Center",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "antonio",
-              "email": "admin@visionaryeyecenterfl.com"
-            },
-            {
-              "name": "jacqueline c. westcott o.d., f.a.a.o.",
-              "email": "westcott@visionaryeyecenterfl.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "offboarded client"
           ],
@@ -1912,17 +1198,8 @@
         },
         {
           "company": "Ward Ruddock, PLLC",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "omari ruddock",
-              "email": "omari@wardruddock.com"
-            },
-            {
-              "name": "ian ward",
-              "email": "ian@wardruddock.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "lfmp client"
           ],
@@ -1933,13 +1210,8 @@
         },
         {
           "company": "Web Promotion Partners",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "andy leonard",
-              "email": "aleonard@lawfirmmarketingpros.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "wpp client"
           ],
@@ -1950,17 +1222,8 @@
         },
         {
           "company": "Your Legacy Legal Care",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "kimberly hegwood",
-              "email": "kim@yourlegacylegalcare.com"
-            },
-            {
-              "name": "adam hundley",
-              "email": "adam@yourlegacylegalcare.com"
-            }
-          ],
+          "contactCount": 0,
+          "contacts": [],
           "tags": [
             "offboarded client"
           ],
