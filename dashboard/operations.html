@@ -272,6 +272,27 @@
 
   <div class="summary-panel" id="summary-panel"></div>
 
+  <div class="summary-panel" id="churn-panel">
+    <div class="summary-title">Client Loss Summary</div>
+    <div class="summary-desc">
+      Number of clients lost and the average monthly loss rate over a window you can adjust below. Counted from the deduplicated "All Clients" list, using the same two bases as the lifetime summary above.
+    </div>
+    <div style="display:flex; align-items:flex-end; gap:12px; margin-bottom:18px; flex-wrap:wrap;">
+      <div class="select-group">
+        <label>Show clients lost in the past</label>
+        <div style="display:flex; align-items:center; gap:8px;">
+          <input type="number" id="churn-months" min="1" max="240" value="24" class="select-input" style="width:80px;">
+          <span style="color:var(--muted); font-size:13px;">months</span>
+        </div>
+      </div>
+      <button class="btn apply" id="churn-apply">Apply</button>
+      <button class="btn churn-preset" data-months="12">Last 12 mo</button>
+      <button class="btn churn-preset" data-months="24">Last 24 mo</button>
+      <button class="btn churn-preset" data-months="36">Last 36 mo</button>
+    </div>
+    <div class="summary-grid" id="churn-grid"></div>
+  </div>
+
   <div class="status-filter" id="status-filter"></div>
 
   <div class="toolbar">
@@ -786,10 +807,68 @@ function renderSummary() {
   `;
 }
 
+function computeChurnStats(monthsBack, endField) {
+  const windowStart = windowStartISO(monthsBack);
+  const today = new Date().toISOString().slice(0, 10);
+  const companies = (DATA.views.all && DATA.views.all.companies) || [];
+  const churned = companies.filter(c => {
+    const d = c[endField];
+    return d && d >= windowStart && d <= today;
+  });
+  return { count: churned.length, avgPerMonth: monthsBack ? churned.length / monthsBack : null };
+}
+
+let churnWindowMonths = 24;
+
+function renderChurnSummary() {
+  const grid = document.getElementById("churn-grid");
+  if (!grid) return;
+  const lastDay = computeChurnStats(churnWindowMonths, "lastDayOfService");
+  const termNotice = computeChurnStats(churnWindowMonths, "terminationNotice");
+  const fmtAvg = (v) => v == null ? "—" : (Math.round(v * 100) / 100).toString();
+  grid.innerHTML = `
+    <div class="summary-stat">
+      <div class="summary-value">${lastDay.count}<span class="summary-unit">clients</span></div>
+      <div class="summary-label">Lost in the past ${churnWindowMonths} months — Last Day of Service basis</div>
+      <div class="summary-sub">Average ${fmtAvg(lastDay.avgPerMonth)} clients lost per month</div>
+    </div>
+    <div class="summary-stat">
+      <div class="summary-value">${termNotice.count}<span class="summary-unit">clients</span></div>
+      <div class="summary-label">Lost in the past ${churnWindowMonths} months — Termination Notice basis</div>
+      <div class="summary-sub">Average ${fmtAvg(termNotice.avgPerMonth)} clients lost per month</div>
+    </div>
+  `;
+}
+
+function wireChurnFilter() {
+  const input = document.getElementById("churn-months");
+  const applyBtn = document.getElementById("churn-apply");
+  if (!input || !applyBtn) return;
+  applyBtn.addEventListener("click", () => {
+    const v = parseInt(input.value, 10);
+    if (v && v > 0) {
+      churnWindowMonths = v;
+      renderChurnSummary();
+    }
+  });
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") applyBtn.click();
+  });
+  document.querySelectorAll(".churn-preset").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const v = parseInt(btn.getAttribute("data-months"), 10);
+      churnWindowMonths = v;
+      input.value = v;
+      renderChurnSummary();
+    });
+  });
+}
+
 function renderAll() {
   renderStatusFilter();
   renderKPIs();
   renderSummary();
+  renderChurnSummary();
   renderTable();
 }
 
@@ -853,6 +932,7 @@ function startAutoRefreshWatcher(intervalMs) {
   renderSynced();
   renderColumnsPopover();
   wireToolbar();
+  wireChurnFilter();
   renderAll();
   startAutoRefreshWatcher(5 * 60 * 1000); // check every 5 minutes for freshly pushed data
 })();
