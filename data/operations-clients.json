@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-17T13:03:56.328Z",
+  "generatedAt": "2026-09-18T13:04:43.112Z",
   "source": "Companies pulled via GoHighLevel API v2 (Contacts search by tag; Businesses endpoint for company custom fields), joined by businessId.",
   "views": {
     "all": {
@@ -287,7 +287,7 @@
           "lastDayOfService": null
         },
         {
-          "company": "Dumas & Sanclemente",
+          "company": "Dumas & Sanclemente Law, PLLC",
           "contactCount": 2,
           "contacts": [
             {
@@ -2039,7 +2039,7 @@
           "lastDayOfService": null
         },
         {
-          "company": "Dumas & Sanclemente",
+          "company": "Dumas & Sanclemente Law, PLLC",
           "contactCount": 2,
           "contacts": [
             {
