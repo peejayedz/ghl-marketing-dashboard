@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-06T13:22:55.710Z",
+  "generatedAt": "2026-10-07T14:34:00.631Z",
   "source": "Companies pulled via GoHighLevel API v2 (Contacts search by tag; Businesses endpoint for company custom fields), joined by businessId.",
   "views": {
     "all": {
@@ -1302,6 +1302,27 @@
           "lastDayOfService": "2024-09-21"
         },
         {
+          "company": "Seymour & Vaughn",
+          "contactCount": 2,
+          "contacts": [
+            {
+              "name": "tommy vaughn",
+              "email": "tommy@seymourvaughn.com"
+            },
+            {
+              "name": "aaron seymour",
+              "email": "aaron@seymourvaughn.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
           "company": "Sheryll Law, P.C.",
           "contactCount": 2,
           "contacts": [
@@ -2528,6 +2549,27 @@
           ],
           "dateClosed": "2021-12-24",
           "onboardingDate": "2021-12-27",
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Seymour & Vaughn",
+          "contactCount": 2,
+          "contacts": [
+            {
+              "name": "tommy vaughn",
+              "email": "tommy@seymourvaughn.com"
+            },
+            {
+              "name": "aaron seymour",
+              "email": "aaron@seymourvaughn.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
           "terminationNotice": null,
           "lastDayOfService": null
         },
