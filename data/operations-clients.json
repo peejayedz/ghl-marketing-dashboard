@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-07T14:34:00.631Z",
+  "generatedAt": "2026-10-08T15:02:45.071Z",
   "source": "Companies pulled via GoHighLevel API v2 (Contacts search by tag; Businesses endpoint for company custom fields), joined by businessId.",
   "views": {
     "all": {
@@ -701,23 +701,6 @@
           "onboardingDate": null,
           "terminationNotice": "2024-07-31",
           "lastDayOfService": "2024-08-31"
-        },
-        {
-          "company": "KynLi Consulting & Accounting LLC",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "cameron williams",
-              "email": "cameron@kynliconsulting.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": null,
-          "lastDayOfService": null
         },
         {
           "company": "LaBre Law Office",
@@ -1496,6 +1479,23 @@
           "lastDayOfService": "2024-06-01"
         },
         {
+          "company": "The Agency Financial Team",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "cameron williams",
+              "email": "cameron@kynliconsulting.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
           "company": "The Arnold Law Firm",
           "contactCount": 1,
           "contacts": [
@@ -2207,23 +2207,6 @@
           "lastDayOfService": null
         },
         {
-          "company": "KynLi Consulting & Accounting LLC",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "cameron williams",
-              "email": "cameron@kynliconsulting.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": null,
-          "onboardingDate": null,
-          "terminationNotice": null,
-          "lastDayOfService": null
-        },
-        {
           "company": "LaBre Law Office",
           "contactCount": 1,
           "contacts": [
@@ -2646,6 +2629,23 @@
           ],
           "dateClosed": "2024-07-12",
           "onboardingDate": "2024-07-23",
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "The Agency Financial Team",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "cameron williams",
+              "email": "cameron@kynliconsulting.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
           "terminationNotice": null,
           "lastDayOfService": null
         },
