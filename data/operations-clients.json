@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T13:26:20.821Z",
+  "generatedAt": "2026-10-22T17:33:05.408Z",
   "source": "Companies pulled via GoHighLevel API v2 (Contacts search by tag; Businesses endpoint for company custom fields), joined by businessId.",
   "views": {
     "all": {
@@ -1863,6 +1863,27 @@
           "lastDayOfService": "2023-09-15"
         },
         {
+          "company": "Tyrone Law Firm, P.C.",
+          "contactCount": 2,
+          "contacts": [
+            {
+              "name": "nelson tyrone, esq.",
+              "email": "nelson@tyronelaw.com"
+            },
+            {
+              "name": "ali daly",
+              "email": "ali@tyronelaw.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
           "company": "Vargas Orthodontics",
           "contactCount": 2,
           "contacts": [
@@ -2789,6 +2810,27 @@
           ],
           "dateClosed": "2024-10-02",
           "onboardingDate": "2024-10-11",
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Tyrone Law Firm, P.C.",
+          "contactCount": 2,
+          "contacts": [
+            {
+              "name": "nelson tyrone, esq.",
+              "email": "nelson@tyronelaw.com"
+            },
+            {
+              "name": "ali daly",
+              "email": "ali@tyronelaw.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
           "terminationNotice": null,
           "lastDayOfService": null
         },
