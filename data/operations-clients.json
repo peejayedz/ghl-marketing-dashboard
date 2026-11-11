@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T13:01:46.202Z",
+  "generatedAt": "2026-11-11T13:05:16.462Z",
   "source": "Companies pulled via GoHighLevel API v2 (Contacts search by tag; Businesses endpoint for company custom fields), joined by businessId.",
   "views": {
     "all": {
@@ -1084,7 +1084,7 @@
           "contacts": [
             {
               "name": "ladonna diller",
-              "email": ""
+              "email": null
             },
             {
               "name": "carla pisani",
@@ -1458,8 +1458,8 @@
           ],
           "dateClosed": "2024-07-12",
           "onboardingDate": "2024-07-23",
-          "terminationNotice": null,
-          "lastDayOfService": null
+          "terminationNotice": "2026-10-29",
+          "lastDayOfService": "2026-11-29"
         },
         {
           "company": "Tax Workout Group",
@@ -1649,19 +1649,23 @@
         },
         {
           "company": "The Law Office of Polly Tatum",
-          "contactCount": 2,
+          "contactCount": 3,
           "contacts": [
+            {
+              "name": "kim roberson",
+              "email": "kim@lawofficeofpollytatum.com"
+            },
             {
               "name": "jamese tatum",
               "email": "jamese@lawofficeofpollytatum.com"
             },
             {
-              "name": "polly tatum",
+              "name": "polly tatum, esq.",
               "email": "polly@lawofficeofpollytatum.com"
             }
           ],
           "tags": [
-            "offboarded client"
+            "lfmp client"
           ],
           "dateClosed": "2024-06-04",
           "onboardingDate": "2024-06-11",
@@ -1678,7 +1682,7 @@
             },
             {
               "name": "kimberly butler",
-              "email": ""
+              "email": null
             },
             {
               "name": "david rainen",
@@ -2650,8 +2654,8 @@
           ],
           "dateClosed": "2024-07-12",
           "onboardingDate": "2024-07-23",
-          "terminationNotice": null,
-          "lastDayOfService": null
+          "terminationNotice": "2026-10-29",
+          "lastDayOfService": "2026-11-29"
         },
         {
           "company": "The Agency Financial Team",
@@ -2707,6 +2711,31 @@
           "onboardingDate": "2023-08-15",
           "terminationNotice": null,
           "lastDayOfService": null
+        },
+        {
+          "company": "The Law Office of Polly Tatum",
+          "contactCount": 3,
+          "contacts": [
+            {
+              "name": "kim roberson",
+              "email": "kim@lawofficeofpollytatum.com"
+            },
+            {
+              "name": "jamese tatum",
+              "email": "jamese@lawofficeofpollytatum.com"
+            },
+            {
+              "name": "polly tatum, esq.",
+              "email": "polly@lawofficeofpollytatum.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": "2024-06-04",
+          "onboardingDate": "2024-06-11",
+          "terminationNotice": "2026-07-10",
+          "lastDayOfService": "2026-08-15"
         },
         {
           "company": "The Law Offices of Nugent Zborowski",
@@ -3671,27 +3700,6 @@
           "lastDayOfService": "2026-02-01"
         },
         {
-          "company": "The Law Office of Polly Tatum",
-          "contactCount": 2,
-          "contacts": [
-            {
-              "name": "jamese tatum",
-              "email": "jamese@lawofficeofpollytatum.com"
-            },
-            {
-              "name": "polly tatum",
-              "email": "polly@lawofficeofpollytatum.com"
-            }
-          ],
-          "tags": [
-            "offboarded client"
-          ],
-          "dateClosed": "2024-06-04",
-          "onboardingDate": "2024-06-11",
-          "terminationNotice": "2026-07-10",
-          "lastDayOfService": "2026-08-15"
-        },
-        {
           "company": "The Law Offices Of Kimberly Butler Rainen",
           "contactCount": 3,
           "contacts": [
@@ -3701,7 +3709,7 @@
             },
             {
               "name": "kimberly butler",
-              "email": ""
+              "email": null
             },
             {
               "name": "david rainen",
@@ -3993,7 +4001,7 @@
           "contacts": [
             {
               "name": "ladonna diller",
-              "email": ""
+              "email": null
             },
             {
               "name": "carla pisani",
