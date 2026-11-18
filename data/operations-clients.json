@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-16T13:03:20.345Z",
+  "generatedAt": "2026-11-18T13:01:32.075Z",
   "source": "Companies pulled via GoHighLevel API v2 (Contacts search by tag; Businesses endpoint for company custom fields), joined by businessId.",
   "views": {
     "all": {
@@ -20,7 +20,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2023-06-23",
           "onboardingDate": "2023-07-12",
@@ -41,7 +41,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2026-05-07",
           "onboardingDate": "2026-05-15",
@@ -58,7 +58,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2020-11-11",
           "onboardingDate": null,
@@ -79,8 +79,7 @@
             }
           ],
           "tags": [
-            "offboarded client",
-            "wpp client"
+            "offboarded"
           ],
           "dateClosed": "2024-10-23",
           "onboardingDate": "2024-11-15",
@@ -97,7 +96,7 @@
             }
           ],
           "tags": [
-            "wpp client"
+            "wpp"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -122,7 +121,7 @@
             }
           ],
           "tags": [
-            "wpp client"
+            "wpp"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -147,7 +146,7 @@
             }
           ],
           "tags": [
-            "wpp client"
+            "wpp"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -164,7 +163,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2023-08-23",
           "onboardingDate": "2023-09-08",
@@ -181,7 +180,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2023-09-22",
           "onboardingDate": "2023-09-27",
@@ -206,7 +205,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2018-12-28",
           "onboardingDate": "2018-12-31",
@@ -227,8 +226,7 @@
             }
           ],
           "tags": [
-            "offboarded client",
-            "wpp client"
+            "offboarded"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -245,7 +243,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -262,7 +260,7 @@
             }
           ],
           "tags": [
-            "wpp client"
+            "wpp"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -279,7 +277,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2021-08-16",
           "onboardingDate": null,
@@ -300,7 +298,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -321,7 +319,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2025-05-23",
           "onboardingDate": "2025-05-30",
@@ -338,7 +336,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2023-08-13",
           "onboardingDate": "2023-08-30",
@@ -359,7 +357,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2022-02-28",
           "onboardingDate": "2022-03-10",
@@ -380,7 +378,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -409,7 +407,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2022-05-02",
           "onboardingDate": "2022-05-12",
@@ -426,7 +424,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -443,7 +441,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -460,7 +458,7 @@
             }
           ],
           "tags": [
-            "wpp client"
+            "wpp"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -489,7 +487,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2020-04-13",
           "onboardingDate": "2020-04-14",
@@ -506,7 +504,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2023-11-03",
           "onboardingDate": "2023-11-17",
@@ -527,7 +525,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2025-09-22",
           "onboardingDate": "2025-10-24",
@@ -544,7 +542,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2024-04-20",
           "onboardingDate": "2024-04-26",
@@ -561,7 +559,24 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Herrin Injury Law",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "gordon herrin",
+              "email": "gordon@herrininjurylaw.com"
+            }
+          ],
+          "tags": [
+            "offboarded"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -582,7 +597,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -611,7 +626,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2024-07-24",
           "onboardingDate": "2024-08-02",
@@ -632,7 +647,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2019-11-07",
           "onboardingDate": "2019-11-08",
@@ -657,7 +672,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2019-08-05",
           "onboardingDate": "2019-08-06",
@@ -678,7 +693,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2021-03-26",
           "onboardingDate": "2021-04-05",
@@ -695,7 +710,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -712,7 +727,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -729,7 +744,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2019-12-31",
           "onboardingDate": "2020-01-01",
@@ -750,7 +765,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -767,7 +782,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2023-03-11",
           "onboardingDate": "2023-03-22",
@@ -784,7 +799,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2020-11-12",
           "onboardingDate": "2020-12-22",
@@ -801,7 +816,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -818,7 +833,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2024-01-29",
           "onboardingDate": "2024-02-02",
@@ -835,7 +850,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2021-12-08",
           "onboardingDate": "2021-12-16",
@@ -856,7 +871,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2023-06-01",
           "onboardingDate": "2023-06-15",
@@ -873,7 +888,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -890,7 +905,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2022-03-01",
           "onboardingDate": "2022-03-03",
@@ -907,7 +922,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2023-11-08",
           "onboardingDate": "2023-11-29",
@@ -928,7 +943,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2025-03-26",
           "onboardingDate": "2025-04-04",
@@ -945,7 +960,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2025-07-23",
           "onboardingDate": "2025-08-08",
@@ -962,7 +977,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2020-06-08",
           "onboardingDate": "2020-06-09",
@@ -991,7 +1006,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2021-11-12",
           "onboardingDate": "2021-11-22",
@@ -1012,7 +1027,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2022-06-15",
           "onboardingDate": "2022-06-29",
@@ -1029,7 +1044,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2025-07-18",
           "onboardingDate": "2025-08-13",
@@ -1050,7 +1065,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2025-01-29",
           "onboardingDate": "2025-03-12",
@@ -1071,7 +1086,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2021-04-07",
           "onboardingDate": null,
@@ -1084,7 +1099,7 @@
           "contacts": [
             {
               "name": "ladonna diller",
-              "email": null
+              "email": ""
             },
             {
               "name": "carla pisani",
@@ -1092,7 +1107,7 @@
             }
           ],
           "tags": [
-            "wpp client"
+            "wpp"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -1117,7 +1132,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2025-04-24",
           "onboardingDate": "2025-05-01",
@@ -1134,7 +1149,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2026-02-23",
           "onboardingDate": "2026-03-10",
@@ -1151,7 +1166,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2021-04-07",
           "onboardingDate": "2021-04-21",
@@ -1172,7 +1187,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2024-12-27",
           "onboardingDate": "2025-01-24",
@@ -1189,7 +1204,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2024-06-10",
           "onboardingDate": "2024-06-14",
@@ -1214,7 +1229,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2023-03-01",
           "onboardingDate": "2023-03-20",
@@ -1231,7 +1246,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2021-12-24",
           "onboardingDate": "2021-12-27",
@@ -1248,7 +1263,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2024-09-19",
           "onboardingDate": "2024-09-26",
@@ -1277,7 +1292,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2020-11-25",
           "onboardingDate": "2021-01-31",
@@ -1298,7 +1313,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -1319,7 +1334,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2020-11-10",
           "onboardingDate": "2020-11-23",
@@ -1336,7 +1351,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2025-06-25",
           "onboardingDate": "2025-07-02",
@@ -1353,7 +1368,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2022-04-15",
           "onboardingDate": "2022-04-26",
@@ -1374,7 +1389,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2024-08-20",
           "onboardingDate": "2024-08-23",
@@ -1399,7 +1414,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2020-11-24",
           "onboardingDate": "2020-12-09",
@@ -1416,7 +1431,7 @@
             }
           ],
           "tags": [
-            "wpp client"
+            "wpp"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -1437,7 +1452,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2023-10-28",
           "onboardingDate": "2023-11-09",
@@ -1454,7 +1469,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2024-07-12",
           "onboardingDate": "2024-07-23",
@@ -1471,7 +1486,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2023-02-24",
           "onboardingDate": "2023-03-08",
@@ -1488,7 +1503,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -1505,7 +1520,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -1530,7 +1545,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2026-01-12",
           "onboardingDate": "2026-01-23",
@@ -1551,7 +1566,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2023-08-10",
           "onboardingDate": "2023-08-15",
@@ -1572,7 +1587,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2022-12-09",
           "onboardingDate": "2022-12-21",
@@ -1589,7 +1604,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -1606,7 +1621,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2022-12-09",
           "onboardingDate": "2022-12-19",
@@ -1623,7 +1638,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2024-10-15",
           "onboardingDate": "2024-10-22",
@@ -1640,7 +1655,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2025-07-24",
           "onboardingDate": "2025-08-01",
@@ -1665,7 +1680,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2024-06-04",
           "onboardingDate": "2024-06-11",
@@ -1682,7 +1697,7 @@
             },
             {
               "name": "kimberly butler",
-              "email": null
+              "email": ""
             },
             {
               "name": "david rainen",
@@ -1690,7 +1705,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2021-07-16",
           "onboardingDate": "2021-07-27",
@@ -1715,7 +1730,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -1736,8 +1751,7 @@
             }
           ],
           "tags": [
-            "lfmp client",
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2024-05-14",
           "onboardingDate": "2024-05-23",
@@ -1758,7 +1772,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2025-08-27",
           "onboardingDate": "2025-09-12",
@@ -1775,7 +1789,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2025-11-19",
           "onboardingDate": "2025-11-19",
@@ -1792,7 +1806,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2024-04-12",
           "onboardingDate": "2024-04-19",
@@ -1813,7 +1827,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2023-09-27",
           "onboardingDate": "2023-10-11",
@@ -1838,7 +1852,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2024-10-02",
           "onboardingDate": "2024-10-11",
@@ -1859,7 +1873,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2020-02-20",
           "onboardingDate": "2020-02-21",
@@ -1880,7 +1894,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -1901,8 +1915,7 @@
             }
           ],
           "tags": [
-            "offboarded client",
-            "wpp client"
+            "offboarded"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -1923,7 +1936,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -1948,8 +1961,7 @@
             }
           ],
           "tags": [
-            "offboarded client",
-            "wpp client"
+            "offboarded"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -1970,7 +1982,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2024-05-29",
           "onboardingDate": "2024-06-04",
@@ -1987,7 +1999,7 @@
             }
           ],
           "tags": [
-            "wpp client"
+            "wpp"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -2008,7 +2020,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2024-11-13",
           "onboardingDate": "2024-11-22",
@@ -2035,7 +2047,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2026-05-07",
           "onboardingDate": "2026-05-15",
@@ -2060,7 +2072,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2018-12-28",
           "onboardingDate": "2018-12-31",
@@ -2077,7 +2089,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -2098,7 +2110,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -2119,7 +2131,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2025-05-23",
           "onboardingDate": "2025-05-30",
@@ -2140,7 +2152,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -2157,7 +2169,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -2186,7 +2198,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2020-04-13",
           "onboardingDate": "2020-04-14",
@@ -2207,7 +2219,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2025-09-22",
           "onboardingDate": "2025-10-24",
@@ -2224,7 +2236,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2024-04-20",
           "onboardingDate": "2024-04-26",
@@ -2241,7 +2253,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -2258,7 +2270,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2019-12-31",
           "onboardingDate": "2020-01-01",
@@ -2279,7 +2291,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -2296,7 +2308,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2023-03-11",
           "onboardingDate": "2023-03-22",
@@ -2313,7 +2325,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -2330,7 +2342,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2022-03-01",
           "onboardingDate": "2022-03-03",
@@ -2351,7 +2363,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2025-03-26",
           "onboardingDate": "2025-04-04",
@@ -2368,7 +2380,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2025-07-23",
           "onboardingDate": "2025-08-08",
@@ -2385,7 +2397,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2020-06-08",
           "onboardingDate": "2020-06-09",
@@ -2414,7 +2426,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2021-11-12",
           "onboardingDate": "2021-11-22",
@@ -2431,7 +2443,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2025-07-18",
           "onboardingDate": "2025-08-13",
@@ -2452,7 +2464,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2025-01-29",
           "onboardingDate": "2025-03-12",
@@ -2477,7 +2489,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2025-04-24",
           "onboardingDate": "2025-05-01",
@@ -2494,7 +2506,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2026-02-23",
           "onboardingDate": "2026-03-10",
@@ -2511,7 +2523,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2021-04-07",
           "onboardingDate": "2021-04-21",
@@ -2536,7 +2548,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2023-03-01",
           "onboardingDate": "2023-03-20",
@@ -2553,7 +2565,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2021-12-24",
           "onboardingDate": "2021-12-27",
@@ -2574,7 +2586,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -2591,7 +2603,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2022-04-15",
           "onboardingDate": "2022-04-26",
@@ -2612,7 +2624,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2024-08-20",
           "onboardingDate": "2024-08-23",
@@ -2633,7 +2645,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2023-10-28",
           "onboardingDate": "2023-11-09",
@@ -2650,7 +2662,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2024-07-12",
           "onboardingDate": "2024-07-23",
@@ -2667,7 +2679,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -2684,7 +2696,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -2705,7 +2717,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2023-08-10",
           "onboardingDate": "2023-08-15",
@@ -2730,7 +2742,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2024-06-04",
           "onboardingDate": "2024-06-11",
@@ -2755,29 +2767,12 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": null,
           "onboardingDate": null,
           "terminationNotice": null,
           "lastDayOfService": null
-        },
-        {
-          "company": "The Law Offices of Peter N. Davis & Associates, LLC",
-          "contactCount": 1,
-          "contacts": [
-            {
-              "name": "jessica jimenez",
-              "email": "jjimenez@peterdavislaw.com"
-            }
-          ],
-          "tags": [
-            "lfmp client"
-          ],
-          "dateClosed": "2024-05-14",
-          "onboardingDate": "2024-05-23",
-          "terminationNotice": "2026-07-24",
-          "lastDayOfService": "2026-08-31"
         },
         {
           "company": "The Mahdavi Law Firm PLLC",
@@ -2793,7 +2788,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2025-08-27",
           "onboardingDate": "2025-09-12",
@@ -2810,7 +2805,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2025-11-19",
           "onboardingDate": "2025-11-19",
@@ -2835,7 +2830,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2024-10-02",
           "onboardingDate": "2024-10-11",
@@ -2856,7 +2851,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -2877,7 +2872,7 @@
             }
           ],
           "tags": [
-            "lfmp client"
+            "active"
           ],
           "dateClosed": "2024-05-29",
           "onboardingDate": "2024-06-04",
@@ -2904,7 +2899,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2023-06-23",
           "onboardingDate": "2023-07-12",
@@ -2921,7 +2916,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2020-11-11",
           "onboardingDate": null,
@@ -2942,7 +2937,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2024-10-23",
           "onboardingDate": "2024-11-15",
@@ -2959,7 +2954,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2023-08-23",
           "onboardingDate": "2023-09-08",
@@ -2976,7 +2971,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2023-09-22",
           "onboardingDate": "2023-09-27",
@@ -2997,7 +2992,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -3014,7 +3009,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2021-08-16",
           "onboardingDate": null,
@@ -3031,7 +3026,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2023-08-13",
           "onboardingDate": "2023-08-30",
@@ -3052,7 +3047,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2022-02-28",
           "onboardingDate": "2022-03-10",
@@ -3081,7 +3076,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2022-05-02",
           "onboardingDate": "2022-05-12",
@@ -3098,7 +3093,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -3115,7 +3110,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2023-11-03",
           "onboardingDate": "2023-11-17",
@@ -3132,7 +3127,24 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
+        {
+          "company": "Herrin Injury Law",
+          "contactCount": 1,
+          "contacts": [
+            {
+              "name": "gordon herrin",
+              "email": "gordon@herrininjurylaw.com"
+            }
+          ],
+          "tags": [
+            "offboarded"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -3153,7 +3165,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -3182,7 +3194,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2024-07-24",
           "onboardingDate": "2024-08-02",
@@ -3203,7 +3215,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2019-11-07",
           "onboardingDate": "2019-11-08",
@@ -3228,7 +3240,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2019-08-05",
           "onboardingDate": "2019-08-06",
@@ -3249,7 +3261,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2021-03-26",
           "onboardingDate": "2021-04-05",
@@ -3266,7 +3278,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -3283,7 +3295,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2020-11-12",
           "onboardingDate": "2020-12-22",
@@ -3300,7 +3312,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2024-01-29",
           "onboardingDate": "2024-02-02",
@@ -3317,7 +3329,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2021-12-08",
           "onboardingDate": "2021-12-16",
@@ -3338,7 +3350,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2023-06-01",
           "onboardingDate": "2023-06-15",
@@ -3355,7 +3367,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -3372,7 +3384,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2023-11-08",
           "onboardingDate": "2023-11-29",
@@ -3393,7 +3405,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2022-06-15",
           "onboardingDate": "2022-06-29",
@@ -3414,7 +3426,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2021-04-07",
           "onboardingDate": null,
@@ -3435,7 +3447,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2024-12-27",
           "onboardingDate": "2025-01-24",
@@ -3452,7 +3464,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2024-06-10",
           "onboardingDate": "2024-06-14",
@@ -3469,7 +3481,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2024-09-19",
           "onboardingDate": "2024-09-26",
@@ -3498,7 +3510,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2020-11-25",
           "onboardingDate": "2021-01-31",
@@ -3519,7 +3531,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2020-11-10",
           "onboardingDate": "2020-11-23",
@@ -3536,7 +3548,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2025-06-25",
           "onboardingDate": "2025-07-02",
@@ -3561,7 +3573,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2020-11-24",
           "onboardingDate": "2020-12-09",
@@ -3578,7 +3590,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2023-02-24",
           "onboardingDate": "2023-03-08",
@@ -3603,7 +3615,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2026-01-12",
           "onboardingDate": "2026-01-23",
@@ -3624,7 +3636,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2022-12-09",
           "onboardingDate": "2022-12-21",
@@ -3641,7 +3653,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -3658,7 +3670,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2022-12-09",
           "onboardingDate": "2022-12-19",
@@ -3675,7 +3687,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2024-10-15",
           "onboardingDate": "2024-10-22",
@@ -3692,7 +3704,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2025-07-24",
           "onboardingDate": "2025-08-01",
@@ -3709,7 +3721,7 @@
             },
             {
               "name": "kimberly butler",
-              "email": null
+              "email": ""
             },
             {
               "name": "david rainen",
@@ -3717,7 +3729,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2021-07-16",
           "onboardingDate": "2021-07-27",
@@ -3726,15 +3738,19 @@
         },
         {
           "company": "The Law Offices of Peter N. Davis & Associates, LLC",
-          "contactCount": 1,
+          "contactCount": 2,
           "contacts": [
+            {
+              "name": "jessica jimenez",
+              "email": "jjimenez@peterdavislaw.com"
+            },
             {
               "name": "peter n davis, esq.",
               "email": "pdavis@peterdavislaw.com"
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2024-05-14",
           "onboardingDate": "2024-05-23",
@@ -3751,7 +3767,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2024-04-12",
           "onboardingDate": "2024-04-19",
@@ -3772,7 +3788,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2023-09-27",
           "onboardingDate": "2023-10-11",
@@ -3793,7 +3809,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2020-02-20",
           "onboardingDate": "2020-02-21",
@@ -3814,7 +3830,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -3835,7 +3851,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -3860,7 +3876,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -3881,7 +3897,7 @@
             }
           ],
           "tags": [
-            "offboarded client"
+            "offboarded"
           ],
           "dateClosed": "2024-11-13",
           "onboardingDate": "2024-11-22",
@@ -3904,7 +3920,7 @@
             }
           ],
           "tags": [
-            "wpp client"
+            "wpp"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -3929,7 +3945,7 @@
             }
           ],
           "tags": [
-            "wpp client"
+            "wpp"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -3954,7 +3970,7 @@
             }
           ],
           "tags": [
-            "wpp client"
+            "wpp"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -3971,7 +3987,7 @@
             }
           ],
           "tags": [
-            "wpp client"
+            "wpp"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -3988,7 +4004,7 @@
             }
           ],
           "tags": [
-            "wpp client"
+            "wpp"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -4001,7 +4017,7 @@
           "contacts": [
             {
               "name": "ladonna diller",
-              "email": null
+              "email": ""
             },
             {
               "name": "carla pisani",
@@ -4009,7 +4025,7 @@
             }
           ],
           "tags": [
-            "wpp client"
+            "wpp"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -4026,7 +4042,7 @@
             }
           ],
           "tags": [
-            "wpp client"
+            "wpp"
           ],
           "dateClosed": null,
           "onboardingDate": null,
@@ -4043,7 +4059,7 @@
             }
           ],
           "tags": [
-            "wpp client"
+            "wpp"
           ],
           "dateClosed": null,
           "onboardingDate": null,
