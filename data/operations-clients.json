@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-23T13:01:39.098Z",
+  "generatedAt": "2026-11-24T13:02:33.698Z",
   "source": "Companies pulled via GoHighLevel API v2 (Contacts search by tag; Businesses endpoint for company custom fields), joined by businessId.",
   "views": {
     "all": {
@@ -26,6 +26,31 @@
           "onboardingDate": "2023-07-12",
           "terminationNotice": "2026-08-31",
           "lastDayOfService": "2026-09-30"
+        },
+        {
+          "company": "Asghar Law",
+          "contactCount": 3,
+          "contacts": [
+            {
+              "name": "shaz asghar, esq.",
+              "email": "shaz@asgharlawfirm.com"
+            },
+            {
+              "name": "yulianna cox",
+              "email": "yulianna@asgharlawfirm.com"
+            },
+            {
+              "name": "madelina james",
+              "email": "madelina@asgharlawfirm.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
         },
         {
           "company": "Bade Law Group, LLC",
@@ -1099,7 +1124,7 @@
           "contacts": [
             {
               "name": "ladonna diller",
-              "email": ""
+              "email": null
             },
             {
               "name": "carla pisani",
@@ -1697,7 +1722,7 @@
             },
             {
               "name": "kimberly butler",
-              "email": ""
+              "email": null
             },
             {
               "name": "david rainen",
@@ -2033,6 +2058,31 @@
       "label": "Active Clients (LFMP)",
       "tag": "lfmp client",
       "companies": [
+        {
+          "company": "Asghar Law",
+          "contactCount": 3,
+          "contacts": [
+            {
+              "name": "shaz asghar, esq.",
+              "email": "shaz@asgharlawfirm.com"
+            },
+            {
+              "name": "yulianna cox",
+              "email": "yulianna@asgharlawfirm.com"
+            },
+            {
+              "name": "madelina james",
+              "email": "madelina@asgharlawfirm.com"
+            }
+          ],
+          "tags": [
+            "lfmp client"
+          ],
+          "dateClosed": null,
+          "onboardingDate": null,
+          "terminationNotice": null,
+          "lastDayOfService": null
+        },
         {
           "company": "Bade Law Group, LLC",
           "contactCount": 2,
@@ -3721,7 +3771,7 @@
             },
             {
               "name": "kimberly butler",
-              "email": ""
+              "email": null
             },
             {
               "name": "david rainen",
@@ -4017,7 +4067,7 @@
           "contacts": [
             {
               "name": "ladonna diller",
-              "email": ""
+              "email": null
             },
             {
               "name": "carla pisani",
